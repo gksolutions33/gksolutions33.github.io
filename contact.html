@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tech tutorials and projects on AI, Python, and IoT." />
+  <title>GK Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #1e40af;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #1e3a8a;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    main {
+      padding: 2rem;
+    }
+    article, .contact-section {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.75rem;
+      background-color: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e3a8a;
+    }
+    footer {
+      background-color: #1e40af;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GK Solutions</h1>
+    <p>Tech Tutorials & Projects - Python, IoT, AI</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#tutorials">Tutorials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <article>
+      <h2>Getting Started with Arduino and SIM808</h2>
+      <p>This project walks you through creating a GPS + GSM tracker using Arduino Nano and the SIM808 module. It sends location data via SMS and can be powered by a Li-ion battery.</p>
+      <ul>
+        <li>Components: Arduino Nano, SIM808, battery</li>
+        <li>Skills: AT commands, serial communication, GPS</li>
+        <li><a href="#">Read more</a></li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Python for Beginners: Build a Calculator</h2>
+      <p>Start learning Python with this beginner-friendly calculator app using simple logic and Tkinter GUI.</p>
+      <ul>
+        <li>Topics: Variables, Functions, GUI design</li>
+        <li>Platform: Python 3.x</li>
+        <li><a href="#">Read more</a></li>
+      </ul>
+    </article>
+
+    <section class="contact-section" id="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or want to collaborate, feel free to send a message:</p>
+      <form action="https://formspree.io/f/mnqeyjpa" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GK Solutions | Built with ❤️ on GitHub Pages</p>
+  </footer>
+</body>
+</html>
