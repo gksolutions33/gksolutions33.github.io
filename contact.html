@@ -63,6 +63,19 @@
     button:hover {
       background-color: #1e3a8a;
     }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4ade80;
+      color: #065f46;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      font-weight: 600;
+      z-index: 1000;
+    }
     footer {
       background-color: #1e40af;
       color: white;
@@ -79,32 +92,54 @@
   </header>
 
   <nav>
-     <a href="index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="#projects">Projects</a>
     <a href="#tutorials">Tutorials</a>
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
-
   </nav>
 
   <main>
-    
     <section class="contact-section" id="contact">
       <h2>Contact Us</h2>
       <p>If you have any questions or want to collaborate, feel free to send a message:</p>
-      <form  action="https://formspree.io/f/mrbqongj"  method="POST">
+      <form id="contact-form" action="https://formspree.io/f/mrbqongj" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
+      <div class="popup" id="thank-you-popup">Thank you! Your message has been sent.</div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 GK Solutions | Built with ❤️ </p>
+    <p>&copy; 2025 GK Solutions | Built with ❤️</p>
   </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const popup = document.getElementById('thank-you-popup');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          popup.style.display = 'block';
+          form.reset();
+          setTimeout(() => popup.style.display = 'none', 4000);
+        } else {
+          alert('There was an error sending your message.');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
