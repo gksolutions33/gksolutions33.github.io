@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previous Question Papers - GK Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header, footer {
+      background-color: #1e40af;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav {
+      background-color: #1e3a8a;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .paper-list {
+      list-style: none;
+      padding: 0;
+    }
+    .paper-list li {
+      background-color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .paper-list a {
+      color: #1e40af;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .paper-list a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GK Solutions</h1>
+    <p>Question Papers Archive</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="contact.html">Contact</a>
+    <a href="papers.html">Papers</a>
+  </nav>
+
+  <main>
+    <h2>Download Previous Year Question Papers</h2>
+    <ul class="paper-list">
+      <li><a href="#">Semester 1 - Computer Science (PDF)</a></li>
+      <li><a href="#">Semester 2 - Electronics (PDF)</a></li>
+      <li><a href="#">Semester 3 - Data Structures (PDF)</a></li>
+      <li><a href="#">Semester 4 - Microprocessors (PDF)</a></li>
+      <li><a href="#">Semester 5 - IoT & Embedded Systems (PDF)</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GK Solutions | Learn, Build, Innovate</p>
+  </footer>
+</body>
+</html>
