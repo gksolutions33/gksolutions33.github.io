@@ -5,97 +5,242 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Tech tutorials and projects on AI, Python, and IoT." />
   <title>GK SOLUTIONS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root{
+      --bg:#0b1020;
+      --card:#05060a;
+      --muted:#9aa4c0;
+      --accent-cyan: #00f5ff;
+      --accent-pink: #ff2d95;
+      --accent-green: #7bff6f;
+    }
+    *{box-sizing:border-box}
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background: linear-gradient(180deg,var(--bg) 0%, #071028 60%, #081021 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
     }
-    header {
-      background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOmHItlTH6Pw2X88xUNE3PAXm76Iunx_TKscO4zkYNal954uH4IV1rFrw0MxwLmwtrp2Dyh1mpyhoIYyDk7glN4X2tyjjkiwzaZMq7HFvavs6MRrwTA_2GfYMvy50UPMv4bk6C-uE0EAEyJfd8-k_4N=w1080-h856-s-no-gm?authuser=0');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      opacity: 0.8;
-      color: white;
-      padding: 18rem;
-      text-align: center;
+    /* Header / Hero */
+    header{
+      padding:3.5rem 1.25rem;
+      text-align:center;
+      background-image: radial-gradient(circle at 10% 10%, rgba(0,245,255,0.06), transparent 10%), radial-gradient(circle at 85% 35%, rgba(255,45,149,0.04), transparent 12%);
     }
-    nav {
-      background-color: #1e3a8a;
-      padding: 0.5rem;
-      text-align: center;
+    .site-title{font-size:clamp(1.4rem,3vw,2.4rem); font-weight:800; letter-spacing:0.6px}
+    .site-sub{color:var(--muted); margin-top:0.25rem}
+
+    nav{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; padding:0.6rem 1rem;}
+    nav a{color:var(--muted); text-decoration:none; font-weight:600; background:transparent; padding:8px 12px; border-radius:8px}
+    nav a:hover{color:white; background:rgba(255,255,255,0.02)}
+
+    main{width:100%; max-width:1100px; margin:2rem auto; padding:0 1rem; flex:1}
+
+    /* Departments neon cards */
+    .dept-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem}
+    @media (max-width:900px){.dept-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){.dept-grid{grid-template-columns:1fr}}
+
+    .dept-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:1.4rem;
+      text-align:center;
+      position:relative;
+      cursor:pointer;
+      border:3px solid #000; /* black border as requested */
+      transition:transform .18s ease, box-shadow .18s ease;
+      overflow:hidden;
+      min-height:120px;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;
     }
-    nav a {
-      margin: 0 1rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
+    .dept-card:hover{transform:translateY(-6px)}
+
+    /* Neon outlines using pseudo-elements */
+    .dept-card::before{
+      content:''; position:absolute; inset:0; z-index:0; pointer-events:none; border-radius:12px;
+      box-shadow: 0 0 28px rgba(0,0,0,0.2);
     }
-    main {
-      padding: 2rem;
-    }
-    article {
-      background-color: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    footer {
-      background-color: #1e40af;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
+    .neon-cse::after{content:''; position:absolute; inset:-2px; z-index:0; border-radius:14px; box-shadow:0 0 32px rgba(0,245,255,0.14), 0 0 64px rgba(0,245,255,0.06)}
+    .neon-ai::after{content:''; position:absolute; inset:-2px; z-index:0; border-radius:14px; box-shadow:0 0 32px rgba(255,45,149,0.16), 0 0 64px rgba(255,45,149,0.06)}
+    .neon-ece::after{content:''; position:absolute; inset:-2px; z-index:0; border-radius:14px; box-shadow:0 0 32px rgba(123,255,111,0.14), 0 0 64px rgba(123,255,111,0.05)}
+    .neon-robotics::after{content:''; position:absolute; inset:-2px; z-index:0; border-radius:14px; box-shadow:0 0 32px rgba(255,195,0,0.14), 0 0 64px rgba(255,195,0,0.05)}
+
+    .dept-card > *{position:relative; z-index:1}
+    .dept-name{font-weight:800; font-size:1.1rem; margin-bottom:6px}
+    .dept-desc{font-size:0.86rem; color:var(--muted)}
+
+    /* Projects area - hidden by default */
+    .projects-area{margin-top:2rem}
+    .projects-header{display:flex; align-items:center; justify-content:space-between; gap:1rem}
+    .projects-list{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1rem}
+    @media (max-width:900px){.projects-list{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){.projects-list{grid-template-columns:1fr}}
+
+    .project-card{background:var(--card); border-radius:10px; padding:1rem; border:2px solid #000; box-shadow: 0 6px 18px rgba(0,0,0,0.5);}
+    .project-thumb{height:140px; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600}
+    .project-title{font-weight:700; margin-top:0.6rem}
+    .project-meta{font-size:0.82rem; color:var(--muted); margin-top:0.3rem}
+    .project-actions{margin-top:0.8rem; display:flex; gap:.5rem}
+    .btn{padding:.45rem .7rem; border-radius:8px; font-weight:700; font-size:0.82rem; text-decoration:none}
+    .btn-outline{border:2px solid rgba(255,255,255,0.06); color:var(--muted)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent-cyan), var(--accent-pink)); color:#001; border:none}
+
+    /* small helper */
+    .muted{color:var(--muted)}
+    .hidden{display:none}
+
+    footer{padding:1.2rem; text-align:center; color:var(--muted); font-size:0.9rem}
   </style>
 </head>
 <body>
   <header>
-    <!-- <h1>GK SOLUTIONS</h1>
-    <p>Tech Tutorials & Projects and Study Material</p>
-  </br> <p>Teaching and Learning have no end point</p> -->
+    <div class="site-title">GK SOLUTIONS</div>
+    <div class="site-sub">PCB • IoT • Arduino • Projects & Tutorials</div>
   </header>
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
+    <a href="#projects">Projects</a>
     <a href="#tutorials">Tutorials</a>
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="Papers.html">Previous year Question paper's</a>
-
-
   </nav>
 
   <main>
-    <article>
-      <h2>Getting Started with Arduino and SIM808</h2>
-      <p>This project walks you through creating a GPS + GSM tracker using Arduino Nano and the SIM808 module. It sends location data via SMS and can be powered by a Li-ion battery.</p>
-      <ul>
-        <li>Components: Arduino Nano, SIM808, battery</li>
-        <li>Skills: AT commands, serial communication, GPS</li>
-        <li><a href="#">Read more</a></li>
-      </ul>
-    </article>
+    <section id="projects">
+      <h2 style="margin:0 0 1rem 0; font-size:1.3rem">Projects — Departments</h2>
 
-    <article>
-      <h2>Python for Beginners: Build a Calculator</h2>
-      <p>Start learning Python with this beginner-friendly calculator app using simple logic and Tkinter GUI.</p>
-      <ul>
-        <li>Topics: Variables, Functions, GUI design</li>
-        <li>Platform: Python 3.x</li>
-        <li><a href="#">Read more</a></li>
-      </ul>
-    </article>
+      <!-- Department cards -->
+      <div class="dept-grid" role="list">
+        <div class="dept-card neon-cse" tabindex="0" data-dept="CSE">
+          <div class="dept-name">CSE</div>
+          <div class="dept-desc">Computer Science & Software Projects</div>
+        </div>
+
+        <div class="dept-card neon-ai" tabindex="0" data-dept="AI">
+          <div class="dept-name">AI</div>
+          <div class="dept-desc">Machine Learning & Deep Learning</div>
+        </div>
+
+        <div class="dept-card neon-ece" tabindex="0" data-dept="ECE">
+          <div class="dept-name">ECE</div>
+          <div class="dept-desc">Embedded Systems & Electronics</div>
+        </div>
+
+        <div class="dept-card neon-robotics" tabindex="0" data-dept="Robotics">
+          <div class="dept-name">Robotics</div>
+          <div class="dept-desc">Mechatronics & Robotics Projects</div>
+        </div>
+      </div>
+
+      <!-- Projects area: will be filtered based on department selected -->
+      <div class="projects-area">
+        <div class="projects-header">
+          <div>
+            <h3 id="selected-dept" style="margin:0">Select a department above</h3>
+            <div class="muted" id="projects-count">&nbsp;</div>
+          </div>
+          <div>
+            <button id="show-all" class="btn btn-outline">Show All</button>
+          </div>
+        </div>
+
+        <div class="projects-list" id="projects-list">
+          <!-- Example project cards (each has data-dept attribute) -->
+
+          <div class="project-card" data-dept="CSE">
+            <div class="project-thumb">CSE — Web Scraper</div>
+            <div class="project-title">Web Scraper with BeautifulSoup</div>
+            <div class="project-meta">Python • Requests • BeautifulSoup</div>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="#">View</a>
+              <a class="btn btn-primary" href="#">Source</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-dept="AI">
+            <div class="project-thumb">AI — YOLOv8</div>
+            <div class="project-title">Real-time Object Detection</div>
+            <div class="project-meta">Python • YOLOv8 • OpenCV</div>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="#">View</a>
+              <a class="btn btn-primary" href="#">Source</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-dept="ECE">
+            <div class="project-thumb">ECE — IoT</div>
+            <div class="project-title">GPS + GSM Tracker (SIM808)</div>
+            <div class="project-meta">Arduino Nano • SIM808 • Li-ion</div>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="#">View</a>
+              <a class="btn btn-primary" href="#">Source</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-dept="Robotics">
+            <div class="project-thumb">Robotics — Line Follower</div>
+            <div class="project-title">Autonomous Line Follower</div>
+            <div class="project-meta">STM32 • Sensors • PID</div>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="#">View</a>
+              <a class="btn btn-primary" href="#">Source</a>
+            </div>
+          </div>
+
+          <!-- You can duplicate these project-card blocks with the appropriate data-dept value -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutorials / other content placeholders -->
+    <section id="tutorials" style="margin-top:3rem">
+      <article style="background:transparent; padding:0">
+        <h2 style="margin-bottom:0.25rem">Latest Tutorials</h2>
+        <p class="muted">Short guides and step-by-step tutorials will appear here.</p>
+      </article>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 GK Solutions | Built with ❤️ on GitHub Pages</p>
+    &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
   </footer>
+
+  <script>
+    // Filtering logic for department cards → projects
+    const deptCards = document.querySelectorAll('.dept-card');
+    const projects = document.querySelectorAll('.project-card');
+    const selectedDeptEl = document.getElementById('selected-dept');
+    const projectsCountEl = document.getElementById('projects-count');
+    const showAllBtn = document.getElementById('show-all');
+
+    function showDept(dept){
+      selectedDeptEl.textContent = dept + ' Projects';
+      let count = 0;
+      projects.forEach(p => {
+        if(p.dataset.dept === dept){ p.style.display = '' ; count++; }
+        else p.style.display = 'none';
+      });
+      projectsCountEl.textContent = count + ' project' + (count!==1 ? 's' : '');
+    }
+
+    deptCards.forEach(card => {
+      card.addEventListener('click', ()=> showDept(card.dataset.dept));
+      card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') showDept(card.dataset.dept); });
+    });
+
+    showAllBtn.addEventListener('click', ()=>{
+      selectedDeptEl.textContent = 'All Departments';
+      projectsCountEl.textContent = '';
+      projects.forEach(p=>p.style.display='');
+    });
+  </script>
 </body>
 </html>
