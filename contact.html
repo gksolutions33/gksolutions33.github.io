@@ -16,11 +16,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
       background-size: 300% 300%;
       animation: gradientMove 8s ease infinite;
     }
+
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -38,6 +40,7 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       text-align: center;
       box-sizing: border-box;
+      margin-bottom: 90px; /* leave space for bottom nav */
     }
 
     h2 {
@@ -133,22 +136,49 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    footer {
+    /* Bottom navigation bar */
+    .bottom-nav {
       position: fixed;
-      bottom: 10px;
+      bottom: 0;
+      left: 0;
       width: 100%;
-      text-align: center;
-      font-size: 0.8rem;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-around;
+      padding: 0.6rem 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .bottom-nav a {
       color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      transition: 0.3s;
+    }
+
+    .bottom-nav a i {
+      font-size: 1.2rem;
+    }
+
+    .bottom-nav a:hover {
+      color: #38bdf8;
+      transform: scale(1.1);
+    }
+
+    .bottom-nav a.active {
+      color: #00f2fe;
+      text-shadow: 0 0 10px #00f2fe;
     }
 
     @media (max-width: 480px) {
-      .contact-card {
-        padding: 1.5rem;
-        max-width: 90%;
-      }
-      input, textarea, button {
-        font-size: 0.95rem;
+      .bottom-nav a {
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -176,9 +206,12 @@
 
   <div class="popup" id="thank-you-popup">✅ Thank you! Your message has been sent.</div>
 
-  <footer>
-    <p>&copy; 2025 GK Solutions | Innovating with ❤️</p>
-  </footer>
+  <nav class="bottom-nav">
+    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="projects.html"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+    <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    <a href="contact.html" class="active"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+  </nav>
 
   <script>
     const form = document.getElementById('contact-form');
