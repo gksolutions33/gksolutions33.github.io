@@ -1,5 +1,5 @@
 ---
-date: '2025-11-30T18:58:16.156856'
+date: '2025-11-30T19:54:54.713360+00:00'
 layout: post
 tags:
 - crypto
@@ -8,37 +8,39 @@ tags:
 title: Daily Market Update — Nov 30, 2025
 ---
 
-## Crypto Prices
+## Crypto snapshot
 
-**Bitcoin**: $91459 | ₹8172536 | 24h: 0.82%
+**Bitcoin** — $91439 / ₹8170743 (24h change: 0.84%)
 
-**Dogecoin**: $0.149954 | ₹13.4 | 24h: 1.23%
+**Dogecoin** — $0.149691 / ₹13.38 (24h change: 1.01%)
 
-**Ethereum**: $3036.75 | ₹271356 | 24h: 1.37%
-
-
----
-
-## Stock Updates
-
-**AAPL**: 278.8500 (Change: 0.4684%)
-
-**TSLA**: 430.1700 (Change: 0.8416%)
+**Ethereum** — $3031.75 / ₹270910 (24h change: 1.41%)
 
 
 ---
 
-## News Headlines
+## Stock snapshot
 
-- [Bitcoin Munari Approaches Round 2 Deadline at $0.22](https://www.globenewswire.com/news-release/2025/11/29/3196560/0/en/Bitcoin-Munari-Approaches-Round-2-Deadline-at-0-22.html) — _GlobeNewswire_
+**AAPL** — 278.8500 (Δ 0.4684%)
 
-- [Samsung Went Rogue on Galaxy Tab S10 Lite, Black Friday All-Time Low Cheaper Than Last Year’s Models](https://kotaku.com/samsung-went-rogue-on-galaxy-tab-s10-lite-black-friday-all-time-low-cheaper-than-last-years-models-2000648767) — _Kotaku_
+**TSLA** — 430.1700 (Δ 0.8416%)
 
-- [Jim Cramer on Keurig Dr Pepper: “They’re Doing Some Good Things”](https://biztoc.com/x/23757cb8090a5140) — _Biztoc.com_
 
-- [Jim Cramer on Tractor Supply: “I’m Going to Say You Want to Buy That One”](https://biztoc.com/x/1f648773a79de060) — _Biztoc.com_
+---
 
-- [Jim Cramer Notes “TJX is at Its Highest, Tremendous Momentum”](https://biztoc.com/x/0e03eae766c82205) — _Biztoc.com_
+## Top headlines
+
+- 2025-11-29 — [American Revolutionary War, Vertical Video, Google Maps, More: Saturday Afternoon ResearchBuzz, November 29, 2025](https://researchbuzz.me/2025/11/29/american-revolutionary-war-vertical-video-google-maps-more-saturday-afternoon-researchbuzz-november-29-2025/) — _Researchbuzz.me_
+
+- 2025-11-29 — [Womier SK75 TMR Review: I Can’t Stop Typing](https://wccftech.com/review/womier-sk75-tmr-review/) — _Wccftech_
+
+- 2025-11-29 — [pypomes-crypto 0.6.8](https://pypi.org/project/pypomes-crypto/0.6.8/) — _Pypi.org_
+
+- 2025-11-29 — [Why Gold Shines at +55% While Bitcoin Tanks: The Great Divergence of 2025](https://biztoc.com/x/634198af29838d46) — _Biztoc.com_
+
+- 2025-11-29 — [This AI Stock Could Rally More if Its New Product Line Delivers on Expectations](https://biztoc.com/x/012566a54ba90d2e) — _Biztoc.com_
+
+- 2025-11-29 — [Elon Musk Moves Closer To $1 Trillion Tesla Prize — Should Shareholders Worry?](https://finance.yahoo.com/news/elon-musk-moves-closer-1-194035639.html) — _Yahoo Entertainment_
 
 
 ---
