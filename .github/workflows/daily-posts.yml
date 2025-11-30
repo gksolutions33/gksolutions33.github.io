@@ -1,5 +1,9 @@
 name: Daily finance posts
 
+# Grant the workflow permission to write repo contents (required for git push)
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 3 * * *'
@@ -13,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: true    # keeps GITHUB_TOKEN for git push
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -42,7 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # use the actor (the user who triggered the run) for a valid identity
+          # use the actor for a valid identity
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
@@ -53,4 +57,3 @@ jobs:
           else
             echo "No changes to commit"
           fi
-
