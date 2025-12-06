@@ -428,6 +428,46 @@
       renderPostsList(filtered);
     }
 
+        // Build a raw GitHub URL to the markdown file for a post
+    function resolveRawUrl(post) {
+      // 1) If raw_url already present (future-proof), use it
+      if (post.raw_url) {
+        return post.raw_url;
+      }
+
+      // 2) If "path" present (e.g. "_posts/2025-12-06-xxx.md"), use it
+      if (post.path) {
+        return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + post.path;
+      }
+
+      // 3) Fallback: build path from permalink or url
+      const link = post.permalink || post.url;
+      if (!link) return null;
+
+      // strip domain if full URL
+      let path = link;
+      const schemeIdx = path.indexOf("://");
+      if (schemeIdx !== -1) {
+        const firstSlash = path.indexOf("/", schemeIdx + 3);
+        path = firstSlash === -1 ? "/" : path.slice(firstSlash);
+      }
+
+      // expect something like /2025/12/06/daily-market-update---dec-06--2025.html
+      const match = path.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/([^\/]+)\.html/);
+      if (!match) return null;
+
+      const year = match[1];
+      const month = match[2];
+      const day = match[3];
+      const slug = match[4];
+
+      const filename = `${year}-${month}-${day}-${slug}.md`;
+      const mdPath = `_posts/${filename}`;
+
+      return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + mdPath;
+    }
+
+
     async function loadPostIntoViewer(post) {
       activePostId = post.id;
 
@@ -445,19 +485,14 @@
       viewerBodyEl.classList.remove("viewer-empty");
       viewerBodyEl.textContent = "Loading post content...";
 
-      // Prefer raw_url, fallback to constructing it from path
-      let rawUrl = post.raw_url;
-      if (!rawUrl && post.path) {
-        rawUrl =
-          "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" +
-          post.path;
-      }
+      const rawUrl = resolveRawUrl(post);
 
       if (!rawUrl) {
         viewerBodyEl.innerHTML =
           "<div class='error'>Sorry, this post is missing its content link.</div>";
         return;
       }
+
 
       try {
         const res = await fetch(rawUrl);
