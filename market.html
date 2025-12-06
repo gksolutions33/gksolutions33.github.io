@@ -1,184 +1,521 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Market Updates — GK Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Market Updates – GK Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Simple dark styling -->
   <style>
-    :root{--bg:#0b1020;--muted:#9aa4c0;--card:#071026}
-    body{font-family:'Inter',sans-serif;margin:0;background:var(--bg);color:#e6eef8;min-height:100vh}
-    header{padding:20px;text-align:center;background:linear-gradient(90deg,#071021,#07162b)}
-    header h1{margin:0;font-size:1.6rem}
-    nav{display:flex;justify-content:center;gap:12px;margin-top:8px}
-    nav a{color:var(--muted);text-decoration:none}
-    main{max-width:1100px;margin:20px auto;padding:0 16px;display:flex;gap:20px}
-    .list{width:380px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.03)}
-    .card h3{margin:0 0 6px 0;font-size:1rem}
-    .card p{margin:0;color:var(--muted);font-size:0.9rem}
-    .btn{display:inline-block;margin-top:8px;padding:8px 10px;border-radius:8px;background:#00f5ff;color:#001;font-weight:700;text-decoration:none}
-    .viewer{flex:1;min-height:60vh;background:#061026;padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);overflow:auto}
-    .meta{color:var(--muted);font-size:0.85rem;margin-bottom:8px}
-    .small{font-size:0.85rem;color:var(--muted)}
-    .subscribe{margin:12px 0;padding:12px;background:#081426;border-radius:8px}
-    .search{margin-bottom:12px}
-    input[type="search"]{width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#e6eef8}
+    :root {
+      --bg: #020617;
+      --bg-soft: #020b1f;
+      --bg-card: #020617;
+      --bg-card-alt: #020b1f;
+      --accent: #22d3ee;
+      --accent-soft: rgba(34,211,238,0.12);
+      --accent-strong: #06b6d4;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --danger: #f97373;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 0 0, #0b1120 0, #020617 35%, #000 100%);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1200px;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    nav a:hover,
+    nav a.active {
+      color: var(--accent);
+    }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent), var(--accent-strong));
+      border-radius: 999px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.7fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .card {
+      background: radial-gradient(circle at 0 0, #020b1f 0, #020617 40%, #000 100%);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(148,163,184,0.12);
+      box-shadow:
+        0 18px 50px rgba(15,23,42,0.9),
+        0 0 0 1px rgba(15,23,42,0.85);
+    }
+
+    .card-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 3px 9px 4px;
+      border-radius: 999px;
+      background: rgba(15,23,42,1);
+      border: 1px solid rgba(148,163,184,0.2);
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34,197,94,0.18);
+    }
+
+    .search-box {
+      margin: 16px 0 10px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 8px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #020617;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+    }
+    .search-input::placeholder {
+      color: #6b7280;
+      font-size: 12px;
+    }
+
+    .posts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .posts-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .posts-list::-webkit-scrollbar-thumb {
+      background: #111827;
+      border-radius: 999px;
+    }
+
+    .post-card {
+      background: radial-gradient(circle at 0 0, #020b1f 0, #020617 55%);
+      border-radius: 16px;
+      padding: 11px 12px 12px;
+      border: 1px solid rgba(15,23,42,0.9);
+      cursor: pointer;
+      transition: border 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease,
+        background 0.18s ease;
+      position: relative;
+    }
+    .post-card:hover {
+      border-color: rgba(56,189,248,0.6);
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(15,23,42,1);
+      background: radial-gradient(circle at 0 0, #020b1f 0, #020617 65%);
+    }
+    .post-card.active {
+      border-color: var(--accent-strong);
+      box-shadow: 0 0 0 1px rgba(34,211,238,0.55), 0 18px 45px rgba(8,47,73,0.9);
+    }
+
+    .post-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .post-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .post-summary {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      max-height: 48px;
+      overflow: hidden;
+    }
+
+    .read-btn {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+    }
+    .read-btn span {
+      margin-left: 4px;
+      font-size: 11px;
+    }
+
+    .viewer {
+      min-height: 420px;
+    }
+
+    .viewer-header {
+      margin-bottom: 8px;
+    }
+    .viewer-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .viewer-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .viewer-body {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-main);
+      padding-top: 8px;
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
+    .viewer-body h1,
+    .viewer-body h2,
+    .viewer-body h3 {
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    .viewer-body p {
+      margin: 4px 0;
+    }
+    .viewer-body ul {
+      padding-left: 18px;
+    }
+    .viewer-body code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      background: #020617;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .viewer-empty {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .error {
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 6px;
+    }
   </style>
+
+  <!-- Markdown parser (tiny library) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Market Updates</h1>
-    <div class="small">Auto-posted crypto & stock summaries — updated daily</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="tutorials.html">Tutorials</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="page">
+    <header>
+      <div class="title">Market Updates</div>
+      <div class="subtitle">Auto-posted crypto &amp; stock summaries — updated daily</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="contact.html">Contact</a>
+        <a href="market.html" class="active">Market</a>
+      </nav>
+    </header>
 
-  <main>
-    <aside class="list">
-      <div class="subscribe">
-        <strong>Subscribe</strong>
-        <p class="small">Get daily market updates by email (coming soon). For now, bookmark this page.</p>
+    <div class="layout">
+      <!-- LEFT: list -->
+      <div>
+        <div class="card" style="margin-bottom: 14px;">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            Daily auto-updates
+          </div>
+          <div class="card-title">Subscribe</div>
+          <div class="card-subtitle">
+            Email subscription coming soon. For now, bookmark this page to check daily crypto &amp; stock posts.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Recent posts</div>
+          <div class="card-subtitle">Tap on any card to read the full update on the right.</div>
+
+          <div class="search-box">
+            <input id="searchInput" class="search-input" placeholder="Search posts (title or date)..." />
+          </div>
+
+          <div id="postsList" class="posts-list">
+            <!-- filled by JS -->
+          </div>
+
+          <div id="listError" class="error" style="display:none;"></div>
+        </div>
       </div>
 
-      <div class="search">
-        <input id="q" type="search" placeholder="Search posts (title or date)" />
+      <!-- RIGHT: viewer -->
+      <div class="card viewer">
+        <div class="viewer-header">
+          <div id="viewerTitle" class="viewer-title">Open a post to view it here</div>
+          <div id="viewerMeta" class="viewer-meta">
+            Click any item on the left to load the full post. Data is fetched live from GitHub.
+          </div>
+        </div>
+        <div id="viewerBody" class="viewer-body viewer-empty">
+          No post selected yet.
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div id="posts-list" aria-live="polite">
-        <!-- filled by JS -->
-      </div>
-    </aside>
+  <script>
+    const POSTS_JSON_URL = "posts.json";
 
-    <section class="viewer" id="viewer">
-      <div id="viewer-content">
-        <h2 style="margin-top:0">Open a post to view it here</h2>
-        <p class="small">Click any item on the left to load the full post inside this box.</p>
-      </div>
-    </section>
-  </main>
+    const postsListEl = document.getElementById("postsList");
+    const searchInputEl = document.getElementById("searchInput");
+    const listErrorEl = document.getElementById("listError");
+    const viewerTitleEl = document.getElementById("viewerTitle");
+    const viewerMetaEl = document.getElementById("viewerMeta");
+    const viewerBodyEl = document.getElementById("viewerBody");
 
-<script>
-const POSTS_JSON = '/posts.json'; // updated by generator
-let posts = [];
+    let allPosts = [];
+    let activePostId = null;
 
-async function loadIndex(){
-  try {
-    const r = await fetch(POSTS_JSON + '?_=' + Date.now());
-    if(!r.ok) throw new Error('No posts index');
-    posts = await r.json();
-    renderList(posts);
-  } catch(err){
-    document.getElementById('posts-list').innerHTML = '<div class="card"><p class="small">No market posts found yet. The bot will publish daily.</p></div>';
-    console.error(err);
-  }
-}
-
-function renderList(list){
-  const el = document.getElementById('posts-list');
-  if(!list || list.length===0){
-    el.innerHTML = '<div class="card"><p class="small">No posts yet.</p></div>';
-    return;
-  }
-  el.innerHTML = '';
-  list.forEach((p, idx) => {
-    const d = new Date(p.date);
-    const html = `
-      <div class="card">
-        <h3>${escapeHtml(p.title)}</h3>
-        <div class="meta">${d.toLocaleString()}</div>
-        <p>${escapeHtml(p.excerpt)}</p>
-        <a href="#" data-url="${p.permalink}" data-index="${idx}" class="btn open">Read</a>
-      </div>`;
-    el.insertAdjacentHTML('beforeend', html);
-  });
-
-  // attach click handlers
-  document.querySelectorAll('.open').forEach(a=>{
-    a.addEventListener('click', function(ev){
-      ev.preventDefault();
-      const url = this.dataset.url;
-      loadPost(url);
-    });
-  });
-}
-
-async function loadPost(permalink){
-  // permalink is like /2025/11/30/slug.html
-  try {
-    const fullUrl = permalink.startsWith('/') ? permalink : '/' + permalink;
-    const r = await fetch(fullUrl);
-    if(!r.ok){
-      document.getElementById('viewer-content').innerHTML = '<p class="small">Post not found (build might be pending).</p>';
-      return;
+    function formatDate(dateStr) {
+      if (!dateStr) return "";
+      const d = new Date(dateStr);
+      if (isNaN(d)) return dateStr;
+      return d.toLocaleString();
     }
-    const html = await r.text();
 
-    // sanitize a bit: display only article contents between <article>..</article> if using our Jekyll layout
-    const temp = document.createElement('div');
-    temp.innerHTML = html;
-
-    // prefer article tag if present
-    let article = temp.querySelector('article');
-    let content = article ? article.innerHTML : temp.innerHTML;
-
-    // make all links open in same site (or new tab for external)
-    const doc = document.createElement('div');
-    doc.innerHTML = content;
-    doc.querySelectorAll('a').forEach(a=>{
-      // if external link - open in new tab, else open in same window (keeps user on site)
-      const href = a.getAttribute('href') || '';
-      if(href.startsWith('http') && !href.includes(location.hostname)){
-        a.setAttribute('target','_blank');
-        a.setAttribute('rel','noopener noreferrer');
-      } else {
-        // internal link: keep same domain — leave default so user stays on site
-        a.removeAttribute('target');
+    function renderPostsList(posts) {
+      postsListEl.innerHTML = "";
+      if (!posts.length) {
+        postsListEl.innerHTML = "<div class='viewer-empty'>No posts found.</div>";
+        return;
       }
+
+      posts.forEach((post, idx) => {
+        const card = document.createElement("div");
+        card.className = "post-card";
+        card.dataset.index = idx;
+
+        if (post.id === activePostId) {
+          card.classList.add("active");
+        }
+
+        const title = document.createElement("div");
+        title.className = "post-title";
+        title.textContent = post.title || "Untitled";
+
+        const meta = document.createElement("div");
+        meta.className = "post-meta";
+        meta.textContent = formatDate(post.date);
+
+        const summary = document.createElement("div");
+        summary.className = "post-summary";
+        summary.textContent = post.summary || "";
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "read-btn";
+        btn.innerHTML = 'Read <span>⟶</span>';
+
+        btn.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          loadPostIntoViewer(post);
+        });
+
+        card.addEventListener("click", () => {
+          loadPostIntoViewer(post);
+        });
+
+        card.appendChild(title);
+        card.appendChild(meta);
+        card.appendChild(summary);
+        card.appendChild(btn);
+        postsListEl.appendChild(card);
+      });
+    }
+
+    function applyFilter() {
+      const q = (searchInputEl.value || "").toLowerCase();
+      if (!q) {
+        renderPostsList(allPosts);
+        return;
+      }
+      const filtered = allPosts.filter(p =>
+        (p.title || "").toLowerCase().includes(q) ||
+        (p.date || "").toLowerCase().includes(q)
+      );
+      renderPostsList(filtered);
+    }
+
+    async function loadPostIntoViewer(post) {
+      activePostId = post.id;
+
+      // Highlight active card
+      document.querySelectorAll(".post-card").forEach(el => {
+        if (parseInt(el.dataset.index, 10) === post.index) {
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
+        }
+      });
+
+      viewerTitleEl.textContent = post.title || "Daily Market Update";
+      viewerMetaEl.textContent = formatDate(post.date);
+      viewerBodyEl.classList.remove("viewer-empty");
+      viewerBodyEl.textContent = "Loading post content...";
+
+      // Prefer raw_url, fallback to constructing it from path
+      let rawUrl = post.raw_url;
+      if (!rawUrl && post.path) {
+        rawUrl =
+          "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" +
+          post.path;
+      }
+
+      if (!rawUrl) {
+        viewerBodyEl.innerHTML =
+          "<div class='error'>Sorry, this post is missing its content link.</div>";
+        return;
+      }
+
+      try {
+        const res = await fetch(rawUrl);
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        let md = await res.text();
+
+        // Strip YAML front matter if present
+        if (md.startsWith("---")) {
+          const parts = md.split("---");
+          if (parts.length >= 3) {
+            md = parts.slice(2).join("---").trimStart();
+          }
+        }
+
+        const html = marked.parse(md);
+        viewerBodyEl.innerHTML = html;
+      } catch (err) {
+        console.error(err);
+        viewerBodyEl.innerHTML =
+          "<div class='error'>Could not load this post from GitHub. " +
+          "You can still open it directly: <a href='" +
+          (post.url || rawUrl) +
+          "' target='_blank' style='color:var(--accent);'>open raw post</a>.</div>";
+      }
+    }
+
+    async function init() {
+      try {
+        const res = await fetch(POSTS_JSON_URL);
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const posts = await res.json();
+
+        // Normalize & add index/id
+        allPosts = posts.map((p, index) => ({
+          ...p,
+          index,
+          id: p.path || p.url || String(index)
+        }));
+
+        renderPostsList(allPosts);
+
+        // Auto-open the latest post
+        if (allPosts.length) {
+          loadPostIntoViewer(allPosts[0]);
+        }
+      } catch (err) {
+        console.error(err);
+        listErrorEl.style.display = "block";
+        listErrorEl.textContent =
+          "Failed to load posts.json. Try reloading the page in a few seconds.";
+      }
+    }
+
+    searchInputEl.addEventListener("input", () => {
+      applyFilter();
     });
 
-    // Inject processed content into viewer
-    document.getElementById('viewer-content').innerHTML = doc.innerHTML;
-
-    // Scroll viewer to top
-    document.getElementById('viewer').scrollTop = 0;
-
-    // Optionally: add "Read next" links at bottom using posts.json
-    addReadNext(permalink);
-
-  } catch(err){
-    console.error(err);
-    document.getElementById('viewer-content').innerHTML = '<p class="small">Error loading post.</p>';
-  }
-}
-
-function addReadNext(currentPermalink){
-  const idx = posts.findIndex(p => p.permalink === currentPermalink || p.url === currentPermalink);
-  const container = document.getElementById('viewer-content');
-  const next = posts[idx+1] || posts[0];
-  if(!next) return;
-  const html = `<hr><div class="small">Read next: <a href="${next.permalink}">${escapeHtml(next.title)}</a></div>`;
-  container.insertAdjacentHTML('beforeend', html);
-}
-
-// quick search filter
-document.getElementById('q').addEventListener('input', function(){
-  const q = this.value.toLowerCase().trim();
-  if(!q) return renderList(posts);
-  const filtered = posts.filter(p => (p.title + ' ' + p.excerpt + ' ' + p.date).toLowerCase().includes(q));
-  renderList(filtered);
-});
-
-function escapeHtml(s){
-  if(!s) return '';
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-loadIndex();
-</script>
+    init();
+  </script>
 </body>
 </html>
