@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Market Updates – GK Solutions</title>
+  <title>Crypto & Stock Market Today – GK Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Simple dark styling -->
   <style>
     :root {
-      --bg: #020617;
-      --bg-soft: #020b1f;
-      --bg-card: #020617;
-      --bg-card-alt: #020b1f;
-      --accent: #22d3ee;
-      --accent-soft: rgba(34,211,238,0.12);
-      --accent-strong: #06b6d4;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: #1f2937;
-      --danger: #f97373;
+      --bg: #f3f4f6;
+      --bg-page: #eef2f7;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --border-strong: #cbd5f5;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --accent-strong: #1d4ed8;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --danger: #dc2626;
     }
 
     * { box-sizing: border-box; }
@@ -29,68 +28,71 @@
     body {
       margin: 0;
       min-height: 100vh;
+      background: var(--bg-page);
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at 0 0, #0b1120 0, #020617 35%, #000 100%);
       color: var(--text-main);
       display: flex;
       justify-content: center;
     }
 
+    a { color: var(--accent-strong); text-decoration: none; }
+
     .page {
       width: 100%;
-      max-width: 1200px;
-      padding: 24px 16px 40px;
+      max-width: 1180px;
+      padding: 20px 14px 40px;
     }
 
     header {
-      text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .title {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 700;
-      letter-spacing: .04em;
-      margin-bottom: 4px;
     }
 
     .subtitle {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
+      margin-top: 4px;
     }
 
     nav {
       display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 16px;
+      gap: 18px;
       font-size: 14px;
     }
     nav a {
-      color: var(--text-muted);
-      text-decoration: none;
       position: relative;
       padding-bottom: 4px;
+      color: var(--text-muted);
     }
-    nav a:hover,
+    nav a:hover { color: var(--accent-strong); }
     nav a.active {
-      color: var(--accent);
+      color: var(--accent-strong);
     }
     nav a.active::after {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -4px;
+      left: 0; right: 0; bottom: -3px;
       height: 2px;
-      background: linear-gradient(to right, var(--accent), var(--accent-strong));
+      background: var(--accent-strong);
       border-radius: 999px;
     }
 
     .layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.7fr);
-      gap: 20px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.8fr);
+      gap: 18px;
       align-items: flex-start;
     }
 
@@ -99,157 +101,203 @@
     }
 
     .card {
-      background: radial-gradient(circle at 0 0, #020b1f 0, #020617 40%, #000 100%);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(148,163,184,0.12);
-      box-shadow:
-        0 18px 50px rgba(15,23,42,0.9),
-        0 0 0 1px rgba(15,23,42,0.85);
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+      padding: 14px 16px 14px;
     }
 
-    .card-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .pill {
-      display: inline-flex;
+    .badge-row {
+      display: flex;
       align-items: center;
-      gap: 7px;
-      padding: 3px 9px 4px;
-      border-radius: 999px;
-      background: rgba(15,23,42,1);
-      border: 1px solid rgba(148,163,184,0.2);
-      font-size: 11px;
-      color: var(--accent);
+      gap: 10px;
       margin-bottom: 6px;
     }
-
-    .pill-dot {
-      width: 7px;
-      height: 7px;
+    .status-dot {
+      width: 9px; height: 9px; border-radius: 999px;
+      background: #16a34a;
+      box-shadow: 0 0 0 5px rgba(34,197,94,0.2);
+    }
+    .pill {
+      font-size: 11px;
+      padding: 3px 9px;
       border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 5px rgba(34,197,94,0.18);
+      background: #ecfdf5;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 2px 0 2px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
     }
 
     .search-box {
-      margin: 16px 0 10px;
+      margin-top: 8px;
+      margin-bottom: 10px;
     }
     .search-input {
       width: 100%;
-      padding: 8px 11px;
+      padding: 7px 11px;
       border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      background: #020617;
-      color: var(--text-main);
+      border: 1px solid var(--border);
       font-size: 13px;
       outline: none;
+      background: #f9fafb;
     }
-    .search-input::placeholder {
-      color: #6b7280;
-      font-size: 12px;
+    .search-input:focus {
+      border-color: var(--accent-strong);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.2);
+      background: #ffffff;
     }
 
     .posts-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       max-height: 520px;
       overflow-y: auto;
-      padding-right: 4px;
+      padding-right: 2px;
     }
-    .posts-list::-webkit-scrollbar {
-      width: 6px;
-    }
+    .posts-list::-webkit-scrollbar { width: 6px; }
     .posts-list::-webkit-scrollbar-thumb {
-      background: #111827;
+      background: #cbd5f5;
       border-radius: 999px;
     }
 
     .post-card {
-      background: radial-gradient(circle at 0 0, #020b1f 0, #020617 55%);
-      border-radius: 16px;
-      padding: 11px 12px 12px;
-      border: 1px solid rgba(15,23,42,0.9);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 9px 10px;
       cursor: pointer;
-      transition: border 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease,
-        background 0.18s ease;
-      position: relative;
+      display: grid;
+      grid-template-columns: 60px minmax(0,1fr);
+      gap: 10px;
+      align-items: center;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      background: #f9fafb;
     }
+
     .post-card:hover {
-      border-color: rgba(56,189,248,0.6);
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(15,23,42,1);
-      background: radial-gradient(circle at 0 0, #020b1f 0, #020617 65%);
+      border-color: var(--border-strong);
+      box-shadow: 0 10px 25px rgba(148,163,184,0.25);
+      background: #ffffff;
     }
+
     .post-card.active {
       border-color: var(--accent-strong);
-      box-shadow: 0 0 0 1px rgba(34,211,238,0.55), 0 18px 45px rgba(8,47,73,0.9);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.3);
+      background: #eff6ff;
+    }
+
+    .thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #22c55e, #2563eb);
+      position: relative;
+      overflow: hidden;
+    }
+    .thumb::after {
+      content: "";
+      position: absolute;
+      inset: 15px 10px 10px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-top-color: transparent;
+      transform: rotate(-25deg);
+      opacity: 0.75;
+    }
+
+    .thumb-icon {
+      position: absolute;
+      bottom: 6px;
+      left: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #eff6ff;
     }
 
     .post-title {
       font-size: 14px;
       font-weight: 600;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .post-meta {
       font-size: 11px;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .post-summary {
       font-size: 12px;
       color: var(--text-muted);
-      line-height: 1.4;
-      max-height: 48px;
+      max-height: 38px;
       overflow: hidden;
     }
 
     .read-btn {
-      margin-top: 8px;
+      margin-top: 6px;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 5px 14px;
+      padding: 3px 10px;
       border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
       border: none;
-      outline: none;
-      cursor: pointer;
       background: var(--accent-soft);
       color: var(--accent-strong);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
     }
     .read-btn span {
       margin-left: 4px;
       font-size: 11px;
     }
 
-    .viewer {
-      min-height: 420px;
+    /* Viewer */
+    .viewer-hero {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
-    .viewer-header {
-      margin-bottom: 8px;
+    .viewer-hero img {
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      object-fit: cover;
     }
-    .viewer-title {
+
+    .viewer-hero-text h2 {
       font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 4px;
+      margin: 0 0 4px;
     }
+    .viewer-hero-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
     .viewer-meta {
       font-size: 12px;
       color: var(--text-muted);
+      margin-bottom: 6px;
     }
+
     .viewer-body {
       font-size: 13px;
       line-height: 1.6;
-      color: var(--text-main);
+      border-top: 1px solid var(--border);
       padding-top: 8px;
-      border-top: 1px solid rgba(15,23,42,0.9);
+      max-height: 450px;
+      overflow-y: auto;
     }
     .viewer-body h1,
     .viewer-body h2,
@@ -257,40 +305,38 @@
       margin-top: 14px;
       margin-bottom: 6px;
     }
-    .viewer-body p {
-      margin: 4px 0;
-    }
-    .viewer-body ul {
-      padding-left: 18px;
-    }
+    .viewer-body p { margin: 4px 0; }
+    .viewer-body ul { padding-left: 18px; }
     .viewer-body code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 12px;
-      background: #020617;
+      background: #f3f4f6;
       padding: 2px 4px;
       border-radius: 4px;
+      font-size: 12px;
     }
 
-    .viewer-empty {
-      color: var(--text-muted);
+    .empty {
       font-size: 13px;
+      color: var(--text-muted);
     }
 
     .error {
-      color: var(--danger);
       font-size: 13px;
+      color: var(--danger);
       margin-top: 6px;
     }
   </style>
 
-  <!-- Markdown parser (tiny library) -->
+  <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="title">Market Updates</div>
-      <div class="subtitle">Auto-posted crypto &amp; stock summaries — updated daily</div>
+<div class="page">
+  <header>
+    <div class="top-row">
+      <div>
+        <div class="title">Crypto & Stock Market Today</div>
+        <div class="subtitle">Fresh, auto-generated daily snapshots – prices, moves and trends in one place.</div>
+      </div>
       <nav>
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
@@ -298,259 +344,260 @@
         <a href="contact.html">Contact</a>
         <a href="market.html" class="active">Market</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <div class="layout">
-      <!-- LEFT: list -->
-      <div>
-        <div class="card" style="margin-bottom: 14px;">
-          <div class="pill">
-            <span class="pill-dot"></span>
-            Daily auto-updates
-          </div>
-          <div class="card-title">Subscribe</div>
-          <div class="card-subtitle">
-            Email subscription coming soon. For now, bookmark this page to check daily crypto &amp; stock posts.
-          </div>
+  <div class="layout">
+    <!-- LEFT: sidebar -->
+    <div>
+      <div class="card" style="margin-bottom: 10px;">
+        <div class="badge-row">
+          <span class="status-dot"></span>
+          <span class="pill">Auto-updated daily</span>
         </div>
-
-        <div class="card">
-          <div class="card-title">Recent posts</div>
-          <div class="card-subtitle">Tap on any card to read the full update on the right.</div>
-
-          <div class="search-box">
-            <input id="searchInput" class="search-input" placeholder="Search posts (title or date)..." />
-          </div>
-
-          <div id="postsList" class="posts-list">
-            <!-- filled by JS -->
-          </div>
-
-          <div id="listError" class="error" style="display:none;"></div>
+        <div class="section-title">Subscribe</div>
+        <div class="section-subtitle">
+          Email alerts coming soon – for now, bookmark this page to check today’s crypto & stock breakdown.
         </div>
       </div>
 
-      <!-- RIGHT: viewer -->
-      <div class="card viewer">
-        <div class="viewer-header">
-          <div id="viewerTitle" class="viewer-title">Open a post to view it here</div>
-          <div id="viewerMeta" class="viewer-meta">
-            Click any item on the left to load the full post. Data is fetched live from GitHub.
-          </div>
+      <div class="card">
+        <div class="section-title">Recent updates</div>
+        <div class="section-subtitle">Tap any card to read the full market story.</div>
+
+        <div class="search-box">
+          <input id="searchInput" class="search-input" placeholder="Search posts (title or date)..." />
         </div>
-        <div id="viewerBody" class="viewer-body viewer-empty">
-          No post selected yet.
+
+        <div id="postsList" class="posts-list"></div>
+
+        <div id="listError" class="error" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: viewer -->
+    <div class="card">
+      <div class="viewer-hero">
+        <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600"
+             alt="Market dashboard illustration" />
+        <div class="viewer-hero-text">
+          <h2 id="viewerTitle">Open a post to view details</h2>
+          <p id="viewerSubtitle">Click any update on the left — we’ll load the full breakdown here.</p>
         </div>
+      </div>
+
+      <div id="viewerMeta" class="viewer-meta"></div>
+      <div id="viewerBody" class="viewer-body empty">
+        No post selected yet.
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    const POSTS_JSON_URL = "posts.json";
+<script>
+  const POSTS_JSON_URL = "posts.json";
 
-    const postsListEl = document.getElementById("postsList");
-    const searchInputEl = document.getElementById("searchInput");
-    const listErrorEl = document.getElementById("listError");
-    const viewerTitleEl = document.getElementById("viewerTitle");
-    const viewerMetaEl = document.getElementById("viewerMeta");
-    const viewerBodyEl = document.getElementById("viewerBody");
+  const postsListEl = document.getElementById("postsList");
+  const searchInputEl = document.getElementById("searchInput");
+  const listErrorEl = document.getElementById("listError");
 
-    let allPosts = [];
-    let activePostId = null;
+  const viewerTitleEl = document.getElementById("viewerTitle");
+  const viewerSubtitleEl = document.getElementById("viewerSubtitle");
+  const viewerMetaEl = document.getElementById("viewerMeta");
+  const viewerBodyEl = document.getElementById("viewerBody");
 
-    function formatDate(dateStr) {
-      if (!dateStr) return "";
-      const d = new Date(dateStr);
-      if (isNaN(d)) return dateStr;
-      return d.toLocaleString();
+  let allPosts = [];
+  let activeId = null;
+
+  function formatDate(dateStr) {
+    if (!dateStr) return "";
+    const d = new Date(dateStr);
+    if (isNaN(d)) return dateStr;
+    return d.toLocaleString();
+  }
+
+  // Build a raw GitHub URL for a post’s markdown, based on fields we have
+  function resolveRawUrl(post) {
+    if (post.raw_url) return post.raw_url;
+
+    if (post.path) {
+      return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + post.path;
     }
 
-    function renderPostsList(posts) {
-      postsListEl.innerHTML = "";
-      if (!posts.length) {
-        postsListEl.innerHTML = "<div class='viewer-empty'>No posts found.</div>";
-        return;
-      }
+    const link = post.permalink || post.url;
+    if (!link) return null;
 
-      posts.forEach((post, idx) => {
-        const card = document.createElement("div");
-        card.className = "post-card";
-        card.dataset.index = idx;
-
-        if (post.id === activePostId) {
-          card.classList.add("active");
-        }
-
-        const title = document.createElement("div");
-        title.className = "post-title";
-        title.textContent = post.title || "Untitled";
-
-        const meta = document.createElement("div");
-        meta.className = "post-meta";
-        meta.textContent = formatDate(post.date);
-
-        const summary = document.createElement("div");
-        summary.className = "post-summary";
-        summary.textContent = post.summary || "";
-
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "read-btn";
-        btn.innerHTML = 'Read <span>⟶</span>';
-
-        btn.addEventListener("click", (ev) => {
-          ev.stopPropagation();
-          loadPostIntoViewer(post);
-        });
-
-        card.addEventListener("click", () => {
-          loadPostIntoViewer(post);
-        });
-
-        card.appendChild(title);
-        card.appendChild(meta);
-        card.appendChild(summary);
-        card.appendChild(btn);
-        postsListEl.appendChild(card);
-      });
+    let path = link;
+    const schemeIdx = path.indexOf("://");
+    if (schemeIdx !== -1) {
+      const firstSlash = path.indexOf("/", schemeIdx + 3);
+      path = firstSlash === -1 ? "/" : path.slice(firstSlash);
     }
 
-    function applyFilter() {
-      const q = (searchInputEl.value || "").toLowerCase();
-      if (!q) {
-        renderPostsList(allPosts);
-        return;
-      }
-      const filtered = allPosts.filter(p =>
-        (p.title || "").toLowerCase().includes(q) ||
-        (p.date || "").toLowerCase().includes(q)
-      );
-      renderPostsList(filtered);
+    const match = path.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/([^\/]+)\.html/);
+    if (!match) return null;
+
+    const year = match[1];
+    const month = match[2];
+    const day = match[3];
+    const slug = match[4];
+
+    const filename = `${year}-${month}-${day}-${slug}.md`;
+    const mdPath = `_posts/${filename}`;
+
+    return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + mdPath;
+  }
+
+  function renderPostsList(posts) {
+    postsListEl.innerHTML = "";
+    if (!posts.length) {
+      postsListEl.innerHTML = "<div class='empty'>No posts found.</div>";
+      return;
     }
 
-        // Build a raw GitHub URL to the markdown file for a post
-    function resolveRawUrl(post) {
-      // 1) If raw_url already present (future-proof), use it
-      if (post.raw_url) {
-        return post.raw_url;
-      }
+    posts.forEach((post, index) => {
+      const card = document.createElement("div");
+      card.className = "post-card";
+      if (post.id === activeId) card.classList.add("active");
+      card.dataset.index = index;
 
-      // 2) If "path" present (e.g. "_posts/2025-12-06-xxx.md"), use it
-      if (post.path) {
-        return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + post.path;
-      }
+      const thumb = document.createElement("div");
+      thumb.className = "thumb";
+      const thumbLabel = document.createElement("div");
+      thumbLabel.className = "thumb-icon";
+      thumbLabel.textContent = "MKT";
+      thumb.appendChild(thumbLabel);
 
-      // 3) Fallback: build path from permalink or url
-      const link = post.permalink || post.url;
-      if (!link) return null;
+      const right = document.createElement("div");
 
-      // strip domain if full URL
-      let path = link;
-      const schemeIdx = path.indexOf("://");
-      if (schemeIdx !== -1) {
-        const firstSlash = path.indexOf("/", schemeIdx + 3);
-        path = firstSlash === -1 ? "/" : path.slice(firstSlash);
-      }
+      const title = document.createElement("div");
+      title.className = "post-title";
+      title.textContent = post.title || "Daily Market Snapshot";
 
-      // expect something like /2025/12/06/daily-market-update---dec-06--2025.html
-      const match = path.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/([^\/]+)\.html/);
-      if (!match) return null;
+      const meta = document.createElement("div");
+      meta.className = "post-meta";
+      meta.textContent = formatDate(post.date);
 
-      const year = match[1];
-      const month = match[2];
-      const day = match[3];
-      const slug = match[4];
+      const summary = document.createElement("div");
+      summary.className = "post-summary";
+      summary.textContent = post.summary || post.excerpt || "";
 
-      const filename = `${year}-${month}-${day}-${slug}.md`;
-      const mdPath = `_posts/${filename}`;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "read-btn";
+      btn.innerHTML = "Read <span>→</span>";
 
-      return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + mdPath;
-    }
-
-
-    async function loadPostIntoViewer(post) {
-      activePostId = post.id;
-
-      // Highlight active card
-      document.querySelectorAll(".post-card").forEach(el => {
-        if (parseInt(el.dataset.index, 10) === post.index) {
-          el.classList.add("active");
-        } else {
-          el.classList.remove("active");
-        }
+      btn.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        loadPostIntoViewer(post);
       });
 
-      viewerTitleEl.textContent = post.title || "Daily Market Update";
-      viewerMetaEl.textContent = formatDate(post.date);
-      viewerBodyEl.classList.remove("viewer-empty");
-      viewerBodyEl.textContent = "Loading post content...";
+      card.addEventListener("click", () => {
+        loadPostIntoViewer(post);
+      });
 
-      const rawUrl = resolveRawUrl(post);
+      right.appendChild(title);
+      right.appendChild(meta);
+      right.appendChild(summary);
+      right.appendChild(btn);
 
-      if (!rawUrl) {
-        viewerBodyEl.innerHTML =
-          "<div class='error'>Sorry, this post is missing its content link.</div>";
-        return;
-      }
+      card.appendChild(thumb);
+      card.appendChild(right);
 
+      postsListEl.appendChild(card);
+    });
+  }
 
-      try {
-        const res = await fetch(rawUrl);
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        let md = await res.text();
-
-        // Strip YAML front matter if present
-        if (md.startsWith("---")) {
-          const parts = md.split("---");
-          if (parts.length >= 3) {
-            md = parts.slice(2).join("---").trimStart();
-          }
-        }
-
-        const html = marked.parse(md);
-        viewerBodyEl.innerHTML = html;
-      } catch (err) {
-        console.error(err);
-        viewerBodyEl.innerHTML =
-          "<div class='error'>Could not load this post from GitHub. " +
-          "You can still open it directly: <a href='" +
-          (post.url || rawUrl) +
-          "' target='_blank' style='color:var(--accent);'>open raw post</a>.</div>";
-      }
+  function applyFilter() {
+    const q = (searchInputEl.value || "").toLowerCase();
+    if (!q) {
+      renderPostsList(allPosts);
+      return;
     }
+    const filtered = allPosts.filter(p =>
+      (p.title || "").toLowerCase().includes(q) ||
+      (p.date || "").toLowerCase().includes(q)
+    );
+    renderPostsList(filtered);
+  }
 
-    async function init() {
-      try {
-        const res = await fetch(POSTS_JSON_URL);
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        const posts = await res.json();
+  async function loadPostIntoViewer(post) {
+    activeId = post.id;
 
-        // Normalize & add index/id
-        allPosts = posts.map((p, index) => ({
-          ...p,
-          index,
-          id: p.path || p.url || String(index)
-        }));
-
-        renderPostsList(allPosts);
-
-        // Auto-open the latest post
-        if (allPosts.length) {
-          loadPostIntoViewer(allPosts[0]);
-        }
-      } catch (err) {
-        console.error(err);
-        listErrorEl.style.display = "block";
-        listErrorEl.textContent =
-          "Failed to load posts.json. Try reloading the page in a few seconds.";
+    document.querySelectorAll(".post-card").forEach(el => {
+      if (parseInt(el.dataset.index, 10) === post.index) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
       }
-    }
-
-    searchInputEl.addEventListener("input", () => {
-      applyFilter();
     });
 
-    init();
-  </script>
+    const prettyTitle = post.title || "Daily Market Snapshot";
+    viewerTitleEl.textContent = prettyTitle;
+    viewerSubtitleEl.textContent = "Full breakdown of today’s crypto and stock moves.";
+    viewerMetaEl.textContent = formatDate(post.date);
+    viewerBodyEl.classList.remove("empty");
+    viewerBodyEl.textContent = "Loading post content…";
+
+    const rawUrl = resolveRawUrl(post);
+    if (!rawUrl) {
+      viewerBodyEl.innerHTML =
+        "<div class='error'>Sorry, this post is missing its content link.</div>";
+      return;
+    }
+
+    try {
+      const res = await fetch(rawUrl);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      let md = await res.text();
+
+      if (md.startsWith("---")) {
+        const parts = md.split("---");
+        if (parts.length >= 3) {
+          md = parts.slice(2).join("---").trimStart();
+        }
+      }
+
+      const html = marked.parse(md);
+      viewerBodyEl.innerHTML = html;
+    } catch (err) {
+      console.error(err);
+      viewerBodyEl.innerHTML =
+        "<div class='error'>Could not load this post content right now. " +
+        "You can still open the raw file on GitHub: <a href='" +
+        rawUrl +
+        "' target='_blank'>open markdown</a>.</div>";
+    }
+  }
+
+  async function init() {
+    try {
+      const res = await fetch(POSTS_JSON_URL);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const posts = await res.json();
+
+      allPosts = posts.map((p, index) => ({
+        ...p,
+        index,
+        id: p.path || p.url || String(index)
+      }));
+
+      renderPostsList(allPosts);
+
+      if (allPosts.length) {
+        loadPostIntoViewer(allPosts[0]);
+      }
+    } catch (err) {
+      console.error(err);
+      listErrorEl.style.display = "block";
+      listErrorEl.textContent =
+        "Failed to load posts list. Try refreshing in a few seconds.";
+    }
+  }
+
+  searchInputEl.addEventListener("input", applyFilter);
+
+  init();
+</script>
 </body>
 </html>
