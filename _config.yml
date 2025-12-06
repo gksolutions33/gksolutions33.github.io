@@ -1,0 +1,8 @@
+title: "GK Solutions"
+markdown: kramdown
+theme: minima
+permalink: /:year/:month/:day/:title.html
+exclude:
+  - scripts
+  - .github
+  - generator.log
