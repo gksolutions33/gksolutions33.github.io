@@ -10,7 +10,6 @@
 
   <style>
     :root {
-      --bg: #f3f4f6;
       --bg-page: #eef2f7;
       --card: #ffffff;
       --border: #e5e7eb;
@@ -21,6 +20,9 @@
       --text-main: #111827;
       --text-muted: #6b7280;
       --danger: #dc2626;
+      --chip-bg: #eff6ff;
+      --chip-active-bg: #1d4ed8;
+      --chip-active-text: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -158,6 +160,42 @@
       background: #ffffff;
     }
 
+    /* Category pills row */
+    .category-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+    .cat-pill {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--chip-bg);
+      padding: 3px 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+      cursor: pointer;
+      outline: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .cat-pill span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #9ca3af;
+    }
+    .cat-pill.active {
+      background: var(--chip-active-bg);
+      border-color: var(--chip-active-bg);
+      color: var(--chip-active-text);
+    }
+    .cat-pill.active span.dot {
+      background: #bfdbfe;
+    }
+
     .posts-list {
       display: flex;
       flex-direction: column;
@@ -204,6 +242,8 @@
       background: linear-gradient(135deg, #22c55e, #2563eb);
       position: relative;
       overflow: hidden;
+      background-size: cover;
+      background-position: center;
     }
     .thumb::after {
       content: "";
@@ -233,13 +273,18 @@
     .post-meta {
       font-size: 11px;
       color: var(--text-muted);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .post-summary {
       font-size: 12px;
       color: var(--text-muted);
       max-height: 38px;
       overflow: hidden;
+    }
+    .post-cats {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
     }
 
     .read-btn {
@@ -365,6 +410,15 @@
         <div class="section-title">Recent updates</div>
         <div class="section-subtitle">Tap any card to read the full market story.</div>
 
+        <!-- Category filter row -->
+        <div class="category-row">
+          <button class="cat-pill active" data-cat="all"><span class="dot"></span>All</button>
+          <button class="cat-pill" data-cat="crypto"><span class="dot"></span>Crypto</button>
+          <button class="cat-pill" data-cat="stocks"><span class="dot"></span>Stocks</button>
+          <button class="cat-pill" data-cat="currencies"><span class="dot"></span>Currencies</button>
+          <button class="cat-pill" data-cat="nifty"><span class="dot"></span>Nifty</button>
+        </div>
+
         <div class="search-box">
           <input id="searchInput" class="search-input" placeholder="Search posts (title or date)..." />
         </div>
@@ -378,7 +432,8 @@
     <!-- RIGHT: viewer -->
     <div class="card">
       <div class="viewer-hero">
-        <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600"
+        <img id="viewerHeroImage"
+             src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600"
              alt="Market dashboard illustration" />
         <div class="viewer-hero-text">
           <h2 id="viewerTitle">Open a post to view details</h2>
@@ -396,6 +451,8 @@
 
 <script>
   const POSTS_JSON_URL = "posts.json";
+  const DEFAULT_HERO =
+    "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600";
 
   const postsListEl = document.getElementById("postsList");
   const searchInputEl = document.getElementById("searchInput");
@@ -405,9 +462,13 @@
   const viewerSubtitleEl = document.getElementById("viewerSubtitle");
   const viewerMetaEl = document.getElementById("viewerMeta");
   const viewerBodyEl = document.getElementById("viewerBody");
+  const viewerHeroImg = document.getElementById("viewerHeroImage");
+
+  const catButtons = document.querySelectorAll(".cat-pill");
 
   let allPosts = [];
   let activeId = null;
+  let currentCategory = "all";
 
   function formatDate(dateStr) {
     if (!dateStr) return "";
@@ -416,12 +477,20 @@
     return d.toLocaleString();
   }
 
+  function capitalize(s) {
+    if (!s) return "";
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
   // Build a raw GitHub URL for a post’s markdown, based on fields we have
   function resolveRawUrl(post) {
     if (post.raw_url) return post.raw_url;
 
     if (post.path) {
-      return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + post.path;
+      return (
+        "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" +
+        post.path
+      );
     }
 
     const link = post.permalink || post.url;
@@ -445,13 +514,16 @@
     const filename = `${year}-${month}-${day}-${slug}.md`;
     const mdPath = `_posts/${filename}`;
 
-    return "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" + mdPath;
+    return (
+      "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" +
+      mdPath
+    );
   }
 
   function renderPostsList(posts) {
     postsListEl.innerHTML = "";
     if (!posts.length) {
-      postsListEl.innerHTML = "<div class='empty'>No posts found.</div>";
+      postsListEl.innerHTML = "<div class='empty'>No posts found in this category yet.</div>";
       return;
     }
 
@@ -463,10 +535,17 @@
 
       const thumb = document.createElement("div");
       thumb.className = "thumb";
+
       const thumbLabel = document.createElement("div");
       thumbLabel.className = "thumb-icon";
-      thumbLabel.textContent = "MKT";
       thumb.appendChild(thumbLabel);
+
+      if (post.thumb) {
+        thumb.style.backgroundImage = "url(" + post.thumb + ")";
+        thumbLabel.textContent = "";
+      } else {
+        thumbLabel.textContent = "MKT";
+      }
 
       const right = document.createElement("div");
 
@@ -481,6 +560,11 @@
       const summary = document.createElement("div");
       summary.className = "post-summary";
       summary.textContent = post.summary || post.excerpt || "";
+
+      const catsLine = document.createElement("div");
+      catsLine.className = "post-cats";
+      const cats = post.categories || [];
+      catsLine.textContent = cats.length ? cats.map(capitalize).join(" · ") : "Crypto · Stocks";
 
       const btn = document.createElement("button");
       btn.type = "button";
@@ -499,6 +583,7 @@
       right.appendChild(title);
       right.appendChild(meta);
       right.appendChild(summary);
+      right.appendChild(catsLine);
       right.appendChild(btn);
 
       card.appendChild(thumb);
@@ -510,21 +595,29 @@
 
   function applyFilter() {
     const q = (searchInputEl.value || "").toLowerCase();
-    if (!q) {
-      renderPostsList(allPosts);
-      return;
+    let filtered = allPosts;
+
+    if (currentCategory !== "all") {
+      filtered = filtered.filter((p) =>
+        (p.categories || []).includes(currentCategory)
+      );
     }
-    const filtered = allPosts.filter(p =>
-      (p.title || "").toLowerCase().includes(q) ||
-      (p.date || "").toLowerCase().includes(q)
-    );
+
+    if (q) {
+      filtered = filtered.filter(
+        (p) =>
+          (p.title || "").toLowerCase().includes(q) ||
+          (p.date || "").toLowerCase().includes(q)
+      );
+    }
+
     renderPostsList(filtered);
   }
 
   async function loadPostIntoViewer(post) {
     activeId = post.id;
 
-    document.querySelectorAll(".post-card").forEach(el => {
+    document.querySelectorAll(".post-card").forEach((el) => {
       if (parseInt(el.dataset.index, 10) === post.index) {
         el.classList.add("active");
       } else {
@@ -533,11 +626,17 @@
     });
 
     const prettyTitle = post.title || "Daily Market Snapshot";
+    const catsLabel = (post.categories || []).map(capitalize).join(" · ");
     viewerTitleEl.textContent = prettyTitle;
     viewerSubtitleEl.textContent = "Full breakdown of today’s crypto and stock moves.";
-    viewerMetaEl.textContent = formatDate(post.date);
+    viewerMetaEl.textContent = catsLabel
+      ? `${formatDate(post.date)} · ${catsLabel}`
+      : formatDate(post.date);
     viewerBodyEl.classList.remove("empty");
     viewerBodyEl.textContent = "Loading post content…";
+
+    const heroSrc = post.hero || post.thumb || DEFAULT_HERO;
+    viewerHeroImg.src = heroSrc;
 
     const rawUrl = resolveRawUrl(post);
     if (!rawUrl) {
@@ -576,11 +675,21 @@
       if (!res.ok) throw new Error("HTTP " + res.status);
       const posts = await res.json();
 
-      allPosts = posts.map((p, index) => ({
-        ...p,
-        index,
-        id: p.path || p.url || String(index)
-      }));
+      allPosts = posts.map((p, index) => {
+        // default categories if none present: treat as Crypto + Stocks
+        let cats = Array.isArray(p.categories) && p.categories.length
+          ? p.categories
+          : ["crypto", "stocks"];
+
+        cats = cats.map((c) => String(c).toLowerCase());
+
+        return {
+          ...p,
+          index,
+          id: p.path || p.url || String(index),
+          categories: cats,
+        };
+      });
 
       renderPostsList(allPosts);
 
@@ -596,6 +705,18 @@
   }
 
   searchInputEl.addEventListener("input", applyFilter);
+
+  catButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cat = btn.getAttribute("data-cat");
+      currentCategory = cat;
+
+      catButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      applyFilter();
+    });
+  });
 
   init();
 </script>
