@@ -24,12 +24,22 @@ COINGECKO = "https://api.coingecko.com/api/v3/simple/price"
 NEWSAPI = "https://newsapi.org/v2/everything"
 ALPHAVANTAGE = "https://www.alphavantage.co/query"
 
+# CoinGecko ids
 CRYPTO = ["bitcoin", "ethereum", "dogecoin"]
+
+# Stock tickers for AlphaVantage
 STOCKS = ["AAPL", "TSLA", "RELIANCE.NS"]
 
+# Where we store the markdown posts
 MARKET_POSTS_DIR = "market_posts"
+
+# JSON index used by market.html
 POSTS_JSON = "posts.json"
+
+# Public site base URL (change if you add a custom domain)
 SITE_BASE = "https://gksolutions33.github.io"
+
+# How many posts to keep in posts.json
 MAX_POSTS_IN_INDEX = 30
 
 
@@ -40,6 +50,27 @@ def slugify(s: str) -> str:
     return "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-")
 
 
+def build_seo_title() -> str:
+    """
+    Build a nice SEO-friendly title using CRYPTO and STOCKS lists.
+    """
+    date_str = datetime.now().strftime("%b %d, %Y")
+
+    crypto_names = [c.title() for c in CRYPTO[:2]]  # Bitcoin, Ethereum
+    stock_names = STOCKS[:2]                        # e.g. AAPL, TSLA
+
+    top_cryptos = ", ".join(crypto_names) or "Crypto"
+    top_stocks = ", ".join(stock_names) or "Stocks"
+
+    return (
+        f"Crypto & Stock Market Today ({date_str}) – "
+        f"{top_cryptos} & {top_stocks} Price Update"
+    )
+
+
+# -------------------------
+# Fetchers
+# -------------------------
 def fetch_crypto():
     try:
         params = {
@@ -161,23 +192,33 @@ def write_post_and_index(title: str, md_content: str):
         slug = slugify(title)[:60]
         filename = f"{date_prefix}-{slug}.md"
 
+        # Store inside market_posts/
         os.makedirs(MARKET_POSTS_DIR, exist_ok=True)
+        rel_path = f"{MARKET_POSTS_DIR}/{filename}"
         full_path = os.path.join(MARKET_POSTS_DIR, filename)
 
+        # Write markdown file
         with open(full_path, "w", encoding="utf-8") as f:
             f.write(md_content)
         print("Wrote markdown post:", full_path)
 
-        # This is what the browser will fetch
-        permalink = f"/{MARKET_POSTS_DIR}/{filename}"
+        # Public URL (if someone opens directly on Pages)
+        permalink = f"/{rel_path}"
         public_url = SITE_BASE.rstrip("/") + permalink
 
-        # Build excerpt
+        # Raw GitHub URL for the markdown (used by market.html)
+        raw_url = (
+            "https://raw.githubusercontent.com/"
+            "gksolutions33/gksolutions33.github.io/main/"
+            f"{rel_path}"
+        )
+
+        # Build excerpt/summary
         plain = md_content.replace("\n", " ")
         plain = " ".join(plain.split())
         excerpt = plain[:220] + ("…" if len(plain) > 220 else "")
 
-        # Load / update posts.json
+        # Load existing posts.json
         posts_list = []
         if os.path.exists(POSTS_JSON):
             try:
@@ -187,19 +228,24 @@ def write_post_and_index(title: str, md_content: str):
                 print("Warning: could not parse existing posts.json:", e)
                 posts_list = []
 
+        # New index item
         new_item = {
             "title": title,
             "url": public_url,
             "permalink": permalink,
             "date": iso,
             "excerpt": excerpt,
+            "summary": excerpt,
+            "path": rel_path,   # e.g. "market_posts/2025-12-07-..."
+            "raw_url": raw_url, # direct markdown link
         }
 
-        # De-duplicate
+        # De-duplicate and prepend
         posts_list = [p for p in posts_list if p.get("url") != new_item["url"]]
         posts_list.insert(0, new_item)
         posts_list = posts_list[:MAX_POSTS_IN_INDEX]
 
+        # Save posts.json
         with open(POSTS_JSON, "w", encoding="utf-8") as f:
             json.dump(posts_list, f, ensure_ascii=False, indent=2)
 
@@ -223,47 +269,18 @@ def main():
         news = fetch_news()
         stocks = [fetch_stock(s) for s in STOCKS]
 
-def build_seo_title():
-    # adjust these if your variable names differ
-    try:
-        crypto_names = [c.title() for c in CRYPTO]  # or CRYPTO_LIST if that's your list
-    except NameError:
-        crypto_names = []
+        title = build_seo_title()
+        md_content = build_markdown(title, crypto, stocks, news)
 
-    try:
-        stock_names = STOCK_SYMBOLS
-    except NameError:
-        stock_names = []
+        post_path, idx_item = write_post_and_index(title, md_content)
+        if post_path:
+            print("SUCCESS: created post:", post_path)
+        else:
+            print("No post created (error above).")
 
-    top_cryptos = ", ".join(crypto_names[:2]) or "Crypto"
-    top_stocks = ", ".join(stock_names[:2]) or "Stocks"
-
-    date_str = datetime.now().strftime("%b %d, %Y")
-    return f"Crypto & Stock Market Today ({date_str}) – {top_cryptos} & {top_stocks} Price Update"
-
-# later, where you previously had:
-# title = f"Daily Market Update — {datetime.now().strftime('%b %d, %Y')}"
-    def build_seo_title():
-    # adjust these if your variable names differ
-    try:
-        crypto_names = [c.title() for c in CRYPTO]  # or CRYPTO_LIST if that's your list
-    except NameError:
-        crypto_names = []
-
-    try:
-        stock_names = STOCK_SYMBOLS
-    except NameError:
-        stock_names = []
-
-    top_cryptos = ", ".join(crypto_names[:2]) or "Crypto"
-    top_stocks = ", ".join(stock_names[:2]) or "Stocks"
-
-    date_str = datetime.now().strftime("%b %d, %Y")
-    return f"Crypto & Stock Market Today ({date_str}) – {top_cryptos} & {top_stocks} Price Update"
-
-# later, where you previously had:
-# title = f"Daily Market Update — {datetime.now().strftime('%b %d, %Y')}"
-title = build_seo_title()
+    except Exception as e:
+        print("Unhandled exception in main():", e)
+        traceback.print_exc()
 
 
 if __name__ == "__main__":
