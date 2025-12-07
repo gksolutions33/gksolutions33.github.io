@@ -1,11 +1,3 @@
-Generator started at 2025-12-07T03:54:29.190333
-Wrote post: _posts/2025-12-07-daily-market-update---dec-07--2025.md
-Updated posts index: posts.json
-SUCCESS: created post: _posts/2025-12-07-daily-market-update---dec-07--2025.md
-Index item: {
-  "title": "Daily Market Update \u2014 Dec 07, 2025",
-  "url": "https://gksolutions33.github.io/2025/12/07/daily-market-update---dec-07--2025.html",
-  "permalink": "/2025/12/07/daily-market-update---dec-07--2025.html",
-  "date": "2025-12-07T03:54:30",
-  "excerpt": "## Crypto snapshot **Bitcoin** \u2014 $89735 / \u20b98072422 (24h change: 0.01%) **Dogecoin** \u2014 $0.140374 / \u20b912.63 (24h change: 0.22%) **Ethereum** \u2014 $3053.75 / \u20b9274711 (24h change: 0.50%) --- ## Stock snapshot **AAPL** \u2014 278.7800\u2026"
-}
+  File "/home/runner/work/gksolutions33.github.io/gksolutions33.github.io/scripts/generate_daily_posts.py", line 226
+    def build_seo_title():
+SyntaxError: expected 'except' or 'finally' block
