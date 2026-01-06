@@ -1,239 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact GK Solutions - Collaborate on IoT, PCB, and AI Projects." />
-  <title>Contact | GK Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      background-size: 300% 300%;
-      animation: gradientMove 8s ease infinite;
-    }
+---
+layout: default
+title: "Contact | GK Solutions"
+description: "Contact GK Solutions - Collaborate on IoT, PCB, and AI Projects."
+keywords: "contact, GK Solutions, IoT, AI, collaboration, projects"
+---
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+<div class="contact-card">
+  <h2>Contact GK Solutions</h2>
+  <p>Let's collaborate or discuss your next IoT or AI project!</p>
+  <form id="contact-form" action="https://formspree.io/f/mrbqongj" method="POST">
+    <div class="input-group">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="input-group">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="input-group">
+      <i class="fa-solid fa-comment"></i>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
 
-    .contact-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 2rem;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      box-sizing: border-box;
-      margin-bottom: 90px; /* leave space for bottom nav */
-    }
+<div class="popup" id="thank-you-popup">✅ Thank you! Your message has been sent.</div>
 
-    h2 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      color: #cbd5e1;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .input-group {
-      position: relative;
-      width: 100%;
-    }
-
-    .input-group i {
-      position: absolute;
-      top: 50%;
-      left: 12px;
-      transform: translateY(-50%);
-      color: #94a3b8;
-      font-size: 1rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem 0.8rem 0.8rem 2.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      outline: none;
-      background-color: rgba(255, 255, 255, 0.15);
-      color: #fff;
-      box-sizing: border-box;
-      transition: background 0.3s ease, transform 0.2s;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #cbd5e1;
-    }
-
-    input:focus, textarea:focus {
-      background-color: rgba(255, 255, 255, 0.25);
-      transform: scale(1.02);
-    }
-
-    button {
-      padding: 0.8rem;
-      background: linear-gradient(90deg, #00f2fe, #4facfe);
-      color: #0f172a;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px #00f2fe;
-      width: 100%;
-    }
-
-    button:hover {
-      background: linear-gradient(90deg, #4facfe, #00f2fe);
-      box-shadow: 0 0 20px #00f2fe, 0 0 40px #4facfe;
-      transform: translateY(-2px);
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #4ade80;
-      color: #065f46;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      font-weight: 600;
-      animation: fadeIn 0.5s ease;
-      z-index: 1000;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Bottom navigation bar */
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-around;
-      padding: 0.6rem 0;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
-      border-top: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .bottom-nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-size: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      transition: 0.3s;
-    }
-
-    .bottom-nav a i {
-      font-size: 1.2rem;
-    }
-
-    .bottom-nav a:hover {
-      color: #38bdf8;
-      transform: scale(1.1);
-    }
-
-    .bottom-nav a.active {
-      color: #00f2fe;
-      text-shadow: 0 0 10px #00f2fe;
-    }
-
-    @media (max-width: 480px) {
-      .bottom-nav a {
-        font-size: 0.8rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="contact-card">
-    <h2>Contact GK Solutions</h2>
-    <p>Let’s collaborate or discuss your next IoT or AI project!</p>
-    <form id="contact-form" action="https://formspree.io/f/mrbqongj" method="POST">
-      <div class="input-group">
-        <i class="fa-solid fa-user"></i>
-        <input type="text" name="name" placeholder="Your Name" required>
-      </div>
-      <div class="input-group">
-        <i class="fa-solid fa-envelope"></i>
-        <input type="email" name="email" placeholder="Your Email" required>
-      </div>
-      <div class="input-group">
-        <i class="fa-solid fa-comment"></i>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      </div>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-
-  <div class="popup" id="thank-you-popup">✅ Thank you! Your message has been sent.</div>
-
-  <nav class="bottom-nav">
-    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-    <a href="projects.html"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
-    <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
-    <a href="contact.html" class="active"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
-  </nav>
-
-  <script>
-    const form = document.getElementById('contact-form');
-    const popup = document.getElementById('thank-you-popup');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          popup.style.display = 'block';
-          form.reset();
-          setTimeout(() => popup.style.display = 'none', 4000);
-        } else {
-          alert('There was an error sending your message.');
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+<nav class="bottom-nav">
+  <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <a href="projects.html"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+  <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+  <a href="contact.html" class="active"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+</nav>

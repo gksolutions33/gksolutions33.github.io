@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crypto & Stock Market Updates – GK Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-page: #eef2f7;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --border-strong: #cbd5f5;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --accent-strong: #1d4ed8;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --danger: #dc2626;
+      --chip-bg: #eff6ff;
+      --chip-active-bg: #1d4ed8;
+      --chip-active-text: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg-page);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+    }
+
+    a { color: var(--accent-strong); text-decoration: none; }
+
+    .page {
+      width: 100%;
+      max-width: 1180px;
+      padding: 20px 14px 40px;
+    }
+
+    header {
+      margin-bottom: 18px;
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+    nav a {
+      position: relative;
+      padding-bottom: 4px;
+      color: var(--text-muted);
+    }
+    nav a:hover { color: var(--accent-strong); }
+    nav a.active {
+      color: var(--accent-strong);
+    }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -3px;
+      height: 2px;
+      background: var(--accent-strong);
+      border-radius: 999px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.8fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: minmax(0,1fr); }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15,23,42,0.05);
+      padding: 14px 16px 14px;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .status-dot {
+      width: 9px; height: 9px; border-radius: 999px;
+      background: #16a34a;
+      box-shadow: 0 0 0 5px rgba(34,197,94,0.2);
+    }
+    .pill {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 2px 0 2px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .search-box {
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      outline: none;
+      background: #f9fafb;
+    }
+    .search-input:focus {
+      border-color: var(--accent-strong);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.2);
+      background: #ffffff;
+    }
+
+    /* Category pills row */
+    .category-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+    .cat-pill {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--chip-bg);
+      padding: 3px 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+      cursor: pointer;
+      outline: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .cat-pill span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #9ca3af;
+    }
+    .cat-pill.active {
+      background: var(--chip-active-bg);
+      border-color: var(--chip-active-bg);
+      color: var(--chip-active-text);
+    }
+    .cat-pill.active span.dot {
+      background: #bfdbfe;
+    }
+
+    .posts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 2px;
+    }
+    .posts-list::-webkit-scrollbar { width: 6px; }
+    .posts-list::-webkit-scrollbar-thumb {
+      background: #cbd5f5;
+      border-radius: 999px;
+    }
+
+    .post-card {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 9px 10px;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 60px minmax(0,1fr);
+      gap: 10px;
+      align-items: center;
+      transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      background: #f9fafb;
+    }
+
+    .post-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 10px 25px rgba(148,163,184,0.25);
+      background: #ffffff;
+    }
+
+    .post-card.active {
+      border-color: var(--accent-strong);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.3);
+      background: #eff6ff;
+    }
+
+    .thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #22c55e, #2563eb);
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+    }
+    .thumb::after {
+      content: "";
+      position: absolute;
+      inset: 15px 10px 10px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-top-color: transparent;
+      transform: rotate(-25deg);
+      opacity: 0.75;
+    }
+
+    .thumb-icon {
+      position: absolute;
+      bottom: 6px;
+      left: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #eff6ff;
+    }
+
+    .post-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .post-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+    .post-summary {
+      font-size: 12px;
+      color: var(--text-muted);
+      max-height: 38px;
+      overflow: hidden;
+    }
+    .post-cats {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .read-btn {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .read-btn span {
+      margin-left: 4px;
+      font-size: 11px;
+    }
+
+    /* Viewer */
+    .viewer-hero {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .viewer-hero img {
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .viewer-hero-text h2 {
+      font-size: 18px;
+      margin: 0 0 4px;
+    }
+    .viewer-hero-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .viewer-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .viewer-body {
+      font-size: 13px;
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      max-height: 450px;
+      overflow-y: auto;
+    }
+    .viewer-body h1,
+    .viewer-body h2,
+    .viewer-body h3 {
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    .viewer-body p { margin: 4px 0; }
+    .viewer-body ul { padding-left: 18px; }
+    .viewer-body code {
+      background: #f3f4f6;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .empty {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .error {
+      font-size: 13px;
+      color: var(--danger);
+      margin-top: 6px;
+    }
+  </style>
+
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://pl28380496.effectivegatecpm.com/8b/9e/03/8b9e0345fc4b19d59660de21b8d5ed58.js"></script>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="top-row">
+      <div>
+        <div class="title">Crypto & Stock Market Today</div>
+        <div class="subtitle">Fresh, auto-generated daily snapshots – prices, moves and trends in one place.</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="contact.html">Contact</a>
+        <a href="market.html" class="active">Market</a>
+      </nav>
+    </div>
+  </header>
+
+  
+<script>
+  atOptions = {
+    'key' : '84d36e041aafd8441f830a9ff76e1775',
+    'format' : 'iframe',
+    'height' : 300,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/84d36e041aafd8441f830a9ff76e1775/invoke.js"></script>
+
+
+  
+  <div class="layout">
+    <!-- LEFT: sidebar -->
+    <div>
+      <div class="card" style="margin-bottom: 10px;">
+        <div class="badge-row">
+          <span class="status-dot"></span>
+          <span class="pill">Auto-updated daily</span>
+        </div>
+        <div class="section-title">Subscribe</div>
+        <div class="section-subtitle">
+          Email alerts coming soon – for now, bookmark this page to check today’s crypto & stock breakdown.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Recent updates</div>
+        <div class="section-subtitle">Tap any card to read the full market story.</div>
+
+        <!-- Category filter row -->
+        <div class="category-row">
+          <button class="cat-pill active" data-cat="all"><span class="dot"></span>All</button>
+          <button class="cat-pill" data-cat="crypto"><span class="dot"></span>Crypto</button>
+          <button class="cat-pill" data-cat="stocks"><span class="dot"></span>Stocks</button>
+          <button class="cat-pill" data-cat="currencies"><span class="dot"></span>Currencies</button>
+          <button class="cat-pill" data-cat="nifty"><span class="dot"></span>Nifty</button>
+        </div>
+
+        <div class="search-box">
+          <input id="searchInput" class="search-input" placeholder="Search posts (title or date)..." />
+        </div>
+
+        <div id="postsList" class="posts-list"></div>
+
+        <div id="listError" class="error" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: viewer -->
+    <div class="card">
+      <div class="viewer-hero">
+        <img id="viewerHeroImage"
+             src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600"
+             alt="Market dashboard illustration" />
+        <div class="viewer-hero-text">
+          <h2 id="viewerTitle">Open a post to view details</h2>
+          <p id="viewerSubtitle">Click any update on the left — we’ll load the full breakdown here.</p>
+        </div>
+      </div>
+
+      <div id="viewerMeta" class="viewer-meta"></div>
+      <div id="viewerBody" class="viewer-body empty">
+        No post selected yet.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const POSTS_JSON_URL = "posts.json";
+  const DEFAULT_HERO =
+    "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600";
+
+  const postsListEl = document.getElementById("postsList");
+  const searchInputEl = document.getElementById("searchInput");
+  const listErrorEl = document.getElementById("listError");
+
+  const viewerTitleEl = document.getElementById("viewerTitle");
+  const viewerSubtitleEl = document.getElementById("viewerSubtitle");
+  const viewerMetaEl = document.getElementById("viewerMeta");
+  const viewerBodyEl = document.getElementById("viewerBody");
+  const viewerHeroImg = document.getElementById("viewerHeroImage");
+
+  const catButtons = document.querySelectorAll(".cat-pill");
+
+  let allPosts = [];
+  let activeId = null;
+  let currentCategory = "all";
+
+  function formatDate(dateStr) {
+    if (!dateStr) return "";
+    const d = new Date(dateStr);
+    if (isNaN(d)) return dateStr;
+    return d.toLocaleString();
+  }
+
+  function capitalize(s) {
+    if (!s) return "";
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  // Build a raw GitHub URL for a post’s markdown, based on fields we have
+  function resolveRawUrl(post) {
+    if (post.raw_url) return post.raw_url;
+
+    if (post.path) {
+      return (
+        "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" +
+        post.path
+      );
+    }
+
+    const link = post.permalink || post.url;
+    if (!link) return null;
+
+    let path = link;
+    const schemeIdx = path.indexOf("://");
+    if (schemeIdx !== -1) {
+      const firstSlash = path.indexOf("/", schemeIdx + 3);
+      path = firstSlash === -1 ? "/" : path.slice(firstSlash);
+    }
+
+    const match = path.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/([^\/]+)\.html/);
+    if (!match) return null;
+
+    const year = match[1];
+    const month = match[2];
+    const day = match[3];
+    const slug = match[4];
+
+    const filename = `${year}-${month}-${day}-${slug}.md`;
+    const mdPath = `_posts/${filename}`;
+
+    return (
+      "https://raw.githubusercontent.com/gksolutions33/gksolutions33.github.io/main/" +
+      mdPath
+    );
+  }
+
+  function renderPostsList(posts) {
+    postsListEl.innerHTML = "";
+    if (!posts.length) {
+      postsListEl.innerHTML = "<div class='empty'>No posts found in this category yet.</div>";
+      return;
+    }
+
+    posts.forEach((post, index) => {
+      const card = document.createElement("div");
+      card.className = "post-card";
+      if (post.id === activeId) card.classList.add("active");
+      card.dataset.index = index;
+
+      const thumb = document.createElement("div");
+      thumb.className = "thumb";
+
+      const thumbLabel = document.createElement("div");
+      thumbLabel.className = "thumb-icon";
+      thumb.appendChild(thumbLabel);
+
+      if (post.thumb) {
+        thumb.style.backgroundImage = "url(" + post.thumb + ")";
+        thumbLabel.textContent = "";
+      } else {
+        thumbLabel.textContent = "MKT";
+      }
+
+      const right = document.createElement("div");
+
+      const title = document.createElement("div");
+      title.className = "post-title";
+      title.textContent = post.title || "Daily Market Snapshot";
+
+      const meta = document.createElement("div");
+      meta.className = "post-meta";
+      meta.textContent = formatDate(post.date);
+
+      const summary = document.createElement("div");
+      summary.className = "post-summary";
+      summary.textContent = post.summary || post.excerpt || "";
+
+      const catsLine = document.createElement("div");
+      catsLine.className = "post-cats";
+      const cats = post.categories || [];
+      catsLine.textContent = cats.length ? cats.map(capitalize).join(" · ") : "Crypto · Stocks";
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "read-btn";
+      btn.innerHTML = "Read <span>→</span>";
+
+      btn.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        loadPostIntoViewer(post);
+      });
+
+      card.addEventListener("click", () => {
+        loadPostIntoViewer(post);
+      });
+
+      right.appendChild(title);
+      right.appendChild(meta);
+      right.appendChild(summary);
+      right.appendChild(catsLine);
+      right.appendChild(btn);
+
+      card.appendChild(thumb);
+      card.appendChild(right);
+
+      postsListEl.appendChild(card);
+    });
+  }
+
+  function applyFilter() {
+    const q = (searchInputEl.value || "").toLowerCase();
+    let filtered = allPosts;
+
+    if (currentCategory !== "all") {
+      filtered = filtered.filter((p) =>
+        (p.categories || []).includes(currentCategory)
+      );
+    }
+
+    if (q) {
+      filtered = filtered.filter(
+        (p) =>
+          (p.title || "").toLowerCase().includes(q) ||
+          (p.date || "").toLowerCase().includes(q)
+      );
+    }
+
+    renderPostsList(filtered);
+  }
+
+  async function loadPostIntoViewer(post) {
+    activeId = post.id;
+
+    document.querySelectorAll(".post-card").forEach((el) => {
+      if (parseInt(el.dataset.index, 10) === post.index) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
+      }
+    });
+
+    const prettyTitle = post.title || "Daily Market Snapshot";
+    const catsLabel = (post.categories || []).map(capitalize).join(" · ");
+    viewerTitleEl.textContent = prettyTitle;
+    viewerSubtitleEl.textContent = "Full breakdown of today’s crypto and stock moves.";
+    viewerMetaEl.textContent = catsLabel
+      ? `${formatDate(post.date)} · ${catsLabel}`
+      : formatDate(post.date);
+    viewerBodyEl.classList.remove("empty");
+    viewerBodyEl.textContent = "Loading post content…";
+
+    const heroSrc = post.hero || post.thumb || DEFAULT_HERO;
+    viewerHeroImg.src = heroSrc;
+
+    const rawUrl = resolveRawUrl(post);
+    if (!rawUrl) {
+      viewerBodyEl.innerHTML =
+        "<div class='error'>Sorry, this post is missing its content link.</div>";
+      return;
+    }
+
+    try {
+      const res = await fetch(rawUrl);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      let md = await res.text();
+
+      if (md.startsWith("---")) {
+        const parts = md.split("---");
+        if (parts.length >= 3) {
+          md = parts.slice(2).join("---").trimStart();
+        }
+      }
+
+      const html = marked.parse(md);
+      viewerBodyEl.innerHTML = html;
+    } catch (err) {
+      console.error(err);
+      viewerBodyEl.innerHTML =
+        "<div class='error'>Could not load this post content right now. " +
+        "You can still open the raw file on GitHub: <a href='" +
+        rawUrl +
+        "' target='_blank'>open markdown</a>.</div>";
+    }
+  }
+
+  async function init() {
+    try {
+      const res = await fetch(POSTS_JSON_URL);
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const posts = await res.json();
+
+      allPosts = posts.map((p, index) => {
+        // default categories if none present: treat as Crypto + Stocks
+        let cats = Array.isArray(p.categories) && p.categories.length
+          ? p.categories
+          : ["crypto", "stocks"];
+
+        cats = cats.map((c) => String(c).toLowerCase());
+
+        return {
+          ...p,
+          index,
+          id: p.path || p.url || String(index),
+          categories: cats,
+        };
+      });
+
+      renderPostsList(allPosts);
+
+      if (allPosts.length) {
+        loadPostIntoViewer(allPosts[0]);
+      }
+    } catch (err) {
+      console.error(err);
+      listErrorEl.style.display = "block";
+      listErrorEl.textContent =
+        "Failed to load posts list. Try refreshing in a few seconds.";
+    }
+  }
+
+  searchInputEl.addEventListener("input", applyFilter);
+
+  catButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cat = btn.getAttribute("data-cat");
+      currentCategory = cat;
+
+      catButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      applyFilter();
+    });
+  });
+
+  init();
+</script>
+</body>
+</html>
