@@ -1,0 +1,197 @@
+---
+layout: default
+title: "{{ page.project_title }} | Project Details"
+---
+
+<style>
+    .project-detail {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .project-hero {
+        background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 45, 149, 0.05));
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+
+    .project-hero .meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.95rem;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tech-section {
+        margin: 2rem 0;
+    }
+
+    .tech-grid {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .tech-badge {
+        padding: 0.5rem 1rem;
+        background: rgba(0, 245, 255, 0.1);
+        border: 2px solid rgba(0, 245, 255, 0.2);
+        border-radius: 8px;
+        font-weight: 600;
+        color: var(--accent-cyan);
+    }
+
+    .readme-content {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        line-height: 1.8;
+    }
+
+    .readme-content h1,
+    .readme-content h2,
+    .readme-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .readme-content h2 {
+        border-bottom: 2px solid rgba(0, 245, 255, 0.2);
+        padding-bottom: 0.5rem;
+    }
+
+    .readme-content ul,
+    .readme-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .readme-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .readme-content code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9em;
+    }
+
+    .readme-content pre {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .readme-content pre code {
+        background: none;
+        padding: 0;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    .action-btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .btn-github {
+        background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+        color: #001;
+    }
+
+    .btn-github:hover {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .btn-back {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+    }
+
+    .btn-back:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+</style>
+
+<div class="project-detail">
+    <div class="action-buttons">
+        <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
+        <a href="{{ page.repo_url }}" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+    </div>
+
+    <div class="project-hero">
+        <h1>{{ page.project_title }}</h1>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">{{ page.description }}</p>
+
+        <div class="meta">
+            <div class="meta-item">
+                <span>📊</span>
+                <span>Difficulty: <strong>{{ page.difficulty | capitalize }}</strong></span>
+            </div>
+            <div class="meta-item">
+                <span>⏱️</span>
+                <span>{{ page.estimated_time }}</span>
+            </div>
+            <div class="meta-item">
+                <span>⭐</span>
+                <span>{{ page.stars }} stars</span>
+            </div>
+            <div class="meta-item">
+                <span>🍴</span>
+                <span>{{ page.forks }} forks</span>
+            </div>
+        </div>
+    </div>
+
+    {% if page.languages.size > 0 or page.technologies.size > 0 %}
+    <div class="tech-section">
+        <h2>🛠️ Technologies Used</h2>
+        <div class="tech-grid">
+            {% for lang in page.languages %}
+            <span class="tech-badge">{{ lang }}</span>
+            {% endfor %}
+            {% for tech in page.technologies %}
+            <span class="tech-badge">{{ tech }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="readme-content">
+        {{ content }}
+    </div>
+
+    <div class="action-buttons">
+        <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
+        <a href="{{ page.repo_url }}" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+    </div>
+</div>

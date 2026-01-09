@@ -1,16 +1,513 @@
 ---
 layout: default
 title: "Projects | GK Solutions"
-description: "Explore our collection of IoT, AI, and embedded systems projects."
-keywords: "projects, IoT, AI, Arduino, embedded systems, robotics"
+description: "Explore our collection of college projects including AI, Web Development, IoT, and more. Each project
+includes step-by-step instructions and source code."
+keywords: "projects, college projects, AI, web development, IoT, tutorials, source code"
 ---
 
-<section>
-    <h2>Our Projects</h2>
-    <p class="muted">Browse our collection of hands-on projects across different departments.</p>
+<style>
+    /* Project Showcase Specific Styles */
+    .showcase-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 2rem 1rem;
+        background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 45, 149, 0.05));
+        border-radius: 16px;
+    }
 
-    <div style="margin-top: 2rem;">
-        <p>Visit the <a href="index.html" style="color: var(--accent-cyan); font-weight: 600;">Home page</a> to explore
-            projects by department (CSE, AI, ECE, Robotics).</p>
+    .showcase-header h1 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+    }
+
+    .showcase-header p {
+        color: var(--muted);
+        font-size: 1.1rem;
+    }
+
+    .stats-row {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--accent-cyan);
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+
+    /* Filters */
+    .filters-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .filter-row {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .filter-label {
+        font-weight: 600;
+        min-width: 80px;
+    }
+
+    .filter-chips {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-chip {
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    .filter-chip:hover {
+        border-color: var(--accent-cyan);
+        color: white;
+    }
+
+    .filter-chip.active {
+        background: var(--accent-cyan);
+        border-color: var(--accent-cyan);
+        color: #001;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
+        color: white;
+        font-size: 0.95rem;
+        outline: none;
+    }
+
+    .search-input:focus {
+        border-color: var(--accent-cyan);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Project Grid */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Project Card */
+    .project-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+        border: 2px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        min-height: 420px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(0, 245, 255, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 245, 255, 0.1);
+    }
+
+    .project-card:hover::before {
+        opacity: 1;
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .difficulty-badge {
+        padding: 0.3rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .difficulty-beginner {
+        background: rgba(34, 197, 94, 0.2);
+        color: #4ade80;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .difficulty-intermediate {
+        background: rgba(251, 191, 36, 0.2);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .difficulty-advanced {
+        background: rgba(239, 68, 68, 0.2);
+        color: #f87171;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .project-description {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        min-height: 60px;
+        max-height: 60px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .tech-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        min-height: 70px;
+    }
+
+    .tech-tag {
+        padding: 0.3rem 0.7rem;
+        background: rgba(0, 245, 255, 0.1);
+        border: 1px solid rgba(0, 245, 255, 0.2);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        color: var(--accent-cyan);
+        font-weight: 600;
+    }
+
+    .project-meta {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 1rem;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .project-actions {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: auto;
+    }
+
+    .action-btn {
+        flex: 1;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+        background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+        color: #001;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+    }
+
+    .btn-secondary:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+
+    .no-results {
+        text-align: center;
+        padding: 3rem;
+        color: var(--muted);
+    }
+
+    .no-results h3 {
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<div class="showcase-header">
+    <h1>🚀 Our Projects</h1>
+    <p>Explore our collection of college projects with step-by-step guides</p>
+
+    <div class="stats-row">
+        <div class="stat-item">
+            <div class="stat-number" id="totalProjects">{{ site.data.projects.total_projects }}</div>
+            <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="totalLanguages">-</div>
+            <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="totalStars">-</div>
+            <div class="stat-label">Stars</div>
+        </div>
     </div>
-</section>
+</div>
+
+<div class="filters-section">
+    <div class="filter-row">
+        <div class="filter-label">Difficulty:</div>
+        <div class="filter-chips" id="difficultyFilters">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="beginner">Beginner</button>
+            <button class="filter-chip" data-filter="intermediate">Intermediate</button>
+            <button class="filter-chip" data-filter="advanced">Advanced</button>
+        </div>
+    </div>
+
+    <div class="filter-row">
+        <div class="filter-label">Technology:</div>
+        <div class="filter-chips" id="techFilters">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <!-- Dynamic tech filters will be added by JavaScript -->
+        </div>
+    </div>
+
+    <div class="filter-row">
+        <div class="filter-label">Search:</div>
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search projects...">
+        </div>
+    </div>
+</div>
+
+<div class="projects-grid" id="projectsGrid">
+    {% for project in site.data.projects.projects %}
+    <div class="project-card" data-difficulty="{{ project.difficulty }}"
+        data-languages="{{ project.languages | join: ',' }}" data-technologies="{{ project.technologies | join: ',' }}"
+        data-name="{{ project.name | downcase }}" data-description="{{ project.description | downcase }}">
+
+        <div class="project-header">
+            <div>
+                <h3 class="project-title">{{ project.title }}</h3>
+            </div>
+            <span class="difficulty-badge difficulty-{{ project.difficulty }}">{{ project.difficulty }}</span>
+        </div>
+
+        <p class="project-description">{{ project.description }}</p>
+
+        {% if project.languages.size > 0 or project.technologies.size > 0 %}
+        <div class="tech-tags">
+            {% for lang in project.languages limit:3 %}
+            <span class="tech-tag">{{ lang }}</span>
+            {% endfor %}
+            {% for tech in project.technologies limit:2 %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <span>⭐</span>
+                <span>{{ project.stars }}</span>
+            </div>
+            <div class="meta-item">
+                <span>🍴</span>
+                <span>{{ project.forks }}</span>
+            </div>
+            <div class="meta-item">
+                <span>⏱️</span>
+                <span>{{ project.estimated_time }}</span>
+            </div>
+        </div>
+
+        <div class="project-actions">
+            <a href="{{ project.repo_url }}" target="_blank" class="action-btn btn-primary">
+                View on GitHub →
+            </a>
+            <a href="project-{{ forloop.index }}.html" class="action-btn btn-secondary">
+                Details
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="no-results hidden" id="noResults">
+    <h3>No projects found</h3>
+    <p>Try adjusting your filters or search terms</p>
+</div>
+
+<script>
+    // Get all unique technologies
+    const projectsData = {{ site.data.projects.projects | jsonify }};
+    const allTechs = new Set();
+    let totalStars = 0;
+
+    projectsData.forEach(project => {
+        (project.languages || []).forEach(lang => allTechs.add(lang));
+        (project.technologies || []).forEach(tech => allTechs.add(tech));
+        totalStars += project.stars || 0;
+    });
+
+    // Update stats
+    document.getElementById('totalLanguages').textContent = allTechs.size;
+    document.getElementById('totalStars').textContent = totalStars;
+
+    // Add technology filter buttons
+    const techFiltersContainer = document.getElementById('techFilters');
+    const sortedTechs = Array.from(allTechs).sort();
+
+    sortedTechs.forEach(tech => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-chip';
+        btn.setAttribute('data-filter', tech.toLowerCase());
+        btn.textContent = tech;
+        techFiltersContainer.appendChild(btn);
+    });
+
+    // Filter functionality
+    let currentDifficulty = 'all';
+    let currentTech = 'all';
+    let searchQuery = '';
+
+    function filterProjects() {
+        const cards = document.querySelectorAll('.project-card');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const difficulty = card.getAttribute('data-difficulty');
+            const languages = (card.getAttribute('data-languages') || '').toLowerCase();
+            const technologies = (card.getAttribute('data-technologies') || '').toLowerCase();
+            const name = card.getAttribute('data-name');
+            const description = card.getAttribute('data-description');
+
+            const matchesDifficulty = currentDifficulty === 'all' || difficulty === currentDifficulty;
+            const matchesTech = currentTech === 'all' ||
+                languages.includes(currentTech) ||
+                technologies.includes(currentTech);
+            const matchesSearch = searchQuery === '' ||
+                name.includes(searchQuery) ||
+                description.includes(searchQuery);
+
+            if (matchesDifficulty && matchesTech && matchesSearch) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Show/hide no results message
+        const noResults = document.getElementById('noResults');
+        if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+        } else {
+            noResults.classList.add('hidden');
+        }
+    }
+
+    // Difficulty filter
+    document.getElementById('difficultyFilters').addEventListener('click', (e) => {
+        if (e.target.classList.contains('filter-chip')) {
+            document.querySelectorAll('#difficultyFilters .filter-chip').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            e.target.classList.add('active');
+            currentDifficulty = e.target.getAttribute('data-filter');
+            filterProjects();
+        }
+    });
+
+    // Technology filter
+    document.getElementById('techFilters').addEventListener('click', (e) => {
+        if (e.target.classList.contains('filter-chip')) {
+            document.querySelectorAll('#techFilters .filter-chip').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            e.target.classList.add('active');
+            currentTech = e.target.getAttribute('data-filter');
+            filterProjects();
+        }
+    });
+
+    // Search
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        filterProjects();
+    });
+</script>
