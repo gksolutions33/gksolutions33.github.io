@@ -1,0 +1,195 @@
+---
+layout: project
+project_title: "Ai Based Hr Screening Chatbot"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/Ai-based-hr-screening-chatbot"
+difficulty: "intermediate"
+estimated_time: "Varies"
+stars: 0
+forks: 1
+languages: []
+technologies: []
+---
+
+# Resume-screening-for-HR-round
+
+The HR Interview Screening Chatbot is a cloud-based intelligent system that automates the initial stages of recruitment.  
+It simulates a real-world hiring workflow used by companies:
+
+“Resume → Application → ATS Filter -> Mail"
+---
+"Mail→ Assessment Link → Assessment Scoring → HR Shortlist”
+---
+The system uses Streamlit + Python for the applicant interface, HTML and CSS and vanilla JS for assesment interface, Snowflake as the data warehouse, Azure for deployment and email automation, and Power BI for recruiter dashboards.
+
+The goal of the project is to reduce recruiter workload and shortlist the most relevant candidates using a transparent and explainable AI scoring system.
+
+---
+
+## Key Features
+### Admin page :
+     Job decscription is available here, assesment questions depends on jd. key words are also in Jd.
+     
+### 1. Candidate Application Portal (Streamlit)
+- Candidate fills an application form.  
+- Uploads PDF resume.  
+- Stores submission in Snowflake.  
+- Shows message: “Assessment link will be emailed if your resume passes ATS filter.”
+
+### 2. ATS Resume Filtering (Python + NLP)
+- Keywords and skill extraction.  
+- Semantic similarity scoring.  
+- Computes ATS Score (0–100).  
+- If ATS score ≥ threshold, an assessment link is emailed.
+
+### 3. Assessment Workflow
+- Candidate receives secure link via email.  
+- Takes the MCQ/coding assessment.  
+- System auto-grades and stores the result.  
+- Assessment score is compared with the threshold.
+
+### 4. Final Composite Scoring
+For candidates who pass both gates, the system evaluates:
+- Resume Score  
+- Application Form Answer Score  
+- Assessment Score  
+
+All three are combined to calculate a composite AI score.
+
+### 5. Recruiter Dashboard (Power BI)
+- Displays top candidates.  
+- Filters by ATS, Assessment, and Final Score.  
+- View resume information and summaries.  
+- Provides transparent score breakdowns.
+
+---
+
+## Why This Project Is Useful
+
+Recruiters handle thousands of applications. Manually checking resumes, distributing assessments, scoring results, and shortlisting candidates is slow.
+
+This system automates:
+- Resume screening  
+- Assessment distribution  
+- Scoring  
+- Shortlisting  
+- Candidate ranking  
+
+It improves fairness, consistency, and reduces workload by 70–80%.
+
+---
+
+## Process Flow
+
+### Admin page :
+     Job decscription is available here, assesment questions depends on jd. key words are also in Jd.
+
+### 1. Candidate Submission
+Candidates visit the Streamlit app and:
+- Fill personal details  
+- Upload resume (PDF only)  
+- Answer basic application questions  
+
+Data is stored in Snowflake.
+
+### 2. ATS Scoring
+ATS score is calculated using:
+- Extracted skills  
+- Keywords  
+- Role requirements  
+- Semantic similarity  
+
+If ATS Score ≥ ATS_MIN, the candidate moves forward.  
+If not, the application ends.
+
+### 3. Assessment Link Generation
+If ATS passes:
+- The system generates a secure assessment token  
+- Sends the assessment link to the candidate’s email  
+
+### 4. Candidate Completes Assessment
+Candidate takes the assessment, which may include:
+- MCQs  
+- Optional coding tasks  
+
+### 5. Assessment Gate
+If Assessment Score ≥ ASSESSMENT_MIN, the candidate proceeds to HR evaluation.  
+Otherwise, the candidate is rejected.
+
+### 6. Composite AI Scoring
+For candidates who pass both gates:
+
+final_score = 0.4 * resume_score + 0.3 * application_score + 0.3 * assessment_score
+
+A detailed score breakdown is stored for transparency.
+
+### 7. Recruiter Shortlist
+The Power BI dashboard shows:
+- Final Score  
+- ATS Score  
+- Assessment Score  
+- Resume keywords  
+- Application answers  
+
+Recruiters review only the shortlisted profiles.
+
+---
+
+## System Architecture
+
+           +-----------------------------+
+           |       Streamlit UI          |
+           | (Resume + Application Form) |
+           +-------------+---------------+
+                         |
+                         v
+           +-----------------------------+
+           |      Python Backend         |
+           |  ATS Scoring + NLP Parsing  |
+           +-------------+---------------+
+                         |
+                         v
+           +-----------------------------+
+           |          Snowflake          |
+           |  (Candidate & Score Data)   |
+           +-------------+---------------+
+                         |
+                         v
+           +-----------------------------+
+           |     Assessment Service 
+           |         HTML & CSS
+           | (MCQ/Coding Auto-Grading)   |
+           +-------------+---------------+
+                         |
+                         v
+           +-----------------------------+
+           |   Composite Scoring Engine  |
+           +-------------+---------------+
+                         |
+                         v
+           +-----------------------------+
+           |      Power BI Dashboard     |
+           |     (HR Shortlist View)     |
+           +-----------------------------+
+
+
+---
+
+## Tech Stack
+
+Frontend: Streamlit, HTML, CSS
+Backend: Python (NLP for ATS scoring)  
+Database / DW: Snowflake    
+Visualization: Power BI  
+Software Tool Used:SendGrid
+
+## Project Descriptiion
+- Admin page has JD, After the candidate fills the application and the application questions consists of :(name, email, gender, ph no, city, state, country, pincode, address, applied role, work experience, languages known, highest level of education, name of university, feild of study, year of graduation, skills, resume url,CTC expected, why this company, do you have the work permit of the applied country, do you in future require any help from the company for visa permit) and then the application is submitted and the ats scoring takes place based on the keyword matching and if the ats score is equal or higher than what we set teh candidate will be get the assessment link through mail ----> python+streamlit--> stored in snowflake
+
+-after the candidate receives the mail and starts the assignment and the assignment consists of 10 qestions(MCQ)(MCQ, options, answers all stored in seperate snowflake table) and the candidate submits the assessment and the assesment should be scored and if the assesment score is higher than the given score the candidate goes under holistic screening that consists of resume screening + assesment score + application answers(application answers means CTC, work permit eligibilty is taken as base ) and if the avarage score is equal or higher than the score set then the candidate is shortlisted to present on power bi for HR ----> HTML, CSS, Vanilla JS ---> stored in snowflake
+
+-HR has a view of shortlisted candidates in table and graph of their selection reason(CTC, keyword matching kindaa)---> power bi
+
+## Database details:
+Name, email, gender, phno, city, state, pincode, country, address, applied role, resume url, ats score, ats pass, assesment token, assesment score, final score, key word score, shortlisted, shortlisted score, job description, skills, work experience, languages known, highest level of education, name of university, feild of study, year of graduation 
+

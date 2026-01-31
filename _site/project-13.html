@@ -174,11 +174,11 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Rag-knowledge-chat-boot" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Rag Knowledge Chat Boot</h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
@@ -206,54 +206,67 @@
         <h2>🛠️ Technologies Used</h2>
         <div class="tech-grid">
             
-            <span class="tech-badge">Python</span>
-            
-            
-            <span class="tech-badge">NumPy</span>
+            <span class="tech-badge">Jupyter Notebook</span>
             
             <span class="tech-badge">Python</span>
+            
+            
+            <span class="tech-badge">Python</span>
+            
+            <span class="tech-badge">Jupyter Notebook</span>
             
         </div>
     </div>
     
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        # rag-qa-self
+RAG based application on question and answer about myself
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+I wrote about this in this article: [How I Built a RAG-based AI Chatbot from My Personal Data](https://medium.com/keeping-up-with-ai/how-i-built-a-rag-based-ai-chatbot-from-my-personal-data-88eec0d3483c)
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+**Overview**
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+This AI-powered app, built with Streamlit, uses a Large Language Model (LLM) to answer questions based on PDF data about Ana. Key technologies include:
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+- Langchain as the framework, 
+- GPT4All for embedding generation, 
+- Gemini 1.5 as the LLM, 
+- Streamlit for the user interface, and 
+- Chroma DB as the vector database.
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+create the .pdf datasets
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+before very vector db creation delete chroma folder 
+
+**Instructions**
+
+1. run pip install -r requirements.txt
+2. generate your own GEMINI API KEY from https://aistudio.google.com/ and put it in .env file as GEMINI_API_KEY = "YOUR_KEY"
+3. run `python create_db.py` in the terminal to create the vector database from the documents.
+4. run `streamlit run main.py` to launch streamlit UI in the browser
+
+#rag
+This project implements a Retrieval-Augmented Generation (RAG) chatbot designed to provide accurate, context-aware responses by combining Large Language Models (LLMs) with a domain-specific knowledge base. It leverages retrieval mechanisms to fetch relevant documents or information snippets and uses an LLM to generate natural, coherent answers grounded in the retrieved data.
+#road map 
+A phased approach to build the RAG Knowledge Base Chatbot:
+
+Phase 1 — Setup and Data Preparation
+
+Phase 2 — Retrieval Pipeline
+
+Phase 3 — Generation and Integration
+
+Phase 4 — API and UI Development
+
+Phase 5 — Testing, Polish, and Deployment
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Rag-knowledge-chat-boot" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>

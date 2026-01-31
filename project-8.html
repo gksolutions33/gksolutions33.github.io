@@ -1,0 +1,82 @@
+---
+layout: project
+project_title: "Comprehensive Automated Doc Verification"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/comprehensive-automated-doc-verification"
+difficulty: "intermediate"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- Python
+technologies:
+- Flask
+- Python
+---
+
+# CertiSecure - Secure Marksheet Generator & Validator
+
+CertiSecure is a web application designed to generate tamper-proof marksheet PDFs and validate them using cryptographic hashing and strict content verification.
+
+## Features
+
+### 1. Secure Generation
+-   **Data Hashing**: Creates a SHA-256 hash of the student's text details (Name, Marks, etc.).
+-   **Image Hashing**: Normalizes the profile photo to JPEG and calculates its SHA-256 hash to prevent format-based verification errors.
+-   **QR Code Embedding**: Embeds a QR code containing the digital signature (hashes) of both the text and the image.
+-   **Visual Security**: Adds a visual border to the profile photo and embeds the specific JPEG stream that was hashed.
+
+### 2. Strict Validation
+-   **Content Extraction**: Extracts raw text and images from the uploaded PDF.
+-   **Integrity Check**: Re-calculates hashes of the extracted content and compares them byte-for-byte with the data stored in the QR code.
+-   **Visual Tamper Detection**: Automatically fails validation if any PDF annotations or overlays (common in "fill and sign" editors) are detected.
+-   **Feedback**: Provides detailed pass/fail reports for text, photo, and visual layer integrity.
+
+## Prerequisites
+
+-   Python 3.8+
+-   Pip (Python Package Manager)
+
+## Installation Guide
+
+1.  **Clone/Download** this project folder.
+2.  **Open a terminal** inside the project folder.
+3.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Step-by-Step Usage
+
+### Starting the Server
+Run the application using Python:
+```bash
+python app.py
+```
+The server will start at `http://127.0.0.1:5000`.
+
+### Generating a Marksheet
+1.  Open your browser and go to `http://127.0.0.1:5000`.
+2.  Fill in the form (Name, Father's Name, Institution, Roll No, Marks).
+3.  Upload a Profile Photo (JPG/PNG).
+4.  Click **Generate Secured PDF**.
+5.  The secured PDF will run and download automatically.
+
+### Validating a Marksheet
+1.  Go to the **Validate Document** section on the home page.
+2.  Upload a Marksheet PDF (either the original or a generic file).
+3.  Click **Run Verification**.
+4.  **Check the Results**:
+    -   **Authentic**: All hashes match, and no tampering detected.
+    -   **Invalid / Tampered**: The text or photo has been changed, or someone added visual annotations.
+
+## Technical Notes
+-   **Image Handling**: To ensure consistency, all uploaded photos are converted to JPEG quality 95 before hashing. This ensures the hash stored in the QR always matches the image embedded in the PDF.
+-   **Libraries Used**: 
+    -   `Flask` (Web Framework)
+    -   `ReportLab` (PDF Generation)
+    -   `PyMuPDF (fitz)` (PDF Reading/Extraction)
+    -   `OpenCV` (QR Code Detection)
+    -   `Pillow` (Image Processing)
+
+Automated Document Verification System for Official Documentation - https://1drv.ms/w/c/87C32D068B13D74E/IQC60j2_IM9eRa21Bq-kq1lLAemn0T-eCkr7fRg1lZ1jG6E?e=SjqEtO

@@ -174,17 +174,17 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Skin-disease-detection-and-classification-using-cnn" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Skin Disease Detection And Classification Using Cnn</h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
             <div class="meta-item">
                 <span>📊</span>
-                <span>Difficulty: <strong>Intermediate</strong></span>
+                <span>Difficulty: <strong>Beginner</strong></span>
             </div>
             <div class="meta-item">
                 <span>⏱️</span>
@@ -208,52 +208,141 @@
             
             <span class="tech-badge">Python</span>
             
+            <span class="tech-badge">CSS</span>
             
-            <span class="tech-badge">NumPy</span>
+            <span class="tech-badge">JavaScript</span>
+            
+            <span class="tech-badge">HTML</span>
+            
+            
+            <span class="tech-badge">JavaScript</span>
             
             <span class="tech-badge">Python</span>
+            
+            <span class="tech-badge">Keras</span>
+            
+            <span class="tech-badge">Flask</span>
+            
+            <span class="tech-badge">TensorFlow</span>
+            
+            <span class="tech-badge">HTML</span>
+            
+            <span class="tech-badge">CSS</span>
+            
+            <span class="tech-badge">NumPy</span>
             
         </div>
     </div>
     
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        <<<<<<< HEAD
+# Skin Disease Prediction AI
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+This project is a Deep Learning application designed to classify various skin diseases from images. It uses a Convolutional Neural Network (CNN) built with **TensorFlow/Keras** and provides a user-friendly **Flask** web interface for real-time predictions.
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+## 🚀 Features
+- **High-Accuracy Classification**: Trained on a diverse dataset of skin conditions.
+- **Web Interface**: Modern, responsive web app for easy image upload and analysis.
+- **Real-Time Inference**: Fast predictions with confidence scores.
+- **CLI Support**: Command-line scripts for batch processing or quick checks.
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+## 🛠️ Prerequisites
+Ensure you have **Python 3.8+** installed. You will need the following libraries:
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+- TensorFlow
+- Flask
+- NumPy
+- Matplotlib (for training visualization)
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+## 📦 Installation
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+1.  **Clone or Download** this repository to your local machine.
+2.  **Install Dependencies**:
+    Open your terminal or command prompt in the project directory and run:
+    ```bash
+    pip install tensorflow flask numpy matplotlib
+    ```
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+## 📂 Project Structure
+
+```
+skin project/
+├── data set/               # Dataset directory (Test/Train split)
+├── static/                 # CSS and JavaScript for the web app
+│   ├── style.css
+│   └── script.js
+├── templates/              # HTML templates
+│   └── index.html
+├── app.py                  # Flask Web Application entry point
+├── train_model.py          # Script to train the CNN model
+├── evaluate_model.py       # Script to evaluate model performance
+├── predict.py              # CLI script for single image prediction
+├── skin_disease_model.keras # Saved trained model file
+└── README.md               # Project documentation
+```
+
+## 🖥️ usage
+
+### 1. Running the Web Application (Recommended)
+This starts the local web server where you can upload images via a graphical interface.
+
+1.  Run the Flask app:
+    ```bash
+    python app.py
+    ```
+2.  Wait for the message: `Model loaded successfully`.
+3.  Open your web browser and go to:
+    ```
+    http://127.0.0.1:5000
+    ```
+4.  Drag and drop an image or click to upload, then click **"Analyze Image"**.
+
+### 2. Training the Model
+If you want to retrain the model with new data:
+
+1.  Ensure your data is organized in `data set/train` and `data set/test` with subfolders for each class.
+2.  Run:
+    ```bash
+    python train_model.py
+    ```
+    This will save the new model as `skin_disease_model.keras`.
+
+### 3. Evaluating the Model
+To check the accuracy and loss on the test dataset:
+
+```bash
+python evaluate_model.py
+```
+
+### 4. Command Line Prediction
+To predict a single image without starting the web server:
+
+1.  Open `predict.py` and modify the image path at the bottom.
+2.  Run:
+    ```bash
+    python predict.py
+    ```
+
+## ⚠️ Note
+- The model expects images to be resized to **180x180** pixels (handled automatically by the scripts).
+- Ensure the `data set` folder exists if you plan to retrain or if the app needs to load class names dynamically.
+
+## 🤝 Contributing
+Feel free to fork this project and submit pull requests for improvements!
+=======
+# Skin-disease-detection-and-classification-using-cnn
+
+
+https://github.com/varshitha-g/Skin-Disease-Prediction
+>>>>>>> b967eb6c0c349a02ab1be9e38ecf9c4c469235c6
+update README
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Skin-disease-detection-and-classification-using-cnn" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>

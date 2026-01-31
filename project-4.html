@@ -1,0 +1,1148 @@
+---
+layout: project
+project_title: "Solar Panel Detection Clasification"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/solar-panel-detection-clasification"
+difficulty: "advanced"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- Python
+- HTML
+technologies:
+- Python
+- scikit-learn
+- FastAPI
+- pandas
+- Flask
+- HTML
+- Raspberry Pi
+- NumPy
+---
+
+#Enhancing Defect classification in solar panels with Electroluminescence Imaging and Advanced Machine learning and deep learning and Ai by using YOLOV8 
+
+
+Solar Panel Defect Classification using Electroluminescence (EL) Imaging & YOLOv8
+
+Project Title: Enhancing Defect Classification in Solar Panels using Electroluminescence Imaging, Machine Learning, Deep Learning & YOLOv8
+Overview
+
+This project focuses on detecting and classifying defects in photovoltaic (PV) solar panels using Electroluminescence (EL) images and YOLOv8 deep learning model. EL imaging highlights hidden defects like micro-cracks, hotspots, and broken cell fingers, making it an ideal method for automated inspection.
+
+This repository includes dataset structure, training pipeline, model configuration, evaluation metrics, and deployment steps to build a complete AI-based defect inspection system.
+
+Objective
+
+Detect various solar panel defects using EL images.
+
+Train an accurate, real-time YOLOv8-based detection model.
+
+Deploy the model for practical field inspections using edge devices or cloud.
+
+Automate reporting for maintenance teams.
+
+Defects Covered
+
+Recommended classes:
+
+micro_crack
+
+major_crack
+
+broken_finger
+
+inactive_cell
+
+hotspot
+
+delamination
+
+solder_break
+
+(You may add/remove classes depending on your dataset.)
+
+Dataset Structure
+project-root/
+│
+├── images/
+│   ├── train/
+│   ├── val/
+│   └── test/
+│
+├── labels/
+│   ├── train/
+│   ├── val/
+│   └── test/
+│
+└── data.yaml
+Sample data.yaml
+train: ./images/train
+val: ./images/val
+test: ./images/test
+
+
+nc: 7
+names: [micro_crack, major_crack, broken_finger, inactive_cell, hotspot, delamination, solder_break]
+Annotation Format (YOLO Format)
+
+Each annotation file (.txt) contains:
+
+class_id  center_x  center_y  width  height
+
+All values are normalized (0–1).
+
+Tools you can use:
+
+LabelImg
+
+Roboflow Annotate
+
+CVAT
+
+Label Studio
+
+Installation
+pip install ultralytics opencv-python numpy
+
+Or clone YOLOv8 directly:
+
+pip install ultralytics
+Training YOLOv8
+Train using CLI:
+yolo task=detect mode=train model=yolov8s.pt data=data.yaml imgsz=640 epochs=50 batch=16
+Train using Python:
+from ultralytics import YOLO
+
+
+model = YOLO('yolov8s.pt')
+model.train(data='data.yaml', epochs=50, imgsz=640)
+Evaluation
+
+Run validation:
+
+yolo mode=val model=runs/detect/train/weights/best.pt data=data.yaml
+
+Metrics produced:
+
+mAP@0.5
+
+mAP@0.5:0.95
+
+Precision & Recall
+
+Confusion Matrix
+
+Per-class AP
+
+Inference
+On an image:
+yolo predict model=best.pt source=path/to/image.jpg
+With Python:
+model = YOLO('best.pt')
+results = model('image.jpg')
+results.show()
+Model Export
+yolo export model=best.pt format=onnx
+
+Supported formats:
+
+TensorRT
+
+ONNX
+
+CoreML
+
+OpenVINO
+
+TFLite
+
+Deployment Options
+Edge Deployment:
+
+NVIDIA Jetson Nano / Xavier (TensorRT)
+
+Raspberry Pi + Coral TPU
+
+Intel NCS2 (OpenVINO)
+
+Cloud Deployment:
+
+Flask / FastAPI REST API
+
+Streamlit dashboard
+
+Mobile/Web inspection tool
+
+Augmentations Used
+
+Horizontal/Vertical flip
+
+Brightness/contrast shift
+
+Gaussian noise
+
+Random rotation
+
+Mosaic (YOLO built-in)
+
+CutMix (optional)
+
+# A Benchmark for Visual Identification of Defective Solar Cells in Electroluminescence Imagery
+
+[![PyPI - Version](https://img.shields.io/pypi/v/elpv-dataset.svg)](https://pypi.org/project/elpv-dataset)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/elpv-dataset.svg)](https://pypi.org/project/elpv-dataset)
+
+This repository provides a dataset of solar cell images extracted from
+high-resolution electroluminescence images of photovoltaic modules.
+
+![An overview of images in the dataset. The darker the red is, the higher is the
+likelihood of a defect in the solar cell overlayed by the corresponding color.](./doc/images/overview.jpg)
+
+## The Dataset
+
+The dataset contains 2,624 samples of 300x300 pixels 8-bit grayscale images of
+functional and defective solar cells with varying degree of degradations
+extracted from 44 different solar modules. The defects in the annotated images
+are either of intrinsic or extrinsic type and are known to reduce the power
+efficiency of solar modules.
+
+All images are normalized with respect to size and perspective.
+Additionally, any distortion induced by the camera lens used to capture the EL images was
+eliminated prior to solar cell extraction.
+
+## Annotations
+
+Every image is annotated with a defect probability (a floating point value
+between 0 and 1) and the type of the solar module (either mono- or
+polycrystalline) the solar cell image was originally extracted from.
+
+## Usage
+
+Install the Python package
+```console
+pip install elpv-dataset
+```
+
+and load the images and the corresponding annotations as follows:
+
+```python
+from elpv_dataset.utils import load_dataset
+images, proba, types = load_dataset()
+```
+
+## Citing
+
+If you use this dataset in scientific context, please cite the following
+publications:
+
+> Buerhop-Lutz, C.; Deitsch, S.; Maier, A.; Gallwitz, F.; Berger, S.; Doll, B.; Hauch, J.; Camus, C. & Brabec, C. J. A Benchmark for Visual Identification of Defective Solar Cells in Electroluminescence Imagery. European PV Solar Energy Conference and Exhibition (EU PVSEC), 2018. DOI: [10.4229/35thEUPVSEC20182018-5CV.3.15](http://dx.doi.org/10.4229/35thEUPVSEC20182018-5CV.3.15)
+
+> Deitsch, S., Buerhop-Lutz, C., Sovetkin, E., Steland, A., Maier, A., Gallwitz, F., & Riess, C. (2021). Segmentation of photovoltaic module cells in uncalibrated electroluminescence images. Machine Vision and Applications, 32(4). DOI: [10.1007/s00138-021-01191-9](https://doi.org/10.1007/s00138-021-01191-9)
+
+> Deitsch, S.; Christlein, V.; Berger, S.; Buerhop-Lutz, C.; Maier, A.; Gallwitz, F. & Riess, C. Automatic classification of defective photovoltaic module cells in electroluminescence images. Solar Energy, Elsevier BV, 2019, 185, 455-468. DOI: [10.1016/j.solener.2019.02.067](http://dx.doi.org/10.1016/j.solener.2019.02.067)
+
+BibTeX details:
+
+<details>
+
+```bibtex
+
+@InProceedings{Buerhop2018,
+  author    = {Buerhop-Lutz, Claudia and Deitsch, Sergiu and Maier, Andreas and Gallwitz, Florian and Berger, Stephan and Doll, Bernd and Hauch, Jens and Camus, Christian and Brabec, Christoph J.},
+  title     = {A Benchmark for Visual Identification of Defective Solar Cells in Electroluminescence Imagery},
+  booktitle = {European PV Solar Energy Conference and Exhibition (EU PVSEC)},
+  year      = {2018},
+  eventdate = {2018-09-24/2018-09-28},
+  venue     = {Brussels, Belgium},
+  doi       = {10.4229/35thEUPVSEC20182018-5CV.3.15},
+}
+
+@Article{Deitsch2021,
+  author       = {Deitsch, Sergiu and Buerhop-Lutz, Claudia and Sovetkin, Evgenii and Steland, Ansgar and Maier, Andreas and Gallwitz, Florian and Riess, Christian},
+  date         = {2021},
+  journaltitle = {Machine Vision and Applications},
+  title        = {Segmentation of photovoltaic module cells in uncalibrated electroluminescence images},
+  doi          = {10.1007/s00138-021-01191-9},
+  issn         = {1432-1769},
+  number       = {4},
+  volume       = {32},
+}
+
+@Article{Deitsch2019,
+  author    = {Sergiu Deitsch and Vincent Christlein and Stephan Berger and Claudia Buerhop-Lutz and Andreas Maier and Florian Gallwitz and Christian Riess},
+  title     = {Automatic classification of defective photovoltaic module cells in electroluminescence images},
+  journal   = {Solar Energy},
+  year      = {2019},
+  volume    = {185},
+  pages     = {455--468},
+  month     = jun,
+  issn      = {0038-092X},
+  doi       = {10.1016/j.solener.2019.02.067},
+  publisher = {Elsevier {BV}},
+}
+```
+</details>
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />All the images in this work are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. Accompanying Python source code is distributed under the terms of the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
+
+
+For commercial use, please contact us for further information.
+
+
+
+ preprocess
+
+import os
+import shutil
+import pandas as pd
+import numpy as np
+import cv2
+from sklearn.model_selection import train_test_split
+from glob import glob
+
+# Configuration
+DATASET_DIR = r'C:\Users\devas\solar project\data\elpv-dataset'
+OUTPUT_DIR = r'C:\Users\devas\solar project\data\processed'
+IMG_SIZE = (640, 640)
+RANDOM_SEED = 42
+
+def find_labels_file(start_dir):
+    for root, dirs, files in os.walk(start_dir):
+        if 'labels.csv' in files:
+            return os.path.join(root, 'labels.csv')
+    return None
+
+def preprocess():
+    print("Finding labels.csv...")
+    labels_path = find_labels_file(DATASET_DIR)
+    if not labels_path:
+        print(f"Error: labels.csv not found in {DATASET_DIR}. Did git clone finish?")
+        return
+
+    print(f"Found labels at: {labels_path}")
+    df = pd.read_csv(labels_path, sep='\s+|,', engine='python') # Handle potential space or comma separation
+    
+    # Check columns
+    # ELPV usually has no header, or specific columns. Let's inspect first row if needed.
+    # Standard ELPV: image_path, defect_probability, type
+    # But usually it's space separated: "images/cell0001.png 0.0 mono"
+    
+    # If no header, we assume:
+    if len(df.columns) < 2:
+         df = pd.read_csv(labels_path, delim_whitespace=True, header=None, names=['image_name', 'prob', 'type'])
+
+    # Standardize
+    # Make sure we have image_name and prob
+    if 'prob' not in df.columns:
+        # try 2nd column
+        df.columns = ['image_name', 'prob', 'type']
+    
+    print(f"Loaded {len(df)} samples.")
+
+    # Define classes: 0.0 = Normal, > 0.0 (or >0.5) = Defected?
+    # Paper says: 0=functional, 1=defective. Intermediate = probability.
+    # User step 2 says: "Normal / Defected".
+    # We will threshold at 0.5.
+    df['label'] = df['prob'].apply(lambda x: 'defected' if x >= 0.5 else 'normal')
+    
+    print(df['label'].value_counts())
+
+    # Split
+    # Stratified split to keep balance
+    train_df, test_df = train_test_split(df, test_size=0.1, stratify=df['label'], random_state=RANDOM_SEED)
+    train_df, val_df = train_test_split(train_df, test_size=0.22, stratify=train_df['label'], random_state=RANDOM_SEED) # 0.22 of 0.9 ~ 0.2 total
+
+    print(f"Train: {len(train_df)}, Val: {len(val_df)}, Test: {len(test_df)}")
+
+    # clear output dir
+    if os.path.exists(OUTPUT_DIR):
+        shutil.rmtree(OUTPUT_DIR)
+    
+    for subdir in ['train', 'val', 'test']:
+        for label in ['normal', 'defected']:
+            os.makedirs(os.path.join(OUTPUT_DIR, subdir, label), exist_ok=True)
+
+    # Processing function
+    def process_subset(subset_df, subset_name):
+        dataset_root = os.path.dirname(labels_path)
+        for idx, row in subset_df.iterrows():
+            img_path = os.path.join(dataset_root, row['image_name'])
+            
+            # Handle if image_name contains "images/" prefix or not
+            if not os.path.exists(img_path):
+                # try removing/adding images prefix
+                if row['image_name'].startswith('images/'):
+                     img_path = os.path.join(dataset_root, row['image_name'])
+                else:
+                     img_path = os.path.join(dataset_root, 'images', row['image_name'])
+            
+            if not os.path.exists(img_path):
+                print(f"Warning: Image not found {img_path}")
+                continue
+                
+            # Load and resize
+            img = cv2.imread(img_path)
+            if img is None:
+                print(f"Warning: Failed to load {img_path}")
+                continue
+                
+            img_resized = cv2.resize(img, IMG_SIZE)
+            
+            # Save
+            save_name = f"{subset_name}_{os.path.basename(row['image_name'])}"
+            save_path = os.path.join(OUTPUT_DIR, subset_name, row['label'], save_name)
+            cv2.imwrite(save_path, img_resized)
+            
+    print("Processing Train...")
+    process_subset(train_df, 'train')
+    print("Processing Val...")
+    process_subset(val_df, 'val')
+    print("Processing Test...")
+    process_subset(test_df, 'test')
+    
+    print("Preprocessing complete!")
+
+if __name__ == '__main__':
+    preprocess()
+
+
+    
+
+script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const previewContainer = document.getElementById('preview-container');
+    const imagePreview = document.getElementById('image-preview');
+    const removeBtn = document.getElementById('remove-file');
+    const analyzeBtn = document.getElementById('analyze-btn');
+    const uploadForm = document.getElementById('upload-form');
+    const spinner = document.getElementById('spinner');
+    
+    // Result elements
+    const resultSection = document.getElementById('result-section');
+    const resultImage = document.getElementById('result-image');
+    const statusBadge = document.getElementById('status-badge');
+    const meterFill = document.getElementById('meter-fill');
+    const confidenceValue = document.getElementById('confidence-value');
+    const maintenanceMsg = document.getElementById('maintenance-msg');
+    
+    // Drag & Drop
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, preventDefaults, false);
+    });
+    
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => dropZone.classList.add('dragover'), false);
+    });
+    
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => dropZone.classList.remove('dragover'), false);
+    });
+    
+    dropZone.addEventListener('drop', handleDrop, false);
+    
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        handleFiles(files);
+    }
+    
+    // Click upload
+    dropZone.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', function() {
+        handleFiles(this.files);
+    });
+    
+    function handleFiles(files) {
+        if (files.length > 0) {
+            const file = files[0];
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    imagePreview.src = e.target.result;
+                    previewContainer.classList.remove('hidden');
+                    dropZone.classList.add('hidden');
+                    analyzeBtn.disabled = false;
+                };
+                reader.readAsDataURL(file);
+                
+                // Manually set files to input if dropped (a bit hacky but works for form submit)
+                // Actually easier to just append to FormData later
+            }
+        }
+    }
+    
+    removeBtn.addEventListener('click', () => {
+        fileInput.value = '';
+        previewContainer.classList.add('hidden');
+        dropZone.classList.remove('hidden');
+        analyzeBtn.disabled = true;
+        resultSection.classList.add('hidden');
+    });
+    
+    // Submit
+    uploadForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const files = fileInput.files;
+        // If dropped, input might be empty, need to handle that if needed, 
+        // but for now we assume input was populated or clicked.
+        // If fileInput is empty, maybe drag&drop didn't populate it.
+        // Let's rely on standard input selection for simplicity in this code block, 
+        // or check if dropped file exists.
+        
+        if (files.length === 0) return;
+        
+        const formData = new FormData();
+        formData.append('file', files[0]);
+        
+        // UI Loading
+        analyzeBtn.disabled = true;
+        spinner.classList.remove('hidden');
+        analyzeBtn.querySelector('span').textContent = 'Analyzing...';
+        resultSection.classList.add('hidden');
+        
+        try {
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            
+            if (response.ok) {
+                showResult(data);
+            } else {
+                alert('Analysis failed: ' + (data.error || 'Unknown error'));
+            }
+            
+        } catch (error) {
+            console.error(error);
+            alert('An error occurred during analysis.');
+        } finally {
+            analyzeBtn.disabled = false;
+            spinner.classList.add('hidden');
+            analyzeBtn.querySelector('span').textContent = 'Analyze Panel';
+        }
+    });
+    
+    function showResult(data) {
+        resultSection.classList.remove('hidden');
+        resultImage.src = data.image_url;
+        
+        // Data: class (normal/defected), confidence (0.0-1.0)
+        let cls = data.class.toLowerCase();
+        const confidence = parseFloat(data.confidence);
+        const confidencePct = Math.round(confidence * 100);
+        
+        // Update badge
+        statusBadge.className = 'status-badge'; 
+        if (cls.includes('defect') || cls.includes('bad')) {
+            statusBadge.classList.add('defected');
+            statusBadge.textContent = 'DEFECT DETECTED';
+            maintenanceMsg.textContent = 'Warning: Structural anomalies detected. Immediate maintenance or further inspection is recommended to prevent efficiency loss.';
+            maintenanceMsg.style.color = '#ff3344';
+        } else if (cls.includes('normal') || cls.includes('good')) {
+            statusBadge.classList.add('normal');
+            statusBadge.textContent = 'PANEL HEALTHY';
+            maintenanceMsg.textContent = 'No significant defects detected. The solar panel appears to be in optimal operating condition.';
+            maintenanceMsg.style.color = '#00ff88';
+        } else {
+            // Fallback for unknown classes (e.g. from pretrained model)
+            statusBadge.textContent = cls.toUpperCase();
+            maintenanceMsg.textContent = `Identified as ${cls}.`;
+            maintenanceMsg.style.color = '#fff';
+        }
+        
+        // Update Meter
+        meterFill.style.width = `${confidencePct}%`;
+        confidenceValue.textContent = `${confidencePct}% Confidence`;
+        
+        // Scroll to result
+        resultSection.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+
+
+
+
+
+style.css
+
+:root {
+    --bg-color: #050a14;
+    --text-color: #ffffff;
+    --accent-color: #ffaa00; /* Solar Gold */
+    --accent-glow: rgba(255, 170, 0, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --success-color: #00ff88;
+    --danger-color: #ff3344;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Background Orbs */
+.background-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.6;
+}
+.orb-1 {
+    top: -10%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #1a237e, transparent);
+}
+.orb-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #311b92, transparent);
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 2rem;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.logo h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.logo .icon {
+    font-size: 2.5rem;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease;
+}
+
+.upload-section {
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.drop-zone {
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 3rem;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.drop-zone:hover, .drop-zone.dragover {
+    border-color: var(--accent-color);
+    background: rgba(255, 170, 0, 0.05);
+}
+
+.drop-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-color), #ff8800);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    min-width: 200px;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Preview */
+.preview-container {
+    position: relative;
+    max-width: 300px;
+    margin: 2rem auto;
+}
+
+.preview-container img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Results */
+.result-section {
+    margin-top: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.result-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-image-box {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--accent-color);
+}
+
+.result-image-box img {
+    width: 100%;
+    display: block;
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color);
+    animation: scan 2s infinite linear;
+    opacity: 0.8;
+}
+
+.result-details {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.status-badge.normal {
+    background: rgba(0, 255, 136, 0.2);
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.status-badge.defected {
+    background: rgba(255, 51, 68, 0.2);
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    box-shadow: 0 0 20px rgba(255, 51, 68, 0.3);
+}
+
+.confidence-meter {
+    margin-bottom: 1.5rem;
+}
+
+.meter-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #ff8800);
+    width: 0%;
+    transition: width 1s ease-out;
+}
+
+.maintenance-msg {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes scan { 
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+
+
+
+INDEX.HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarGuard - Defect Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="icon">☀️</span>
+                <h1>SolarGuard</h1>
+            </div>
+            <p class="subtitle">Advanced Electroluminescence Analysis</p>
+        </header>
+
+        <main>
+            <div class="glass-card upload-section">
+                <h2>Analyze Solar Panel</h2>
+                <form id="upload-form">
+                    <div class="drop-zone" id="drop-zone">
+                        <span class="drop-icon">📂</span>
+                        <p>Drag & Drop EL Image here or <strong>Browse</strong></p>
+                        <input type="file" name="file" id="file-input" accept="image/*" hidden>
+                    </div>
+                    <div id="preview-container" class="preview-container hidden">
+                        <img id="image-preview" src="" alt="Preview">
+                        <button type="button" id="remove-file" class="close-btn">×</button>
+                    </div>
+                    <button type="submit" class="btn-primary" id="analyze-btn" disabled>
+                        <span>Analyze Panel</span>
+                        <div class="spinner hidden" id="spinner"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div id="result-section" class="glass-card result-section hidden">
+                <h2>Analysis Result</h2>
+                <div class="result-content">
+                    <div class="result-image-box">
+                        <img id="result-image" src="" alt="Analyzed Panel">
+                        <div class="scan-line"></div>
+                    </div>
+                    <div class="result-details">
+                        <div class="status-badge" id="status-badge">Processing...</div>
+                        <div class="confidence-meter">
+                            <span>Confidence Score</span>
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="meter-fill" style="width: 0%"></div>
+                            </div>
+                            <span id="confidence-value" class="confidence-value">0%</span>
+                        </div>
+                        <p id="maintenance-msg" class="maintenance-msg"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 SolarGuard AI. Built for Enhanced Energy Efficiency.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+
+APP.PY
+
+import os
+import cv2
+import numpy as np
+from flask import Flask, render_template, request, jsonify, url_for
+from ultralytics import YOLO
+from werkzeug.utils import secure_filename
+
+app = Flask(__name__)
+# Config
+UPLOAD_FOLDER = 'static/uploads'
+MODEL_PATH = '../models/elpv_yolov8/weights/best.pt' # Path to best model after training
+# Fallback if training not done, use pretrained (won't be accurate for solar, but works for code)
+DEFAULT_MODEL = 'yolov8n-cls.pt' 
+
+os.makedirs(os.path.join(app.root_path, UPLOAD_FOLDER), exist_ok=True)
+
+print("Loading model...")
+try:
+    if os.path.exists(MODEL_PATH):
+        model = YOLO(MODEL_PATH)
+        print(f"Loaded trained model from {MODEL_PATH}")
+    else:
+        print(f"Warning: Trained model not found at {MODEL_PATH}. Using {DEFAULT_MODEL} placeholder.")
+        model = YOLO(DEFAULT_MODEL)
+except Exception as e:
+    print(f"Error loading model: {e}")
+    model = None
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    
+    if file:
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.root_path, UPLOAD_FOLDER, filename)
+        file.save(filepath)
+        
+        # Inference
+        if model:
+            results = model(filepath)
+            # Classification user case
+            # results[0].probs.top1 -> index
+            # results[0].names -> dict
+            
+            # Get top prediction
+            probs = results[0].probs
+            top1_index = probs.top1
+            confidence = float(probs.top1conf)
+            class_name = results[0].names[top1_index]
+            
+            # Map class_name manually if using pretrained placeholder to avoid "goldfish"
+            # But if using our trained model, names should be 'normal', 'defected'
+            
+            result_data = {
+                'class': class_name,
+                'confidence': f"{confidence:.2f}",
+                'image_url': url_for('static', filename=f'uploads/{filename}')
+            }
+            return jsonify(result_data)
+        else:
+            return jsonify({'error': 'Model not loaded'}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+
+
+IMPLEMENTING PLAN
+
+Enhancing Defect Classification in Solar Panels using EL Imaging and ML
+Goal Description
+Automatically detect and classify solar panel defects using Electroluminescence (EL) images and the YOLOv8 deep learning model. The system will be accessible via a user-friendly web application.
+
+User Review Required
+IMPORTANT
+
+Dataset Acquisition: We need to confirm if the ELPV dataset can be automatically downloaded or if manual placement is required. Compute Resources: Training YOLOv8 requires reasonable compute (GPU recommended).
+
+Proposed Changes
+Project Structure
+data/: Directory for ELPV dataset (raw and processed)
+src/: Source code for preprocessing and training
+app/: Web application code (templates, static, backend)
+models/: Directory to save trained YOLOv8 models
+Dependencies
+ultralytics (YOLOv8)
+flask (Web Framework)
+opencv-python, numpy, pandas, scikit-learn (Data processing)
+git (to clone dataset)
+Data Preprocessing (src/preprocess.py)
+Clone dataset from https://github.com/zae-bayern/elpv-dataset.
+Load images and labels (labels are probabilities 0.0-1.0).
+Binarize labels: 0.0 = Normal, 1.0 (or >0.5) = Defected.
+Resize images to 640x640 (standard for YOLOv8).
+Normalize pixel values.
+Split into Train (70%), Val (20%), Test (10%).
+Organize into YOLOv8 Classification format:
+root/train/normal, root/train/defected
+root/val/normal, root/val/defected
+root/test/normal, root/test/defected
+Model Training (src/train.py)
+Load yolov8n-cls.pt (Classification model).
+Train on the processed folder.
+Export best model.
+Web Application (app/)
+Backend: Flask app to load the model.
+Frontend: HTML/CSS/JS with "Premium" design (Dark mode, glassmorphism).
+Flow: Upload -> Process -> Show Result (Class + Confidence).
+Verification Plan
+Automated Tests
+Run src/train.py --dry-run (few epochs) to ensure pipeline works.
+Test Flask endpoints with sample images.
+Manual Verification
+Upload test images to the web app and verify output.
+
+
+WALKTHROUGH
+
+Walkthrough: Solar Panel Defect Classification
+This document explains how to run the project from start to finish.
+
+1. Data Preprocessing (Run First)
+File: 
+src/preprocess.py
+ Command: python src/preprocess.py
+
+What it does:
+Loads the ELPV dataset labels.
+Splits images into Training (70%), Validation (20%), and Testing (10%) sets.
+Resizes all images to 640x640 pixels (standard for YOLOv8).
+Saves organized data into data/processed/.
+2. Model Training (Run Second)
+File: src/train.py Command: python src/train.py
+
+What it does:
+Loads the yolov8n-cls.pt (Nano Classification) model.
+Trains the model on the processed data for 50 epochs.
+Saves the best model weights to models/elpv_yolov8/weights/best.pt.
+Note: Training can take time. If you want to skip this, the app will use a default pretrained model (less accurate for this specific task).
+3. Web Application (Run Last)
+File: app/app.py Command: python app/app.py
+
+What it does:
+Starts the Flask web server.
+Loads the trained model (or fallback).
+Opens the interface at http://127.0.0.1:5000.
+Allows you to upload EL images and view defect predictions.
+4. Helper Files
+verify.py: a script to quickly test the API without opening the browser.
+
+
+TRAIN.PY
+
+from ultralytics import YOLO
+
+def train():
+    # Load model
+    model = YOLO('yolov8n-cls.pt')  # load a pretrained model (recommended for training)
+
+    # Train
+    # data argument for classify mode is the path to folder containing train/val/test folders
+    results = model.train(data='data/processed', epochs=50, imgsz=640, project='models', name='elpv_yolov8')
+
+    # Validate
+    metrics = model.val()
+    print("Validation Accuracy:", metrics.top1)
+
+    # Export
+    path = model.export(format='onnx')
+    print(f"Model exported to {path}")
+
+if __name__ == '__main__':
+    train()

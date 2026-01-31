@@ -1,0 +1,120 @@
+---
+layout: project
+project_title: "Blockchain"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/blockchain"
+difficulty: "intermediate"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- JavaScript
+- HTML
+- Solidity
+- CSS
+technologies:
+- CSS
+- JavaScript
+- HTML
+- Solidity
+---
+
+# Blockchain-Based Student-Teacher-Admin Network
+
+A decentralized application (DApp) for managing academic interactions securely on the blockchain.
+
+## Technology Stack
+- **Blockchain**: Solidity, Ganache
+- **Frontend**: HTML5, CSS3, JavaScript, Web3.js
+- **Wallet**: MetaMask
+
+## Prerequisites
+1. **Google Chrome** with [MetaMask Extension](https://metamask.io/) installed.
+2. [Ganache](https://trufflesuite.com/ganache/) (Quickstart workspace).
+3. VS Code (to edit code if needed).
+
+## Setup & Deployment Steps
+
+### 1. Setup Blockchain (Ganache)
+1. Open **Ganache** and click **"Quickstart"**.
+2. Note the **RPC Server** URL (usually `HTTP://127.0.0.1:7545`) and the **Chain ID** (usually `1337`).
+
+### 2. Configure MetaMask
+1. Open MetaMask and add a new network manually:
+   - **Network Name**: Ganache Local
+   - **RPC URL**: `HTTP://127.0.0.1:7545`
+   - **Chain ID**: `1337`
+   - **Currency Symbol**: ETH
+2. Import an Account:
+   - Copy a **Private Key** from one of the accounts in Ganache.
+   - Initialise MetaMask -> Click Circle Icon -> Import Account -> Paste Private Key.
+
+### 3. Deploy Smart Contract (Remix IDE)
+1. Go to [Remix IDE](https://remix.ethereum.org/).
+2. Create a new file `UnifiedNetwork.sol` and copy the content from the local `UnifiedNetwork.sol` file in this folder.
+3. **Compile**: Go to "Solidity Compiler" tab -> Click "Compile UnifiedNetwork.sol".
+
+use parias evm version only 
+
+
+4. **Deploy**:
+   - Go to "Deploy & Run Transactions" tab.
+   - Set **Environment** to **"Injected Provider - MetaMask"**. (Make sure MetaMask is connected to Ganache).
+   - Click **"Deploy"**.
+5. **Copy Address**: After deployment, scroll down to "Deployed Contracts", copy the contract address (e.g., `0x123...`).
+
+### 4. Connect Frontend
+1. Open `app.js` in this folder.
+2. Replace `"YOUR_CONTRACT_ADDRESS_HERE"` with the address you just copied.
+   ```javascript
+   const contractAddress = "0xYourCopiedAddress...";
+   ```
+3. Save the file.
+
+### 5. Run the Application
+1. You can simply double-click `index.html` to open it in Chrome (or use Live Server extension in VS Code for better experience).
+2. **Login Admin**: The account used to deploy the contract is the **Admin**. Connect with that account on `index.html`.
+3. **Add Teacher**: Use Admin dashboard to register a new Teacher address (pick another address from Ganache).
+4. **Login Teacher**: Switch MetaMask account to the Teacher address, reload `index.html` and login.
+5. **Add Student**: Use Teacher dashboard to register a Student address.
+6. **Login Student**: Switch MetaMask account to Student address, reload `index.html` and login.
+
+## Troubleshooting
+- **"Connection Failed"**: Ensure Ganache is running and MetaMask is on the correct network.
+- **"Contract Connection Failed"**: Verify `contractAddress` in `app.js` matches the deployed address in Remix.
+
+
+
+16/12/2025  Final Optimizations
+
+Admin dash board required features
+     - It should contain details about different departments like CSE,ECE,EEE,CIVIL,MECH,AI&ML,AI-DS,CDS and more
+     - Admin should give an access to students that to see notifications
+     - admin block should have an unique design than others
+
+Teacher dashboard required features
+     - access to upload Fee details update
+     - Access to upload (materials, notes & previous papers, belongs to different subjects) - access to paste links 
+     - to send notifications about every information (to give updates)
+     - to assign results to each student
+     - access to prepare time table of examinations
+     - access to prepare time table of each department classes
+     - Behaviour documentation of Student
+     - to give info about carrer implementation about jobs realated to government and private
+     - to assign weekly challenges to students
+
+
+Studentb Dashboard required features
+      - to take weekly challenges 
+      - to ask questions in AI Assiatant
+      - to check fee receipt & verifications
+      - to Check results
+      - to give feedback about each faculty
+      - emmergency communication purpose of studies,sports,projects & about issues both offical & personal
+      - to check carrer implemtation about jobs related to both government & private
+
+
+
+
+17-12-2025
+    - Upload login page to every Dashboard (Admin,Teacher,Student)

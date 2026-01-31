@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="No description available" />
+  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>GK SOLUTIONS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+
+<body>
+  <header>
+    <div class="site-title">GK SOLUTIONS</div>
+    <div class="site-sub">AI • IoT • Arduino • Projects & Tutorials</div>
+    <div class="site-sub">DEFEAT THE FEAR</div>
+  </header>
+
+  <nav>
+    <a href="/market.html">Market Updates</a>
+    <a href="/index.html">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/tutorials.html">Tutorials</a>
+    <a href="/Papers.html">Papers</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+</nav>
+
+  <main>
+    <style>
+    .project-detail {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .project-hero {
+        background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 45, 149, 0.05));
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+
+    .project-hero .meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.95rem;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tech-section {
+        margin: 2rem 0;
+    }
+
+    .tech-grid {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .tech-badge {
+        padding: 0.5rem 1rem;
+        background: rgba(0, 245, 255, 0.1);
+        border: 2px solid rgba(0, 245, 255, 0.2);
+        border-radius: 8px;
+        font-weight: 600;
+        color: var(--accent-cyan);
+    }
+
+    .readme-content {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        line-height: 1.8;
+    }
+
+    .readme-content h1,
+    .readme-content h2,
+    .readme-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .readme-content h2 {
+        border-bottom: 2px solid rgba(0, 245, 255, 0.2);
+        padding-bottom: 0.5rem;
+    }
+
+    .readme-content ul,
+    .readme-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .readme-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .readme-content code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9em;
+    }
+
+    .readme-content pre {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .readme-content pre code {
+        background: none;
+        padding: 0;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    .action-btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .btn-github {
+        background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+        color: #001;
+    }
+
+    .btn-github:hover {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .btn-back {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+    }
+
+    .btn-back:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+</style>
+
+<div class="project-detail">
+    <div class="action-buttons">
+        <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
+        <a href="https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+    </div>
+
+    <div class="project-hero">
+        <h1>Image And Text Plagiarism Detection</h1>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
+
+        <div class="meta">
+            <div class="meta-item">
+                <span>📊</span>
+                <span>Difficulty: <strong>Beginner</strong></span>
+            </div>
+            <div class="meta-item">
+                <span>⏱️</span>
+                <span>Varies</span>
+            </div>
+            <div class="meta-item">
+                <span>⭐</span>
+                <span>0 stars</span>
+            </div>
+            <div class="meta-item">
+                <span>🍴</span>
+                <span>0 forks</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="tech-section">
+        <h2>🛠️ Technologies Used</h2>
+        <div class="tech-grid">
+            
+            <span class="tech-badge">Python</span>
+            
+            <span class="tech-badge">Cython</span>
+            
+            <span class="tech-badge">C</span>
+            
+            <span class="tech-badge">XSLT</span>
+            
+            <span class="tech-badge">C++</span>
+            
+            
+            <span class="tech-badge">Fortran</span>
+            
+            <span class="tech-badge">JavaScript</span>
+            
+            <span class="tech-badge">Jupyter Notebook</span>
+            
+            <span class="tech-badge">Roff</span>
+            
+            <span class="tech-badge">Jinja</span>
+            
+            <span class="tech-badge">C</span>
+            
+            <span class="tech-badge">Meson</span>
+            
+            <span class="tech-badge">XSLT</span>
+            
+            <span class="tech-badge">Shell</span>
+            
+            <span class="tech-badge">React</span>
+            
+        </div>
+    </div>
+    
+
+    <div class="readme-content">
+        # Image-and-text-plagiarism-detection
+# Plagiarism Checker 🔍
+
+A full-stack web application (Flask + React) to check plagiarism in uploaded text or Word documents using Natural Language Processing (NLP).  
+It uses **SerpAPI** to search the web and **spaCy** to calculate content similarity.
+
+🚧 _This project is still in development._
+
+---
+
+## 🔧 Features
+
+- Upload `.txt` or `.docx` files for plagiarism analysis.
+- Extracts random sentences from the document.
+- Google search integration via SerpAPI to find similar content.
+- NLP-powered similarity score calculation using **spaCy**.
+- Displays individual sentence matches with links and scores.
+- Overall plagiarism percentage.
+- **Frontend built with React** for a modern UI.
+
+---
+
+## 🧠 How It Works
+
+1. The file is uploaded through the React interface.
+2. The Flask backend reads and parses the document.
+3. Five random sentences are selected.
+4. Each sentence is searched on Google using SerpAPI (top 3 results).
+5. Content from those pages is fetched and compared using `spaCy`'s similarity method.
+6. Results are displayed in the frontend with links and match scores.
+7. Final plagiarism percentage is calculated from all matches.
+
+---
+
+## 🗂 Folder Structure
+
+```
+Plagiarism-Checker/
+│
+├── frontend/             # React frontend
+│   ├── public/
+│   ├── src/
+│   └── ...
+│
+├── templates/            # Flask HTML templates (for legacy UI)
+├── static/               # Static files (CSS, JS, images)
+├── nlpmain.py            # Flask backend using NLP
+├── main.py               # Alternate version (regex-based)
+├── requirements.txt      # Python dependencies
+├── .gitignore
+├── .env                  # API key (not committed)
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
+
+### 📦 Prerequisites
+
+- Python 3.7+
+- Node.js + npm (for React frontend)
+- pip (Python package manager)
+- [SerpAPI](https://serpapi.com/) API key
+
+---
+
+### ⚙️ Backend Setup (Flask)
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/LEADisDEAD/Plagiarism-Checker.git
+cd Plagiarism-Checker
+```
+
+2. **Create virtual environment**
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate       # Windows
+# OR
+source .venv/bin/activate   # macOS/Linux
+```
+
+3. **Install Python dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Add your SerpAPI key**
+
+Create a `.env` file in the root folder:
+
+```env
+API_KEY=your_serpapi_key_here
+```
+
+_(Do not share this key publicly or push it to GitHub.)_
+
+5. **Download spaCy model**
+
+```bash
+python -m spacy download en_core_web_md
+```
+
+---
+
+### 🎨 Frontend Setup (React)
+
+1. **Navigate to frontend folder**
+
+```bash
+cd frontend
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Start the React app**
+
+```bash
+npm start
+```
+
+4. **Frontend will run at** `http://localhost:3000` and connect to the Flask backend.
+
+---
+
+## 📝 Notes
+
+- Make sure the Flask server is running on port 5000 and CORS is enabled.
+- You may need to adjust the proxy in `frontend/package.json` to match your Flask backend:
+```json
+"proxy": "http://localhost:5000"
+```
+
+- `.env` file is required both locally and in deployment (on platforms like Render or Vercel).
+- Do **not commit your `.env` file** — it's already ignored via `.gitignore`.
+
+---
+
+## ⚠️ Alternate Backend Option
+
+The `main.py` file has the same core logic but uses basic regex matching instead of NLP (spaCy).  
+If you want a lighter and faster version with less accuracy, use this.
+
+---
+
+## 🤝 Contributing
+
+Pull requests, issues, and feature suggestions are welcome!  
+Feel free to fork the repo and contribute.
+
+
+#  🧾Abstract
+Plagiarism has become a major issue in the academic and digital world, especially with the increasing availability of online documents, articles, and media. Today, individuals can easily copy text and images from the internet, modify them, and present them as original work, leading to copyright violations and ethical concerns. Traditional plagiarism detection systems mainly focus on text-only similarity and fail to detect plagiarism involving visual content such as images. Therefore, there is a need for a modern plagiarism detection system capable of analyzing both text and images.
+This project proposes a combined text and image plagiarism detection system designed to identify copied or similar content across documents and digital images. For text plagiarism detection, methods such as Natural Language Processing, tokenization, semantic similarity, and cosine similarity are used to detect exact or paraphrased plagiarism even after changing sentence structure or wording. These techniques allow deeper understanding and comparison of meaning rather than depending on direct text matching.
+For image plagiarism detection, the system applies computer vision and deep learning techniques to identify similarities between images. Feature extraction models such as ORB, CNN and SSIM enable detection of altered, rotated, resized, filtered, or partially modified images. By matching visual patterns and pixel structures, the system accurately identifies whether an uploaded image is plagiarized or unique.
+The overall goal of this project is to provide a reliable platform that can automatically detect plagiarism in textual and visual content, generate plagiarism percentage reports, and highlight matched portions. This system helps students, researchers, faculty, and content creators to maintain originality and prevent copyright violations. The combined text and image approach increases accuracy and overcomes the limitations of traditional plagiarism detectors, making the system modern, robust, and suitable for real-world applications.
+
+
+#  ⚙️ 2. Working / Methodology
+The plagiarism detection system works in a step-by-step pipeline:
+
+1)User Input: The user uploads a .txt or .docx document through the React-based frontend.
+
+2)File Processing: The Flask backend parses the document and extracts clean textual content.
+
+3)Sentence Selection: Five random sentences are selected to represent the document.
+
+4)Web Search: Each sentence is queried on Google via SerpAPI, retrieving the top three matching web pages.
+
+5)Content Extraction: Textual content from the retrieved URLs is scraped.
+
+6)NLP Similarity Analysis: spaCy’s en_core_web_md model calculates semantic similarity between the uploaded sentence and web content.
+
+7)Score Calculation: Individual similarity scores are aggregated to compute an overall plagiarism percentage.
+
+8)Result Display: The frontend displays sentence-wise matches, similarity scores, source links, and final plagiarism percentage.
+
+
+#  📐 3. UML Diagrams (9 Types)
+
+1)📊 Activity UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/7203026b00b36250e8cac39e382ea4702680708f/Activity-uml-diagram.png.png)
+
+2)🧱 Component UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/Component-uml-diagram.png.png)
+
+3)🧩 Object UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/Object-uml-diagram.png.png)
+
+4)🔁 Sequence UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/Sequence-uml-diagram.png.png)
+
+5)🧩 Class UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/class-uml-diagram.png.png)
+
+6)📡 Communication UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/communication-uml-diagram.png.png)
+
+7)📦 Package UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/package-uml-diagram.png.png)
+
+8)🔄 State UML Diagram (State Machine Diagram)
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/state-uml-diagra%20m.png.png)
+
+9)👤 Use Case UML Diagram
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b483f1b5e9f8809c820a47e1eada9e5f2bbcda1a/use-case%20-uml-diagram.png.png)
+
+
+4)🧠 Training Images / Data
+
+
+✔ Training Data / Training Images Section 
+
+Training Data:
+The system uses a pre-trained Natural Language Processing model (spaCy – en_core_web_md).
+No custom training images or datasets were required. The model was trained on large-scale English text corpora including news articles, web text, and Wikipedia.
+
+📌 There are NO training images, because:
+
+This is text plagiarism, not image ML training
+
+No CNN / deep learning model is used
+
+
+5)🔹 Result Images
+
+🖼️ 1. Upload Interface
+
+React UI where user uploads .txt or .docx /.png file
+📌 Filename:project_Interface.png
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/b0ed12c9837b1beaab26fa1d8d7d9dec27a4d5b3/Program_Interface_git.png..jpeg)
+
+                                  
+🖼️ 2. Processing Screen
+
+Loading state while plagiarism is being checked
+
+📌 Filename : Upload_Interface.png
+
+  ![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/f45fb68bc2f6cd37fedd6df850e47383a4fa88bf/Analyzing.png.jpeg)
+
+🖼️ 3. Sentence-wise Plagiarism Result
+
+Shows:
+
+->Sentence
+
+->Similarity score 
+
+📌 Filename :Sentence_match.png
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/6cc3e7b364b71d40bc3b6f148640d5ff6af02178/sentece_check.jpg.jpeg)
+
+
+
+🖼️ 4.Final_Result
+
+📌 Filename :Final_Result.png
+
+![img alt](https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection/blob/6cc3e7b364b71d40bc3b6f148640d5ff6af02178/image_checker2.png.jpeg)
+
+
+
+# 🛠️ Software Tools Used
+
+The development of the **Image and Text Plagiarism Detection System** involves a combination of backend, frontend, and support tools to ensure a smooth and scalable workflow. Below is a detailed description of each tool:
+
+1. **Python 3.7+**
+
+   * **Purpose:** Backend development, text processing, and NLP operations.
+   * **Why Used:** Python provides excellent libraries for natural language processing, web requests, and file handling, making it ideal for implementing plagiarism detection logic.
+
+2. **Flask**
+
+   * **Purpose:** Web framework for the backend.
+   * **Why Used:** Lightweight, flexible, and easy to integrate with Python NLP libraries. Handles REST API creation for connecting the frontend and backend.
+
+3. **React.js**
+
+   * **Purpose:** Frontend user interface.
+   * **Why Used:** Provides a dynamic, responsive, and modern web interface for users to upload files, view plagiarism results, and interact with the system.
+
+4. **Node.js & npm**
+
+   * **Purpose:** Frontend environment and dependency management.
+   * **Why Used:** Required to run React development server and install frontend libraries.
+
+5. **spaCy**
+
+   * **Purpose:** Natural Language Processing (NLP) library.
+   * **Why Used:** Calculates semantic similarity between sentences to detect plagiarism at the sentence level using pre-trained models (`en_core_web_md`).
+
+6. **SerpAPI**
+
+   * **Purpose:** Google Search API integration.
+   * **Why Used:** To fetch top web results for sentences from uploaded documents for comparison, enabling real-time plagiarism detection.
+
+7. **VS Code / IDE**
+
+   * **Purpose:** Development environment.
+   * **Why Used:** Provides code editing, debugging, and project organization tools.
+
+8. **Git & GitHub**
+
+   * **Purpose:** Version control and repository hosting.
+   * **Why Used:** Tracks changes, supports collaboration, and hosts project code and documentation online.
+
+9. **Postman (Optional)**
+
+   * **Purpose:** API testing.
+   * **Why Used:** Verifies backend API endpoints independently from the frontend.
+
+---
+
+# 📚 Code Libraries Used
+
+The project uses **Python libraries** for backend processing and **JavaScript libraries** for frontend UI operations. Each library contributes to specific functionality in the plagiarism detection pipeline.
+
+### **Python Libraries (Backend)**
+
+| Library           | Purpose                                                                                           |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+| **flask**         | Creates the web server and routes for API endpoints.                                              |
+| **flask-cors**    | Enables Cross-Origin Resource Sharing to allow frontend-backend communication.                    |
+| **spacy**         | Performs NLP operations, including tokenization and semantic similarity calculations.             |
+| **python-docx**   | Reads and extracts text from Word documents (`.docx`).                                            |
+| **requests**      | Sends HTTP requests to SerpAPI and fetches web content.                                           |
+| **python-dotenv** | Loads environment variables such as API keys from a `.env` file.                                  |
+| **random**        | Selects random sentences from documents for plagiarism checks.                                    |
+| **re**            | Provides regex support for text cleaning and optional regex-based matching (alternative backend). |
+
+### **JavaScript / React Libraries (Frontend)**
+
+| Library              | Purpose                                               |
+| -------------------- | ----------------------------------------------------- |
+| **react**            | Provides component-based frontend structure.          |
+| **axios**            | Handles HTTP requests to Flask backend API endpoints. |
+| **react-router-dom** | Enables routing for multi-page React applications.    |
+| **bootstrap / CSS**  | Provides styling and responsive design components.    |
+
+
+
+## 👩‍💻 Authors
+
+**Prathmesh Manoj Bajpai**  
+[LinkedIn](https://www.linkedin.com/in/prathmesh-bajpai-8429652aa/)
+
+**Aditi Ritesh Dixit**  
+[LinkedIn](https://www.linkedin.com/in/aditi-dixit-895b551b5/)
+
+    </div>
+
+    <div class="action-buttons">
+        <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
+        <a href="https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+    </div>
+</div>
+  </main>
+
+  <footer>
+    &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

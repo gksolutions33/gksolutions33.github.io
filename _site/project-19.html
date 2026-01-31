@@ -174,11 +174,11 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/autonomous-drone" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Autonomous Drone</h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
@@ -202,58 +202,94 @@
     </div>
 
     
-    <div class="tech-section">
-        <h2>🛠️ Technologies Used</h2>
-        <div class="tech-grid">
-            
-            <span class="tech-badge">Python</span>
-            
-            
-            <span class="tech-badge">NumPy</span>
-            
-            <span class="tech-badge">Python</span>
-            
-        </div>
-    </div>
-    
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        The project “Autonomous Drone using DroneKit, MAVLink, MAVProxy, MAVGen with Machine Learning Simulation” aims to build a fully automatic drone system that can fly, navigate, detect obstacles, and make decisions without human control. The drone is developed and tested in a simulation environment using machine learning.
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+The core idea is to use DroneKit to write Python programs for controlling the drone, MAVLink for communication, MAVGen to automatically generate MAVLink message libraries, and MAVProxy for monitoring and controlling the drone. Machine learning models help the drone recognize obstacles or objects from simulated camera input and respond intelligently. The entire system is safely tested using SITL, Gazebo, or AirSim simulation.
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+Short Descriptions of Each Component
+1. DroneKit
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+A Python library used to program the drone.
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+Controls takeoff, landing, and autonomous missions.
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+2. MAVLink
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+A lightweight communication protocol.
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+Connects the drone autopilot with ground stations and scripts.
+
+Transfers telemetry like GPS, altitude, speed, sensor data.
+
+3. MAVGen
+
+A code generator tool inside MAVLink.
+
+Automatically creates MAVLink message classes in languages like Python or C.
+
+Helps in customizing messages and building new drone functionalities.
+
+Ensures DroneKit and MAVProxy can understand the same message format.
+
+4. MAVProxy
+
+A Ground Control Station (GCS) software.
+
+Monitors the drone’s live data and allows command forwarding.
+
+Acts as a communication hub while testing autonomous missions.
+
+5. Machine Learning + Simulation
+
+Uses environments like SITL, Gazebo, or AirSim.
+
+Trains ML models for:
+
+Obstacle detection
+
+Object recognition
+
+Path adjustment
+
+The simulated drone uses these predictions to fly safely and intelligently.
+
+How the System Works (Simple Flow)
+
+Simulation Setup:
+A virtual drone is created using SITL or AirSim.
+
+Message Generation (MAVGen):
+MAVGen creates the necessary MAVLink message libraries.
+
+Communication (MAVLink + MAVProxy):
+MAVProxy connects DroneKit scripts with the simulated drone using MAVLink messages.
+
+Autonomous Control (DroneKit):
+Python scripts control:
+
+Arming
+
+Takeoff
+
+Waypoints
+
+Mission execution
+
+Landing
+
+Machine Learning Decision Making:
+The ML model processes camera images and helps the drone avoid obstacles or detect targets.
+
+Monitoring:
+MAVProxy shows real-time data for testing and debugging.
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/autonomous-drone" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>

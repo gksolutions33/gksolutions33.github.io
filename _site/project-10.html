@@ -174,17 +174,17 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Audio-data-preparation-and-argument-using-tensorflow-" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Audio Data Preparation And Argument Using Tensorflow </h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
             <div class="meta-item">
                 <span>📊</span>
-                <span>Difficulty: <strong>Intermediate</strong></span>
+                <span>Difficulty: <strong>Advanced</strong></span>
             </div>
             <div class="meta-item">
                 <span>⏱️</span>
@@ -209,7 +209,11 @@
             <span class="tech-badge">Python</span>
             
             
+            <span class="tech-badge">TensorFlow</span>
+            
             <span class="tech-badge">NumPy</span>
+            
+            <span class="tech-badge">Flask</span>
             
             <span class="tech-badge">Python</span>
             
@@ -218,42 +222,97 @@
     
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        # Audio Data Preparation, Augmentation & Classification Studio
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+A comprehensive web application for analyzing, augmenting, and classifying audio data using **TensorFlow**, **YAMNet**, and **Flask**.
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+## 🚀 Features
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+### 1. Audio Ingestion
+- **File Upload**: Support for `.wav` file uploads.
+- **Microphone Recording**: Built-in browser recorder that captures audio, converts it to WAV client-side, and sends it for analysis.
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+### 2. AI Classification (YAMNet)
+- Integrates Google's **YAMNet** model.
+- Automatically identifies audio events from **521 classes** (e.g., "Speech", "Music", "Clapping", "Dog", "Siren").
+- Displays top 5 predictions with confidence scores.
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+### 3. Advanced Visualization Pipeline
+The app processes audio through a multi-stage pipeline and visualizes each step:
+- **Waveform**: Raw time-domain signal.
+- **Trimming**: Automatic silence removal.
+- **Fading**: Logarithmic fade-in/out application.
+- **Spectrograms**:
+    - Standard Spectrogram (Log Scale).
+    - Mel Spectrogram (Perceptually relevant scale).
+    - DB-Scaled Mel Spectrogram.
+- **Augmentations**:
+    - **Frequency Masking**: Randomly masks frequency bands (useful for training robust models).
+    - **Time Masking**: Randomly masks time steps.
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+## 🛠️ Tech Stack
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+- **Backend**: Python, Flask
+- **ML/AI**: TensorFlow, TensorFlow I/O, TensorFlow Hub
+- **Audio Processing**: `tensorflow-io`, `soundfile`, `numpy`
+- **Frontend**: HTML5, CSS3 (Dark Mode), JavaScript (Web Audio API)
+
+## 📋 Prerequisites
+
+- Python 3.9+
+- Internet connection (for initial model download)
+
+## ⚡ Installation
+
+1.  **Clone/Download** the project.
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## 🖥️ Usage
+
+1.  **Start the Server**:
+    Run the following command in your terminal:
+    ```bash
+    python app.py
+    ```
+    *Note: The first run may take a moment to download the YAMNet model.*
+
+2.  **Open Dashboard**:
+    Go to [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+
+3.  **Analyze Audio**:
+    - **Upload**: Choose a `.wav` file and click **"Upload & Process"**.
+    - **Record**: Click **"🔴 Record"**, speak or make a sound, then click **"⏹ Stop"**.
+
+## 📂 Project Structure
+
+```
+├── app.py                  # Main Flask application entry point
+├── audio_processing.py     # Core logic: TF pipeline, YAMNet classification
+├── requirements.txt        # Python dependencies
+├── README.md               # Documentation
+├── uploads/                # Directory for temporary audio storage
+├── static/
+│   └── images/             # Generated visualization plots
+└── templates/
+    └── index.html          # Dashboard frontend with Recorder logic
+```
+
+## 🔧 Troubleshooting
+
+- **"Format not recognised" error**: Ensure you have refreshed the page to load the latest JavaScript recorder, which converts microphone input to WAV automatically.
+- **Model downloading**: If the app hangs on startup, check your internet connection; it needs to fetch the model from TF Hub.
+
+---
+*Created with the assistance of Google DeepMind's Antigravity Agent.*
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Audio-data-preparation-and-argument-using-tensorflow-" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>

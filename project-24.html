@@ -1,0 +1,187 @@
+---
+layout: project
+project_title: "Vitamin Deficiency"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/vitamin-deficiency"
+difficulty: "intermediate"
+estimated_time: "20 mins"
+stars: 0
+forks: 0
+languages: []
+technologies:
+- IoT
+---
+
+# Vitamin Deficiency Prediction Based on User Symptoms
+
+# ✅ **Vitamin Deficiency Prediction Based on Symptoms**
+
+A **machine-learning + rule-based** health-support system that identifies possible vitamin deficiencies based on symptoms that the user enters and provides:
+
+✔ Predicted vitamin deficiency
+✔ Food sources to correct the deficiency
+✔ Daily lifestyle changes
+✔ Supplement suggestions (non-medical, general)
+✔ Preventive tips
+
+> **Important:** This is not a medical diagnosis system; it gives educational predictions.
+
+---
+
+# 🧠 **How the System Works**
+
+There are two ways to build it:
+
+---
+
+## **1️⃣ Rule-Based Prediction System (Simple & Highly Accurate for Symptoms)**
+
+Each symptom is mapped to possible vitamin deficiencies.
+
+### **Example Mapping**
+
+| Symptom             | Possible Deficiency       |
+| ------------------- | ------------------------- |
+| Hair loss           | Vitamin B7 (Biotin), D, E |
+| Fatigue             | B12, D, Iron              |
+| Cracked lips        | B2, B6                    |
+| Vision problems     | Vitamin A                 |
+| Weak immunity       | Vitamin C, D              |
+| Tingling hands/feet | B1, B6, B12               |
+| Bone/joint pain     | Vitamin D, Calcium        |
+| Dry skin            | A, E                      |
+| Mouth ulcers        | B9, B12                   |
+
+The system checks all symptoms the user enters and predicts one or more deficiencies.
+
+---
+
+## **2️⃣ ML-Based Prediction (If You Want AI Model)**
+
+### Dataset structure:
+
+| symptom1    | symptom2     | symptom3 | …       | vitamin_deficiency |
+| ----------- | ------------ | -------- | ------- | ------------------ |
+| hair loss   | fatigue      | dry skin | …       | Vitamin D          |
+| mouth ulcer | cracked lips | …        | Vit B12 |                    |
+
+Train using:
+✔ Random Forest
+✔ SVM
+✔ Decision Trees
+✔ Neural networks (simple MLP)
+
+---
+
+# 🧰 **Project Workflow**
+
+1. **User enters symptoms**
+   Example: “fatigue, hair loss, tingling feet”
+
+2. **Symptom → Deficiency Prediction**
+   Using rule-based or ML model.
+
+3. **Generate output:**
+
+   * vitamin deficiency
+   * recommended foods
+   * lifestyle changes
+   * supplement recommendations
+   * warning when to see a doctor
+
+---
+
+# 🎯 **Final Output Example**
+
+### **Input:**
+
+*“Hair fall, fatigue, tingling feet”*
+
+### **Prediction:**
+
+➡ **Likely Vitamin B12 Deficiency**
+➡ Possible: **Vitamin D**, **Biotin**
+
+---
+
+## 🥗 Food Suggestions
+
+### **For Vitamin B12**
+
+* Eggs
+* Milk, curd
+* Fish (salmon, tuna)
+* Lean chicken
+* Fortified cereals
+
+### **For Vitamin D**
+
+* Sunlight (morning 20 mins)
+* Mushrooms
+* Fortified milk
+* Egg yolk
+
+### **For Biotin (B7)**
+
+* Almonds
+* Walnuts
+* Sweet potatoes
+* Whole grains
+
+---
+
+## 💊 Home Remedies (Non-Medical)
+
+* Include **curd + banana** for gut health
+* **1 tsp flaxseed** daily for skin & hair
+* **Moringa powder** (rich in B-complex)
+
+---
+
+## 🏃 Lifestyle Recommendations
+
+* 20–30 min morning sunlight daily
+* Reduce junk food & sugar
+* Follow regular sleep schedule (7–8 hrs)
+* Reduce stress with breathing exercises
+* Drink 2.5–3 liters of water daily
+
+---
+
+## ⚠ “When to See a Doctor”
+
+* Long-term numbness/tingling
+* Extreme fatigue
+* Unexplained weight loss
+* Severe hair loss
+
+---
+
+# 🗂 Project Modules (for your academic submission)
+
+### **1. Symptom Input Module**
+
+User enters symptoms via text or list checklist.
+
+### **2. Preprocessing Module**
+
+Tokenize → map symptoms → dataset encoding.
+
+### **3. Prediction Engine**
+
+* **Rule-based JSON** mapping
+* OR **ML model.pkl** prediction
+
+### **4. Recommendation Module**
+
+* Food
+* Lifestyle
+* Remedies
+
+https://github.com/shivasaisanga/vitamin-deficiency-prediction-and-food-recommendation.git
+* Prevention tips
+
+### **5. Report Generation**
+
+Shows final predicted deficiency with suggestions.
+

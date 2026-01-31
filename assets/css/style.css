@@ -59,30 +59,37 @@ header {
    =================================== */
 nav {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0.6rem 1rem;
+  padding: 1rem;
 }
 
 nav a {
-  color: var(--muted);
+  color: #cad4e0;
   text-decoration: none;
-  font-weight: 600;
-  background: transparent;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+  font-size: 0.95rem;
 }
 
 nav a:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
 nav a.active {
-  color: var(--accent-cyan);
-  background: rgba(0, 245, 255, 0.08);
+  color: #05060a;
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.4);
 }
 
 /* ===================================
@@ -173,7 +180,7 @@ main {
   box-shadow: 0 0 32px rgba(255, 195, 0, 0.14), 0 0 64px rgba(255, 195, 0, 0.05);
 }
 
-.dept-card > * {
+.dept-card>* {
   position: relative;
   z-index: 1;
 }
@@ -300,9 +307,11 @@ main {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -420,6 +429,7 @@ button[type='submit']:hover {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -524,8 +534,24 @@ footer {
   }
 
   nav {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    gap: 8px;
+    overflow-x: visible;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Wrap links properly on mobile */
+  nav a {
+    white-space: normal;
+    font-size: 0.9rem;
+    padding: 8px 14px;
+    flex-grow: 0;
   }
 
   .projects-header {

@@ -1,0 +1,103 @@
+---
+layout: project
+project_title: "Audio Data Preparation And Argument Using Tensorflow "
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/Audio-data-preparation-and-argument-using-tensorflow-"
+difficulty: "advanced"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- Python
+technologies:
+- TensorFlow
+- NumPy
+- Flask
+- Python
+---
+
+# Audio Data Preparation, Augmentation & Classification Studio
+
+A comprehensive web application for analyzing, augmenting, and classifying audio data using **TensorFlow**, **YAMNet**, and **Flask**.
+
+## 🚀 Features
+
+### 1. Audio Ingestion
+- **File Upload**: Support for `.wav` file uploads.
+- **Microphone Recording**: Built-in browser recorder that captures audio, converts it to WAV client-side, and sends it for analysis.
+
+### 2. AI Classification (YAMNet)
+- Integrates Google's **YAMNet** model.
+- Automatically identifies audio events from **521 classes** (e.g., "Speech", "Music", "Clapping", "Dog", "Siren").
+- Displays top 5 predictions with confidence scores.
+
+### 3. Advanced Visualization Pipeline
+The app processes audio through a multi-stage pipeline and visualizes each step:
+- **Waveform**: Raw time-domain signal.
+- **Trimming**: Automatic silence removal.
+- **Fading**: Logarithmic fade-in/out application.
+- **Spectrograms**:
+    - Standard Spectrogram (Log Scale).
+    - Mel Spectrogram (Perceptually relevant scale).
+    - DB-Scaled Mel Spectrogram.
+- **Augmentations**:
+    - **Frequency Masking**: Randomly masks frequency bands (useful for training robust models).
+    - **Time Masking**: Randomly masks time steps.
+
+## 🛠️ Tech Stack
+
+- **Backend**: Python, Flask
+- **ML/AI**: TensorFlow, TensorFlow I/O, TensorFlow Hub
+- **Audio Processing**: `tensorflow-io`, `soundfile`, `numpy`
+- **Frontend**: HTML5, CSS3 (Dark Mode), JavaScript (Web Audio API)
+
+## 📋 Prerequisites
+
+- Python 3.9+
+- Internet connection (for initial model download)
+
+## ⚡ Installation
+
+1.  **Clone/Download** the project.
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## 🖥️ Usage
+
+1.  **Start the Server**:
+    Run the following command in your terminal:
+    ```bash
+    python app.py
+    ```
+    *Note: The first run may take a moment to download the YAMNet model.*
+
+2.  **Open Dashboard**:
+    Go to [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+
+3.  **Analyze Audio**:
+    - **Upload**: Choose a `.wav` file and click **"Upload & Process"**.
+    - **Record**: Click **"🔴 Record"**, speak or make a sound, then click **"⏹ Stop"**.
+
+## 📂 Project Structure
+
+```
+├── app.py                  # Main Flask application entry point
+├── audio_processing.py     # Core logic: TF pipeline, YAMNet classification
+├── requirements.txt        # Python dependencies
+├── README.md               # Documentation
+├── uploads/                # Directory for temporary audio storage
+├── static/
+│   └── images/             # Generated visualization plots
+└── templates/
+    └── index.html          # Dashboard frontend with Recorder logic
+```
+
+## 🔧 Troubleshooting
+
+- **"Format not recognised" error**: Ensure you have refreshed the page to load the latest JavaScript recorder, which converts microphone input to WAV automatically.
+- **Model downloading**: If the app hangs on startup, check your internet connection; it needs to fetch the model from TF Hub.
+
+---
+*Created with the assistance of Google DeepMind's Antigravity Agent.*

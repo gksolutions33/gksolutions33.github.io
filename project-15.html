@@ -1,0 +1,213 @@
+---
+layout: project
+project_title: "Heart Disease Detection Naive Bayes "
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/Heart-disease-detection-naive-bayes-"
+difficulty: "beginner"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- HTML
+- Python
+technologies:
+- Python
+- scikit-learn
+- pandas
+- Flask
+- HTML
+- NumPy
+---
+
+# Heart-disease-detection-naive-bayesian
+📌 Project Overview
+
+Heart disease is one of the leading causes of death worldwide. Early prediction and diagnosis can significantly reduce mortality rates and improve patient outcomes. This project focuses on the design and implementation of a Heart Disease Prediction System using the Naive Bayes algorithm.
+
+The system analyzes patient health parameters and predicts whether a person is likely to have heart disease. It provides both command-line and web-based interfaces, making it easy to use for healthcare applications.
+
+🎯 Objectives
+
+To predict heart disease using machine learning techniques
+
+To implement the Naive Bayes classifier for medical data analysis
+
+To develop a user-friendly web interface for prediction
+
+To assist doctors and patients in early diagnosis
+
+To achieve reliable prediction accuracy with minimal computational cost
+
+🧠 Technology Stack
+
+Programming Language: Python
+
+Machine Learning Algorithm: Naive Bayes (GaussianNB)
+
+Web Framework: Flask
+
+Libraries Used:
+
+pandas
+
+numpy
+
+scikit-learn
+
+flask
+
+Frontend: HTML, CSS
+
+Dataset: Heart disease medical dataset
+
+⚙️ System Architecture
+
+The system consists of the following modules:
+
+Data Generation Module
+
+Model Training Module
+
+Prediction Module (CLI & Web)
+
+Web Interface Module
+
+Visualization Module (Histogram / Graphs)
+
+📂 Project Structure
+Heart-Disease-Prediction/
+│
+├── data/
+│   └── heart_disease_data.csv
+│
+├── src/
+│   ├── app.py
+│   ├── train_model.py
+│   ├── predict.py
+│   ├── generate_data.py
+│   ├── heart_disease_model.pkl
+│
+├── templates/
+│   └── result.html
+│
+├── static/
+│   └── styles.css
+│
+├── verify_histogram.py
+├── requirements.txt
+└── README.md
+
+🧪 Methodology
+
+Data Collection
+Medical data containing patient health attributes is collected.
+
+Data Preprocessing
+Data is cleaned and prepared for training.
+
+Model Training
+A Gaussian Naive Bayes classifier is trained using Scikit-learn.
+
+Prediction
+The trained model predicts the likelihood of heart disease.
+
+Result Visualization
+Prediction confidence and population comparison are displayed graphically.
+
+▶️ How to Run the Project
+1️⃣ Install Dependencies
+pip install -r requirements.txt
+
+2️⃣ Generate Dataset (Optional)
+python src/generate_data.py
+
+
+This creates:
+
+data/heart_disease_data.csv
+
+3️⃣ Train the Model
+python src/train_model.py
+
+
+Trains the Naive Bayes model
+
+Displays accuracy
+
+Saves the model as:
+
+src/heart_disease_model.pkl
+
+4️⃣ Run Prediction (Command Line)
+python src/predict.py
+
+
+Enter patient details when prompted
+
+Get heart disease prediction instantly
+
+5️⃣ Run Web Application
+python src/app.py
+
+
+Open browser and visit:
+
+http://127.0.0.1:5000
+
+
+Enter health parameters
+
+View prediction result
+
+See confidence percentage and histogram
+
+📊 Output Screens
+
+Prediction Result Page
+
+Likely Heart Disease / No Heart Disease
+
+Confidence Percentage
+
+Population Comparison Graph
+
+✅ Advantages
+
+Simple and efficient algorithm
+
+High prediction accuracy
+
+Low computational complexity
+
+User-friendly interface
+
+Suitable for real-time healthcare applications
+
+⚠️ Limitations
+
+Depends on quality of dataset
+
+Assumes independence between features
+
+Performance may vary with unseen data
+
+🚀 Future Enhancements
+
+Integration with real-time hospital databases
+
+Use of hybrid machine learning models
+
+Mobile application support
+
+Cloud-based deployment
+
+Integration with wearable health devices
+
+📚 Conclusion
+
+This project successfully demonstrates the application of Naive Bayes classification in predicting heart disease. The system provides an effective decision-support tool for early diagnosis and healthcare assistance. With further enhancements, it can be deployed in real-world medical environments.
+
+👩‍💻 Developed By
+
+Design and Implementing Heart Disease Prediction Using Naive Bayesian
+Major Project – Artificial Intelligence and Machine Learning

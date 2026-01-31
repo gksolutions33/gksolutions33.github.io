@@ -174,11 +174,11 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/road-condition-monitoring" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Road Condition Monitoring</h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
@@ -209,8 +209,6 @@
             <span class="tech-badge">Python</span>
             
             
-            <span class="tech-badge">NumPy</span>
-            
             <span class="tech-badge">Python</span>
             
         </div>
@@ -218,42 +216,155 @@
     
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        # Road Condition Monitoring – AI-Based Pothole Detection
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+This project uses Artificial Intelligence to automatically detect road damages such as potholes from a standard camera feed. Using a YOLO-based deep learning model and OpenCV, the system analyzes each video frame to identify potholes and then generates a professional PDF report with material estimates and repair budget. The entire pipeline runs automatically on a laptop using Python.
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+---
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+## Features
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+- YOLO-based pothole detection on road videos (e.g., dashcam footage).
+- Live detection window showing bounding boxes around potholes.
+- De-duplication logic so each pothole is counted only once across frames.
+- Automatic estimation per pothole:
+  - Length and width (approximate)
+  - Sand (kg), Cement (kg), Rocks (kg), Coal Tar (liters)
+  - Individual pothole repair budget
+- Aggregated “Materials & Cost Summary”:
+  - Total sand, cement, rocks and coal tar required
+  - Total material costs + labour cost
+  - Final estimated repair budget
+- Professional letter-style PDF report addressed to road authorities.
+- Automatic email sending of the PDF report via Gmail.
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+---
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+## Project Structure (important files)
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+```
+R_C_M/
+├── best.pt                     # Trained YOLO model for pothole detection
+├── potholes_video.mp4          # Sample input video
+├── auto_pothole_report.py      # Main end-to-end pipeline (detect + report + email)
+├── .env                        # Email credentials (not committed to Git)
+├── venv/                       # Python virtual environment (ignored)
+├── README.md
+└── ...                         # Other helper scripts / logs
+```
+
+---
+
+## Requirements
+
+- Python 3.10+
+- Windows (tested) with VS Code or any IDE
+- Gmail account with App Password enabled
+
+Python packages:
+
+```
+ultralytics
+opencv-python
+reportlab
+python-dotenv
+```
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/<your-username>/road-condition-monitoring.git
+cd road-condition-monitoring/R_C_M
+```
+
+### 2. Create and activate virtual environment (recommended)
+
+```
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```
+pip install ultralytics opencv-python reportlab python-dotenv
+```
+
+### 4. Add your YOLO model and sample video
+
+Place the following in the `R_C_M` folder:
+
+- `best.pt` – your trained YOLOv8/YOLOv11 pothole detector.
+- `potholes_video.mp4` – sample road inspection video.
+
+### 5. Create `.env` file for email
+
+Create a file named `.env` in `R_C_M` (same folder as `auto_pothole_report.py`):
+
+```
+SENDER_EMAIL=your_email@gmail.com
+GMAIL_APP_PASSWORD=xxxx xxxx xxxx xxxx
+```
+
+Use a Gmail **App Password**, not your normal password (from Google Account → Security → 2‑Step Verification → App passwords).
+
+### 6. Configure report details (optional)
+
+Open `auto_pothole_report.py` and adjust these variables near the top:
+
+```
+VIDEO_PATH = "potholes_video.mp4"
+MODEL_PATH = "best.pt"
+GUIDE_EMAIL = "road.authority@example.com"
+GUIDE_NAME = "Road Authority Officer"
+ROAD_NAME = "NH-44"
+AREA_NAME = "Bangalore-Chennai Highway Section"
+```
+
+---
+
+## How to Run (Single Command)
+
+From inside the activated virtual environment:
+
+```
+cd R_C_M
+python auto_pothole_report.py
+```
+
+The script will:
+
+1. Open a live window showing pothole detections on the video.
+2. Automatically de-duplicate detections and estimate materials per pothole.
+3. Generate `pothole_detection_report.pdf` in the same folder.
+4. Email the PDF report to `GUIDE_EMAIL` using the credentials from `.env`.
+
+---
+
+## Output Report
+
+The generated PDF contains:
+
+- Formal letter addressed to the specified road authority.
+- Short description of the inspected road segment.
+- Table of each pothole with:
+  - ID, length, width, detection accuracy
+  - Sand (kg), cement (kg), rocks (kg), coal tar (liters)
+  - Individual pothole repair budget
+- “Materials & Cost Summary” table with total quantities and costs.
+- Final total estimated budget for repairing all detected potholes.
+```
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/road-condition-monitoring" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>

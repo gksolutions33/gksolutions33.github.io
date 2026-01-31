@@ -174,11 +174,11 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/comprehensive-automated-doc-verification" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Comprehensive Automated Doc Verification</h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
@@ -209,7 +209,7 @@
             <span class="tech-badge">Python</span>
             
             
-            <span class="tech-badge">NumPy</span>
+            <span class="tech-badge">Flask</span>
             
             <span class="tech-badge">Python</span>
             
@@ -218,42 +218,78 @@
     
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        # CertiSecure - Secure Marksheet Generator & Validator
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+CertiSecure is a web application designed to generate tamper-proof marksheet PDFs and validate them using cryptographic hashing and strict content verification.
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+## Features
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+### 1. Secure Generation
+-   **Data Hashing**: Creates a SHA-256 hash of the student's text details (Name, Marks, etc.).
+-   **Image Hashing**: Normalizes the profile photo to JPEG and calculates its SHA-256 hash to prevent format-based verification errors.
+-   **QR Code Embedding**: Embeds a QR code containing the digital signature (hashes) of both the text and the image.
+-   **Visual Security**: Adds a visual border to the profile photo and embeds the specific JPEG stream that was hashed.
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+### 2. Strict Validation
+-   **Content Extraction**: Extracts raw text and images from the uploaded PDF.
+-   **Integrity Check**: Re-calculates hashes of the extracted content and compares them byte-for-byte with the data stored in the QR code.
+-   **Visual Tamper Detection**: Automatically fails validation if any PDF annotations or overlays (common in "fill and sign" editors) are detected.
+-   **Feedback**: Provides detailed pass/fail reports for text, photo, and visual layer integrity.
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+## Prerequisites
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+-   Python 3.8+
+-   Pip (Python Package Manager)
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+## Installation Guide
+
+1.  **Clone/Download** this project folder.
+2.  **Open a terminal** inside the project folder.
+3.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Step-by-Step Usage
+
+### Starting the Server
+Run the application using Python:
+```bash
+python app.py
+```
+The server will start at `http://127.0.0.1:5000`.
+
+### Generating a Marksheet
+1.  Open your browser and go to `http://127.0.0.1:5000`.
+2.  Fill in the form (Name, Father's Name, Institution, Roll No, Marks).
+3.  Upload a Profile Photo (JPG/PNG).
+4.  Click **Generate Secured PDF**.
+5.  The secured PDF will run and download automatically.
+
+### Validating a Marksheet
+1.  Go to the **Validate Document** section on the home page.
+2.  Upload a Marksheet PDF (either the original or a generic file).
+3.  Click **Run Verification**.
+4.  **Check the Results**:
+    -   **Authentic**: All hashes match, and no tampering detected.
+    -   **Invalid / Tampered**: The text or photo has been changed, or someone added visual annotations.
+
+## Technical Notes
+-   **Image Handling**: To ensure consistency, all uploaded photos are converted to JPEG quality 95 before hashing. This ensures the hash stored in the QR always matches the image embedded in the PDF.
+-   **Libraries Used**: 
+    -   `Flask` (Web Framework)
+    -   `ReportLab` (PDF Generation)
+    -   `PyMuPDF (fitz)` (PDF Reading/Extraction)
+    -   `OpenCV` (QR Code Detection)
+    -   `Pillow` (Image Processing)
+
+Automated Document Verification System for Official Documentation - https://1drv.ms/w/c/87C32D068B13D74E/IQC60j2_IM9eRa21Bq-kq1lLAemn0T-eCkr7fRg1lZ1jG6E?e=SjqEtO
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/comprehensive-automated-doc-verification" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>

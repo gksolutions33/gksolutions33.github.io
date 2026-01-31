@@ -1,0 +1,126 @@
+---
+layout: project
+project_title: "Skin Disease Detection And Classification Using Cnn"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/Skin-disease-detection-and-classification-using-cnn"
+difficulty: "beginner"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- Python
+- CSS
+- JavaScript
+- HTML
+technologies:
+- JavaScript
+- Python
+- Keras
+- Flask
+- TensorFlow
+- HTML
+- CSS
+- NumPy
+---
+
+<<<<<<< HEAD
+# Skin Disease Prediction AI
+
+This project is a Deep Learning application designed to classify various skin diseases from images. It uses a Convolutional Neural Network (CNN) built with **TensorFlow/Keras** and provides a user-friendly **Flask** web interface for real-time predictions.
+
+## 🚀 Features
+- **High-Accuracy Classification**: Trained on a diverse dataset of skin conditions.
+- **Web Interface**: Modern, responsive web app for easy image upload and analysis.
+- **Real-Time Inference**: Fast predictions with confidence scores.
+- **CLI Support**: Command-line scripts for batch processing or quick checks.
+
+## 🛠️ Prerequisites
+Ensure you have **Python 3.8+** installed. You will need the following libraries:
+
+- TensorFlow
+- Flask
+- NumPy
+- Matplotlib (for training visualization)
+
+## 📦 Installation
+
+1.  **Clone or Download** this repository to your local machine.
+2.  **Install Dependencies**:
+    Open your terminal or command prompt in the project directory and run:
+    ```bash
+    pip install tensorflow flask numpy matplotlib
+    ```
+
+## 📂 Project Structure
+
+```
+skin project/
+├── data set/               # Dataset directory (Test/Train split)
+├── static/                 # CSS and JavaScript for the web app
+│   ├── style.css
+│   └── script.js
+├── templates/              # HTML templates
+│   └── index.html
+├── app.py                  # Flask Web Application entry point
+├── train_model.py          # Script to train the CNN model
+├── evaluate_model.py       # Script to evaluate model performance
+├── predict.py              # CLI script for single image prediction
+├── skin_disease_model.keras # Saved trained model file
+└── README.md               # Project documentation
+```
+
+## 🖥️ usage
+
+### 1. Running the Web Application (Recommended)
+This starts the local web server where you can upload images via a graphical interface.
+
+1.  Run the Flask app:
+    ```bash
+    python app.py
+    ```
+2.  Wait for the message: `Model loaded successfully`.
+3.  Open your web browser and go to:
+    ```
+    http://127.0.0.1:5000
+    ```
+4.  Drag and drop an image or click to upload, then click **"Analyze Image"**.
+
+### 2. Training the Model
+If you want to retrain the model with new data:
+
+1.  Ensure your data is organized in `data set/train` and `data set/test` with subfolders for each class.
+2.  Run:
+    ```bash
+    python train_model.py
+    ```
+    This will save the new model as `skin_disease_model.keras`.
+
+### 3. Evaluating the Model
+To check the accuracy and loss on the test dataset:
+
+```bash
+python evaluate_model.py
+```
+
+### 4. Command Line Prediction
+To predict a single image without starting the web server:
+
+1.  Open `predict.py` and modify the image path at the bottom.
+2.  Run:
+    ```bash
+    python predict.py
+    ```
+
+## ⚠️ Note
+- The model expects images to be resized to **180x180** pixels (handled automatically by the scripts).
+- Ensure the `data set` folder exists if you plan to retrain or if the app needs to load class names dynamically.
+
+## 🤝 Contributing
+Feel free to fork this project and submit pull requests for improvements!
+=======
+# Skin-disease-detection-and-classification-using-cnn
+
+
+https://github.com/varshitha-g/Skin-Disease-Prediction
+>>>>>>> b967eb6c0c349a02ab1be9e38ecf9c4c469235c6
+update README

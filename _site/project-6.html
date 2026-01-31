@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="No description available" />
+  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>GK SOLUTIONS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+
+<body>
+  <header>
+    <div class="site-title">GK SOLUTIONS</div>
+    <div class="site-sub">AI • IoT • Arduino • Projects & Tutorials</div>
+    <div class="site-sub">DEFEAT THE FEAR</div>
+  </header>
+
+  <nav>
+    <a href="/market.html">Market Updates</a>
+    <a href="/index.html">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/tutorials.html">Tutorials</a>
+    <a href="/Papers.html">Papers</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+</nav>
+
+  <main>
+    <style>
+    .project-detail {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .project-hero {
+        background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 45, 149, 0.05));
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+    }
+
+    .project-hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1rem;
+    }
+
+    .project-hero .meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.95rem;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tech-section {
+        margin: 2rem 0;
+    }
+
+    .tech-grid {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .tech-badge {
+        padding: 0.5rem 1rem;
+        background: rgba(0, 245, 255, 0.1);
+        border: 2px solid rgba(0, 245, 255, 0.2);
+        border-radius: 8px;
+        font-weight: 600;
+        color: var(--accent-cyan);
+    }
+
+    .readme-content {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        line-height: 1.8;
+    }
+
+    .readme-content h1,
+    .readme-content h2,
+    .readme-content h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .readme-content h2 {
+        border-bottom: 2px solid rgba(0, 245, 255, 0.2);
+        padding-bottom: 0.5rem;
+    }
+
+    .readme-content ul,
+    .readme-content ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .readme-content li {
+        margin-bottom: 0.5rem;
+    }
+
+    .readme-content code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9em;
+    }
+
+    .readme-content pre {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1rem 0;
+    }
+
+    .readme-content pre code {
+        background: none;
+        padding: 0;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    .action-btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .btn-github {
+        background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+        color: #001;
+    }
+
+    .btn-github:hover {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .btn-back {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        color: var(--muted);
+    }
+
+    .btn-back:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+</style>
+
+<div class="project-detail">
+    <div class="action-buttons">
+        <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
+        <a href="https://github.com/Universal-college-projects/grama-soil-express-app" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+    </div>
+
+    <div class="project-hero">
+        <h1>Grama Soil Express App</h1>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
+
+        <div class="meta">
+            <div class="meta-item">
+                <span>📊</span>
+                <span>Difficulty: <strong>Beginner</strong></span>
+            </div>
+            <div class="meta-item">
+                <span>⏱️</span>
+                <span>Varies</span>
+            </div>
+            <div class="meta-item">
+                <span>⭐</span>
+                <span>0 stars</span>
+            </div>
+            <div class="meta-item">
+                <span>🍴</span>
+                <span>0 forks</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="tech-section">
+        <h2>🛠️ Technologies Used</h2>
+        <div class="tech-grid">
+            
+            <span class="tech-badge">Java</span>
+            
+            
+            <span class="tech-badge">Java</span>
+            
+            <span class="tech-badge">Express</span>
+            
+        </div>
+    </div>
+    
+
+    <div class="readme-content">
+        🌾 Grama Soil Express
+---------------------
+
+Grama Soil Express is an Android-based agriculture support application developed to help farmers in rural areas by providing soil-related information, crop details, and centralized administration through a simple mobile platform.
+
+1️⃣ Abstract
+------------
+
+Grama Soil Express is an Android-based agricultural support system designed to assist farmers in rural and semi-rural areas by providing easy access to soil health information and agricultural guidance. Traditional soil testing methods are often expensive, time-consuming, and inaccessible to village farmers, leading to improper fertilizer usage and reduced crop productivity.
+
+This project aims to bridge the gap between agriculture and digital technology by offering a user-friendly mobile application. The system consists of two main modules: User (Farmer) and Admin. Farmers can log in, manage their profile, and access soil and crop-related information, while administrators manage village lists and crop master data. The application is developed using Android Studio (Java & XML) with Firebase Authentication and Firebase Realtime Database, ensuring secure access and real-time data management.
+
+2️⃣ Working of the Project
+-------------------------
+
+The working of Grama Soil Express follows a simple and structured flow:
+
+User or Admin logs in using Firebase Authentication.
+
+After successful login, the system checks the user role from Firebase Realtime Database.
+
+Based on the role:
+
+User (Farmer) is redirected to the Home screen.
+
+Admin is redirected to the Admin Dashboard.
+
+Farmers can view their profile, land details, and agricultural information.
+
+Admin can manage village names and crop lists centrally.
+
+All data updates are reflected in real time using Firebase.
+
+3️⃣ UML Diagrams (9 Diagrams)
+----------------------------
+
+The following UML diagrams are designed for the project:
+
+Use Case Diagram
+----------------
+<img width="1600" height="657" alt="image" src="https://github.com/user-attachments/assets/cfde8079-20c2-482c-8ca9-f83b3498e639" />
+
+
+Class Diagram
+-------------
+<img width="1026" height="1600" alt="image" src="https://github.com/user-attachments/assets/303bb421-92a5-441b-8d8f-307640f9ac7e" />
+
+
+Sequence Diagram
+----------------
+<img width="1600" height="689" alt="image" src="https://github.com/user-attachments/assets/762750ad-a6cb-416d-8bd4-8768406ceae6" />
+
+
+
+Activity Diagram
+----------------
+<img width="633" height="1600" alt="image" src="https://github.com/user-attachments/assets/51e743a9-fce4-41c6-9e70-011793da07fb" />
+
+
+State Diagram
+------------
+<img width="1561" height="1600" alt="image" src="https://github.com/user-attachments/assets/d2bf01b7-e18c-4048-b891-9d259cb2b9ba" />
+
+
+
+Component Diagram
+-----------------
+<img width="1600" height="1208" alt="image" src="https://github.com/user-attachments/assets/7dc0a3eb-5e17-47de-8bba-50dac8a01dd9" />
+
+
+
+Deployment Diagram
+------------------
+<img width="1600" height="1084" alt="image" src="https://github.com/user-attachments/assets/f155e032-9232-459e-b51a-7b62773ef014" />
+
+
+
+Data Flow Diagram (DFD – Level 0)
+--------------------------------
+<img width="1600" height="271" alt="image" src="https://github.com/user-attachments/assets/98b27f85-1ca4-4f6e-8442-9aeb437efe10" />
+
+
+
+Data Flow Diagram (DFD – Level 1)
+---------------------------------
+<img width="1600" height="748" alt="image" src="https://github.com/user-attachments/assets/3600fdfa-4cdb-4d96-8be6-83bd1e56f84c" />
+
+
+
+These diagrams explain the system structure, data flow, and interaction between users, admin, and the system.
+
+4️⃣ Results Images
+-----------------
+The results section includes screenshots of the implemented application such as:
+
+Login Screen
+------------
+<img width="540" height="1204" alt="image" src="https://github.com/user-attachments/assets/575042c2-e632-4cda-8523-08ea3a64df6a" />
+
+User Home Screen
+----------------
+<img width="540" height="1204" alt="image" src="https://github.com/user-attachments/assets/9f6018ef-4421-46ac-bec2-db93facfe1fd" />
+
+User Profile Screen
+-------------------
+<img width="540" height="1204" alt="image" src="https://github.com/user-attachments/assets/b242b14c-cd0d-4e6a-a8a8-0b80a5070175" />
+
+Settings Screen
+---------------
+<img width="540" height="1204" alt="image" src="https://github.com/user-attachments/assets/b054951a-aad5-4e0a-93ac-fa3534c9ff00" />
+
+Admin Dashboard
+---------------
+<img width="540" height="1204" alt="image" src="https://github.com/user-attachments/assets/508d66bd-0215-49b1-a413-1ccdbac91ed3" />
+
+Village Management Screen
+------------------------
+<img width="540" height="1204" alt="image" src="https://github.com/user-attachments/assets/4d643b99-a3e0-4be8-bcce-fd3b0763aedb" />
+
+Crop Management Screen
+----------------------
+<img width="540" height="1204" alt="image" src="https://github.com/user-attachments/assets/918638b8-c756-47cc-8db8-7cd35698dc1d" />
+
+These images demonstrate the successful implementation of role-based login and admin-controlled data management.
+
+5️⃣ Training Images
+------------------
+
+Training images include:
+
+UI design screenshots
+---------------------
+<img width="442" height="113" alt="image" src="https://github.com/user-attachments/assets/3bbcd82b-7a51-463c-ab0f-34ad69e7d2e3" />
+
+
+Firebase Authentication setup
+----------------------------
+<img width="1420" height="734" alt="Screenshot 2025-12-20 095149" src="https://github.com/user-attachments/assets/06967a31-a390-4dd9-a59a-f1a5e25c1006" />
+
+
+Firebase Realtime Database structure
+------------------------------------
+<img width="1914" height="838" alt="Screenshot 2025-12-18 120757" src="https://github.com/user-attachments/assets/2de8b107-6499-4188-8522-6491192dcbd8" />
+<img width="1434" height="673" alt="Screenshot 2025-12-20 095302" src="https://github.com/user-attachments/assets/55001451-f7c2-4253-b9a9-018f07ff9575" />
+
+Admin data entry screens
+-----------------------
+<img width="1032" height="445" alt="Screenshot 2025-12-17 025558" src="https://github.com/user-attachments/assets/e7269207-9452-4a3d-8969-e6cf7a7fd6cc" />
+
+
+These images show how the application was configured and tested during development.
+
+6️⃣ Software Tools Used
+----------------------
+
+The following software tools were used in the development of this project:
+
+Android Studio – Application development
+
+Java – Application logic
+
+XML – User Interface design
+
+Firebase Console – Backend services
+
+Git & GitHub – Version control
+
+Windows OS – Development environment
+
+7️⃣ Code Libraries Used
+----------------------
+
+The following libraries and services are used in the project:
+
+Firebase Authentication
+
+Firebase Realtime Database
+
+AndroidX Libraries
+
+Material Design Components
+
+ConstraintLayout
+
+RecyclerView
+
+📌 Conclusion
+-------------
+
+Grama Soil Express demonstrates how mobile and cloud technologies can be effectively used to support agriculture and rural development. The project provides a scalable foundation that can be extended with soil testing hardware, AI-based recommendations, and multilingual support in the future.
+
+    </div>
+
+    <div class="action-buttons">
+        <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
+        <a href="https://github.com/Universal-college-projects/grama-soil-express-app" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+    </div>
+</div>
+  </main>
+
+  <footer>
+    &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

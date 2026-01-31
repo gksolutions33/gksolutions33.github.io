@@ -1,224 +1,47 @@
 ---
 layout: project
-project_title: "AI-Based HR Screening Chatbot"
-description: "An intelligent cloud-based system that automates the initial stages of recruitment using ATS filtering,
-assessments, and composite AI scoring."
-repo_url: "https://github.com/Universal-college-projects/Ai-based-hr-screening-chatbot"
+project_title: "Driver Dowsiness"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/driver-dowsiness"
 difficulty: "intermediate"
 estimated_time: "Varies"
 stars: 0
-forks: 1
+forks: 0
 languages:
 - Python
-- HTML
-- CSS
-- JavaScript
 technologies:
-- Streamlit
-- Snowflake
-- Azure
-- Power BI
-- SendGrid
+- NumPy
+- Python
 ---
 
-# Resume Screening for HR Round
-
-The HR Interview Screening Chatbot is a cloud-based intelligent system that automates the initial stages of recruitment.
-It simulates a real-world hiring workflow used by companies:
-
-**"Resume → Application → ATS Filter → Mail"**
----
-**"Mail→ Assessment Link → Assessment Scoring → HR Shortlist"**
----
-
-The system uses **Streamlit + Python** for the applicant interface, **HTML, CSS, and vanilla JS** for assessment
-interface, **Snowflake** as the data warehouse, **Azure** for deployment and email automation, and **Power BI** for
-recruiter dashboards.
-
-The goal of the project is to reduce recruiter workload and shortlist the most relevant candidates using a transparent
-and explainable AI scoring system.
-
----
-
-## Key Features
-
-### Admin Page
-Job description is available here. Assessment questions depend on JD. Keywords are also in JD.
-
-### 1. Candidate Application Portal (Streamlit)
-- Candidate fills an application form
-- Uploads PDF resume
-- Stores submission in Snowflake
-- Shows message: "Assessment link will be emailed if your resume passes ATS filter"
-
-### 2. ATS Resume Filtering (Python + NLP)
-- Keywords and skill extraction
-- Semantic similarity scoring
-- Computes ATS Score (0–100)
-- If ATS score ≥ threshold, an assessment link is emailed
-
-### 3. Assessment Workflow
-- Candidate receives secure link via email
-- Takes the MCQ/coding assessment
-- System auto-grades and stores the result
-- Assessment score is compared with the threshold
-
-### 4. Final Composite Scoring
-For candidates who pass both gates, the system evaluates:
-- Resume Score
-- Application Form Answer Score
-- Assessment Score
-
-All three are combined to calculate a composite AI score.
-
-### 5. Recruiter Dashboard (Power BI)
-- Displays top candidates
-- Filters by ATS, Assessment, and Final Score
-- View resume information and summaries
-- Provides transparent score breakdowns
-
----
-
-## Why This Project Is Useful
-
-Recruiters handle thousands of applications. Manually checking resumes, distributing assessments, scoring results, and
-shortlisting candidates is slow.
-
-This system automates:
-- Resume screening
-- Assessment distribution
-- Scoring
-- Shortlisting
-- Candidate ranking
-
-It improves fairness, consistency, and reduces workload by 70–80%.
-
----
-
-## Process Flow
-
-### 1. Candidate Submission
-Candidates visit the Streamlit app and:
-- Fill personal details
-- Upload resume (PDF only)
-- Answer basic application questions
-
-Data is stored in Snowflake.
-
-### 2. ATS Scoring
-ATS score is calculated using:
-- Extracted skills
-- Keywords
-- Role requirements
-- Semantic similarity
-
-If ATS Score ≥ ATS_MIN, the candidate moves forward.
-If not, the application ends.
-
-### 3. Assessment Link Generation
-If ATS passes:
-- The system generates a secure assessment token
-- Sends the assessment link to the candidate's email
-
-### 4. Candidate Completes Assessment
-Candidate takes the assessment, which may include:
-- MCQs
-- Optional coding tasks
-
-### 5. Assessment Gate
-If Assessment Score ≥ ASSESSMENT_MIN, the candidate proceeds to HR evaluation.
-Otherwise, the candidate is rejected.
-
-### 6. Composite AI Scoring
-For candidates who pass both gates:
-
-```
-final_score = 0.4 * resume_score + 0.3 * application_score + 0.3 * assessment_score
-```
-
-A detailed score breakdown is stored for transparency.
-
-### 7. Recruiter Shortlist
-The Power BI dashboard shows:
-- Final Score
-- ATS Score
-- Assessment Score
-- Resume keywords
-- Application answers
-
-Recruiters review only the shortlisted profiles.
-
----
-
-## System Architecture
-
-```
-+-----------------------------+
-| Streamlit UI |
-| (Resume + Application Form) |
-+-------------+---------------+
-|
-v
-+-----------------------------+
-| Python Backend |
-| ATS Scoring + NLP Parsing |
-+-------------+---------------+
-|
-v
-+-----------------------------+
-| Snowflake |
-| (Candidate & Score Data) |
-+-------------+---------------+
-|
-v
-+-----------------------------+
-| Assessment Service |
-| HTML & CSS |
-| (MCQ/Coding Auto-Grading) |
-+-------------+---------------+
-|
-v
-+-----------------------------+
-| Composite Scoring Engine |
-+-------------+---------------+
-|
-v
-+-----------------------------+
-| Power BI Dashboard |
-| (HR Shortlist View) |
-+-----------------------------+
-```
-
----
-
-## Tech Stack
-
-- **Frontend**: Streamlit, HTML, CSS
-- **Backend**: Python (NLP for ATS scoring)
-- **Database / DW**: Snowflake
-- **Visualization**: Power BI
-- **Software Tool Used**: SendGrid
-
----
-
-## Database Details
-
-**Fields stored**:
-Name, email, gender, phone number, city, state, pincode, country, address, applied role, resume URL, ATS score, ATS
-pass, assessment token, assessment score, final score, keyword score, shortlisted, shortlisted score, job description,
-skills, work experience, languages known, highest level of education, name of university, field of study, year of
-graduation
-
----
-
-## Getting Started
-
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Configure Snowflake credentials
-4. Set up SendGrid API key
-5. Run the Streamlit app: `streamlit run app.py`
-6. Configure Power BI dashboard connection
-
-For detailed setup instructions, visit the [GitHub
-repository](https://github.com/Universal-college-projects/Ai-based-hr-screening-chatbot).
+# Driver Drowsiness Detection System
+
+Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+
+## Project Logic
+This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+
+## Eye Aspect Ratio (EAR)
+EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+
+## Working of the Project
+- Webcam captures live video
+- Face and facial landmarks are detected
+- EAR is computed in real time
+- Time-based logic detects sleeping and drowsiness
+- Audio alerts are triggered on state change
+- Driver state is logged with timestamps
+- Dashboard UI displays status and metrics
+
+## Technologies Used
+Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+
+## How to Run
+1. Install dependencies  
+   `pip install opencv-python dlib imutils numpy playsound`
+2. Run  
+   `python main.py`
+3. Press Q or ESC to exit
+
+## Conclusion
+This system helps prevent accidents by detecting driver fatigue in real time using computer vision.

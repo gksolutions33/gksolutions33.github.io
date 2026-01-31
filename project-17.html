@@ -1,0 +1,119 @@
+---
+layout: project
+project_title: "Go Grocery Serve App"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/go-grocery-serve-app"
+difficulty: "intermediate"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages: []
+technologies: []
+---
+
+# 🛒 Go Grocery – Android Grocery Delivery Application
+
+## 1. Abstract
+
+Go Grocery is an Android-based grocery delivery application designed to simplify the process of purchasing daily grocery items. The app allows users to browse products by category, add items to a cart, and place orders dynamically. Firebase is used as a backend service to manage user authentication, real-time database operations, and cloud storage. The system reduces manual shopping effort and provides a scalable, secure, and efficient solution suitable for real-world and academic projects.
+
+---
+
+## 2. Working of the System
+
+The Go Grocery application follows a client–server architecture using Firebase as the backend:
+
+1. User registers or logs in using Firebase Authentication.
+2. After login, the user is redirected to the Home Screen.
+3. Products are fetched dynamically from Firebase Firestore.
+4. Users can browse categories such as Vegetables, Fruits, Dairy, Snacks, and Drinks.
+5. Selected products are added to the cart and stored in Firestore.
+6. During checkout, order details are saved in the Orders collection.
+7. Admin can manage products and update order status through Firebase Console.
+8. Users can view order history and profile details.
+
+---
+
+## 3. UML Diagrams (9 Diagrams)
+
+1. **Use Case Diagram** – Shows interactions between User, Admin, and the system.
+2. **Class Diagram** – Represents classes such as User, Product, Cart, Order, and Admin.
+3. **Sequence Diagram (Login)** – Shows authentication flow.
+4. **Sequence Diagram (Order Placement)** – Describes cart-to-order process.
+5. **Activity Diagram (User Flow)** – Overall navigation flow of the app.
+6. **Activity Diagram (Admin Flow)** – Product and order management flow.
+7. **Data Flow Diagram (DFD – Level 0)** – High-level system overview.
+8. **Data Flow Diagram (DFD – Level 1)** – Detailed data movement between modules.
+9. **Deployment Diagram** – Shows Android app, Firebase services, and users.
+
+> 📌 UML diagrams are available in the `uml_diagrams/` folder.
+
+---
+
+## 4. Results (Output Screens)
+
+The application successfully performs all intended operations. Below are the result screens:
+
+* Splash Screen
+* Login Screen
+* Register Screen
+* Home Screen
+* Category Product Screen
+* Cart Screen
+* Checkout Screen
+* Order History Screen
+* Profile Screen
+
+> 📸 Screenshots are available in the `results_images/` folder.
+
+---
+
+## 5. Training Images
+
+Training images include UI reference designs and sample product images used during development:
+
+* App UI wireframes
+* Product images (Vegetables, Fruits, Dairy, Snacks)
+* Firebase database structure screenshots
+
+> 🖼 Images are stored in the `training_images/` folder.
+
+---
+
+## 6. Software Tools Used
+
+* Android Studio
+* Firebase Console
+* Git & GitHub
+* Google Chrome (Testing)
+* Figma (UI Design – Optional)
+
+---
+
+## 7. Code Libraries Used
+
+### Android Libraries
+
+* androidx.appcompat
+* androidx.recyclerview
+* androidx.constraintlayout
+* com.google.android.material
+
+### Firebase Libraries
+
+* Firebase Authentication
+* Firebase Firestore
+* Firebase Storage
+* Firebase Analytics (optional)
+
+### Other Libraries
+
+* Glide (for image loading)
+* Gson (JSON parsing – optional)
+
+---
+
+## 📌 Conclusion
+
+Go Grocery provides a complete end-to-end grocery delivery solution using Android and Firebase. The project demonstrates real-time database handling, authentication, and dynamic UI updates, making it suitable for academic submission and practical learning.
+

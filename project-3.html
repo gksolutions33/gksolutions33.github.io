@@ -1,0 +1,92 @@
+---
+layout: project
+project_title: "Cyber Threats"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/cyber-threats"
+difficulty: "intermediate"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- Python
+- CSS
+- JavaScript
+- HTML
+technologies:
+- CSS
+- JavaScript
+- Python
+- HTML
+---
+
+<<<<<<< HEAD
+# cyber-threats
+https://github.com/AyyubAnsari786/Cyber-Threat-Detection-Based-On-Artificial-Neural-Networks-Using-Event-Profiles
+https://github.com/vakalatha/CYBER_THREAT_DETECTION_BASED_ON_ARTIFICIAL_NEURAL_NETWORKS_USING_EVENT_PROFILES_MACHINE_LEARNING
+=======
+# AI-SIEM Cyber Threat Detection System
+
+## 🎯 Aim of the Project
+The primary goal of this project is to automate the detection of cyber threats (such as network intrusions and malicious attacks) using **Artificial Intelligence**.
+
+Traditional security systems often flood analysts with false alarms. This project uses **Deep Learning** to analyze patterns in network logs, helping to identify real threats more accurately and efficiently.
+
+It implements the concepts from the research paper *"Cyber Threat Detection Based on Artificial Neural Networks Using Event Profiles"*, utilizing three distinct AI models:
+- **FCNN**: For general pattern recognition.
+- **CNN**: For detecting local anomalies in event data.
+- **LSTM**: For identifying malicious sequences over time.
+
+---
+
+## 🚀 How to Use It
+
+### Prerequisites
+Ensure you have **Python 3.9+** installed on your system.
+
+### 1. Open in VS Code
+1. Open Visual Studio Code.
+2. Go to **File > Open Folder** and select the `CS project` folder.
+3. Open a **Terminal** inside VS Code (`Ctrl + ` or `Terminal > New Terminal`).
+
+### 2. Install Dependencies (First Time Only)
+In the VS Code terminal, run:
+```powershell
+pip install -r requirements.txt
+```
+
+### 3. Train the AI Models (Important!)
+Before the system can detect anything, it needs to "learn". Run this command to generate data and train the brains of the system:
+```powershell
+python backend/src/train.py
+```
+*Wait until you see "Training complete" and "Models saved". This creates the `.h5` model files in `backend/data`.*
+### 4. Start the Web Dashboard
+Run the main application server:
+```powershell
+python backend/src/app.py
+```
+You should see a message: `Running on http://127.0.0.1:5000`.
+
+### 5. Detect Threats
+1. Open your web browser (Chrome/Edge).
+2. Go to: **[http://127.0.0.1:5000](http://127.0.0.1:5000)**
+3. **Upload Log File**: Drag and drop the `valid_test.csv` file (located in your project folder) into the upload box.
+4. Click **Run AI Analysis**.
+5. The AI will scan the file and display which IP addresses are "THREATS" and which are "NORMAL".
+
+---
+
+## 📂 Project Structure
+- **`backend/src/train.py`**: The "Teacher". Generates synthetic data and trains the AI models.
+- **`backend/src/app.py`**: The "Server". Connects the web dashboard to the Python AI.
+- **`backend/src/preprocessing.py`**: The "Translator". Converts raw logs into math that the AI understands (TF-IDF, Sliding Windows).
+- **`backend/src/models.py`**: The "Brain". Contains the code for the FCNN, CNN, and LSTM neural networks.
+- **`frontend/`**: Contains the beautiful web interface (`index.html`, `style.css`, `script.js`).
+- **`valid_test.csv`**: A sample file provided for you to test the system immediately.
+
+---
+
+## ❓ Troubleshooting
+- **"Models not found"**: You likely forgot to run `python backend/src/train.py` first.
+- **"JSON Error"**: Make sure you are uploading a valid CSV file (like `valid_test.csv`) with the correct columns: `timestamp`, `source_ip`, `event_id`.
+>>>>>>> a16637f (FIRST)

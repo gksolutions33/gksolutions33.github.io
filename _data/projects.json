@@ -5,6 +5,7 @@
   "projects": [
     {
       "name": "driver-dowsiness",
+      "department": "AI",
       "title": "Driver Dowsiness",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/driver-dowsiness",
@@ -32,6 +33,7 @@
     },
     {
       "name": "Image-and-text-plagiarism-detection",
+      "department": "AI",
       "title": "Image And Text Plagiarism Detection",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection",
@@ -68,6 +70,7 @@
     },
     {
       "name": "cyber-threats",
+      "department": "AI",
       "title": "Cyber Threats",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/cyber-threats",
@@ -97,6 +100,7 @@
     },
     {
       "name": "solar-panel-detection-clasification",
+      "department": "AI",
       "title": "Solar Panel Detection Clasification",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/solar-panel-detection-clasification",
@@ -128,6 +132,7 @@
     },
     {
       "name": "Automated-pest-disease-detection-for-agriculture",
+      "department": "AI",
       "title": "Automated Pest Disease Detection For Agriculture",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Automated-pest-disease-detection-for-agriculture",
@@ -157,6 +162,7 @@
     },
     {
       "name": "grama-soil-express-app",
+      "department": "CSE",
       "title": "Grama Soil Express App",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/grama-soil-express-app",
@@ -181,6 +187,7 @@
     },
     {
       "name": "real-time-learning-assistant",
+      "department": "CSE",
       "title": "Real Time Learning Assistant",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/real-time-learning-assistant",
@@ -208,6 +215,7 @@
     },
     {
       "name": "comprehensive-automated-doc-verification",
+      "department": "CSE",
       "title": "Comprehensive Automated Doc Verification",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/comprehensive-automated-doc-verification",
@@ -236,6 +244,7 @@
     },
     {
       "name": "Deep-Learning-Techniques-for-Diabetic-Retinopathy-classification-",
+      "department": "AI",
       "title": "Deep Learning Techniques For Diabetic Retinopathy Classification ",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Deep-Learning-Techniques-for-Diabetic-Retinopathy-classification-",
@@ -261,6 +270,7 @@
     },
     {
       "name": "Audio-data-preparation-and-argument-using-tensorflow-",
+      "department": "AI",
       "title": "Audio Data Preparation And Argument Using Tensorflow ",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Audio-data-preparation-and-argument-using-tensorflow-",
@@ -287,6 +297,7 @@
     },
     {
       "name": "patient-health-monitoring",
+      "department": "ECE",
       "title": "Patient Health Monitoring",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/patient-health-monitoring",
@@ -313,6 +324,7 @@
     },
     {
       "name": "smart-parking-",
+      "department": "ECE",
       "title": "Smart Parking ",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/smart-parking-",
@@ -337,6 +349,7 @@
     },
     {
       "name": "Rag-knowledge-chat-boot",
+      "department": "AI",
       "title": "Rag Knowledge Chat Boot",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Rag-knowledge-chat-boot",
@@ -362,6 +375,7 @@
     },
     {
       "name": "Ai-based-hr-screening-chatbot",
+      "department": "AI",
       "title": "Ai Based Hr Screening Chatbot",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Ai-based-hr-screening-chatbot",
@@ -381,6 +395,7 @@
     },
     {
       "name": "Heart-disease-detection-naive-bayes-",
+      "department": "AI",
       "title": "Heart Disease Detection Naive Bayes ",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Heart-disease-detection-naive-bayes-",
@@ -410,6 +425,7 @@
     },
     {
       "name": "Automatic-traffic-signal-control-using-AI",
+      "department": "AI",
       "title": "Automatic Traffic Signal Control Using Ai",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Automatic-traffic-signal-control-using-AI",
@@ -433,6 +449,7 @@
     },
     {
       "name": "go-grocery-serve-app",
+      "department": "CSE",
       "title": "Go Grocery Serve App",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/go-grocery-serve-app",
@@ -452,6 +469,7 @@
     },
     {
       "name": "Skin-disease-detection-and-classification-using-cnn",
+      "department": "AI",
       "title": "Skin Disease Detection And Classification Using Cnn",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Skin-disease-detection-and-classification-using-cnn",
@@ -485,6 +503,7 @@
     },
     {
       "name": "autonomous-drone",
+      "department": "Robotics",
       "title": "Autonomous Drone",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/autonomous-drone",
@@ -504,6 +523,7 @@
     },
     {
       "name": "road-condition-monitoring",
+      "department": "AI",
       "title": "Road Condition Monitoring",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/road-condition-monitoring",
@@ -532,6 +552,7 @@
     },
     {
       "name": "blockchain",
+      "department": "CSE",
       "title": "Blockchain",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/blockchain",
@@ -561,6 +582,7 @@
     },
     {
       "name": "Emotion-detection-from-speech-and-facial-expression-",
+      "department": "AI",
       "title": "Emotion Detection From Speech And Facial Expression ",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Emotion-detection-from-speech-and-facial-expression-",
@@ -587,6 +609,7 @@
     },
     {
       "name": "my-personal-chef",
+      "department": "CSE",
       "title": "My Personal Chef",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/my-personal-chef",
@@ -606,6 +629,7 @@
     },
     {
       "name": "vitamin-deficiency",
+      "department": "AI",
       "title": "Vitamin Deficiency",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/vitamin-deficiency",
@@ -627,6 +651,7 @@
     },
     {
       "name": "face-detcetion-and-security-alert",
+      "department": "AI",
       "title": "Face Detcetion And Security Alert",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/face-detcetion-and-security-alert",
@@ -651,6 +676,7 @@
     },
     {
       "name": "Multilingual-chatbot-rasa",
+      "department": "AI",
       "title": "Multilingual Chatbot Rasa",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Multilingual-chatbot-rasa",
@@ -670,6 +696,7 @@
     },
     {
       "name": "Breast-cancer-detection-using-cnn-",
+      "department": "AI",
       "title": "Breast Cancer Detection Using Cnn ",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Breast-cancer-detection-using-cnn-",
@@ -689,6 +716,7 @@
     },
     {
       "name": "Genetic-diseases-",
+      "department": "AI",
       "title": "Genetic Diseases ",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Genetic-diseases-",
@@ -708,6 +736,7 @@
     },
     {
       "name": "Fine-tuning-llm",
+      "department": "AI",
       "title": "Fine Tuning Llm",
       "description": "No description available",
       "repo_url": "https://github.com/Universal-college-projects/Fine-tuning-llm",

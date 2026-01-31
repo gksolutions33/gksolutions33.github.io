@@ -1,0 +1,93 @@
+---
+layout: project
+project_title: "Autonomous Drone"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/autonomous-drone"
+difficulty: "intermediate"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages: []
+technologies: []
+---
+
+The project “Autonomous Drone using DroneKit, MAVLink, MAVProxy, MAVGen with Machine Learning Simulation” aims to build a fully automatic drone system that can fly, navigate, detect obstacles, and make decisions without human control. The drone is developed and tested in a simulation environment using machine learning.
+
+The core idea is to use DroneKit to write Python programs for controlling the drone, MAVLink for communication, MAVGen to automatically generate MAVLink message libraries, and MAVProxy for monitoring and controlling the drone. Machine learning models help the drone recognize obstacles or objects from simulated camera input and respond intelligently. The entire system is safely tested using SITL, Gazebo, or AirSim simulation.
+
+Short Descriptions of Each Component
+1. DroneKit
+
+A Python library used to program the drone.
+
+Controls takeoff, landing, and autonomous missions.
+
+2. MAVLink
+
+A lightweight communication protocol.
+
+Connects the drone autopilot with ground stations and scripts.
+
+Transfers telemetry like GPS, altitude, speed, sensor data.
+
+3. MAVGen
+
+A code generator tool inside MAVLink.
+
+Automatically creates MAVLink message classes in languages like Python or C.
+
+Helps in customizing messages and building new drone functionalities.
+
+Ensures DroneKit and MAVProxy can understand the same message format.
+
+4. MAVProxy
+
+A Ground Control Station (GCS) software.
+
+Monitors the drone’s live data and allows command forwarding.
+
+Acts as a communication hub while testing autonomous missions.
+
+5. Machine Learning + Simulation
+
+Uses environments like SITL, Gazebo, or AirSim.
+
+Trains ML models for:
+
+Obstacle detection
+
+Object recognition
+
+Path adjustment
+
+The simulated drone uses these predictions to fly safely and intelligently.
+
+How the System Works (Simple Flow)
+
+Simulation Setup:
+A virtual drone is created using SITL or AirSim.
+
+Message Generation (MAVGen):
+MAVGen creates the necessary MAVLink message libraries.
+
+Communication (MAVLink + MAVProxy):
+MAVProxy connects DroneKit scripts with the simulated drone using MAVLink messages.
+
+Autonomous Control (DroneKit):
+Python scripts control:
+
+Arming
+
+Takeoff
+
+Waypoints
+
+Mission execution
+
+Landing
+
+Machine Learning Decision Making:
+The ML model processes camera images and helps the drone avoid obstacles or detect targets.
+
+Monitoring:
+MAVProxy shows real-time data for testing and debugging.

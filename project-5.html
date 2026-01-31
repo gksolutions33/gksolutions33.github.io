@@ -1,0 +1,112 @@
+---
+layout: project
+project_title: "Automated Pest Disease Detection For Agriculture"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/Automated-pest-disease-detection-for-agriculture"
+difficulty: "beginner"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- HTML
+- Python
+technologies:
+- Python
+- Keras
+- Flask
+- TensorFlow
+- HTML
+- NumPy
+---
+
+🌱 Automated Pest & Disease Detection for Agriculture
+------------------------------------------------------------------------------------------------------------------------------------------------------
+This project is a Machine Learning–based web application designed to automatically detect pests and plant diseases from crop images, helping farmers and agricultural experts take early preventive action and improve crop yield.
+
+The system uses a trained deep learning model (TensorFlow/Keras) to analyze uploaded plant images and predict the presence of pests or diseases through a simple Flask-based web interface.
+
+🚀 Project Overview
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Agriculture faces significant losses due to late identification of pests and plant diseases. This project addresses that challenge by providing an automated image-based detection system that:
+
+Accepts plant images from users
+
+Processes images using a trained CNN model
+
+Predicts pest or disease presence
+
+Displays results through a user-friendly web interface
+
+🛠️ Technologies Used
+---------------------------------------------------------------------------------------------------------------------------------------------
+Python
+
+Flask – Web framework
+
+TensorFlow / Keras – Deep learning model
+
+NumPy – Numerical computations
+
+Pillow (PIL) – Image processing
+
+HTML/CSS – Frontend interface
+-------------------------------------------------------------------------------------------------------------------------------------------
+📁 Project Structure
+project/
+│
+├── app.py                # Flask application (main server file)
+├── model.h5              # Trained deep learning model
+├── train_model.py        # Model training script
+├── data_setup.py         # Dataset preprocessing utilities
+├── requirements.txt      # Project dependencies
+├── README.md             # Project documentation
+├── RUN_GUIDE.md          # Instructions to run the project
+│
+├── dataset/              # Training and testing image dataset
+│
+├── templates/
+│   └── index.html        # Web interface (image upload & results)
+│
+├── static/               # Static files (CSS, images if any)
+└── Test/                 # Test samples
+
+⚙️ How It Works
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+User uploads a plant image through the web interface
+
+Image is preprocessed using Pillow and NumPy
+
+The trained TensorFlow model (model.h5) analyzes the image
+
+The system predicts whether the plant is healthy or affected
+
+Results are displayed on the web page
+
+🎯 Key Features
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Automated pest and disease detection
+
+Deep learning–based image classification
+
+Simple and interactive web interface
+
+Easy to extend with more crop categories
+
+Suitable for real-world agricultural use
+
+🌾 Future Enhancements
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Add more crop and disease classes
+
+Improve model accuracy with larger datasets
+
+Provide treatment and prevention suggestions
+
+Deploy on cloud platforms for real-time usage
+
+Mobile application Integration
+-------------------------------
+My Requriements ---------------------------------
+1. I require a camera option within the project for live detection of plant diseases.
+2. The current output is quite small; I necessitate a multi-window output.
+3. The output will be enhanced and presented in detail.

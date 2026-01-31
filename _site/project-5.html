@@ -174,17 +174,17 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Automated-pest-disease-detection-for-agriculture" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Automated Pest Disease Detection For Agriculture</h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
             <div class="meta-item">
                 <span>📊</span>
-                <span>Difficulty: <strong>Intermediate</strong></span>
+                <span>Difficulty: <strong>Beginner</strong></span>
             </div>
             <div class="meta-item">
                 <span>⏱️</span>
@@ -206,54 +206,125 @@
         <h2>🛠️ Technologies Used</h2>
         <div class="tech-grid">
             
+            <span class="tech-badge">HTML</span>
+            
             <span class="tech-badge">Python</span>
             
+            
+            <span class="tech-badge">Python</span>
+            
+            <span class="tech-badge">Keras</span>
+            
+            <span class="tech-badge">Flask</span>
+            
+            <span class="tech-badge">TensorFlow</span>
+            
+            <span class="tech-badge">HTML</span>
             
             <span class="tech-badge">NumPy</span>
-            
-            <span class="tech-badge">Python</span>
             
         </div>
     </div>
     
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        🌱 Automated Pest & Disease Detection for Agriculture
+------------------------------------------------------------------------------------------------------------------------------------------------------
+This project is a Machine Learning–based web application designed to automatically detect pests and plant diseases from crop images, helping farmers and agricultural experts take early preventive action and improve crop yield.
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+The system uses a trained deep learning model (TensorFlow/Keras) to analyze uploaded plant images and predict the presence of pests or diseases through a simple Flask-based web interface.
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+🚀 Project Overview
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Agriculture faces significant losses due to late identification of pests and plant diseases. This project addresses that challenge by providing an automated image-based detection system that:
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+Accepts plant images from users
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+Processes images using a trained CNN model
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+Predicts pest or disease presence
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+Displays results through a user-friendly web interface
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+🛠️ Technologies Used
+---------------------------------------------------------------------------------------------------------------------------------------------
+Python
+
+Flask – Web framework
+
+TensorFlow / Keras – Deep learning model
+
+NumPy – Numerical computations
+
+Pillow (PIL) – Image processing
+
+HTML/CSS – Frontend interface
+-------------------------------------------------------------------------------------------------------------------------------------------
+📁 Project Structure
+project/
+│
+├── app.py                # Flask application (main server file)
+├── model.h5              # Trained deep learning model
+├── train_model.py        # Model training script
+├── data_setup.py         # Dataset preprocessing utilities
+├── requirements.txt      # Project dependencies
+├── README.md             # Project documentation
+├── RUN_GUIDE.md          # Instructions to run the project
+│
+├── dataset/              # Training and testing image dataset
+│
+├── templates/
+│   └── index.html        # Web interface (image upload & results)
+│
+├── static/               # Static files (CSS, images if any)
+└── Test/                 # Test samples
+
+⚙️ How It Works
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+User uploads a plant image through the web interface
+
+Image is preprocessed using Pillow and NumPy
+
+The trained TensorFlow model (model.h5) analyzes the image
+
+The system predicts whether the plant is healthy or affected
+
+Results are displayed on the web page
+
+🎯 Key Features
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+Automated pest and disease detection
+
+Deep learning–based image classification
+
+Simple and interactive web interface
+
+Easy to extend with more crop categories
+
+Suitable for real-world agricultural use
+
+🌾 Future Enhancements
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Add more crop and disease classes
+
+Improve model accuracy with larger datasets
+
+Provide treatment and prevention suggestions
+
+Deploy on cloud platforms for real-time usage
+
+Mobile application Integration
+-------------------------------
+My Requriements ---------------------------------
+1. I require a camera option within the project for live detection of plant diseases.
+2. The current output is quite small; I necessitate a multi-window output.
+3. The output will be enhanced and presented in detail.
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/Automated-pest-disease-detection-for-agriculture" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>

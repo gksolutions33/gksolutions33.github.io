@@ -47,47 +47,17 @@ keywords: "AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutor
     <div class="projects-list" id="projects-list">
       <!-- Example project cards (each has data-dept attribute) -->
 
-      <div class="project-card" data-dept="CSE">
-        <div class="project-thumb">CSE — Web Scraper</div>
-        <div class="project-title">Web Scraper with BeautifulSoup</div>
-        <div class="project-meta">Python • Requests • BeautifulSoup</div>
+      {% for project in site.data.projects.projects %}
+      <div class="project-card" data-dept="{{ project.department }}">
+        <div class="project-thumb">{{ project.department }} — {{ project.title | truncatewords: 2, "" }}</div>
+        <div class="project-title">{{ project.title }}</div>
+        <div class="project-meta">{{ project.technologies | join: " • " }}</div>
         <div class="project-actions">
-          <a class="btn btn-outline" href="#">View</a>
-          <a class="btn btn-primary" href="#">Source</a>
+          <a class="btn btn-outline" href="project-{{ forloop.index }}.html">View</a>
+          <a class="btn btn-primary" href="{{ project.repo_url }}" target="_blank">Source</a>
         </div>
       </div>
-
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — YOLOv8</div>
-        <div class="project-title">Real-time Object Detection</div>
-        <div class="project-meta">Python • YOLOv8 • OpenCV</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="#">View</a>
-          <a class="btn btn-primary" href="#">Source</a>
-        </div>
-      </div>
-
-      <div class="project-card" data-dept="ECE">
-        <div class="project-thumb">ECE — IoT</div>
-        <div class="project-title">GPS + GSM Tracker (SIM808)</div>
-        <div class="project-meta">Arduino Nano • SIM808 • Li-ion</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="#">View</a>
-          <a class="btn btn-primary" href="#">Source</a>
-        </div>
-      </div>
-
-      <div class="project-card" data-dept="Robotics">
-        <div class="project-thumb">Robotics — Line Follower</div>
-        <div class="project-title">Autonomous Line Follower</div>
-        <div class="project-meta">STM32 • Sensors • PID</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="#">View</a>
-          <a class="btn btn-primary" href="#">Source</a>
-        </div>
-      </div>
-
-      <!-- You can duplicate these project-card blocks with the appropriate data-dept value -->
+      {% endfor %}
     </div>
   </div>
 </section>

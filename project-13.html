@@ -1,0 +1,58 @@
+---
+layout: project
+project_title: "Rag Knowledge Chat Boot"
+description: "No description available"
+repo_url: "https://github.com/Universal-college-projects/Rag-knowledge-chat-boot"
+difficulty: "intermediate"
+estimated_time: "Varies"
+stars: 0
+forks: 0
+languages:
+- Jupyter Notebook
+- Python
+technologies:
+- Python
+- Jupyter Notebook
+---
+
+# rag-qa-self
+RAG based application on question and answer about myself
+
+I wrote about this in this article: [How I Built a RAG-based AI Chatbot from My Personal Data](https://medium.com/keeping-up-with-ai/how-i-built-a-rag-based-ai-chatbot-from-my-personal-data-88eec0d3483c)
+
+**Overview**
+
+This AI-powered app, built with Streamlit, uses a Large Language Model (LLM) to answer questions based on PDF data about Ana. Key technologies include:
+
+- Langchain as the framework, 
+- GPT4All for embedding generation, 
+- Gemini 1.5 as the LLM, 
+- Streamlit for the user interface, and 
+- Chroma DB as the vector database.
+
+
+create the .pdf datasets
+
+before very vector db creation delete chroma folder 
+
+**Instructions**
+
+1. run pip install -r requirements.txt
+2. generate your own GEMINI API KEY from https://aistudio.google.com/ and put it in .env file as GEMINI_API_KEY = "YOUR_KEY"
+3. run `python create_db.py` in the terminal to create the vector database from the documents.
+4. run `streamlit run main.py` to launch streamlit UI in the browser
+
+#rag
+This project implements a Retrieval-Augmented Generation (RAG) chatbot designed to provide accurate, context-aware responses by combining Large Language Models (LLMs) with a domain-specific knowledge base. It leverages retrieval mechanisms to fetch relevant documents or information snippets and uses an LLM to generate natural, coherent answers grounded in the retrieved data.
+#road map 
+A phased approach to build the RAG Knowledge Base Chatbot:
+
+Phase 1 — Setup and Data Preparation
+
+Phase 2 — Retrieval Pipeline
+
+Phase 3 — Generation and Integration
+
+Phase 4 — API and UI Development
+
+Phase 5 — Testing, Polish, and Deployment

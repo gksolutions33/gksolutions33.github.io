@@ -174,11 +174,11 @@
 <div class="project-detail">
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/smart-parking-" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 
     <div class="project-hero">
-        <h1>Driver Dowsiness</h1>
+        <h1>Smart Parking </h1>
         <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem;">No description available</p>
 
         <div class="meta">
@@ -206,54 +206,168 @@
         <h2>🛠️ Technologies Used</h2>
         <div class="tech-grid">
             
-            <span class="tech-badge">Python</span>
             
+            <span class="tech-badge">IoT</span>
             
-            <span class="tech-badge">NumPy</span>
+            <span class="tech-badge">ESP32</span>
             
-            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Arduino</span>
+            
+            <span class="tech-badge">Raspberry Pi</span>
             
         </div>
     </div>
     
 
     <div class="readme-content">
-        # Driver Drowsiness Detection System
+        [Out puts.docx](https://github.com/user-attachments/files/24269245/Out.puts.docx)
+[Uml diagrams.docx](https://github.com/user-attachments/files/24269244/Uml.diagrams.docx)
+# smart-parking-
 
-Driver Drowsiness Detection is a real-time computer vision project developed using Python, OpenCV, and Dlib. The system continuously monitors the driver’s eye movements using facial landmarks and provides visual and audio alerts when drowsiness or sleep is detected.
+https://github.com/noorkhokhar99/car-parking-finder
 
-## Project Logic
-This project uses Dlib’s 68 facial landmark detector along with OpenCV for real-time video processing. Using eye landmarks, the Eye Aspect Ratio (EAR) is calculated to determine the driver’s alertness level.
+1. Project Title
 
-## Eye Aspect Ratio (EAR)
-EAR is calculated using the ratio of vertical eye distances to horizontal eye distance. A lower EAR indicates closed eyes.
+IoT-Based Smart Parking and Vehicle Occupancy Detection System with Mobile Application
 
-## Working of the Project
-- Webcam captures live video
-- Face and facial landmarks are detected
-- EAR is computed in real time
-- Time-based logic detects sleeping and drowsiness
-- Audio alerts are triggered on state change
-- Driver state is logged with timestamps
-- Dashboard UI displays status and metrics
+2. Project Description
 
-## Technologies Used
-Python, OpenCV, Dlib, NumPy, Imutils, Playsound
+The IoT-Based Smart Parking and Vehicle Occupancy System is designed to efficiently monitor parking spaces in real time and provide instant updates to users through a mobile application.
+This system detects whether parking slots are occupied or vacant using sensors and image processing techniques, sends the data to a cloud server, and displays the live parking status on a mobile app.
 
-## How to Run
-1. Install dependencies  
-   `pip install opencv-python dlib imutils numpy playsound`
-2. Run  
-   `python main.py`
-3. Press Q or ESC to exit
+The primary goal of the project is to reduce parking congestion, save time, and improve user convenience by allowing users to check parking availability before entering a parking area. The system also helps parking administrators manage parking spaces more effectively.
 
-## Conclusion
-This system helps prevent accidents by detecting driver fatigue in real time using computer vision.
+The system integrates IoT hardware, cloud services, computer vision (optional), and mobile application development to create a smart, scalable, and real-time parking solution.
+
+3. Project Objectives
+
+To detect vehicle presence in parking slots accurately
+
+To identify empty and occupied parking spaces in real time
+
+To send live parking data to a cloud database
+
+To display parking availability on a mobile application
+
+To reduce traffic congestion and parking search time
+
+To improve efficient utilization of parking spaces
+
+4. System Working (High-Level Flow)
+
+Sensors or camera monitor each parking slot
+
+Vehicle presence is detected (occupied / empty)
+
+Data is sent to cloud server (Firebase / IoT platform)
+
+Cloud processes and stores parking status
+
+Mobile application fetches real-time data
+
+User views available parking slots on the app
+
+5. Functional Requirements
+A. Parking Slot Detection
+
+Detect vehicle presence in each slot
+
+Update slot status automatically (Empty / Occupied)
+
+Support multiple parking slots
+
+B. Cloud Data Management
+
+Store real-time parking data
+
+Update data instantly when slot status changes
+
+Ensure reliable data synchronization
+
+C. Mobile Application
+
+Display live parking availability
+
+Show number of empty and occupied slots
+
+Refresh data automatically
+
+Simple and user-friendly interface
+
+6. Hardware Requirements
+Component	Description
+Ultrasonic / IR Sensors	Detect vehicle presence
+Camera (Optional)	For image-based detection
+Microcontroller	ESP32 / Arduino / Raspberry Pi
+Wi-Fi Module	Internet connectivity (ESP32 inbuilt)
+Power Supply	5V / 12V regulated
+Parking Slot Frame / Model	Physical demonstration setup
+7. Software Requirements
+Software	Purpose
+Android Studio	Mobile app development
+Firebase Realtime Database	Cloud data storage
+Firebase Authentication (Optional)	User login
+Python / OpenCV	Image processing (if camera-based)
+Arduino IDE	Microcontroller programming
+VS Code	Backend / Python development
+8. Technologies Used
+
+Internet of Things (IoT)
+
+Cloud Computing (Firebase)
+
+Mobile Application Development (Android)
+
+Computer Vision (Optional)
+
+Wireless Communication (Wi-Fi)
+
+9. Advantages
+
+Saves time and fuel
+
+Reduces traffic congestion
+
+Real-time parking updates
+
+User-friendly mobile interface
+
+Scalable for large parking areas
+
+#10. Applications
+
+Shopping malls
+
+Smart cities
+
+Airports
+
+Hospitals
+
+Corporate parking areas
+
+Residential complexes
+
+11. Future Enhancements
+
+Slot reservation feature
+
+Navigation to nearest empty slot
+
+Payment and billing system
+
+AI-based vehicle recognition
+
+License plate detection
+
+
+#smart parking document link---https://docs.google.com/document/d/1kwMrJE5IIZhQmdHM0dpo3ZQ2KgRRRpy4/edit?usp=sharing&ouid=104028342905149223028&rtpof=true&sd=true
+
     </div>
 
     <div class="action-buttons">
         <a href="projects.html" class="action-btn btn-back">← Back to Projects</a>
-        <a href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank" class="action-btn btn-github">View on GitHub →</a>
+        <a href="https://github.com/Universal-college-projects/smart-parking-" target="_blank" class="action-btn btn-github">View on GitHub →</a>
     </div>
 </div>
   </main>
