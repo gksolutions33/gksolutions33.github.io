@@ -4,9 +4,15 @@ import os
 # Paths
 base_dir = r"c:\Users\Hello\Desktop\web\gksolutions33.github.io"
 json_path = os.path.join(base_dir, "_data", "projects.json")
+output_dir = os.path.join(base_dir, "projects")
 
 def generate_project_pages():
     try:
+        # Create projects directory if it doesn't exist
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            print(f"Created directory: {output_dir}")
+
         with open(json_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             projects = data.get("projects", [])
@@ -15,7 +21,7 @@ def generate_project_pages():
 
         for i, project in enumerate(projects, 1):
             filename = f"project-{i}.html"
-            filepath = os.path.join(base_dir, filename)
+            filepath = os.path.join(output_dir, filename)
             
             # Prepare front matter fields
             title = project.get("title", "").replace('"', '\\"')

@@ -399,7 +399,7 @@ keywords: "projects, college projects, AI, web development, IoT, tutorials, sour
             <a href="{{ project.repo_url }}" target="_blank" class="action-btn btn-primary">
                 View on GitHub →
             </a>
-            <a href="project-{{ forloop.index }}.html" class="action-btn btn-secondary">
+            <a href="projects/project-{{ forloop.index }}.html" class="action-btn btn-secondary">
                 Details
             </a>
         </div>
@@ -414,7 +414,18 @@ keywords: "projects, college projects, AI, web development, IoT, tutorials, sour
 
 <script>
     // Get all unique technologies
-    const projectsData = {{ site.data.projects.projects | jsonify }};
+    const projectsData = [
+        {% for project in site.data.projects.projects %}
+    {
+        "difficulty": "{{ project.difficulty }}",
+            "languages": { { project.languages | jsonify } },
+        "technologies": { { project.technologies | jsonify } },
+        "name": { { project.name | downcase | jsonify } },
+        "description": { { project.description | downcase | jsonify } },
+        "stars": { { project.stars | default: 0 } }
+    } {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+    ];
     const allTechs = new Set();
     let totalStars = 0;
 
