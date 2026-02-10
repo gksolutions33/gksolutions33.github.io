@@ -8,15 +8,30 @@
   <title>GK SOLUTIONS</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Favicon / browser tab icon -->
+  <link rel="icon" type="image/png" href="/gksolutions_logo.png">
+  <link rel="apple-touch-icon" href="/gksolutions_logo.png">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 
 <body>
-  <header>
-    <div class="site-title">GK SOLUTIONS</div>
-    <div class="site-sub">AI • IoT • Arduino • Projects & Tutorials</div>
-    <div class="site-sub">DEFEAT THE FEAR</div>
+  <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <a href="/" style="display:inline-flex; align-items:center; gap:0.8rem; text-decoration:none;">
+        <img src="/gksolutions_logo.png" alt="GK Solutions" style="height:64px; width:auto; border-radius:6px; object-fit:contain; box-shadow: 0 6px 18px rgba(0,0,0,0.08); background: var(--card); padding:6px;" />
+        <div>
+          <div class="site-title" style="font-size:1.15rem; font-weight:800; color:var(--text);">GK SOLUTIONS</div>
+          <div class="site-sub" style="font-size:0.86rem; color:var(--muted);">AI • IoT • Arduino • Projects & Tutorials</div>
+        </div>
+      </a>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="site-sub" style="color:var(--muted); font-size:0.85rem;">DEFEAT THE FEAR</div>
+      <button id="theme-toggle" class="btn btn-outline" aria-label="Toggle theme">🌙 Dark</button>
+    </div>
   </header>
 
   <nav>
@@ -215,6 +230,37 @@ https://github.com/suryadevelope/rasa_chatbot_multilang_medical
     </div>
 </div>
   </main>
+
+  <script>
+  (function(){
+    var root = document.documentElement;
+    function applyTheme(mode){
+      if(mode === 'dark') root.classList.add('dark-theme'); else root.classList.remove('dark-theme');
+      try{ localStorage.setItem('theme', mode); }catch(e){}
+      updateButton();
+    }
+    function updateButton(){
+      var btn = document.getElementById('theme-toggle');
+      if(!btn) return;
+      btn.textContent = root.classList.contains('dark-theme') ? '☀️ Light' : '🌙 Dark';
+    }
+    var stored = null;
+    try{ stored = localStorage.getItem('theme'); }catch(e){}
+    if(stored){ applyTheme(stored); }
+    else {
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+    }
+    document.addEventListener('click', function(e){
+      if(!e.target) return;
+      if(e.target.id === 'theme-toggle'){
+        var isDark = root.classList.contains('dark-theme');
+        applyTheme(isDark ? 'light' : 'dark');
+      }
+    });
+    document.addEventListener('DOMContentLoaded', updateButton);
+  })();
+  </script>
 
   <footer>
     &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
