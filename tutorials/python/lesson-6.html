@@ -1,0 +1,196 @@
+---
+layout: default
+title: "Lesson 6: Loops | Python Tutorial"
+description: "Learn how to repeat code with loops"
+---
+
+<section>
+  <div style="margin-bottom: 2rem;">
+    <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+  </div>
+
+  <h2>🔴 Lesson 6: Loops - Repeating Code</h2>
+  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Beginner</p>
+
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    
+    <h3>What is a Loop?</h3>
+    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+      <strong>A loop repeats code multiple times.</strong> Instead of writing the same line over and over, you use a loop!
+    </p>
+
+    <h4>Real-World Analogy:</h4>
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
+      <p style="margin: 0; color: var(--muted);">
+        🔄 Imagine washing dishes:<br>
+        <strong>Without a loop:</strong> Wash dish. Rinse dish. Wash dish. Rinse dish. Wash dish. Rinse dish.<br>
+        <strong>With a loop:</strong> Repeat 10 times: (Wash dish, Rinse dish)
+      </p>
+    </div>
+
+    <h3>For Loops</h3>
+    <p style="color: var(--muted);">Use a for loop to repeat code a specific number of times:</p>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>for i in range(5):
+    print("Hello!")</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello!
+Hello!
+Hello!
+Hello!
+Hello!</code></pre>
+
+    <h3>For Loop with Counter</h3>
+    <p style="color: var(--muted);">The counter (i) changes each time through the loop:</p>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>for i in range(1, 6):
+    print("Number:", i)</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Number: 1
+Number: 2
+Number: 3
+Number: 4
+Number: 5</code></pre>
+
+    <h3>While Loops</h3>
+    <p style="color: var(--muted);">Use a while loop to repeat code WHILE a condition is true:</p>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>count = 1
+while count <= 3:
+    print("Count:", count)
+    count = count + 1</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Count: 1
+Count: 2
+Count: 3</code></pre>
+
+    <h3>Looping Through Lists</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
+
+for fruit in fruits:
+    print("I like", fruit)</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>I like apple
+I like banana
+I like orange</code></pre>
+
+    <h3>Loop Control</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">break - Exit Loop</p>
+        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>for i in range(10):
+    if i == 3:
+        break
+    print(i)
+# Output: 0, 1, 2</code></pre>
+      </div>
+      <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">continue - Skip This</p>
+        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+# Output: 0, 1, 3, 4</code></pre>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Quiz Section -->
+  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How many times will this print "Hi"?<br>for i in range(3):<br>    print("Hi")</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="a"> A) 2 times
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="b"> B) 3 times
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="c"> C) Infinite times
+        </label>
+      </div>
+      <button onclick="checkAnswer('q1', 'b', '✅ Correct! range(3) means 0, 1, 2 = 3 times.', 'For loops')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does "break" do in a loop?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="a"> A) Skips the current iteration
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="b"> B) Exits the loop completely
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="c"> C) Stops the program
+        </label>
+      </div>
+      <button onclick="checkAnswer('q2', 'b', '✅ Correct! break exits the entire loop.', 'Loop control')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which loop is best for going through a list?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="a"> A) while loop
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="b"> B) for loop
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="c"> C) Either works
+        </label>
+      </div>
+      <button onclick="checkAnswer('q3', 'b', '✅ Correct! for loops are cleaner for lists.', 'Loop types')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+  </div>
+
+  <!-- Challenge -->
+  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <p style="color: var(--muted);">Write a program that:</p>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li>Uses a loop to print numbers 1 through 10</li>
+      <li>But skip number 5 (using continue)</li>
+      <li>Stop at number 8 (using break)</li>
+    </ol>
+    <p style="color: var(--muted); margin-top: 1.5rem;"><strong>Expected output:</strong> 1, 2, 3, 4, 6, 7</p>
+  </div>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-5.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: If/Else</a>
+    <a href="lesson-7.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next: Functions →</a>
+  </div>
+
+</section>
+
+<script>
+function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+  const resultDiv = document.getElementById(questionName + '-result');
+  
+  if (!selected) {
+    resultDiv.innerHTML = '⚠️ Please select an answer!';
+    resultDiv.style.color = 'var(--accent-yellow)';
+    return;
+  }
+  
+  if (selected.value === correctAnswer) {
+    resultDiv.innerHTML = successMsg + ' 🎉';
+    resultDiv.style.color = 'var(--accent-green)';
+  } else {
+    resultDiv.innerHTML = '❌ Not quite right. Try again!';
+    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+  }
+}
+</script>

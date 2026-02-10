@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Arduino Basics Tutorial for Beginners | Learn Arduino Step by Step</title>
+  <meta name="description" content="Learn Arduino from scratch with this beginner-friendly tutorial. Understand Arduino basics, installation, first LED blinking program, and practical examples for students and beginners.">
+  <meta name="keywords" content="Arduino tutorial, Arduino basics, Arduino for beginners, Arduino UNO projects, Arduino LED blinking, embedded systems tutorial, IoT basics, electronics for beginners">
+  <meta name="author" content="GK Solutions">
+
+  <!-- Optional Styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+    }
+    h1, h2, h3 {
+      color: #0a58ca;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 10px;
+      display: block;
+      border-left: 4px solid #0a58ca;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .note {
+      background: #e7f1ff;
+      padding: 10px;
+      border-left: 4px solid #0a58ca;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Arduino Basics Tutorial for Beginners</h1>
+    <p><strong>Learn Arduino from Scratch – Step by Step</strong></p>
+
+    <h2>What You Will Learn</h2>
+    <ul>
+      <li>What Arduino is</li>
+      <li>Arduino board types</li>
+      <li>How to install Arduino IDE</li>
+      <li>Write your first Arduino program</li>
+      <li>LED blinking project</li>
+    </ul>
+
+    <h2>What is Arduino?</h2>
+    <p>
+      Arduino is an open-source electronics platform used to build
+      projects like IoT systems, robotics, automation, and embedded devices.
+      It is popular because it is easy to learn, affordable, and beginner-friendly.
+    </p>
+
+    <h2>Arduino Board Types</h2>
+    <ul>
+      <li><strong>Arduino UNO</strong> – Best for beginners</li>
+      <li><strong>Arduino Nano</strong> – Small size, breadboard friendly</li>
+      <li><strong>Arduino Mega</strong> – Large projects with many pins</li>
+    </ul>
+
+    <h2>Components Required</h2>
+    <table>
+      <tr><th>Component</th><th>Quantity</th></tr>
+      <tr><td>Arduino UNO</td><td>1</td></tr>
+      <tr><td>USB Cable</td><td>1</td></tr>
+      <tr><td>LED</td><td>1</td></tr>
+      <tr><td>220Ω Resistor</td><td>1</td></tr>
+      <tr><td>Breadboard</td><td>1</td></tr>
+      <tr><td>Jumper Wires</td><td>Few</td></tr>
+    </table>
+
+    <h2>Installing Arduino IDE</h2>
+    <ol>
+      <li>Visit <a href="https://www.arduino.cc/en/software" target="_blank">arduino.cc</a></li>
+      <li>Download Arduino IDE for your OS</li>
+      <li>Install and open Arduino IDE</li>
+    </ol>
+
+    <h2>Arduino Program Structure</h2>
+    <code>
+void setup() {
+  // runs once
+}
+
+void loop() {
+  // runs repeatedly
+}
+    </code>
+
+    <h2>LED Blinking Program</h2>
+    <code>
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}
+    </code>
+
+    <h2>Code Explanation</h2>
+    <ul>
+      <li><strong>pinMode</strong> – sets pin direction</li>
+      <li><strong>digitalWrite</strong> – turns LED ON/OFF</li>
+      <li><strong>delay</strong> – waits in milliseconds</li>
+    </ul>
+
+    <h2>Common Errors</h2>
+    <ul>
+      <li>COM port not detected → install drivers</li>
+      <li>Upload failed → check board & port</li>
+      <li>LED not glowing → check polarity</li>
+    </ul>
+
+    <h2>What to Learn Next</h2>
+    <ul>
+      <li>Button control with Arduino</li>
+      <li>Arduino LCD display</li>
+      <li>Sensors and IoT projects</li>
+      <li>ESP32 & Wi-Fi automation</li>
+    </ul>
+
+    <div class="note">
+      <strong>Tip:</strong> Practice daily. Arduino is the foundation for
+      embedded systems, robotics, and IoT careers.
+    </div>
+
+    <p><strong>Author:</strong> GK Solutions</p>
+
+  </div>
+</body>
+</html>

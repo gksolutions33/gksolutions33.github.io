@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn HTML - the foundation of web development. Master semantic markup and create accessible, SEO-friendly web pages." />
+  <meta name="keywords" content="HTML tutorial, web development, semantic HTML, markup, web pages, accessibility" />
+  <title>HTML Tutorial | GK Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+
+<body>
+  <header>
+    <div class="site-title">GK SOLUTIONS</div>
+    <div class="site-sub">AI • IoT • Arduino • Projects & Tutorials</div>
+    <div class="site-sub">DEFEAT THE FEAR</div>
+  </header>
+
+  <nav>
+    <a href="/market.html">Market Updates</a>
+    <a href="/index.html">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/tutorials/">Tutorials</a>
+    <a href="/Papers.html">Papers</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+</nav>
+
+  <main>
+    <section>
+  <div style="margin-bottom: 2rem;">
+    <a href="../" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to Tutorials</a>
+  </div>
+
+  <h2>📄 HTML Fundamentals Tutorial - Complete Guide for Beginners</h2>
+  <p class="muted">Learn the foundation of web development from scratch. This comprehensive guide is designed for absolute beginners. No prior coding experience needed!</p>
+
+  <!-- Quick Start -->
+  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">🚀 Quick Start - 5 Minute HTML Page</h3>
+    <p style="color: var(--muted);">Want to create your first HTML page right now? Here's the simplest possible page:</p>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.2);"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello! Welcome to my website&lt;/h1&gt;
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p style="color: var(--muted); font-size: 0.95rem;"><strong>How to use this:</strong> 1) Copy the code above, 2) Create a new file called "index.html", 3) Paste the code, 4) Double-click the file to open in your browser</p>
+  </div>
+
+  <!-- Table of Contents -->
+  <div style="background: rgba(0, 245, 255, 0.05); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
+    <h3 style="margin-top: 0; color: var(--accent-cyan);">📑 Table of Contents</h3>
+    <ol style="columns: 2; column-gap: 2rem; color: var(--muted);">
+      <li><a href="#section-1" style="color: var(--accent-cyan);">What is HTML?</a></li>
+      <li><a href="#section-2" style="color: var(--accent-cyan);">Getting Started</a></li>
+      <li><a href="#section-3" style="color: var(--accent-cyan);">HTML Document Structure</a></li>
+      <li><a href="#section-4" style="color: var(--accent-cyan);">Text Elements</a></li>
+      <li><a href="#section-5" style="color: var(--accent-cyan);">Links & Images</a></li>
+      <li><a href="#section-6" style="color: var(--accent-cyan);">Lists</a></li>
+      <li><a href="#section-7" style="color: var(--accent-cyan);">Tables</a></li>
+      <li><a href="#section-8" style="color: var(--accent-cyan);">Forms</a></li>
+      <li><a href="#section-9" style="color: var(--accent-cyan);">Semantic HTML</a></li>
+      <li><a href="#section-10" style="color: var(--accent-cyan);">Projects</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    <h3 id="section-1" style="margin-top: 0;">🤔 What is HTML?</h3>
+    
+    <h4>The Simple Answer:</h4>
+    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+      <strong>HTML is a language for creating web pages.</strong> Just like you use Microsoft Word to write documents, you use HTML to create web pages. HTML tells the browser (like Chrome or Firefox) what to display and how to organize it.
+    </p>
+
+    <h4>A Real-World Analogy:</h4>
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
+      <p style="margin: 0; color: var(--muted);">
+        Think of HTML like the <strong>blueprint of a house</strong>:
+        <ul style="margin-top: 1rem; color: var(--muted);">
+          <li>📐 HTML is like the blueprint - it defines the structure (walls, rooms, doors)</li>
+          <li>🎨 CSS is like the paint and decorations - it makes it look beautiful</li>
+          <li>⚙️ JavaScript is like the electricity and plumbing - it makes things work and move</li>
+        </ul>
+      </p>
+    </div>
+
+    <h4>Key HTML Concepts (Don't Worry, It's Simple!):</h4>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <h5 style="margin-top: 0; color: var(--accent-cyan);">Tags</h5>
+        <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">Labels that tell the browser what something is. Written like &lt;tagname&gt;</p>
+        <p style="margin: 1rem 0 0 0; color: var(--accent-green); font-family: monospace; font-size: 0.9rem;">&lt;h1&gt;, &lt;p&gt;, &lt;img&gt;</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <h5 style="margin-top: 0; color: var(--accent-cyan);">Elements</h5>
+        <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">A complete tag with opening and closing parts</p>
+        <p style="margin: 1rem 0 0 0; color: var(--accent-green); font-family: monospace; font-size: 0.9rem;">&lt;p&gt;Text here&lt;/p&gt;</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <h5 style="margin-top: 0; color: var(--accent-cyan);">Attributes</h5>
+        <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">Extra information about a tag</p>
+        <p style="margin: 1rem 0 0 0; color: var(--accent-green); font-family: monospace; font-size: 0.9rem;">&lt;a href="page.html"&gt;</p>
+      </div>
+    </div>
+
+    <h4>What HTML Looks Like - A Visual Example:</h4>
+    <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;">
+      <p style="color: var(--accent-cyan); margin: 0 0 1rem 0; font-weight: bold;">HTML Code:</p>
+      <pre style="margin: 0;"><code>&lt;p&gt;Hello, World!&lt;/p&gt;</code></pre>
+      <p style="color: var(--muted); margin: 1rem 0 0 0; font-size: 0.95rem;">👆 This tells the browser: "This is a paragraph. Please display: Hello, World!"</p>
+    </div>
+
+    <h4>Why Learn HTML?</h4>
+    <ul style="color: var(--muted); line-height: 2;">
+      <li>✅ It's the <strong>foundation of the web</strong> - every website uses it</li>
+      <li>✅ <strong>Easy to learn</strong> - much easier than other programming languages</li>
+      <li>✅ <strong>Immediate results</strong> - you see your work right away in the browser</li>
+      <li>✅ <strong>Free and open</strong> - you only need a text editor and a browser</li>
+      <li>✅ <strong>Door to web development</strong> - step one for becoming a web developer</li>
+    </ul>
+  </div>
+
+
+  <!-- Section 2 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+    <h3 id="section-2" style="margin-top: 0;">🛠️ Getting Started - Your First HTML File</h3>
+
+    <h4>Step 1: Choose a Text Editor</h4>
+    <p style="color: var(--muted);">You need a simple text editor. Here are the best free options:</p>
+    <ul style="color: var(--muted);">
+      <li><strong>VS Code</strong> (Recommended) - Download from <a href="https://code.visualstudio.com" target="_blank" style="color: var(--accent-cyan);">code.visualstudio.com</a></li>
+      <li><strong>Notepad++</strong> - For Windows users</li>
+      <li><strong>Sublime Text</strong> - Great alternative</li>
+      <li><strong>Even Notepad works!</strong> - The default Windows text editor</li>
+    </ul>
+    <p style="color: var(--muted); margin-top: 1rem; font-size: 0.95rem; padding: 1rem; background: rgba(255, 195, 0, 0.1); border-left: 3px solid var(--accent-yellow);">
+      ⚠️ <strong>Important:</strong> Don't use Microsoft Word! It adds hidden formatting that will break your HTML.
+    </p>
+
+    <h4>Step 2: Create Your First HTML File</h4>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li>Open your text editor</li>
+      <li>Copy the code from the "Quick Start" section at the top of this page</li>
+      <li>Paste it into your text editor</li>
+      <li>Go to File → Save As</li>
+      <li>Name it: <code>index.html</code> (the .html is important!)</li>
+      <li>Choose a folder to save it (e.g., Desktop or Documents)</li>
+      <li>Make sure "All Files" is selected (not "Text Files")</li>
+      <li>Click Save</li>
+    </ol>
+
+    <h4>Step 3: Open It in Your Browser</h4>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li>Go to the folder where you saved your file</li>
+      <li>Double-click the file (or right-click → Open with → Chrome/Firefox)</li>
+      <li>Your web page appears!</li>
+    </ol>
+
+    <h4>Congratulations! 🎉</h4>
+    <p style="color: var(--muted);">You just created your first HTML web page! That's all it takes to get started.</p>
+
+    <h4>Common Beginner Mistakes to Avoid:</h4>
+    <div style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <ul style="color: var(--muted); margin: 0;">
+        <li>❌ Saving as .txt instead of .html - Fix: Make sure filename ends with .html</li>
+        <li>❌ Using Microsoft Word - Fix: Use a plain text editor like VS Code</li>
+        <li>❌ Forgetting closing tags - Fix: Always close what you open (&lt;p&gt;...&lt;/p&gt;)</li>
+        <li>❌ Using spaces in filenames - Fix: Use hyphens or underscores (my-file.html)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+    <h3 id="section-3" style="margin-top: 0;">🏗️ HTML Document Structure</h3>
+
+    <h4>Every HTML Page Has This Basic Structure:</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title Here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome!&lt;/h1&gt;
+    &lt;p&gt;This is what people see on your page&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h4>Let's Break It Down - Line by Line:</h4>
+    
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--accent-cyan); font-weight: bold;">Line 1: &lt;!DOCTYPE html&gt;</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">🔍 What it means: "This is an HTML5 page" (the newest version of HTML)</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">💡 This line is ALWAYS required - put it at the very top</p>
+    </div>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--accent-cyan); font-weight: bold;">Line 2: &lt;html&gt;...&lt;/html&gt;</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">🔍 What it means: This wraps the entire page - like a container for everything</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">💡 Everything else goes inside these tags</p>
+    </div>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--accent-cyan); font-weight: bold;">Line 3: &lt;head&gt;...&lt;/head&gt;</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">🔍 What it means: Information ABOUT the page (not shown on the page)</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">💡 Contains: page title, links to CSS, metadata</p>
+    </div>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--accent-cyan); font-weight: bold;">Line 4: &lt;title&gt;...&lt;/title&gt;</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">🔍 What it means: The name shown in the browser tab</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">💡 Example: If you set &lt;title&gt;My Cool Site&lt;/title&gt;, the browser tab says "My Cool Site"</p>
+    </div>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--accent-cyan); font-weight: bold;">Line 5: &lt;body&gt;...&lt;/body&gt;</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">🔍 What it means: Everything people SEE on your page</p>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">💡 Text, images, buttons, links - all go inside the body</p>
+    </div>
+
+    <h4>Visual Diagram - How It All Fits Together:</h4>
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; font-family: monospace; font-size: 0.9rem; line-height: 1.6; color: var(--muted);">
+      <pre style="margin: 0;">┌─ &lt;html&gt; ........................... Root Container
+│
+├─ &lt;head&gt; ........................... Information
+│  └─ &lt;title&gt;My Page&lt;/title&gt; .... Browser Tab
+│
+└─ &lt;body&gt; ........................... Visible Content
+   ├─ &lt;h1&gt;Heading&lt;/h1&gt;
+   ├─ &lt;p&gt;Paragraph&lt;/p&gt;
+   └─ &lt;img&gt; Image
+   
+└─ &lt;/html&gt; ......................... End</pre>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+    <h3 id="section-4" style="margin-top: 0;">✍️ Text Elements - Formatting Your Content</h3>
+
+    <h4>Headings - Organize Your Content</h4>
+    <p style="color: var(--muted); margin-bottom: 1rem;">Use headings to organize your page like a newspaper. H1 is the biggest, H6 is the smallest.</p>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;h1&gt;Main Heading - Like a Newspaper Headline&lt;/h1&gt;
+&lt;h2&gt;Subheading - Like a Section Title&lt;/h2&gt;
+&lt;h3&gt;Smaller Heading&lt;/h3&gt;
+&lt;h4&gt;Even Smaller&lt;/h4&gt;
+&lt;h5&gt;Very Small&lt;/h5&gt;
+&lt;h6&gt;Tiniest Heading&lt;/h6&gt;</code></pre>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">
+        <strong>💡 Best Practice:</strong> Use one H1 per page (your main title). Use H2, H3, etc. for sections. This helps search engines and screen readers.
+      </p>
+    </div>
+
+    <h4>Paragraphs - Body Text</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;p&gt;This is a paragraph. HTML automatically adds space above and below paragraphs.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">
+        <strong>💡 Tip:</strong> HTML ignores extra spaces and line breaks. Three spaces = one space. Write code however looks clearest to you!
+      </p>
+    </div>
+
+    <h4>Text Formatting - Make Text Bold, Italic, etc.</h4>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0;">
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px;">
+        <p style="margin: 0 0 1rem 0; color: var(--accent-cyan); font-weight: bold;">Bold Text</p>
+        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code style="font-size: 0.9rem;">&lt;strong&gt;Bold&lt;/strong&gt;
+&lt;b&gt;Also Bold&lt;/b&gt;</code></pre>
+        <p style="margin: 1rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Result: <strong>Bold text</strong></p>
+      </div>
+
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px;">
+        <p style="margin: 0 0 1rem 0; color: var(--accent-cyan); font-weight: bold;">Italic Text</p>
+        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code style="font-size: 0.9rem;">&lt;em&gt;Italic&lt;/em&gt;
+&lt;i&gt;Also Italic&lt;/i&gt;</code></pre>
+        <p style="margin: 1rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Result: <em>Italic text</em></p>
+      </div>
+
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px;">
+        <p style="margin: 0 0 1rem 0; color: var(--accent-cyan); font-weight: bold;">Underline Text</p>
+        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code style="font-size: 0.9rem;">&lt;u&gt;Underlined&lt;/u&gt;</code></pre>
+        <p style="margin: 1rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Result: <u>Underlined text</u></p>
+      </div>
+
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px;">
+        <p style="margin: 0 0 1rem 0; color: var(--accent-cyan); font-weight: bold;">Highlight Text</p>
+        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code style="font-size: 0.9rem;">&lt;mark&gt;Highlighted&lt;/mark&gt;</code></pre>
+        <p style="margin: 1rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Result: <mark>Highlighted text</mark></p>
+      </div>
+
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px;">
+        <p style="margin: 0 0 1rem 0; color: var(--accent-cyan); font-weight: bold;">Line Break</p>
+        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code style="font-size: 0.9rem;">Line 1&lt;br&gt;Line 2</code></pre>
+        <p style="margin: 1rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Creates a line break (no closing tag needed)</p>
+      </div>
+
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px;">
+        <p style="margin: 0 0 1rem 0; color: var(--accent-cyan); font-weight: bold;">Horizontal Line</p>
+        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code style="font-size: 0.9rem;">&lt;hr&gt;</code></pre>
+        <p style="margin: 1rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Draws a horizontal line (divider)</p>
+      </div>
+    </div>
+
+    <h4>Complete Text Example:</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;h1&gt;My Article&lt;/h1&gt;
+&lt;p&gt;This is the introduction. I will make some words &lt;strong&gt;bold&lt;/strong&gt; and others &lt;em&gt;italic&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;The Details&lt;/h2&gt;
+&lt;p&gt;Here's the main content with &lt;mark&gt;highlighted&lt;/mark&gt; important information.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;And that's it!&lt;/p&gt;</code></pre>
+  </div>
+
+  <!-- Section 5 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    <h3 id="section-5" style="margin-top: 0;">🔗 Links & Images - Connect Your Pages</h3>
+
+    <h4>Creating Links - Let Users Click to Other Pages</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;a href="https://google.com"&gt;Click here to visit Google&lt;/a&gt;</code></pre>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--muted);">
+        <strong>Breaking it down:</strong><br>
+        • &lt;a&gt; = anchor (link)<br>
+        • href = the address to go to<br>
+        • "Click here to visit Google" = the text users see and click<br>
+      </p>
+    </div>
+
+    <h4>Adding Images - Show Pictures on Your Page</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;img src="photo.jpg" alt="Description of the photo"&gt;</code></pre>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--muted);">
+        <strong>Important:</strong><br>
+        • src = where the image file is<br>
+        • alt = description (for blind users and search engines)<br>
+        • &lt;img&gt; doesn't need a closing tag!<br>
+      </p>
+    </div>
+
+    <h4>Common Image Formats:</h4>
+    <ul style="color: var(--muted);">
+      <li><strong>.jpg</strong> - Photos (most common)</li>
+      <li><strong>.png</strong> - Images with transparent backgrounds</li>
+      <li><strong>.gif</strong> - Animated images</li>
+      <li><strong>.svg</strong> - Logos and icons (scalable)</li>
+    </ul>
+  </div>
+
+  <!-- Section 6 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+    <h3 id="section-6" style="margin-top: 0;">📋 Lists - Organize Information</h3>
+
+    <h4>Bullet Point Lists (Unordered)</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Result shows bullet points (• )</p>
+    </div>
+
+    <h4>Numbered Lists (Ordered)</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;ol&gt;
+    &lt;li&gt;First step&lt;/li&gt;
+    &lt;li&gt;Second step&lt;/li&gt;
+    &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Result shows numbers (1, 2, 3, ...)</p>
+    </div>
+
+    <h4>Nested Lists - Lists Inside Lists</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;ul&gt;
+    &lt;li&gt;Fruits
+        &lt;ul&gt;
+            &lt;li&gt;Apples&lt;/li&gt;
+            &lt;li&gt;Bananas&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Vegetables&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+
+  <!-- Section 7 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+    <h3 id="section-7" style="margin-top: 0;">📊 Tables - Organize Data in Rows and Columns</h3>
+
+    <h4>Simple Table Example:</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane&lt;/td&gt;
+        &lt;td&gt;28&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0; color: var(--muted);">
+        <strong>Table Tags Explained:</strong><br>
+        • &lt;table&gt; = the whole table<br>
+        • &lt;tr&gt; = table row (one row)<br>
+        • &lt;th&gt; = table header (bold text, for titles)<br>
+        • &lt;td&gt; = table data (regular cells)<br>
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 8 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+    <h3 id="section-8" style="margin-top: 0;">📝 Forms - Collect Information from Users</h3>
+
+    <h4>Simple Contact Form:</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>&lt;form&gt;
+    &lt;label for="name"&gt;Your Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;br&gt;&lt;br&gt;
+    
+    &lt;label for="email"&gt;Your Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    &lt;br&gt;&lt;br&gt;
+    
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+    <h4>Different Input Types:</h4>
+    <ul style="color: var(--muted);">
+      <li><code>type="text"</code> - Regular text box</li>
+      <li><code>type="email"</code> - Email box (checks if it's a valid email)</li>
+      <li><code>type="password"</code> - Password box (hides what you type)</li>
+      <li><code>type="number"</code> - Only allows numbers</li>
+      <li><code>type="checkbox"</code> - Yes/No boxes</li>
+      <li><code>type="radio"</code> - Pick one option from many</li>
+    </ul>
+  </div>
+
+  <!-- Section 9 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    <h3 id="section-9" style="margin-top: 0;">🏷️ Semantic HTML - Using Meaningful Tags</h3>
+
+    <h4>What Does "Semantic" Mean?</h4>
+    <p style="color: var(--muted); margin-bottom: 1rem;">
+      "Semantic" means <strong>meaningful</strong>. Use tags that describe what they contain, not just how they look.
+    </p>
+
+    <h4>Wrong Way vs. Right Way:</h4>
+    <div style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❌ Wrong (non-semantic):</p>
+      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code>&lt;div&gt;
+    &lt;div&gt;My Website&lt;/div&gt;
+    &lt;div&gt;
+        &lt;div&gt;Home&lt;/div&gt;
+        &lt;div&gt;About&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;Main content here&lt;/div&gt;
+    &lt;div&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div style="background: rgba(123, 255, 111, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">✅ Right (semantic):</p>
+      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px;"><code>&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;a href="/"&gt;Home&lt;/a&gt;
+        &lt;a href="/about"&gt;About&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;Main content here&lt;/main&gt;
+&lt;footer&gt;Footer&lt;/footer&gt;</code></pre>
+    </div>
+
+    <h4>Common Semantic Tags:</h4>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">&lt;header&gt;</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Top of page (logo, title)</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">&lt;nav&gt;</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Navigation menu</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">&lt;main&gt;</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Main content</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">&lt;article&gt;</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Blog post or article</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">&lt;section&gt;</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Grouped content</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">&lt;aside&gt;</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Sidebar content</p>
+      </div>
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">&lt;footer&gt;</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Bottom of page</p>
+      </div>
+    </div>
+
+    <h4>Why Use Semantic HTML?</h4>
+    <ul style="color: var(--muted); line-height: 2;">
+      <li>✅ <strong>Search engines understand your content better</strong> - Better SEO ranking</li>
+      <li>✅ <strong>Screen readers work better</strong> - Helps blind users</li>
+      <li>✅ <strong>Easier to maintain</strong> - Other developers understand your code</li>
+      <li>✅ <strong>Better code organization</strong> - Makes CSS styling easier</li>
+    </ul>
+  </div>
+
+  <!-- Section 10 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+    <h3 id="section-10" style="margin-top: 0;">🎨 Projects & Practice</h3>
+
+    <h4>🌟 Beginner Projects (Start Here!):</h4>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li><strong>Personal Bio Page</strong> - Create a page about yourself with a photo, bio, and links</li>
+      <li><strong>Favorite Books List</strong> - Make a page listing your favorite books with descriptions</li>
+      <li><strong>Recipe Page</strong> - Write out a recipe with ingredients list and step-by-step instructions</li>
+      <li><strong>My Hobbies</strong> - A page about your hobbies with images and descriptions</li>
+      <li><strong>Contact Information</strong> - A page with your contact info and a simple form</li>
+    </ol>
+
+    <h4>📈 Intermediate Projects:</h4>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li><strong>Multi-Page Website</strong> - Create 3-4 connected pages (Home, About, Services, Contact)</li>
+      <li><strong>Blog Homepage</strong> - Display multiple blog posts with titles and previews</li>
+      <li><strong>Product Catalog</strong> - Show products in a table or list with images</li>
+      <li><strong>Event Registration</strong> - Create a form to register for an event</li>
+    </ol>
+
+    <h4>🚀 Advanced Projects:</h4>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li><strong>Company Website</strong> - Professional site with multiple sections</li>
+      <li><strong>Portfolio Website</strong> - Showcase your projects and skills</li>
+      <li><strong>E-commerce Product Page</strong> - Product details, images, and purchase form</li>
+    </ol>
+
+    <h4>💡 Beginner Challenge - Build This Now:</h4>
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">Try creating this "About Me" page:</p>
+      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 6px; overflow-x: auto;"><code style="font-size: 0.85rem;">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;About Me&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Page!&lt;/h1&gt;
+    &lt;p&gt;Hi, my name is [Your Name].&lt;/p&gt;
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;I'm learning HTML...&lt;/p&gt;
+    &lt;h2&gt;My Hobbies&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Hobby 1&lt;/li&gt;
+        &lt;li&gt;Hobby 2&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      <p style="margin: 1rem 0 0 0; color: var(--muted); font-size: 0.9rem;">Try filling in your own information and save it as an HTML file!</p>
+    </div>
+  </div>
+
+  <!-- Glossary -->
+  <div style="margin-top: 3rem; padding: 2rem; background: rgba(255, 195, 0, 0.05); border: 1px solid rgba(255, 195, 0, 0.2); border-radius: 12px;">
+    <h3 style="margin-top: 0; color: var(--accent-yellow);">📚 Glossary - HTML Terms Explained</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+      <div>
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Attribute</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Extra information about a tag (e.g., href, src)</p>
+      </div>
+      <div>
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Element</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">A complete tag with opening and closing parts</p>
+      </div>
+      <div>
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Tag</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">A label in angle brackets (&lt;p&gt;)</p>
+      </div>
+      <div>
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Browser</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Software that displays web pages (Chrome, Firefox)</p>
+      </div>
+      <div>
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Semantic</p>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Meaningful - tags that describe content</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

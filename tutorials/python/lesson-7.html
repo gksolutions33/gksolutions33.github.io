@@ -1,0 +1,193 @@
+---
+layout: default
+title: "Lesson 7: Functions | Python Tutorial"
+description: "Learn how to create reusable blocks of code"
+---
+
+<section>
+  <div style="margin-bottom: 2rem;">
+    <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+  </div>
+
+  <h2>💜 Lesson 7: Functions - Reusable Code</h2>
+  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Intermediate</p>
+
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    
+    <h3>What is a Function?</h3>
+    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+      <strong>A function is a reusable block of code.</strong> Instead of writing the same code over and over, you create it once and use it many times!
+    </p>
+
+    <h4>Real-World Analogy:</h4>
+    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
+      <p style="margin: 0; color: var(--muted);">
+        🎂 Imagine a cookie recipe:<br>
+        <strong>Without functions:</strong> You write down the entire recipe every time you want cookies<br>
+        <strong>With functions:</strong> You write the recipe once, then just say "Make cookies!" whenever you want them
+      </p>
+    </div>
+
+    <h3>Creating a Function</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet():
+    print("Hello!")
+    print("Welcome!")</code></pre>
+
+    <h3>Using a Function</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet():
+    print("Hello!")
+    print("Welcome!")
+
+# Call the function 3 times
+greet()
+greet()
+greet()</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello!
+Welcome!
+Hello!
+Welcome!
+Hello!
+Welcome!</code></pre>
+
+    <h3>Functions with Parameters</h3>
+    <p style="color: var(--muted);">Parameters are values you pass to a function:</p>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet(name):
+    print("Hello,", name)
+    print("Nice to meet you!")
+
+greet("Alice")
+greet("Bob")</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello, Alice
+Nice to meet you!
+Hello, Bob
+Nice to meet you!</code></pre>
+
+    <h3>Functions with Return Values</h3>
+    <p style="color: var(--muted);">Use return to send a value back from a function:</p>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def add(a, b):
+    result = a + b
+    return result
+
+answer = add(5, 3)
+print(answer)
+print(add(10, 20))</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>8
+30</code></pre>
+
+    <h3>Multiple Parameters</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def calculate_price(quantity, price_per_item):
+    total = quantity * price_per_item
+    return total
+
+cost = calculate_price(5, 10)
+print("Total cost:", cost)</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Total cost: 50</code></pre>
+
+  </div>
+
+  <!-- Quiz Section -->
+  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What keyword defines a function?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="a"> A) function
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="b"> B) func
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="c"> C) def
+        </label>
+      </div>
+      <button onclick="checkAnswer('q1', 'c', '✅ Correct! Use "def" to define a function.', 'Functions')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What do parameters do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="a"> A) Stop a function
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="b"> B) Return a value
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="c"> C) Accept values into a function
+        </label>
+      </div>
+      <button onclick="checkAnswer('q2', 'c', '✅ Correct! Parameters let functions receive values.', 'Parameters')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does "return" do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="a"> A) Sends a value back from the function
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="b"> B) Calls the function again
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="c"> C) Defines a variable
+        </label>
+      </div>
+      <button onclick="checkAnswer('q3', 'a', '✅ Correct! return sends a value back from a function.', 'Return values')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+  </div>
+
+  <!-- Challenge -->
+  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <p style="color: var(--muted);">Write a function that:</p>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li>Takes a name as a parameter</li>
+      <li>Takes an age as a parameter</li>
+      <li>Calculates when they will be 100 years old</li>
+      <li>Returns a message like "Alice will be 100 in 75 years"</li>
+    </ol>
+    <p style="color: var(--muted); margin-top: 1.5rem;"><strong>Hint:</strong> Use 2024 as the current year (or get it with a formula)</p>
+  </div>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-6.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: Loops</a>
+    <a href="lesson-8.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next: Lists & Dictionaries →</a>
+  </div>
+
+</section>
+
+<script>
+function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+  const resultDiv = document.getElementById(questionName + '-result');
+  
+  if (!selected) {
+    resultDiv.innerHTML = '⚠️ Please select an answer!';
+    resultDiv.style.color = 'var(--accent-yellow)';
+    return;
+  }
+  
+  if (selected.value === correctAnswer) {
+    resultDiv.innerHTML = successMsg + ' 🎉';
+    resultDiv.style.color = 'var(--accent-green)';
+  } else {
+    resultDiv.innerHTML = '❌ Not quite right. Try again!';
+    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+  }
+}
+</script>

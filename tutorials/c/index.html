@@ -1,0 +1,349 @@
+---
+layout: default
+title: "C Tutorial - Learn C Programming"
+---
+
+<section>
+  <div style="margin-bottom: 2rem;">
+    <a href="../" style="color: #ffd60a; text-decoration: none; font-weight: 500;">← Back to Tutorials</a>
+  </div>
+
+  <h1 style="margin-bottom: 1rem;">⚡ C Programming Tutorial</h1>
+  <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 3rem;">Master the foundational language of computer science</p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+    <a href="lesson-1.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 1</h3><p style="margin: 0; font-weight: bold;">What is C?</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
+    <a href="lesson-2.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 2</h3><p style="margin: 0; font-weight: bold;">Setup & First Program</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
+    <a href="lesson-3.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 3</h3><p style="margin: 0; font-weight: bold;">Variables & Data Types</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
+    <a href="lesson-4.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 4</h3><p style="margin: 0; font-weight: bold;">Operators</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
+    <a href="lesson-5.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 5</h3><p style="margin: 0; font-weight: bold;">Control Flow</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
+    <a href="lesson-6.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 6</h3><p style="margin: 0; font-weight: bold;">Functions</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
+    <a href="lesson-7.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 7</h3><p style="margin: 0; font-weight: bold;">Arrays & Strings</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
+    <a href="lesson-8.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 8</h3><p style="margin: 0; font-weight: bold;">Pointers & Memory</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 25 min</p></div></a>
+  </div>
+
+  <!-- Table of Contents -->
+  <div style="background: rgba(0, 245, 255, 0.05); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
+    <h3 style="margin-top: 0; color: var(--accent-cyan);">📑 Table of Contents</h3>
+    <ol style="columns: 2; column-gap: 2rem; color: var(--muted);">
+      <li><a href="#section-1" style="color: var(--accent-cyan);">What is C?</a></li>
+      <li><a href="#section-2" style="color: var(--accent-cyan);">Setup & First Program</a></li>
+      <li><a href="#section-3" style="color: var(--accent-cyan);">Data Types & Variables</a></li>
+      <li><a href="#section-4" style="color: var(--accent-cyan);">Operators</a></li>
+      <li><a href="#section-5" style="color: var(--accent-cyan);">Control Flow</a></li>
+      <li><a href="#section-6" style="color: var(--accent-cyan);">Functions</a></li>
+      <li><a href="#section-7" style="color: var(--accent-cyan);">Arrays & Strings</a></li>
+      <li><a href="#section-8" style="color: var(--accent-cyan);">Pointers</a></li>
+      <li><a href="#section-9" style="color: var(--accent-cyan);">Structures</a></li>
+      <li><a href="#section-10" style="color: var(--accent-cyan);">Projects</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    <h3 id="section-1" style="margin-top: 0;">What is C?</h3>
+    <p>C is a procedural programming language created in 1972 by Dennis Ritchie. It's known for its efficiency, simplicity, and close-to-hardware nature, making it perfect for systems programming and embedded systems.</p>
+    <h4>Why Learn C?</h4>
+    <ul style="color: var(--muted);">
+      <li><strong>Foundation:</strong> Understand how computers work at a deeper level</li>
+      <li><strong>Performance:</strong> Write fast, efficient code</li>
+      <li><strong>Embedded Systems:</strong> Program microcontrollers and IoT devices</li>
+      <li><strong>Unix/Linux:</strong> Essential for systems programming</li>
+      <li><strong>Career Prospects:</strong> High demand in embedded systems and systems programming</li>
+    </ul>
+  </div>
+
+  <!-- Section 2 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+    <h3 id="section-2" style="margin-top: 0;">Setup & First Program</h3>
+    <h4>Installation:</h4>
+    <p style="color: var(--muted);">Windows: Download MinGW or use MSVC compiler<br>Linux: <code>sudo apt-get install gcc</code><br>Mac: Install Xcode Command Line Tools</p>
+    
+    <h4>Your First C Program:</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>#include <stdio.h>
+
+int main() {
+    printf("Hello, C World!\n");
+    return 0;
+}</code></pre>
+
+    <h4>Compiling & Running:</h4>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>gcc program.c -o program
+./program</code></pre>
+  </div>
+
+  <!-- Section 3 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+    <h3 id="section-3" style="margin-top: 0;">Data Types & Variables</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>#include <stdio.h>
+
+int main() {
+    // Integer types
+    int age = 25;           // 4 bytes
+    short year = 2025;      // 2 bytes
+    long population = 8000000000L; // 8 bytes
+    
+    // Floating point
+    float height = 5.9f;    // 4 bytes
+    double pi = 3.14159;    // 8 bytes
+    
+    // Character
+    char initial = 'A';     // 1 byte
+    
+    // Boolean (using int or stdbool.h)
+    int is_student = 1;     // 1 for true, 0 for false
+    
+    // String (array of characters)
+    char name[50] = "John Doe";
+    
+    // Print values
+    printf("Age: %d\n", age);
+    printf("Height: %.2f\n", height);
+    printf("Initial: %c\n", initial);
+    printf("Name: %s\n", name);
+    
+    return 0;
+}</code></pre>
+  </div>
+
+  <!-- Section 4 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+    <h3 id="section-4" style="margin-top: 0;">Operators</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Arithmetic operators
+int a = 10, b = 3;
+printf("a + b = %d\n", a + b);     // 13
+printf("a - b = %d\n", a - b);     // 7
+printf("a * b = %d\n", a * b);     // 30
+printf("a / b = %d\n", a / b);     // 3
+printf("a %% b = %d\n", a % b);    // 1
+
+// Comparison operators
+printf("a == b: %d\n", a == b);    // 0 (false)
+printf("a > b: %d\n", a > b);      // 1 (true)
+printf("a != b: %d\n", a != b);    // 1 (true)
+
+// Logical operators
+int x = 1, y = 0;
+printf("x && y: %d\n", x && y);    // 0 (AND)
+printf("x || y: %d\n", x || y);    // 1 (OR)
+printf("!x: %d\n", !x);             // 0 (NOT)
+
+// Assignment operators
+int c = 5;
+c += 3;     // c = c + 3 = 8
+c -= 2;     // c = c - 2 = 6
+c *= 2;     // c = c * 2 = 12</code></pre>
+  </div>
+
+  <!-- Section 5 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    <h3 id="section-5" style="margin-top: 0;">Control Flow</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// If-Else
+int age = 18;
+if (age >= 18) {
+    printf("You are an adult\n");
+} else if (age >= 13) {
+    printf("You are a teenager\n");
+} else {
+    printf("You are a child\n");
+}
+
+// Switch
+int day = 3;
+switch (day) {
+    case 1:
+        printf("Monday\n");
+        break;
+    case 2:
+        printf("Tuesday\n");
+        break;
+    default:
+        printf("Other day\n");
+}
+
+// For loop
+for (int i = 0; i < 5; i++) {
+    printf("%d ", i);    // 0 1 2 3 4
+}
+
+// While loop
+int count = 0;
+while (count < 3) {
+    printf("%d ", count);
+    count++;
+}
+
+// Do-While (executes at least once)
+int num = 0;
+do {
+    printf("%d ", num);
+    num++;
+} while (num < 3);</code></pre>
+  </div>
+
+  <!-- Section 6 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+    <h3 id="section-6" style="margin-top: 0;">Functions</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Function declaration (prototype)
+int add(int a, int b);
+void greet(char *name);
+
+int main() {
+    int result = add(5, 3);
+    printf("Sum: %d\n", result);  // 8
+    
+    greet("Alice");
+    return 0;
+}
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+
+void greet(char *name) {
+    printf("Hello, %s!\n", name);
+}
+
+// Function with multiple return values using pointers
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}</code></pre>
+  </div>
+
+  <!-- Section 7 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+    <h3 id="section-7" style="margin-top: 0;">Arrays & Strings</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Arrays
+int numbers[5] = {1, 2, 3, 4, 5};
+printf("%d\n", numbers[0]);    // 1
+
+// Array iteration
+for (int i = 0; i < 5; i++) {
+    printf("%d ", numbers[i]);
+}
+
+// 2D Arrays
+int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+printf("%d\n", matrix[1][2]);  // 6
+
+// Strings
+char str1[20] = "Hello";
+char str2[] = "World";
+
+// String functions
+#include <string.h>
+strlen(str1);              // Length
+strcpy(str1, str2);        // Copy
+strcmp(str1, str2);        // Compare
+strcat(str1, str2);        // Concatenate</code></pre>
+  </div>
+
+  <!-- Section 8 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+    <h3 id="section-8" style="margin-top: 0;">Pointers</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>int main() {
+    int x = 10;
+    int *ptr = &x;      // Pointer to x (& = address of)
+    
+    printf("x = %d\n", x);           // 10
+    printf("Address of x: %p\n", &x);
+    printf("ptr = %p\n", ptr);       // Same as &x
+    printf("*ptr = %d\n", *ptr);     // 10 (* = dereference)
+    
+    // Modify value through pointer
+    *ptr = 20;
+    printf("x = %d\n", x);           // 20
+    
+    // Array pointers
+    int arr[5] = {1, 2, 3, 4, 5};
+    int *p = arr;       // Points to first element
+    printf("%d\n", *p);  // 1
+    printf("%d\n", *(p+1)); // 2
+    printf("%d\n", p[2]); // 3
+    
+    // Pointer to pointer
+    int **pp = &ptr;
+    printf("%d\n", **pp);  // 20
+    
+    return 0;
+}</code></pre>
+  </div>
+
+  <!-- Section 9 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    <h3 id="section-9" style="margin-top: 0;">Structures</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Define a structure
+struct Person {
+    char name[50];
+    int age;
+    float height;
+};
+
+int main() {
+    // Create and initialize
+    struct Person p1 = {"John", 25, 5.9};
+    
+    // Access members
+    printf("Name: %s\n", p1.name);
+    printf("Age: %d\n", p1.age);
+    
+    // Using pointers
+    struct Person *ptr = &p1;
+    printf("Height: %.1f\n", ptr->height);
+    printf("Height: %.1f\n", (*ptr).height);  // Alternative
+    
+    // Array of structures
+    struct Person people[3] = {
+        {"Alice", 28, 5.6},
+        {"Bob", 30, 6.0},
+        {"Carol", 26, 5.4}
+    };
+    
+    for (int i = 0; i < 3; i++) {
+        printf("%s: %d years old\n", people[i].name, people[i].age);
+    }
+    
+    return 0;
+}</code></pre>
+  </div>
+
+  <!-- Section 10 -->
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+    <h3 id="section-10" style="margin-top: 0;">Projects & Practice</h3>
+    <h4>Beginner Projects:</h4>
+    <ul style="color: var(--muted);">
+      <li>Calculator</li>
+      <li>Number Guessing Game</li>
+      <li>Temperature Converter</li>
+      <li>Simple Grade Calculator</li>
+      <li>Fibonacci Sequence</li>
+    </ul>
+
+    <h4>Intermediate Projects:</h4>
+    <ul style="color: var(--muted);">
+      <li>Student Management System</li>
+      <li>Library Management System</li>
+      <li>File I/O Programs</li>
+      <li>Sorting Algorithms</li>
+      <li>Hash Table Implementation</li>
+    </ul>
+
+    <h4>Advanced Projects:</h4>
+    <ul style="color: var(--muted);">
+      <li>Binary Search Trees</li>
+      <li>Graph Algorithms</li>
+      <li>Operating System Basics</li>
+      <li>Embedded Systems Projects</li>
+      <li>Game Development (with graphics library)</li>
+    </ul>
+  </div>
+
+</section>

@@ -1,0 +1,176 @@
+---
+layout: default
+title: "Lesson 2: Your First Script | JavaScript Tutorial"
+description: "Write your first JavaScript code"
+---
+
+<section>
+  <div style="margin-bottom: 2rem;">
+    <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+  </div>
+
+  <h2>🟡 Lesson 2: Your First Script</h2>
+  <p class="muted">⏱️ Estimated time: 10-15 minutes | Difficulty: Beginner</p>
+
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    
+    <h3>Hello, JavaScript!</h3>
+    <p style="color: var(--muted);">Let's write your first JavaScript program:</p>
+    
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;script&gt;
+  console.log("Hello, JavaScript!");
+&lt;/script&gt;</code></pre>
+
+    <h3>Where to Put JavaScript</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">In HTML Head</p>
+        <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;head&gt;
+  &lt;script&gt;
+    console.log("Runs first");
+  &lt;/script&gt;
+&lt;/head&gt;</code></pre>
+      </div>
+      <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">In HTML Body</p>
+        <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;body&gt;
+  &lt;script&gt;
+    console.log("Runs after HTML loads");
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+      </div>
+      <div style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">External File</p>
+        <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;script src="app.js"&gt;
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+
+    <h3>Using the Console</h3>
+    <p style="color: var(--muted);">The console is where JavaScript displays messages. Open it:</p>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li>Right-click on a webpage → "Inspect" (or press F12)</li>
+      <li>Click the "Console" tab</li>
+      <li>You'll see messages from JavaScript</li>
+    </ol>
+
+    <h3>Your First Real Program</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My First JavaScript&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome!&lt;/h1&gt;
+  
+  &lt;script&gt;
+    console.log("JavaScript is running!");
+    console.log("I can write messages here");
+    console.log("This is awesome!");
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output in console:</strong></p>
+    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>JavaScript is running!
+I can write messages here
+This is awesome!</code></pre>
+
+  </div>
+
+  <!-- Quiz Section -->
+  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you write JavaScript?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="a"> A) Using &lt;javascript&gt; tags
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="b"> B) Using &lt;script&gt; tags
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="c"> C) Using &lt;code&gt; tags
+        </label>
+      </div>
+      <button onclick="checkAnswer('q1', 'b', '✅ Correct! Use &lt;script&gt; tags for JavaScript.', 'Script tags')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does console.log() do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="a"> A) Saves data to a file
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="b"> B) Displays messages in the console
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="c"> C) Creates a popup alert
+        </label>
+      </div>
+      <button onclick="checkAnswer('q2', 'b', '✅ Correct! console.log() shows messages for debugging.', 'Console output')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you open the console?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="a"> A) Right-click → Inspect
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="b"> B) Press F12
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="c"> C) Both A and B
+        </label>
+      </div>
+      <button onclick="checkAnswer('q3', 'c', '✅ Correct! Both methods work to open developer tools.', 'Developer tools')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+  </div>
+
+  <!-- Challenge -->
+  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <p style="color: var(--muted);">Create an HTML file with JavaScript that:</p>
+    <ol style="color: var(--muted); line-height: 2;">
+      <li>Logs 3 different messages to the console</li>
+      <li>Use console.log() for each message</li>
+      <li>Open the console and verify you see all 3 messages</li>
+    </ol>
+  </div>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-1.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: What is JavaScript?</a>
+    <a href="lesson-3.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next: Variables →</a>
+  </div>
+
+</section>
+
+<script>
+function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+  const resultDiv = document.getElementById(questionName + '-result');
+  
+  if (!selected) {
+    resultDiv.innerHTML = '⚠️ Please select an answer!';
+    resultDiv.style.color = 'var(--accent-yellow)';
+    return;
+  }
+  
+  if (selected.value === correctAnswer) {
+    resultDiv.innerHTML = successMsg + ' 🎉';
+    resultDiv.style.color = 'var(--accent-green)';
+  } else {
+    resultDiv.innerHTML = '❌ Not quite right. Try again!';
+    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+  }
+}
+</script>

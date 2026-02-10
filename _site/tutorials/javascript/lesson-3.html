@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn how to store data in JavaScript" />
+  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 3: Variables | JavaScript Tutorial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+
+<body>
+  <header>
+    <div class="site-title">GK SOLUTIONS</div>
+    <div class="site-sub">AI • IoT • Arduino • Projects & Tutorials</div>
+    <div class="site-sub">DEFEAT THE FEAR</div>
+  </header>
+
+  <nav>
+    <a href="/market.html">Market Updates</a>
+    <a href="/index.html">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/tutorials/">Tutorials</a>
+    <a href="/Papers.html">Papers</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+</nav>
+
+  <main>
+    <section>
+  <div style="margin-bottom: 2rem;">
+    <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+  </div>
+
+  <h2>🟡 Lesson 3: Variables</h2>
+  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Beginner</p>
+
+  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+    
+    <h3>What is a Variable?</h3>
+    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+      <strong>A variable stores information.</strong> It's like a labeled box where you put data.
+    </p>
+
+    <h3>Creating Variables (let, const, var)</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>// Using let (recommended)
+let name = "Alice";
+let age = 25;
+
+// Using const (for values that don't change)
+const PI = 3.14159;
+const gravity = 9.8;
+
+console.log(name);      // Alice
+console.log(age);       // 25</code></pre>
+
+    <h3>Data Types</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">String</p>
+        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>let city = "NYC";
+let msg = 'Hello';</code></pre>
+      </div>
+      <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">Number</p>
+        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>let age = 25;
+let price = 19.99;</code></pre>
+      </div>
+      <div style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px;">
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">Boolean</p>
+        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>let isStudent = true;
+let isActive = false;</code></pre>
+      </div>
+    </div>
+
+    <h3>Changing Variables</h3>
+    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>let score = 10;
+console.log(score);     // 10
+
+score = 20;
+console.log(score);     // 20
+
+score = score + 5;
+console.log(score);     // 25</code></pre>
+
+  </div>
+
+  <!-- Quiz -->
+  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you create a variable in JavaScript?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="a"> A) variable name = value
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="b"> B) let name = value
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q1" value="c"> C) var = name value
+        </label>
+      </div>
+      <button onclick="checkAnswer('q1', 'b', '✅ Correct! Use let to create variables.', 'Variables')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What's the difference between let and const?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="a"> A) No difference
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="b"> B) const can't be changed after creation
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q2" value="c"> C) let is faster
+        </label>
+      </div>
+      <button onclick="checkAnswer('q2', 'b', '✅ Correct! const creates unchangeable variables.', 'const vs let')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What will this output?<br>let x = 5; x = x + 3; console.log(x)</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="a"> A) 5
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="b"> B) 8
+        </label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
+          <input type="radio" name="q3" value="c"> C) 3
+        </label>
+      </div>
+      <button onclick="checkAnswer('q3', 'b', '✅ Correct! 5 + 3 = 8', 'Variable operations')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-2.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous</a>
+    <a href="lesson-4.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next →</a>
+  </div>
+
+</section>
+
+<script>
+function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+  const resultDiv = document.getElementById(questionName + '-result');
+  if (!selected) { resultDiv.innerHTML = '⚠️ Please select an answer!'; resultDiv.style.color = 'var(--accent-yellow)'; return; }
+  if (selected.value === correctAnswer) { resultDiv.innerHTML = successMsg + ' 🎉'; resultDiv.style.color = 'var(--accent-green)'; } else { resultDiv.innerHTML = '❌ Not quite right. Try again!'; resultDiv.style.color = 'rgba(255, 45, 149, 1)'; }
+}
+</script>
+
+  </main>
+
+  <footer>
+    &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

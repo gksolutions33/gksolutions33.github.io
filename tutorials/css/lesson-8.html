@@ -1,0 +1,14 @@
+---
+layout: default
+title: "Lesson 8: Animations & Transitions | CSS Tutorial"
+---
+<section><div style="margin-bottom: 2rem;"><a href="./" style="color: #ff2d95; text-decoration: none;">← Back</a></div><h2>🎨 Lesson 8: Animations & Transitions</h2><p class="muted">⏱️ 25 min | Advanced</p><div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid #ff2d95;"><h3>Transitions</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.btn { 
+  transition: background-color 0.3s ease;
+}
+.btn:hover { background-color: blue; }</code></pre><h3>Transforms</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.box { transform: rotate(45deg); }
+.box { transform: scale(1.5); }
+.box { transform: translate(10px, 20px); }</code></pre><h3>Keyframe Animations</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>@keyframes slide {
+  from { left: 0; }
+  to { left: 100px; }
+}
+.box { animation: slide 2s infinite; }</code></pre></div><div style="background: rgba(123,255,111,0.08); padding: 2rem; border-radius: 12px; margin-top: 2rem;"><h3 style="color: #7bff6f;">✅ Quiz</h3><div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7bff6f;"><p style="color: #999;">❓ Which property changes element state smoothly?</p><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="a"> A) animation</label><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="b"> B) transition</label><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: #7bff6f; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">Check</button><div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div></div></div><div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-7.html" style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">← Previous</a><a href="./" style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">Back to Lessons</a></div></section><script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:'❌ Try again!';}</script>
