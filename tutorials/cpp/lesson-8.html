@@ -1,5 +1,155 @@
 ---
-layout: default
-title: "Lesson 8 | C++ Tutorial"
+layout: tutorial
+title: "Lesson 8: STL & Memory Management | C++ Tutorial"
+description: "Master the Standard Template Library (STL) and advanced memory management in C++"
 ---
-<section style="text-align: center;"><a href="./" style="color: #ff9f1c; text-decoration: none;">← Back to C++ Lessons</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p><h2>⚡ Lesson 8: Classes & Objects</h2></section>
+
+<section>
+    <h2>⚡ Lesson 8: STL & Memory Management</h2>
+    <p class="muted">⏱️ Estimated time: 40 minutes | Difficulty: Advanced</p>
+
+    <div class="callout callout-warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> Advanced Territory</h4>
+        <p style="margin: 0;">C++ gives you total control over memory. Using the STL and smart pointers is crucial for
+            writing safe, modern C++ code.</p>
+    </div>
+
+    <h3>Standard Template Library (STL)</h3>
+    <p style="color: var(--muted);">The STL provides powerful containers, algorithms, and iterators that save you
+        from reinventing the wheel.</p>
+
+    <h4>Vectors (Dynamic Arrays)</h4>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+vector&lt;int&gt; nums = {1, 2, 3, 4, 5};
+nums.push_back(6);       // Add to end
+nums.pop_back();          // Remove last
+cout &lt;&lt; nums.size();     // 5
+cout &lt;&lt; nums[0];         // 1
+
+// Range-based for loop
+for (int n : nums) {
+    cout &lt;&lt; n &lt;&lt; " ";
+}</code></pre>
+
+    <h4>Maps (Key-Value Pairs)</h4>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;map&gt;
+
+map&lt;string, int&gt; ages;
+ages["Alice"] = 25;
+ages["Bob"] = 30;
+
+for (auto&amp; [name, age] : ages) {
+    cout &lt;&lt; name &lt;&lt; ": " &lt;&lt; age &lt;&lt; endl;
+}</code></pre>
+
+    <h4>STL Algorithms</h4>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;algorithm&gt;
+
+vector&lt;int&gt; v = {5, 2, 8, 1, 9};
+sort(v.begin(), v.end());         // 1 2 5 8 9
+reverse(v.begin(), v.end());      // 9 8 5 2 1
+
+auto it = find(v.begin(), v.end(), 5);
+if (it != v.end()) cout &lt;&lt; "Found!";
+
+int maxVal = *max_element(v.begin(), v.end());
+int minVal = *min_element(v.begin(), v.end());</code></pre>
+
+    <h3>Smart Pointers (Modern C++)</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;memory&gt;
+
+// unique_ptr: exclusive ownership
+auto ptr1 = make_unique&lt;int&gt;(42);
+cout &lt;&lt; *ptr1;  // 42
+// Automatically freed when out of scope!
+
+// shared_ptr: shared ownership
+auto ptr2 = make_shared&lt;string&gt;("Hello");
+auto ptr3 = ptr2;  // Both point to same string
+cout &lt;&lt; *ptr2 &lt;&lt; endl;
+// Freed when last shared_ptr goes away</code></pre>
+
+    <div
+        style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #ffd60a;">
+        <p style="margin: 0; color: var(--muted);">
+            <strong>💡 Best Practice:</strong> In modern C++, prefer <code>unique_ptr</code> and
+            <code>shared_ptr</code> over raw pointers (<code>new</code>/<code>delete</code>). They automatically
+            free memory!
+        </p>
+    </div>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is a vector in C++?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) A fixed-size array</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) A dynamic resizable array</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) A linked list</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does unique_ptr do?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Shared ownership, auto-frees memory</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Exclusive ownership, auto-frees memory</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) Manual memory management</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which function sorts a vector?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) sort()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) order()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) arrange()</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-7.html"
+            style="background: #ff9f1c; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="./"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">🎉
+            Back to All Lessons</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

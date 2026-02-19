@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tech tutorials and projects on AI, Python, IoT, and Robotics" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
-  <title>C Lesson 7</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Learn how to organize your C code using reusable functions" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 7: Functions | C Tutorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,7 +50,657 @@
 </nav>
 
   <main>
-    <section style="text-align: center;"><a href="./" style="color: #ffd60a; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>C Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-1">
+                Lesson 1: What is C?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-2">
+                Lesson 2: Setup & First Program
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-3">
+                Lesson 3: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-4">
+                Lesson 4: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-5">
+                Lesson 5: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-6">
+                Lesson 6: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/c/lesson-7">
+                Lesson 7: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-8">
+                Lesson 8: Arrays & Memory
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-1">
+                Lesson 1: What is C++?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-2">
+                Lesson 2: Setup & First Program
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-3">
+                Lesson 3: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-4">
+                Lesson 4: Classes & Objects
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-5">
+                Lesson 5: Inheritance
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-6">
+                Lesson 6: Polymorphism
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-7">
+                Lesson 7: Templates
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-8">
+                Lesson 8: STL & Memory Management
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-1">
+                Lesson 1: What is CSS?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-2">
+                Lesson 2: Selectors & Properties
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-3">
+                Lesson 3: Box Model
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-4">
+                Lesson 4: Layout - Flexbox
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-5">
+                Lesson 5: Layout - Grid
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-6">
+                Lesson 6: Positioning
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-7">
+                Lesson 7: Responsive Design
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-8">
+                Lesson 8: Transitions & Animations
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-1">
+                Lesson 1: What is JavaScript?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-2">
+                Lesson 2: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-3">
+                Lesson 3: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-4">
+                Lesson 4: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-5">
+                Lesson 5: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-6">
+                Lesson 6: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-7">
+                Lesson 7: Objects & Arrays
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-8">
+                Lesson 8: DOM Manipulation
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">c</span>
+        </nav>
+
+        <section>
+    <h2>📦 Lesson 7: Functions (Modular Code)</h2>
+    <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-cube"></i> Reusability</h4>
+        <p style="margin: 0;">Functions are independent blocks of code that perform specific tasks. They help make your
+            programs organized, readable, and reusable.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ffd60a;">
+
+        <h3>Arrays</h3>
+        <p style="color: var(--muted); font-size: 1.05rem;">An array stores multiple values of the <strong>same
+                type</strong> in contiguous memory.</p>
+
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // Declare and initialize
+    int numbers[5] = {10, 20, 30, 40, 50};
+
+    // Access elements (0-indexed!)
+    printf("First: %d\n", numbers[0]);   // 10
+    printf("Last: %d\n", numbers[4]);    // 50
+
+    // Modify an element
+    numbers[2] = 99;
+
+    // Loop through array
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", numbers[i]);
+    }
+    // Output: 10 20 99 40 50
+
+    return 0;
+}</code></pre>
+
+        <h3>2D Arrays (Matrices)</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+printf("%d\n", matrix[1][2]);  // 6 (row 1, col 2)
+
+// Print entire matrix
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        printf("%d ", matrix[i][j]);
+    }
+    printf("\n");
+}</code></pre>
+
+        <h3>Strings in C</h3>
+        <p style="color: var(--muted);">In C, strings are <strong>arrays of characters</strong> ending with a null
+            terminator <code>'\0'</code>.</p>
+
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;  // String functions
+
+int main() {
+    char name[50] = "Hello";
+
+    // String functions
+    printf("Length: %lu\n", strlen(name));     // 5
+    
+    char copy[50];
+    strcpy(copy, name);       // Copy string
+    
+    strcat(name, " World");   // Concatenate
+    printf("%s\n", name);     // Hello World
+    
+    // Compare strings
+    if (strcmp(name, "Hello World") == 0) {
+        printf("Strings are equal!\n");
+    }
+    
+    return 0;
+}</code></pre>
+
+        <h3>Common String Functions</h3>
+        <div style="overflow-x: auto; margin: 1rem 0;">
+            <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
+                <thead>
+                    <tr style="background: rgba(255, 214, 10, 0.15);">
+                        <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #ffd60a;">Function</th>
+                        <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #ffd60a;">Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.5rem;"><code>strlen(s)</code></td>
+                        <td style="padding: 0.5rem;">Get string length</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><code>strcpy(dest, src)</code></td>
+                        <td style="padding: 0.5rem;">Copy string</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><code>strcat(dest, src)</code></td>
+                        <td style="padding: 0.5rem;">Concatenate strings</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><code>strcmp(s1, s2)</code></td>
+                        <td style="padding: 0.5rem;">Compare strings (0 = equal)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;"><code>strchr(s, c)</code></td>
+                        <td style="padding: 0.5rem;">Find character in string</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Quiz -->
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is the index of the first
+                element in a C array?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) 1</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) 0</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) -1</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct! Arrays are 0-indexed in C.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What terminates a C string?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) A period</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Null character '\0'</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) A newline</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct! C strings end with the null character.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which function gets the length of a
+                string?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) strcmp()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) strlen()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) strcpy()</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct! strlen() returns the string length.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-6.html"
+            style="background: #ffd60a; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-8.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Pointers & Memory →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>
+
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

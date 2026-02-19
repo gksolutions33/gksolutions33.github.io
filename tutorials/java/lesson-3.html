@@ -1,3 +1,148 @@
 ---
+layout: tutorial
+title: "Lesson 3: Variables & Data Types | Java Tutorial"
+description: "Learn how Java stores and manages data using strongly-typed variables"
 ---
-<section style="text-align: center;"><a href="./" style="color: #7bff6f; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">1</a><a href="lesson-2.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">2</a><a href="lesson-3.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">3</a><a href="lesson-4.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">4</a><a href="lesson-5.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">5</a><a href="lesson-6.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">6</a><a href="lesson-7.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">7</a><a href="lesson-8.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">8</a></p></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #7bff6f; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>📦 Lesson 3: Java Variables & Data Types</h2>
+    <p class="muted">⏱️ Estimated time: 25 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-tip">
+        <h4><i class="fas fa-box"></i> Strong Typing</h4>
+        <p style="margin: 0;">Java is a strongly-typed language, meaning every variable must be declared with a specific
+            data type before it can be used.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
+
+        <h3>Primitive Data Types</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>// Integer types
+byte small = 127;          // -128 to 127
+short medium = 32000;      // -32,768 to 32,767
+int normal = 2000000000;   // Most common
+long big = 9000000000L;    // Note the L suffix!
+
+// Decimal types
+float pi = 3.14f;          // Note the f suffix!
+double precise = 3.14159265358979;  // More precise (default)
+
+// Other types
+boolean alive = true;      // true or false only
+char letter = 'A';         // Single character (use single quotes!)</code></pre>
+
+        <h3>Strings (Reference Type)</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>String name = "Alice";   // Use double quotes!
+String greeting = "Hello, " + name + "!";  // Concatenation
+
+// String methods
+name.length();           // 5
+name.toUpperCase();      // "ALICE"
+name.charAt(0);          // 'A'
+name.equals("Alice");    // true (use this, NOT ==!)
+name.contains("li");     // true</code></pre>
+
+        <h3>Constants & var</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>final int MAX = 100;      // Constant — can't change
+// MAX = 200;             // Error!
+
+// Type inference (Java 10+)
+var age = 25;             // Compiler infers int
+var name = "Bob";         // Compiler infers String</code></pre>
+
+        <h3>Type Casting</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>// Widening (automatic): smaller → larger
+int x = 10;
+double y = x;  // 10.0 (auto)
+
+// Narrowing (manual): larger → smaller
+double a = 9.8;
+int b = (int) a;  // 9 (decimal truncated!)
+
+// String to number
+int num = Integer.parseInt("42");
+double dbl = Double.parseDouble("3.14");
+
+// Number to String
+String s = String.valueOf(42);
+String s2 = Integer.toString(42);</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which is the default decimal type
+                in Java?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) float</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) double</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) decimal</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How should you compare Strings in
+                Java?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Using ==</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Using .equals()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) Using .compare()</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct! Always use .equals() for Strings.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'final' keyword do?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Makes a variable constant (can't change)</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Deletes a variable</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) Makes it public</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-2.html"
+            style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-4.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Operators →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

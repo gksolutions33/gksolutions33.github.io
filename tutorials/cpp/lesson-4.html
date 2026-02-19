@@ -1,5 +1,170 @@
 ---
-layout: default
-title: "Lesson Navigation | C++"
+layout: tutorial
+title: "Lesson 4: Classes & Objects | C++ Tutorial"
+description: "Enter the world of Object-Oriented Programming with C++ classes and objects"
 ---
-<section style="text-align: center; padding: 2rem;"><a href="./" style="color: #ff9f1c; text-decoration: none; font-weight: bold;">← Back to C++ Lessons</a><p style="margin-top: 2rem;"><a href="lesson-1.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+
+<section>
+    <h2>🏗️ Lesson 4: Classes & Objects (Intro to OOP)</h2>
+    <p class="muted">⏱️ Estimated time: 35 minutes | Difficulty: Intermediate</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-building"></i> OOP Masterclass</h4>
+        <p style="margin: 0;">Objects are the building blocks of C++. A class is a blueprint, and an object is an
+            instance of that blueprint.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff9f1c;">
+
+        <h3>What is a Class?</h3>
+        <p style="color: var(--muted); font-size: 1.05rem;">A class is a <strong>blueprint</strong> for creating
+            objects. It bundles data (attributes) and functions (methods) together.</p>
+
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Car {
+public:
+    string brand;
+    string model;
+    int year;
+
+    // Method
+    void display() {
+        cout &lt;&lt; year &lt;&lt; " " &lt;&lt; brand &lt;&lt; " " &lt;&lt; model &lt;&lt; endl;
+    }
+
+    // Method with return value
+    int getAge() {
+        return 2025 - year;
+    }
+};
+
+int main() {
+    Car car1;
+    car1.brand = "Toyota";
+    car1.model = "Camry";
+    car1.year = 2022;
+    car1.display();  // 2022 Toyota Camry
+    cout &lt;&lt; "Age: " &lt;&lt; car1.getAge() &lt;&lt; endl;
+    return 0;
+}</code></pre>
+
+        <h3>Constructors</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Student {
+private:
+    string name;
+    int age;
+    double gpa;
+
+public:
+    // Constructor
+    Student(string n, int a, double g) {
+        name = n;
+        age = a;
+        gpa = g;
+    }
+
+    // Getter
+    string getName() { return name; }
+    double getGpa() { return gpa; }
+
+    // Setter
+    void setGpa(double g) {
+        if (g >= 0 &amp;&amp; g <= 4.0)
+            gpa = g;
+    }
+
+    void display() {
+        cout &lt;&lt; name &lt;&lt; ", Age: " &lt;&lt; age
+             &lt;&lt; ", GPA: " &lt;&lt; gpa &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s1("Alice", 20, 3.8);
+    s1.display();
+    s1.setGpa(3.9);
+    return 0;
+}</code></pre>
+
+        <h3>Access Modifiers</h3>
+        <ul style="color: var(--muted); line-height: 2.2;">
+            <li><code>public:</code> — Accessible from anywhere</li>
+            <li><code>private:</code> — Only accessible inside the class</li>
+            <li><code>protected:</code> — Accessible in the class and its subclasses</li>
+        </ul>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is a constructor?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) A destructor</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) A method called when an object is created</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) A loop</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What access modifier hides data
+                from outside?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) public</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) private</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) global</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What are getters and setters?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Methods to access/modify private data safely</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Types of loops</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) File operations</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-3.html"
+            style="background: #ff9f1c; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-5.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Inheritance →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

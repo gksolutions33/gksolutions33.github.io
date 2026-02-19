@@ -1,14 +1,150 @@
 ---
-layout: default
-title: "Lesson 8: Animations & Transitions | CSS Tutorial"
+layout: tutorial
+title: "Lesson 8: Transitions & Animations | CSS Tutorial"
+description: "Bring your web pages to life with CSS transitions and animations"
 ---
-<section><div style="margin-bottom: 2rem;"><a href="./" style="color: #ff2d95; text-decoration: none;">← Back</a></div><h2>🎨 Lesson 8: Animations & Transitions</h2><p class="muted">⏱️ 25 min | Advanced</p><div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid #ff2d95;"><h3>Transitions</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.btn { 
-  transition: background-color 0.3s ease;
+
+<section>
+  <h2>🎬 Lesson 8: Transitions & Animations</h2>
+  <p class="muted">⏱️ Estimated time: 35 minutes | Difficulty: Intermediate</p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-film"></i> Magic with CSS</h4>
+    <p style="margin: 0;">CSS transitions and animations allow you to create smooth changes between styles and complex
+      motion without using JavaScript.</p>
+  </div>
+
+  <h3>Transitions</h3>
+  <p style="color: var(--muted);">Transitions create smooth changes between property states (like hover effects).</p>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.button {
+    background: #ff2d95;
+    transform: scale(1);
+    transition: all 0.3s ease;
 }
-.btn:hover { background-color: blue; }</code></pre><h3>Transforms</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.box { transform: rotate(45deg); }
-.box { transform: scale(1.5); }
-.box { transform: translate(10px, 20px); }</code></pre><h3>Keyframe Animations</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>@keyframes slide {
-  from { left: 0; }
-  to { left: 100px; }
+
+.button:hover {
+    background: #ff69b4;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 45, 149, 0.4);
 }
-.box { animation: slide 2s infinite; }</code></pre></div><div style="background: rgba(123,255,111,0.08); padding: 2rem; border-radius: 12px; margin-top: 2rem;"><h3 style="color: #7bff6f;">✅ Quiz</h3><div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7bff6f;"><p style="color: #999;">❓ Which property changes element state smoothly?</p><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="a"> A) animation</label><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="b"> B) transition</label><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: #7bff6f; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">Check</button><div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div></div></div><div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-7.html" style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">← Previous</a><a href="./" style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">Back to Lessons</a></div></section><script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:'❌ Try again!';}</script>
+
+/* Specific properties */
+transition: background 0.3s ease, transform 0.2s ease-out;</code></pre>
+
+  <h3>Transforms</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>transform: translateX(50px);     /* Move right */
+transform: translateY(-20px);    /* Move up */
+transform: rotate(45deg);        /* Rotate */
+transform: scale(1.5);           /* Scale up */
+transform: skewX(10deg);         /* Skew */
+
+/* Combine transforms */
+transform: translateY(-5px) rotate(5deg) scale(1.1);</code></pre>
+
+  <h3>Keyframe Animations</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.card { animation: fadeIn 0.6s ease forwards; }
+.heart { animation: pulse 2s ease infinite; }
+.loader { animation: spin 1s linear infinite; }</code></pre>
+
+  <h3>Animation Properties</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>animation-name: fadeIn;
+animation-duration: 0.5s;
+animation-timing-function: ease;  /* ease, linear, ease-in-out */
+animation-delay: 0.2s;
+animation-iteration-count: infinite;  /* or a number */
+animation-direction: alternate;       /* forward, backward */
+animation-fill-mode: forwards;        /* Keep final state */
+
+/* Shorthand */
+animation: fadeIn 0.5s ease 0.2s infinite alternate forwards;</code></pre>
+
+  </div>
+
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What's the difference between transitions
+        and animations?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="a"> A) Transitions need a trigger (like hover), animations can run automatically</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="b"> B) They are the same thing</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="c"> C) Animations only work in Firefox</label>
+      </div>
+      <button onclick="checkAnswer('q1','a','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does transform: scale(1.5) do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="a"> A) Moves the element</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="b"> B) Makes it 50% larger</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="c"> C) Rotates it</label>
+      </div>
+      <button onclick="checkAnswer('q2','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does animation-fill-mode: forwards
+        do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="a"> A) Reverses the animation</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="b"> B) Keeps the final state after animation ends</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="c"> C) Loops the animation</label>
+      </div>
+      <button onclick="checkAnswer('q3','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-7.html"
+      style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a>
+    <a href="./"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">🎉
+      Back to All Lessons</a>
+  </div>
+</section>
+
+<script>
+  function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

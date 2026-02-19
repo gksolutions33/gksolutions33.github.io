@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn how to store collections of data" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
-  <title>Lesson 8: Lists and Dictionaries | Python Tutorial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Learn how to use external libraries to supercharge your Python scripts" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 8: Modules & Libraries | Python Tutorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,29 +50,332 @@
 </nav>
 
   <main>
-    <section>
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>PYTHON Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/python/lesson-1">
+                Lesson 1: What is Python?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/python/lesson-2">
+                Lesson 2: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/python/lesson-3">
+                Lesson 3: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/python/lesson-4">
+                Lesson 4: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/python/lesson-5">
+                Lesson 5: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/python/lesson-6">
+                Lesson 6: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/python/lesson-7">
+                Lesson 7: Lists & Dictionaries
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/python/lesson-8">
+                Lesson 8: Modules & Libraries
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">python</span>
+        </nav>
+
+        <section>
   <div style="margin-bottom: 2rem;">
     <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
   </div>
 
-  <h2>🟣 Lesson 8: Lists and Dictionaries</h2>
-  <p class="muted">⏱️ Estimated time: 20-25 minutes | Difficulty: Intermediate</p>
+  <h2>📚 Lesson 8: Modules & Libraries</h2>
+  <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
 
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    
+  <div class="callout callout-warning">
+    <h4><i class="fas fa-book"></i> Standing on Shoulders</h4>
+    <p style="margin: 0;">Modules allow you to use code written by others. Python's "Batteries Included" philosophy
+      means it comes with a massive standard library for almost any task.</p>
+  </div>
+
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+
     <h3>What is a List?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       <strong>A list stores multiple values in one variable.</strong> Think of it like a shopping list!
     </p>
 
     <h4>Creating a List:</h4>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
 numbers = [1, 2, 3, 4, 5]
 mixed = ["Alice", 25, True, 3.14]</code></pre>
 
     <h3>Accessing List Items</h3>
     <p style="color: var(--muted);">Lists use indexing (starting at 0):</p>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
 
 print(fruits[0])   # apple
 print(fruits[1])   # banana
@@ -76,7 +383,8 @@ print(fruits[2])   # orange
 print(fruits[-1])  # orange (last item)</code></pre>
 
     <h3>Modifying Lists</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
       <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Change Item</p>
         <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>fruits[0] = "mango"
@@ -105,24 +413,28 @@ print(len(fruits))
 
     <h3>What is a Dictionary?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-      <strong>A dictionary stores data with labels (called keys).</strong> Instead of positions, you use meaningful names!
+      <strong>A dictionary stores data with labels (called keys).</strong> Instead of positions, you use meaningful
+      names!
     </p>
 
     <h4>Creating a Dictionary:</h4>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {
     "name": "Alice",
     "age": 20,
     "major": "Computer Science"
 }</code></pre>
 
     <h3>Accessing Dictionary Items</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {"name": "Alice", "age": 20}
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {"name": "Alice", "age": 20}
 
 print(student["name"])   # Alice
 print(student["age"])    # 20</code></pre>
 
     <h3>Modifying Dictionaries</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {"name": "Alice", "age": 20}
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {"name": "Alice", "age": 20}
 
 # Change a value
 student["age"] = 21
@@ -136,10 +448,12 @@ del student["city"]
 print(student)</code></pre>
 
     <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>{'name': 'Alice', 'age': 21}</code></pre>
+    <pre
+      style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>{'name': 'Alice', 'age': 21}</code></pre>
 
     <h3>Real-World Example: Student Database</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code># List of dictionaries
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code># List of dictionaries
 students = [
     {"name": "Alice", "grade": "A"},
     {"name": "Bob", "grade": "B"},
@@ -158,11 +472,14 @@ Charlie got grade A</code></pre>
   </div>
 
   <!-- Quiz Section -->
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does this print?<br>fruits = ["apple", "banana", "orange"]<br>print(fruits[0])</p>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does this print?<br>fruits =
+        ["apple", "banana", "orange"]<br>print(fruits[0])</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q1" value="a"> A) banana
@@ -174,12 +491,17 @@ Charlie got grade A</code></pre>
           <input type="radio" name="q1" value="c"> C) orange
         </label>
       </div>
-      <button onclick="checkAnswer('q1', 'b', '✅ Correct! List indexing starts at 0, so [0] is the first item.', 'List indexing')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button
+        onclick="checkAnswer('q1', 'b', '✅ Correct! List indexing starts at 0, so [0] is the first item.', 'List indexing')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is the main difference between lists and dictionaries?</p>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is the main difference between lists
+        and dictionaries?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q2" value="a"> A) Dictionaries are faster
@@ -191,11 +513,15 @@ Charlie got grade A</code></pre>
           <input type="radio" name="q2" value="c"> C) Dictionaries hold only text
         </label>
       </div>
-      <button onclick="checkAnswer('q2', 'b', '✅ Correct! Lists use indices (0, 1, 2...), dictionaries use named keys.', 'Lists vs Dictionaries')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button
+        onclick="checkAnswer('q2', 'b', '✅ Correct! Lists use indices (0, 1, 2...), dictionaries use named keys.', 'Lists vs Dictionaries')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you add an item to a list?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -208,14 +534,18 @@ Charlie got grade A</code></pre>
           <input type="radio" name="q3" value="c"> C) list.insert()
         </label>
       </div>
-      <button onclick="checkAnswer('q3', 'b', '✅ Correct! Use .append() to add items to the end of a list.', 'List methods')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button
+        onclick="checkAnswer('q3', 'b', '✅ Correct! Use .append() to add items to the end of a list.', 'List methods')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
   </div>
 
   <!-- Challenge -->
-  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+  <div
+    style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge - Create a Contact List</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
@@ -224,12 +554,13 @@ Charlie got grade A</code></pre>
       <li>Loops through the list and prints each contact's info</li>
     </ol>
     <p style="color: var(--muted); margin-top: 1.5rem;"><strong>Expected output format:</strong><br>
-    "Name: Alice, Phone: 555-1234, Email: alice@email.com"
+      "Name: Alice, Phone: 555-1234, Email: alice@email.com"
     </p>
   </div>
 
   <!-- Celebration Section -->
-  <div style="background: rgba(123, 255, 111, 0.15); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.5); text-align: center;">
+  <div
+    style="background: rgba(123, 255, 111, 0.15); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.5); text-align: center;">
     <h3 style="color: var(--accent-green); margin-top: 0;">🎉 Congratulations! 🎉</h3>
     <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8;">
       You've completed the Python tutorial! You now know:
@@ -249,33 +580,55 @@ Charlie got grade A</code></pre>
 
   <!-- Navigation -->
   <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="lesson-7.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: Functions</a>
-    <a href="./" style="background: var(--accent-cyan); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Back to All Lessons →</a>
+    <a href="lesson-7.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous: Functions</a>
+    <a href="./"
+      style="background: var(--accent-cyan); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Back
+      to All Lessons →</a>
   </div>
 
 </section>
 
 <script>
-function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-  const resultDiv = document.getElementById(questionName + '-result');
-  
-  if (!selected) {
-    resultDiv.innerHTML = '⚠️ Please select an answer!';
-    resultDiv.style.color = 'var(--accent-yellow)';
-    return;
+  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+    const resultDiv = document.getElementById(questionName + '-result');
+
+    if (!selected) {
+      resultDiv.innerHTML = '⚠️ Please select an answer!';
+      resultDiv.style.color = 'var(--accent-yellow)';
+      return;
+    }
+
+    if (selected.value === correctAnswer) {
+      resultDiv.innerHTML = successMsg + ' 🎉';
+      resultDiv.style.color = 'var(--accent-green)';
+    } else {
+      resultDiv.innerHTML = '❌ Not quite right. Try again!';
+      resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+    }
   }
-  
-  if (selected.value === correctAnswer) {
-    resultDiv.innerHTML = successMsg + ' 🎉';
-    resultDiv.style.color = 'var(--accent-green)';
-  } else {
-    resultDiv.innerHTML = '❌ Not quite right. Try again!';
-    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
-  }
-}
 </script>
 
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

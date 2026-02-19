@@ -1,7 +1,7 @@
 ---
-layout: default
-title: "Lesson 2: Your First Python Program | Python Tutorial"
-description: "Write your very first Python program and see it run!"
+layout: tutorial
+title: "Lesson 2: Variables & Data Types | Python Tutorial"
+description: "Learn how to store and manage information in Python"
 ---
 
 <section>
@@ -9,12 +9,19 @@ description: "Write your very first Python program and see it run!"
     <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
   </div>
 
-  <h2>🟢 Lesson 2: Your First Python Program!</h2>
-  <p class="muted">⏱️ Estimated time: 10-15 minutes | Difficulty: Beginner</p>
+  <h2>📦 Lesson 2: Python Variables & Data Types</h2>
+  <p class="muted">⏱️ Estimated time: 20 minutes | Difficulty: Beginner</p>
 
   <!-- Lesson Content -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+
+    <div class="callout callout-tip">
+      <h4><i class="fas fa-box"></i> Dynamic Suffix</h4>
+      <p style="margin: 0;">Python is dynamically typed, meaning you don't need to specify the type of data when you
+        create a variable. Python handles it for you!</p>
+    </div>
+
     <h3>🎯 Your Goal: Write "Hello, World!"</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       Every programmer writes this program as their first one. It's a rite of passage! 🎓
@@ -29,8 +36,9 @@ description: "Write your very first Python program and see it run!"
 
     <h3>Step 2: Write Your First Program</h3>
     <p style="color: var(--muted);">Type (don't copy-paste!) the following code:</p>
-    
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>print("Hello, World!")</code></pre>
+
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>print("Hello, World!")</code></pre>
 
     <p style="color: var(--muted); margin-top: 1rem;">
       That's it! Just one line of code. Here's what it means:
@@ -59,13 +67,15 @@ description: "Write your very first Python program and see it run!"
     </ol>
 
     <p style="color: var(--accent-green); margin: 2rem 0; font-weight: bold; font-size: 1.2rem;">
-      🎉 You should see: <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">Hello, World!</code>
+      🎉 You should see: <code
+        style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">Hello, World!</code>
     </p>
 
     <h3>Let's Get Fancier!</h3>
     <p style="color: var(--muted);">Now try this code:</p>
-    
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>print("Hello, World!")
+
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>print("Hello, World!")
 print("My name is Python!")
 print("I'm awesome!")
 print("")
@@ -76,19 +86,26 @@ print("Welcome to programming!")</code></pre>
     </p>
 
     <h3>More Examples to Try:</h3>
-    
+
     <h4>Example 1: Using Numbers</h4>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>print(5 + 3)
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>print(5 + 3)
 print(10 * 4)
 print(20 / 5)</code></pre>
-    <p style="color: var(--muted); margin-top: 0.5rem;">Output: <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">8</code> <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">40</code> <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">4.0</code></p>
+    <p style="color: var(--muted); margin-top: 0.5rem;">Output: <code
+        style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">8</code> <code
+        style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">40</code> <code
+        style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">4.0</code></p>
 
     <h4>Example 2: Combining Text and Numbers</h4>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>print("I have", 5, "apples")</code></pre>
-    <p style="color: var(--muted); margin-top: 0.5rem;">Output: <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">I have 5 apples</code></p>
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>print("I have", 5, "apples")</code></pre>
+    <p style="color: var(--muted); margin-top: 0.5rem;">Output: <code
+        style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">I have 5 apples</code></p>
 
     <h4>Example 3: Getting Input from Users</h4>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>name = input("What is your name? ")
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>name = input("What is your name? ")
 print("Hello,", name)</code></pre>
     <p style="color: var(--muted); margin-top: 0.5rem;">When you run this, it asks for your name, then says hello!</p>
 
@@ -96,18 +113,24 @@ print("Hello,", name)</code></pre>
     <div style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
       <div style="margin-bottom: 1rem;">
         <p style="margin: 0; color: var(--muted); font-weight: bold;">❌ Mistake 1: Forgetting parentheses</p>
-        <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: rgba(255, 45, 149, 1);">print "Hello"  (WRONG)</code>
-        <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: var(--accent-green);">print("Hello")  (CORRECT)</code>
+        <code
+          style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: rgba(255, 45, 149, 1);">print "Hello"  (WRONG)</code>
+        <code
+          style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: var(--accent-green);">print("Hello")  (CORRECT)</code>
       </div>
       <div style="margin-bottom: 1rem;">
         <p style="margin: 0; color: var(--muted); font-weight: bold;">❌ Mistake 2: Forgetting quotes around text</p>
-        <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: rgba(255, 45, 149, 1);">print(Hello World)  (WRONG)</code>
-        <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: var(--accent-green);">print("Hello World")  (CORRECT)</code>
+        <code
+          style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: rgba(255, 45, 149, 1);">print(Hello World)  (WRONG)</code>
+        <code
+          style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: var(--accent-green);">print("Hello World")  (CORRECT)</code>
       </div>
       <div>
         <p style="margin: 0; color: var(--muted); font-weight: bold;">❌ Mistake 3: Wrong file extension</p>
-        <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: rgba(255, 45, 149, 1);">hello.txt  (WRONG)</code>
-        <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: var(--accent-green);">hello.py  (CORRECT)</code>
+        <code
+          style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: rgba(255, 45, 149, 1);">hello.txt  (WRONG)</code>
+        <code
+          style="background: rgba(0,0,0,0.3); padding: 0.5rem; display: block; margin-top: 0.5rem; border-radius: 4px; color: var(--accent-green);">hello.py  (CORRECT)</code>
       </div>
     </div>
 
@@ -126,19 +149,25 @@ print("Hello,", name)</code></pre>
     </ul>
 
     <h3 style="margin-top: 1rem;">🧪 Try It Online</h3>
-    <p style="color: var(--muted); margin-bottom: 0.5rem;">Quick online editors to experiment with code (safe and instant):</p>
+    <p style="color: var(--muted); margin-bottom: 0.5rem;">Quick online editors to experiment with code (safe and
+      instant):</p>
     <ul style="color: var(--muted);">
-      <li><a href="https://www.w3schools.com/python/trypython.asp" target="_blank" style="color: var(--accent-cyan);">W3Schools - Try Python</a></li>
-      <li><a href="https://replit.com/~" target="_blank" style="color: var(--accent-cyan);">Replit - Run Python in the browser</a></li>
-      <li><a href="https://www.geeksforgeeks.org/python-programming-examples/" target="_blank" style="color: var(--accent-cyan);">GeeksforGeeks - Python examples</a></li>
+      <li><a href="https://www.w3schools.com/python/trypython.asp" target="_blank"
+          style="color: var(--accent-cyan);">W3Schools - Try Python</a></li>
+      <li><a href="https://replit.com/~" target="_blank" style="color: var(--accent-cyan);">Replit - Run Python in the
+          browser</a></li>
+      <li><a href="https://www.geeksforgeeks.org/python-programming-examples/" target="_blank"
+          style="color: var(--accent-cyan);">GeeksforGeeks - Python examples</a></li>
     </ul>
 
     <h3 style="margin-top: 1rem;">📝 Practice Exercises</h3>
     <ol style="color: var(--muted); line-height: 1.9; margin-bottom: 0.5rem;">
       <li>Create a program that asks for the user's age and prints "You are X years old".</li>
-      <li>Write a small calculator that asks for two numbers and prints their sum, difference, product, and quotient.</li>
+      <li>Write a small calculator that asks for two numbers and prints their sum, difference, product, and quotient.
+      </li>
     </ol>
-    <details style="color: var(--muted);"><summary style="cursor: pointer; font-weight: bold;">Show sample answers</summary>
+    <details style="color: var(--muted);">
+      <summary style="cursor: pointer; font-weight: bold;">Show sample answers</summary>
       <pre style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; margin-top: 1rem; overflow-x: auto;"><code># Exercise 1
 age = input("How old are you? ")
 print("You are", age, "years old")
@@ -155,18 +184,24 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
     <h3 style="margin-top: 1rem;">📚 Further Reading</h3>
     <p style="color: var(--muted); margin: 0;">Learn more reference-style material and examples from the originals:</p>
     <ul style="color: var(--muted);">
-      <li><a href="https://www.w3schools.com/python/" target="_blank" style="color: var(--accent-cyan);">W3Schools Python Tutorial</a> — clear, example-driven lessons.</li>
-      <li><a href="https://www.geeksforgeeks.org/python-programming-language/" target="_blank" style="color: var(--accent-cyan);">GeeksforGeeks Python</a> — deeper articles and problem-focused explanations.</li>
+      <li><a href="https://www.w3schools.com/python/" target="_blank" style="color: var(--accent-cyan);">W3Schools
+          Python Tutorial</a> — clear, example-driven lessons.</li>
+      <li><a href="https://www.geeksforgeeks.org/python-programming-language/" target="_blank"
+          style="color: var(--accent-cyan);">GeeksforGeeks Python</a> — deeper articles and problem-focused
+        explanations.</li>
     </ul>
   </div>
 
   <!-- Quiz Section -->
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz - Test Your Knowledge!</h3>
 
     <!-- Question 1 -->
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 1: What command displays text in Python?</p>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 1: What command displays text in
+        Python?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q1" value="a"> A) display()
@@ -181,13 +216,17 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
           <input type="radio" name="q1" value="d"> D) write()
         </label>
       </div>
-      <button onclick="checkAnswer('q1', 'b', '✅ Correct! print() displays output.', 'print() function')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q1', 'b', '✅ Correct! print() displays output.', 'print() function')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
     <!-- Question 2 -->
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 2: What is the correct file extension for Python programs?</p>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 2: What is the correct file
+        extension for Python programs?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q2" value="a"> A) .python
@@ -202,13 +241,17 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
           <input type="radio" name="q2" value="d"> D) .txt
         </label>
       </div>
-      <button onclick="checkAnswer('q2', 'c', '✅ Correct! Python files always end with .py', 'File extensions')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q2', 'c', '✅ Correct! Python files always end with .py', 'File extensions')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
     <!-- Question 3 -->
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 3: What does this code do? print(5 + 3)</p>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 3: What does this code do?
+        print(5 + 3)</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q3" value="a"> A) Displays "5 + 3"
@@ -223,14 +266,17 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
           <input type="radio" name="q3" value="d"> D) Does nothing
         </label>
       </div>
-      <button onclick="checkAnswer('q3', 'b', '✅ Correct! Python calculates 5 + 3 = 8', 'Math in Python')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q3', 'b', '✅ Correct! Python calculates 5 + 3 = 8', 'Math in Python')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
   </div>
 
   <!-- Challenge -->
-  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+  <div
+    style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Try writing a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
@@ -238,34 +284,39 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
       <li>Displays "Your favorite color is [color]"</li>
       <li>Save as <code>favorite_color.py</code> and run it</li>
     </ol>
-    <p style="color: var(--muted); margin-top: 1.5rem;"><strong>Hint:</strong> Use <code>input()</code> to get the user's input and <code>print()</code> to display it.</p>
+    <p style="color: var(--muted); margin-top: 1.5rem;"><strong>Hint:</strong> Use <code>input()</code> to get the
+      user's input and <code>print()</code> to display it.</p>
   </div>
 
   <!-- Navigation -->
   <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="lesson-1.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: What is Python?</a>
-    <a href="lesson-3.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next: Variables →</a>
+    <a href="lesson-1.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous: What is Python?</a>
+    <a href="lesson-3.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Variables →</a>
   </div>
 
 </section>
 
 <script>
-function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-  const resultDiv = document.getElementById(questionName + '-result');
-  
-  if (!selected) {
-    resultDiv.innerHTML = '⚠️ Please select an answer!';
-    resultDiv.style.color = 'var(--accent-yellow)';
-    return;
+  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+    const resultDiv = document.getElementById(questionName + '-result');
+
+    if (!selected) {
+      resultDiv.innerHTML = '⚠️ Please select an answer!';
+      resultDiv.style.color = 'var(--accent-yellow)';
+      return;
+    }
+
+    if (selected.value === correctAnswer) {
+      resultDiv.innerHTML = successMsg + ' 🎉';
+      resultDiv.style.color = 'var(--accent-green)';
+    } else {
+      resultDiv.innerHTML = '❌ Not quite right. Try again!';
+      resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+    }
   }
-  
-  if (selected.value === correctAnswer) {
-    resultDiv.innerHTML = successMsg + ' 🎉';
-    resultDiv.style.color = 'var(--accent-green)';
-  } else {
-    resultDiv.innerHTML = '❌ Not quite right. Try again!';
-    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
-  }
-}
 </script>

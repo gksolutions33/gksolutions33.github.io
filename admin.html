@@ -1,0 +1,490 @@
+---
+layout: default
+title: "Admin Panel | GK Solutions"
+description: "Admin panel to add projects"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Admin Panel - Add Projects" />
+  <meta name="keywords" content="admin, projects, management" />
+  <title>Admin Panel | GK Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="/gksolutions_logo.png">
+  <link rel="apple-touch-icon" href="/gksolutions_logo.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .admin-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: var(--input-bg, var(--card));
+      color: var(--text);
+      transition: border-color 240ms;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .image-preview {
+      margin-top: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 300px;
+    }
+
+    .image-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #00d4ff, #0066ff);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 240ms;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 100, 255, 0.3);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #10b981;
+      color: white;
+      border-radius: 6px;
+      animation: slideIn 300ms ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .error-message {
+      display: none;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #ef4444;
+      color: white;
+      border-radius: 6px;
+      animation: slideIn 300ms ease-out;
+    }
+
+    .field-info {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .admin-header h1 {
+      color: var(--text);
+      margin: 0;
+    }
+
+    .projects-list {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--border);
+    }
+
+    .project-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: var(--input-bg, rgba(0,0,0,0.02));
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .project-item-info h3 {
+      margin: 0 0 0.3rem 0;
+      color: var(--text);
+    }
+
+    .project-item-info p {
+      margin: 0.3rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .project-item-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 240ms;
+    }
+
+    .btn-delete {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-delete:hover {
+      background: #dc2626;
+    }
+
+    .btn-edit {
+      background: var(--accent-cyan);
+      color: white;
+    }
+
+    .btn-edit:hover {
+      background: #0099cc;
+    }
+  </style>
+</head>
+<body>
+  <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <a href="/" style="display:inline-flex; align-items:center; gap:0.8rem; text-decoration:none;">
+        <div>
+          <div class="site-title" style="font-size:1.15rem; font-weight:800; color:var(--text);">GK SOLUTIONS</div>
+          <div class="site-sub" style="font-size:0.86rem; color:var(--muted);">AI • IoT • Arduino • Projects & Tutorials</div>
+        </div>
+      </a>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="site-sub" style="color:var(--muted); font-size:0.85rem;">DEFEAT THE FEAR</div>
+      <button id="theme-toggle" class="btn btn-outline" aria-label="Toggle theme">🌙 Dark</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="/index.html">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/tutorials/">Tutorials</a>
+    <a href="/market.html">Market Updates</a>
+    <a href="/Papers.html">Papers</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
+  </nav>
+
+  <main>
+    <div class="admin-container">
+      <div class="admin-header">
+        <h1>📊 Admin Panel - Add New Project</h1>
+        <a href="/projects.html" class="btn btn-outline">View All Projects</a>
+      </div>
+
+      <form id="projectForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectTitle">Project Title *</label>
+            <input type="text" id="projectTitle" name="title" required placeholder="Enter project title">
+            <div class="field-info">Required. This will appear as the project name.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="projectCategory">Category *</label>
+            <select id="projectCategory" name="category" required>
+              <option value="">Select a category</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Mobile App">Mobile App</option>
+              <option value="IoT">IoT</option>
+              <option value="Arduino">Arduino</option>
+              <option value="AI/ML">AI/ML</option>
+              <option value="Desktop">Desktop</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectDescription">Description *</label>
+          <textarea id="projectDescription" name="description" required placeholder="Enter a detailed description of your project..."></textarea>
+          <div class="field-info">Describe what the project does and its key features.</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="projectTechnologies">Technologies Used</label>
+            <input type="text" id="projectTechnologies" name="technologies" placeholder="e.g., React, Node.js, Arduino, TensorFlow">
+            <div class="field-info">Comma-separated list of technologies.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="projectLink">Project Link</label>
+            <input type="url" id="projectLink" name="link" placeholder="https://github.com/... or https://yoursite.com">
+            <div class="field-info">Optional. URL to GitHub or live project.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="projectImage">Project Image *</label>
+          <input type="file" id="projectImage" name="image" accept="image/*" required>
+          <div class="field-info">Recommended: 800x600px or similar aspect ratio. Format: JPG, PNG, WebP.</div>
+          <div id="imagePreview" class="image-preview" style="display:none;">
+            <img id="previewImg" src="" alt="Preview">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">✨ Add Project</button>
+
+        <div id="successMessage" class="success-message">
+          ✅ Project added successfully! Redirecting to projects page...
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+      </form>
+
+      <!-- Projects List -->
+      <div class="projects-list">
+        <h2>📌 Recent Projects (From Browser Storage)</h2>
+        <p class="field-info" style="margin-bottom: 1.5rem;">Note: Projects are stored in your browser. For permanent storage, implement a backend database.</p>
+        <div id="projectsList"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  // Theme toggle (same as main site)
+  (function(){
+    var root = document.documentElement;
+    function applyTheme(mode){
+      if(mode === 'dark') root.classList.add('dark-theme'); else root.classList.remove('dark-theme');
+      try{ localStorage.setItem('theme', mode); }catch(e){}
+      updateButton();
+    }
+    function updateButton(){
+      var btn = document.getElementById('theme-toggle');
+      if(!btn) return;
+      btn.textContent = root.classList.contains('dark-theme') ? '☀️ Light' : '🌙 Dark';
+    }
+    var stored = null;
+    try{ stored = localStorage.getItem('theme'); }catch(e){}
+    if(stored){ applyTheme(stored); }
+    else {
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+    }
+    document.addEventListener('click', function(e){
+      if(!e.target) return;
+      if(e.target.id === 'theme-toggle'){
+        var isDark = root.classList.contains('dark-theme');
+        applyTheme(isDark ? 'light' : 'dark');
+      }
+    });
+    document.addEventListener('DOMContentLoaded', updateButton);
+  })();
+
+  // Image preview
+  document.getElementById('projectImage').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if(file) {
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        document.getElementById('previewImg').src = event.target.result;
+        document.getElementById('imagePreview').style.display = 'block';
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Form submission
+  document.getElementById('projectForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    var formData = new FormData(this);
+    var imageFile = formData.get('image');
+    
+    if(!imageFile) {
+      showError('Please select an image');
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      var projectData = {
+        id: Date.now(),
+        title: formData.get('title'),
+        category: formData.get('category'),
+        description: formData.get('description'),
+        technologies: formData.get('technologies'),
+        link: formData.get('link'),
+        image: event.target.result,
+        dateAdded: new Date().toLocaleDateString()
+      };
+
+      // Store in localStorage
+      var projects = JSON.parse(localStorage.getItem('gkProjects') || '[]');
+      projects.unshift(projectData);
+      localStorage.setItem('gkProjects', JSON.stringify(projects));
+      
+      // Debug: Log to confirm save
+      console.log('Project saved:', projectData);
+      console.log('All projects:', JSON.parse(localStorage.getItem('gkProjects')));
+
+      // Show success
+      document.getElementById('successMessage').style.display = 'block';
+      document.getElementById('errorMessage').style.display = 'none';
+      document.getElementById('projectForm').reset();
+      document.getElementById('imagePreview').style.display = 'none';
+
+      // Reload projects list
+      loadProjects();
+
+      // Redirect to projects page after 2 seconds
+      setTimeout(() => {
+        window.location.href = '/projects.html';
+      }, 2000);
+    };
+    reader.readAsDataURL(imageFile);
+  });
+
+  function showError(message) {
+    var errorEl = document.getElementById('errorMessage');
+    errorEl.textContent = '❌ ' + message;
+    errorEl.style.display = 'block';
+    document.getElementById('successMessage').style.display = 'none';
+  }
+
+  function loadProjects() {
+    var projects = JSON.parse(localStorage.getItem('gkProjects') || '[]');
+    var listEl = document.getElementById('projectsList');
+
+    if(projects.length === 0) {
+      listEl.innerHTML = '<p style="color: var(--muted);">No projects yet. Create your first one above!</p>';
+      return;
+    }
+
+    listEl.innerHTML = projects.map(p => `
+      <div class="project-item">
+        <div class="project-item-info">
+          <h3>${p.title}</h3>
+          <p><strong>Category:</strong> ${p.category}</p>
+          <p><strong>Added:</strong> ${p.dateAdded}</p>
+        </div>
+        <div class="project-item-actions">
+          <button class="btn-small btn-edit" onclick="editProject(${p.id})">Edit</button>
+          <button class="btn-small btn-delete" onclick="deleteProject(${p.id})">Delete</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function deleteProject(id) {
+    if(confirm('Are you sure you want to delete this project?')) {
+      var projects = JSON.parse(localStorage.getItem('gkProjects') || '[]');
+      projects = projects.filter(p => p.id !== id);
+      localStorage.setItem('gkProjects', JSON.stringify(projects));
+      loadProjects();
+    }
+  }
+
+  function editProject(id) {
+    var projects = JSON.parse(localStorage.getItem('gkProjects') || '[]');
+    var project = projects.find(p => p.id === id);
+    if(project) {
+      document.getElementById('projectTitle').value = project.title;
+      document.getElementById('projectCategory').value = project.category;
+      document.getElementById('projectDescription').value = project.description;
+      document.getElementById('projectTechnologies').value = project.technologies;
+      document.getElementById('projectLink').value = project.link;
+      document.getElementById('previewImg').src = project.image;
+      document.getElementById('imagePreview').style.display = 'block';
+      
+      // Scroll to form
+      document.querySelector('.admin-container').scrollIntoView({ behavior: 'smooth' });
+      
+      // Mark for editing
+      document.getElementById('projectForm').dataset.editId = id;
+    }
+  }
+
+  // Load projects on page load
+  document.addEventListener('DOMContentLoaded', loadProjects);
+  </script>
+
+  <footer>
+    &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
+  </footer>
+</body>
+</html>

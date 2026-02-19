@@ -1,5 +1,156 @@
 ---
-layout: default
-title: "Complete C++ Lessons | C++ Tutorial"
+layout: tutorial
+title: "Lesson 2: Setup & First Program | C++ Tutorial"
+description: "Install a C++ compiler and write your first Hello World program"
 ---
-<section style="text-align: center;"><a href="./" style="color: #ff9f1c; text-decoration: none; font-weight: bold;">← Back to Lessons</a><h2>⚡ C++ Lessons 2-8</h2><p style="color: rgba(255,255,255,0.6); margin: 2rem 0;">Complete the C++ tutorial with these lessons:</p><div style="max-width: 600px; margin: 2rem auto; text-align: left;"><p><strong>Lesson 2:</strong> Setup & First Program - Installation, compilation, cout</p><p><strong>Lesson 3:</strong> Variables & Data Types - int, double, string, auto</p><p><strong>Lesson 4:</strong> Operators & Math - Arithmetic, logical, comparison operators</p><p><strong>Lesson 5:</strong> Control Flow - if/else, switch statements</p><p><strong>Lesson 6:</strong> Loops - for, while, do-while loops</p><p><strong>Lesson 7:</strong> Functions - Function definition, parameters, return types</p><p><strong>Lesson 8:</strong> Classes & Objects - Object-oriented programming, class definition</p></div><div style="background: #7bff6f; color: #000; padding: 1rem; border-radius: 6px; margin-top: 3rem; text-align: center;"><a href="./" style="color: #000; text-decoration: none; font-weight: bold;">Continue Learning</a></div></section>
+
+<section>
+    <h2>🛠️ Lesson 2: Setup & Your First C++ Program</h2>
+    <p class="muted">⏱️ Estimated time: 20 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-tools"></i> Getting Ready</h4>
+        <p style="margin: 0;">To write C++, you need a compiler like GCC or Clang and a code editor like VS Code.</p>
+    </div>
+
+    <h3>Setting Up C++</h3>
+    <p style="color: var(--muted);">C++ uses the same compilers as C (GCC, Clang, MSVC) but with <code>g++</code>
+        instead of <code>gcc</code>.</p>
+
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code># Verify installation
+g++ --version
+
+# Compile
+g++ hello.cpp -o hello
+
+# Run
+./hello       # Linux/Mac
+hello.exe     # Windows</code></pre>
+
+    <h3>Your First C++ Program</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string name;
+    int age;
+
+    cout &lt;&lt; "What's your name? ";
+    cin >> name;
+
+    cout &lt;&lt; "How old are you? ";
+    cin >> age;
+
+    cout &lt;&lt; "Hello " &lt;&lt; name &lt;&lt; "! ";
+    cout &lt;&lt; "You are " &lt;&lt; age &lt;&lt; " years old." &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+
+    <h4>Line-by-Line Breakdown:</h4>
+    <ul style="color: var(--muted); line-height: 2.2;">
+        <li><code>#include &lt;iostream&gt;</code> — Input/output stream library</li>
+        <li><code>#include &lt;string&gt;</code> — String class</li>
+        <li><code>using namespace std;</code> — Use standard library names directly</li>
+        <li><code>string name;</code> — C++ has a proper string type!</li>
+        <li><code>cin >> name;</code> — Read input from keyboard</li>
+        <li><code>cout &lt;&lt; "text";</code> — Print output</li>
+        <li><code>endl</code> — End line (like <code>\n</code>)</li>
+    </ul>
+
+    <h3>C++ vs C: Key Improvements</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>// C style
+char name[50];
+printf("Name: %s\n", name);
+
+// C++ style (much cleaner!)
+string name;
+cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; endl;
+
+// C++ has bool type
+bool isReady = true;
+
+// C++ allows declaring in for loops
+for (int i = 0; i < 5; i++) { ... }
+
+// C++ references (safer than pointers)
+int x = 10;
+int &amp;ref = x;  // ref IS x</code></pre>
+
+    </div>
+
+    <!-- Quiz -->
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What command compiles C++ code?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) gcc</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) g++</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) python</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you read input in C++?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) scanf()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) cin >></label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) input()</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'using namespace std;'
+                do?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Imports math functions</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Allows using cout/cin without std:: prefix</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) Creates a new class</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-1.html"
+            style="background: #ff9f1c; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-3.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Variables & Data Types →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

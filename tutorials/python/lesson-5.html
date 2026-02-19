@@ -1,7 +1,7 @@
 ---
-layout: default
-title: "Lesson 5: If/Else Statements | Python Tutorial"
-description: "Learn how to make decisions in Python"
+layout: tutorial
+title: "Lesson 5: Loops | Python Tutorial"
+description: "Master repetitive tasks in Python using for and while loops"
 ---
 
 <section>
@@ -9,18 +9,27 @@ description: "Learn how to make decisions in Python"
     <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
   </div>
 
-  <h2>🔵 Lesson 5: Making Decisions with If/Else</h2>
-  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Beginner</p>
+  <h2>🔄 Lesson 5: Loops (Repetition)</h2>
+  <p class="muted">⏱️ Estimated time: 25 minutes | Difficulty: Beginner</p>
 
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    
+  <div class="callout callout-tip">
+    <h4><i class="fas fa-redo"></i> Automation</h4>
+    <p style="margin: 0;">Loops allow you to run the same code multiple times, which is essential for processing lists
+      of data or performing repetitive calculations.</p>
+  </div>
+  </div>
+
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+
     <h3>What is an If Statement?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       <strong>An if statement lets your program make decisions.</strong> It runs different code based on conditions.
     </p>
 
     <h4>Real-World Analogy:</h4>
-    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
+    <div
+      style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
       <p style="margin: 0; color: var(--muted);">
         🌧️ <strong>If it's raining:</strong> Take an umbrella<br>
         ☀️ <strong>Else (if it's not raining):</strong> Don't take an umbrella
@@ -28,7 +37,8 @@ description: "Learn how to make decisions in Python"
     </div>
 
     <h3>Basic If Statement</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 18
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 18
 
 if age >= 18:
     print("You can vote!")
@@ -41,7 +51,8 @@ Welcome to voting!</code></pre>
     <h3>Comparison Operators</h3>
     <p style="color: var(--muted);">These are used in if statements to compare values:</p>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
       <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">== Equal</p>
         <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if name == "Alice":
@@ -58,8 +69,10 @@ Welcome to voting!</code></pre>
     print("You passed!")</code></pre>
       </div>
       <div style="background: rgba(255, 195, 0, 0.08); padding: 1rem; border-radius: 8px;">
-        <p style="margin: 0 0 0.5rem 0; color: var(--accent-yellow); font-weight: bold;">< Less</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if age < 13:
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-yellow); font-weight: bold;">
+          < Less</p>
+            <pre
+              style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if age < 13:
     print("You're a kid!")</code></pre>
       </div>
       <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
@@ -68,14 +81,17 @@ Welcome to voting!</code></pre>
     print("Grade: A")</code></pre>
       </div>
       <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
-        <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;"><= Less or Equal</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if age <= 12:
+        <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">
+          <= Less or Equal</p>
+            <pre
+              style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if age <= 12:
     print("Child price")</code></pre>
       </div>
     </div>
 
     <h3>If/Else Statement</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 15
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 15
 
 if age >= 18:
     print("You can vote!")
@@ -86,7 +102,8 @@ else:
     <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>You can't vote yet.</code></pre>
 
     <h3>If/Elif/Else (Multiple Conditions)</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>score = 85
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>score = 85
 
 if score >= 90:
     print("Grade: A")
@@ -101,7 +118,8 @@ else:
     <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Grade: B</code></pre>
 
     <h3>Combining Conditions with AND/OR</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 25
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 25
 has_license = True
 
 # AND: Both must be true
@@ -115,27 +133,30 @@ if age < 13 or age > 65:
   </div>
 
   <!-- Quiz Section -->
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What will this print?<br>x = 10<br>if x > 5:<br>    print("Big")</p>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What will this print?<br>x = 10<br>if x >
+        5:<br> print("Big")</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q1" value="a"> A) Big
         </label>
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="b"> B) Nothing
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q1" value="c"> C) Error
         </label>
       </div>
-      <button onclick="checkAnswer('q1', 'a', '✅ Correct! 10 > 5 is true, so "Big" prints.', 'If statements')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q1', 'b', '✅ Correct! Lists are ordered collections.', 'Python Lists')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What operator checks "not equal"?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -148,11 +169,15 @@ if age < 13 or age > 65:
           <input type="radio" name="q2" value="c"> C) <>
         </label>
       </div>
-      <button onclick="checkAnswer('q2', 'b', '✅ Correct! != is the "not equal" operator in Python.', 'Comparison operators')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button
+        onclick="checkAnswer('q2', 'b', '✅ Correct! != is the not equal operator in Python.', 'Comparison operators')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ When do you use "elif"?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -165,14 +190,18 @@ if age < 13 or age > 65:
           <input type="radio" name="q3" value="c"> C) Instead of "if"
         </label>
       </div>
-      <button onclick="checkAnswer('q3', 'b', '✅ Correct! Use elif for additional conditions to check.', 'Elif statements')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button
+        onclick="checkAnswer('q3', 'b', '✅ Correct! Use elif for additional conditions to check.', 'Elif statements')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
   </div>
 
   <!-- Challenge -->
-  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+  <div
+    style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
@@ -187,29 +216,33 @@ if age < 13 or age > 65:
 
   <!-- Navigation -->
   <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="lesson-4.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: Math & Operations</a>
-    <a href="lesson-6.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next: Loops →</a>
+    <a href="lesson-4.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous: Math & Operations</a>
+    <a href="lesson-6.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Loops →</a>
   </div>
 
 </section>
 
 <script>
-function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-  const resultDiv = document.getElementById(questionName + '-result');
-  
-  if (!selected) {
-    resultDiv.innerHTML = '⚠️ Please select an answer!';
-    resultDiv.style.color = 'var(--accent-yellow)';
-    return;
+  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+    const resultDiv = document.getElementById(questionName + '-result');
+
+    if (!selected) {
+      resultDiv.innerHTML = '⚠️ Please select an answer!';
+      resultDiv.style.color = 'var(--accent-yellow)';
+      return;
+    }
+
+    if (selected.value === correctAnswer) {
+      resultDiv.innerHTML = successMsg + ' 🎉';
+      resultDiv.style.color = 'var(--accent-green)';
+    } else {
+      resultDiv.innerHTML = '❌ Not quite right. Try again!';
+      resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+    }
   }
-  
-  if (selected.value === correctAnswer) {
-    resultDiv.innerHTML = successMsg + ' 🎉';
-    resultDiv.style.color = 'var(--accent-green)';
-  } else {
-    resultDiv.innerHTML = '❌ Not quite right. Try again!';
-    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
-  }
-}
 </script>

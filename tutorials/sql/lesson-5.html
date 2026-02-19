@@ -1,5 +1,131 @@
 ---
-layout: default
-title: "SQL Lesson 5"
+layout: tutorial
+title: "Lesson 5: SQL JOINS (Combining Tables)"
+description: "Master SQL Joins to combine data from multiple tables"
 ---
-<section style="text-align: center;"><a href="./" style="color: #00d9ff; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #00d9ff; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>🔗 Lesson 5: SQL JOINS (Combining Tables)</h2>
+    <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-link"></i> Data Relationships</h4>
+        <p style="margin: 0;">In a relational database, data is often spread across multiple tables. <code>JOIN</code>
+            clauses are used to combine rows from two or more tables, based on a related column between them.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #00d9ff;">
+
+        <h3>Why Joins?</h3>
+        <p style="color: var(--muted);">Data is split across tables. Joins combine related data from multiple tables
+            into one result.</p>
+
+        <h3>Sample Tables</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- users: id | name    | email
+-- orders: id | user_id | product | amount</code></pre>
+
+        <h3>INNER JOIN (Most Common)</h3>
+        <p style="color: var(--muted);">Returns only rows that match in both tables.</p>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT users.name, orders.product, orders.amount
+FROM users
+INNER JOIN orders ON users.id = orders.user_id;</code></pre>
+
+        <h3>LEFT JOIN</h3>
+        <p style="color: var(--muted);">Returns all rows from left table + matching rows from right. NULL if no match.
+        </p>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT users.name, orders.product
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id;
+-- Shows ALL users, even those with no orders</code></pre>
+
+        <h3>RIGHT JOIN & FULL JOIN</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- RIGHT JOIN: all rows from right table
+SELECT * FROM users RIGHT JOIN orders ON users.id = orders.user_id;
+
+-- FULL JOIN: all rows from both tables
+SELECT * FROM users FULL JOIN orders ON users.id = orders.user_id;</code></pre>
+
+        <h3>Table Aliases</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT u.name, o.product, o.amount
+FROM users u
+JOIN orders o ON u.id = o.user_id
+WHERE o.amount > 100;</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does INNER JOIN return?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) All rows from both tables</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Only rows that match in both tables</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) Only rows from left table</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does LEFT JOIN do when no
+                match exists?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Skips the row</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Shows the row with NULL values</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What keyword connects two tables?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) ON</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) WHERE</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) LINK</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct! ON specifies the join condition.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-4.html"
+            style="background: #00d9ff; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-6.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Aggregation →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

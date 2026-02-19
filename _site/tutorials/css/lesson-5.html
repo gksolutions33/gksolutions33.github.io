@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tech tutorials and projects on AI, Python, IoT, and Robotics" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
-  <title>Lesson 5: Flexbox | CSS Tutorial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Master complex two-dimensional layouts with CSS Grid" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 5: Layout - Grid | CSS Tutorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,14 +50,452 @@
 </nav>
 
   <main>
-    <section><div style="margin-bottom: 2rem;"><a href="./" style="color: #ff2d95; text-decoration: none;">← Back</a></div><h2>🎨 Lesson 5: Flexbox</h2><p class="muted">⏱️ 20 min | Intermediate</p><div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid #ff2d95;"><h3>Flex Container</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.container { 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}</code></pre><h3>Flex Direction</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.container { flex-direction: row; }     /* horizontal */
-.container { flex-direction: column; }   /* vertical */</code></pre><h3>Flex Properties</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.item { flex: 1; }       /* Equal space */
-.item { flex-grow: 2; }  /* Grows faster */
-.item { gap: 10px; }     /* Space between */</code></pre></div><div style="background: rgba(123,255,111,0.08); padding: 2rem; border-radius: 12px; margin-top: 2rem;"><h3 style="color: #7bff6f;">✅ Quiz</h3><div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7bff6f;"><p style="color: #999;">❓ Which property makes an element a flex container?</p><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="a"> A) flex-container: true</label><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="b"> B) display: flex</label><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: #7bff6f; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">Check</button><div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div></div></div><div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-4.html" style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">← Previous</a><a href="lesson-6.html" style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">Next →</a></div></section><script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:'❌ Try again!';}</script>
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>CSS Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-1">
+                Lesson 1: What is CSS?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-2">
+                Lesson 2: Selectors & Properties
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-3">
+                Lesson 3: Box Model
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-4">
+                Lesson 4: Layout - Flexbox
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/css/lesson-5">
+                Lesson 5: Layout - Grid
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-6">
+                Lesson 6: Positioning
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-7">
+                Lesson 7: Responsive Design
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-8">
+                Lesson 8: Transitions & Animations
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">css</span>
+        </nav>
+
+        <section>
+  <h2>🏁 Lesson 5: Layout with CSS Grid</h2>
+  <p class="muted">⏱️ Estimated time: 35 minutes | Difficulty: Intermediate</p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-table-cells-large"></i> 2D Layouts</h4>
+    <p style="margin: 0;">CSS Grid is the most powerful layout system available in CSS. It allows you to create complex,
+      two-dimensional layouts with ease.</p>
+  </div>
+
+  <h3>Grid = 2D Layout System</h3>
+  <p style="color: var(--muted);">While Flexbox handles one dimension (row OR column), Grid handles <strong>both
+      dimensions</strong> simultaneously!</p>
+
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* 3 equal columns */
+    grid-template-rows: auto auto;        /* 2 auto rows */
+    gap: 1rem;                            /* Space between items */
+}
+
+/* Shorthand for columns */
+grid-template-columns: repeat(3, 1fr);     /* 3 equal */
+grid-template-columns: 200px 1fr 200px;    /* Fixed-Flex-Fixed */
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive! */</code></pre>
+
+  <h3>Placing Items</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.item {
+    grid-column: 1 / 3;    /* Span columns 1 to 3 */
+    grid-row: 1 / 2;       /* Span row 1 */
+}
+
+/* Span shorthand */
+.wide { grid-column: span 2; }  /* Span 2 columns */
+.tall { grid-row: span 2; }     /* Span 2 rows */</code></pre>
+
+  <h3>Grid Template Areas</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.layout {
+    display: grid;
+    grid-template-areas:
+        "header  header  header"
+        "sidebar content content"
+        "footer  footer  footer";
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 1rem;
+}
+
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+.footer  { grid-area: footer; }</code></pre>
+
+  <h3>Alignment</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Align all items */
+justify-items: center;  /* Horizontal */
+align-items: center;    /* Vertical */
+place-items: center;    /* Both! */
+
+/* Align individual item */
+.item { justify-self: end; align-self: start; }</code></pre>
+
+  </div>
+
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does repeat(3, 1fr) create?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="a"> A) 1 column</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="b"> B) 3 equal columns</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="c"> C) 3 rows</label>
+      </div>
+      <button onclick="checkAnswer('q1','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Grid vs Flexbox?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="a"> A) Grid = 2D, Flexbox = 1D</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="b"> B) They are the same</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="c"> C) Flexbox = 2D, Grid = 1D</label>
+      </div>
+      <button onclick="checkAnswer('q2','a','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does grid-template-areas do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="a"> A) Defines named layout regions</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="b"> B) Creates animations</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="c"> C) Sets background colors</label>
+      </div>
+      <button onclick="checkAnswer('q3','a','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-4.html"
+      style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a>
+    <a href="lesson-6.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Positioning →</a>
+  </div>
+</section>
+
+<script>
+  function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>
+
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Interact with web pages" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
-  <title>Lesson 8: DOM & Events | JavaScript Tutorial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Learn how to use JavaScript to interact with web pages" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 8: DOM Manipulation | JavaScript Tutorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,13 +50,313 @@
 </nav>
 
   <main>
-    <section>
-  <div style="margin-bottom: 2rem;"><a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a></div>
-  <h2>🟡 Lesson 8: DOM & Events</h2>
-  <p class="muted">⏱️ Estimated time: 20-25 minutes | Difficulty: Intermediate</p>
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    <h3>Selecting Elements</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>// By ID
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>JAVASCRIPT Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-1">
+                Lesson 1: What is JavaScript?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-2">
+                Lesson 2: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-3">
+                Lesson 3: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-4">
+                Lesson 4: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-5">
+                Lesson 5: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-6">
+                Lesson 6: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-7">
+                Lesson 7: Objects & Arrays
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/javascript/lesson-8">
+                Lesson 8: DOM Manipulation
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">javascript</span>
+        </nav>
+
+        <section>
+  <div style="margin-bottom: 2rem;"><a href="./"
+      style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a></div>
+  <h2>🌐 Lesson 8: DOM Manipulation</h2>
+  <p class="muted">⏱️ Estimated time: 40 minutes | Difficulty: Intermediate</p>
+
+  <div class="callout callout-warning">
+    <h4><i class="fas fa-globe"></i> Bringing Pages to Life</h4>
+    <p style="margin: 0;">The DOM (Document Object Model) is what allows JavaScript to interact with HTML elements,
+      change their styles, and respond to clicks or keyboard input.</p>
+  </div>
+  <h3>Selecting Elements</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>// By ID
 let elem = document.getElementById('myId');
 
 // By class
@@ -60,27 +364,64 @@ let elems = document.querySelectorAll('.myClass');
 
 // By selector
 let first = document.querySelector('p');</code></pre>
-    <h3>Changing Content</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let button = document.getElementById('myBtn');
+  <h3>Changing Content</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let button = document.getElementById('myBtn');
 button.textContent = "Click me!";
 button.style.color = "blue";</code></pre>
-    <h3>Click Events</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let btn = document.getElementById('myBtn');
+  <h3>Click Events</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let btn = document.getElementById('myBtn');
 btn.addEventListener('click', function() {
   console.log("Button clicked!");
 });</code></pre>
-    <h3>Interactive Example</h3>
-    <p>Try this out:</p>
-    <button id="demoBtn" style="background: var(--accent-cyan); color: #000; padding: 0.7rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 1rem 0;">Click Me!</button>
-    <p id="demoOutput" style="color: var(--accent-green); font-weight: bold;"></p>
+  <h3>Interactive Example</h3>
+  <p>Try this out:</p>
+  <button id="demoBtn"
+    style="background: var(--accent-cyan); color: #000; padding: 0.7rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 1rem 0;">Click
+    Me!</button>
+  <p id="demoOutput" style="color: var(--accent-green); font-weight: bold;"></p>
   </div>
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);"><h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);"><p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What method gets an element by ID?</p><div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="a"> A) document.getElement</label><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="b"> B) document.getElementById()</label><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="c"> C) document.getById()</label></div><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button><div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div></div>
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What method gets an element by ID?</p>
+      <div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1"
+            value="a"> A) document.getElement</label><label style="display: block; margin: 0.7rem 0;"><input
+            type="radio" name="q1" value="b"> B) document.getElementById()</label><label
+          style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="c"> C)
+          document.getById()</label></div><button onclick="checkAnswer('q1','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
   </div>
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-7.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous</a><a href="./" style="background: var(--accent-cyan); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Back to Lessons</a></div>
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-7.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a><a href="./"
+      style="background: var(--accent-cyan); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Back
+      to Lessons</a></div>
 </section>
-<script>document.getElementById('demoBtn').addEventListener('click',function(){document.getElementById('demoOutput').textContent='Button clicked! 🎉';});function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:('❌ Try again!'),document.getElementById(q+'-result').style.color=s.value===a?'var(--accent-green)':'rgba(255,45,149,1)';};</script>
+<script>document.getElementById('demoBtn').addEventListener('click', function () { document.getElementById('demoOutput').textContent = 'Button clicked! 🎉'; }); function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); if (s) document.getElementById(q + '-result').innerHTML = s.value === a ? m : ('❌ Try again!'), document.getElementById(q + '-result').style.color = s.value === a ? 'var(--accent-green)' : 'rgba(255,45,149,1)'; };</script>
 
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

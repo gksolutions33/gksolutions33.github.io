@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tech tutorials and projects on AI, Python, IoT, and Robotics" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <meta name="description"
+    content="Setting up your C environment and writing your very first Hello World program" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
   <title>Lesson 2: Setup & First Program | C Tutorial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,14 +50,648 @@
 </nav>
 
   <main>
-    <section><div style="margin-bottom: 2rem;"><a href="./" style="color: #ffd60a; text-decoration: none;">← Back</a></div><h2>⚙️ Lesson 2: Setup & First Program</h2><p class="muted">⏱️ 15 min | Beginner</p><div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid #ffd60a;"><h3>Installing C</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>/* Windows: Use MinGW or MSVC */
-/* macOS: Install Xcode Command Line Tools */
-/* Linux: sudo apt-get install gcc */</code></pre><h3>Writing Your First Program</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>#include &lt;stdio.h&gt;
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>C Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-1">
+                Lesson 1: What is C?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/c/lesson-2">
+                Lesson 2: Setup & First Program
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-3">
+                Lesson 3: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-4">
+                Lesson 4: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-5">
+                Lesson 5: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-6">
+                Lesson 6: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-7">
+                Lesson 7: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-8">
+                Lesson 8: Arrays & Memory
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-1">
+                Lesson 1: What is C++?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-2">
+                Lesson 2: Setup & First Program
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-3">
+                Lesson 3: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-4">
+                Lesson 4: Classes & Objects
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-5">
+                Lesson 5: Inheritance
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-6">
+                Lesson 6: Polymorphism
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-7">
+                Lesson 7: Templates
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-8">
+                Lesson 8: STL & Memory Management
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-1">
+                Lesson 1: What is CSS?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-2">
+                Lesson 2: Selectors & Properties
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-3">
+                Lesson 3: Box Model
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-4">
+                Lesson 4: Layout - Flexbox
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-5">
+                Lesson 5: Layout - Grid
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-6">
+                Lesson 6: Positioning
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-7">
+                Lesson 7: Responsive Design
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-8">
+                Lesson 8: Transitions & Animations
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-1">
+                Lesson 1: What is JavaScript?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-2">
+                Lesson 2: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-3">
+                Lesson 3: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-4">
+                Lesson 4: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-5">
+                Lesson 5: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-6">
+                Lesson 6: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-7">
+                Lesson 7: Objects & Arrays
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-8">
+                Lesson 8: DOM Manipulation
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">c</span>
+        </nav>
+
+        <section>
+  <h2>🛠️ Lesson 2: Setup & Your First Program</h2>
+  <p class="muted">⏱️ Estimated time: 20 minutes | Difficulty: Beginner</p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-tools"></i> What You'll Learn</h4>
+    <p style="margin: 0;">How to set up a C compiler, use an IDE, and understand the structure of a basic C program.</p>
+  </div>
+
+  <h3>Setting Up Your C Environment</h3>
+  <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+    Unlike Python, C is a <strong>compiled language</strong>. You need a <strong>compiler</strong> to convert your C
+    code into an executable program your computer can run.
+
+  <h4>Step 1: Install a Compiler</h4>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    <div
+      style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
+      <h4 style="margin-top: 0; color: #ffd60a;">🪟 Windows</h4>
+      <ol style="margin: 0; color: var(--muted); line-height: 2;">
+        <li>Download <a href="https://www.mingw-w64.org/" target="_blank" style="color: #ffd60a;">MinGW-w64</a></li>
+        <li>Install and add to PATH</li>
+        <li>Or use <strong>Visual Studio</strong> (MSVC compiler)</li>
+      </ol>
+    </div>
+    <div
+      style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
+      <h4 style="margin-top: 0; color: #ffd60a;">🐧 Linux</h4>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 0.8rem; border-radius: 6px; margin: 0;"><code>sudo apt-get install gcc</code></pre>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">GCC comes pre-installed on most Linux distros!</p>
+    </div>
+    <div
+      style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
+      <h4 style="margin-top: 0; color: #ffd60a;">🍎 macOS</h4>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 0.8rem; border-radius: 6px; margin: 0;"><code>xcode-select --install</code></pre>
+      <p style="margin: 0.5rem 0 0 0; color: var(--muted);">Installs Clang compiler (compatible with GCC)</p>
+    </div>
+  </div>
+
+  <h4>Step 2: Verify Installation</h4>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>gcc --version
+# Should show something like: gcc (GCC) 13.2.0</code></pre>
+
+  <h4>Step 3: Choose a Code Editor</h4>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li>📝 <strong>VS Code</strong> (Recommended) — Free, extensions for C</li>
+    <li>📝 <strong>Code::Blocks</strong> — Built-in compiler and debugger</li>
+    <li>📝 <strong>Notepad++</strong> — Lightweight text editor</li>
+  </ul>
+
+  <h3>Your First C Program</h3>
+  <p style="color: var(--muted); font-size: 1.05rem;">Create a file called <code>hello.c</code> and type this:</p>
+
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
 int main() {
-  printf("My first C program!\n");
-  return 0;
-}</code></pre><h3>Compiling & Running</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>gcc program.c -o program
-./program</code></pre></div><div style="background: rgba(123,255,111,0.08); padding: 2rem; border-radius: 12px; margin-top: 2rem;"><h3 style="color: #7bff6f;">✅ Quiz</h3><div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7bff6f;"><p style="color: #999;">❓ What does gcc do?</p><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="a"> A) Runs C programs</label><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="b"> B) Compiles C code to executable</label><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: #7bff6f; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">Check</button><div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div></div></div><div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-1.html" style="background: #ffd60a; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">← Previous</a><a href="lesson-3.html" style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">Next →</a></div></section><script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:'❌ Try again!';}</script>
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+
+  <h4>Let's Break It Down Line by Line:</h4>
+  <ul style="color: var(--muted); line-height: 2.2; font-size: 1.05rem;">
+    <li><code>#include &lt;stdio.h&gt;</code> — Includes the Standard Input/Output library (gives us
+      <code>printf</code>)
+    </li>
+    <li><code>int main()</code> — The main function where your program starts. Every C program must have one!</li>
+    <li><code>printf("Hello, World!\n")</code> — Prints text to the screen. <code>\n</code> means new line</li>
+    <li><code>return 0;</code> — Tells the operating system "I finished successfully"</li>
+    <li><code>{ }</code> — Curly braces define a block of code</li>
+  </ul>
+
+  <h3>Compiling & Running</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code># Step 1: Compile
+gcc hello.c -o hello
+
+# Step 2: Run
+./hello          # Linux/Mac
+hello.exe        # Windows
+
+# Output: Hello, World!</code></pre>
+
+  <div
+    style="background: rgba(255, 195, 0, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 3px solid var(--accent-yellow);">
+    <p style="margin: 0; color: var(--muted);">
+      <strong>⚠️ Common Mistake:</strong> Forgetting the semicolon <code>;</code> at the end of statements! C requires
+      semicolons after every statement. If you get an error, check for missing semicolons first.
+    </p>
+  </div>
+
+  <h3>More Examples</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("My name is GK Solutions\n");
+    printf("I am learning C programming!\n");
+    printf("2 + 3 = %d\n", 2 + 3);  // %d prints an integer
+    return 0;
+}</code></pre>
+
+  </div>
+
+  <!-- Quiz Section -->
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 1: What does #include
+        &lt;stdio.h&gt; do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="a"> A) Includes the standard input/output library</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="b"> B) Creates a new file</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="c"> C) Starts a comment</label>
+      </div>
+      <button onclick="checkAnswer('q1', 'a', '✅ Correct! stdio.h provides printf and other I/O functions.', '')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 2: What command compiles a C
+        program?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="a"> A) python hello.c</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="b"> B) gcc hello.c -o hello</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="c"> C) run hello.c</label>
+      </div>
+      <button onclick="checkAnswer('q2', 'b', '✅ Correct! gcc compiles C files into executables.', '')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 3: What does return 0; mean in
+        main()?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="a"> A) The program crashed</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="b"> B) The program finished successfully</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="c"> C) The program needs to restart</label>
+      </div>
+      <button onclick="checkAnswer('q3', 'b', '✅ Correct! return 0 means successful execution.', '')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-1.html"
+      style="background: #ffd60a; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous Lesson</a>
+    <a href="lesson-3.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Variables & Data Types →</a>
+  </div>
+</section>
+
+<script>
+  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+    const resultDiv = document.getElementById(questionName + '-result');
+    if (!selected) { resultDiv.innerHTML = '⚠️ Please select an answer!'; resultDiv.style.color = 'var(--accent-yellow)'; return; }
+    if (selected.value === correctAnswer) { resultDiv.innerHTML = successMsg + ' 🎉'; resultDiv.style.color = 'var(--accent-green)'; } else { resultDiv.innerHTML = '❌ Not quite right. Try again!'; resultDiv.style.color = 'rgba(255, 45, 149, 1)'; }
+  }
+</script>
+
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

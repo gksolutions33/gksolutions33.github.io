@@ -1,3 +1,134 @@
 ---
+layout: tutorial
+title: "Lesson 5: Serial Communication | Arduino Tutorial"
+description: "Learn how to talk to your computer using the Serial Monitor"
 ---
-<section style="text-align: center;"><a href="./" style="color: #8c00ff; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">1</a><a href="lesson-2.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">2</a><a href="lesson-3.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">3</a><a href="lesson-4.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">4</a><a href="lesson-5.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">5</a><a href="lesson-6.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">6</a><a href="lesson-7.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">7</a><a href="lesson-8.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">8</a></p></section>
+
+<section>
+    <h2>📡 Lesson 5: Serial Communication</h2>
+    <p class="muted">⏱️ Estimated time: 20 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-terminal"></i> Talking Back</h4>
+        <p style="margin: 0;">Serial communication allows the Arduino to send messages to your computer. It's the most
+            powerful tool for debugging your projects and seeing what's happening inside the microchip.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #8c00ff;">
+
+        <h3>What is Serial?</h3>
+        <p style="color: var(--muted);">Serial communication lets Arduino send and receive data to/from your computer
+            through the USB cable. Open the <strong>Serial Monitor</strong> in Arduino IDE (Tools → Serial Monitor or
+            Ctrl+Shift+M).</p>
+
+        <h3>Sending Data (Arduino → Computer)</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>void setup() {
+    Serial.begin(9600);  // Start serial at 9600 baud
+}
+
+void loop() {
+    Serial.println("Hello from Arduino!");
+    Serial.print("Temperature: ");
+    Serial.println(25.5);
+    delay(1000);
+}</code></pre>
+
+        <h3>Receiving Data (Computer → Arduino)</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ledPin = 13;
+
+void setup() {
+    Serial.begin(9600);
+    pinMode(ledPin, OUTPUT);
+    Serial.println("Send '1' for ON, '0' for OFF");
+}
+
+void loop() {
+    if (Serial.available() > 0) {
+        char input = Serial.read();
+        if (input == '1') {
+            digitalWrite(ledPin, HIGH);
+            Serial.println("LED is ON");
+        } else if (input == '0') {
+            digitalWrite(ledPin, LOW);
+            Serial.println("LED is OFF");
+        }
+    }
+}</code></pre>
+
+        <h3>Serial Plotter</h3>
+        <p style="color: var(--muted);">Use Tools → Serial Plotter to visualize data as a graph in real-time!</p>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>void loop() {
+    int sensorValue = analogRead(A0);
+    Serial.println(sensorValue);  // Shows as graph!
+    delay(50);
+}</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does Serial.begin(9600) do?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Starts serial at 9600 baud rate</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Waits 9600 milliseconds</label>
+            </div>
+            <button onclick="checkAnswer('q1','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Difference between print() and
+                println()?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) println adds a newline, print doesn't</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) They are the same</label>
+            </div>
+            <button onclick="checkAnswer('q2','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What checks if data is available to
+                read?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Serial.available()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Serial.ready()</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-4.html"
+            style="background: #8c00ff; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-6.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Sensors & Input →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

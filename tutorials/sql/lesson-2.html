@@ -1,5 +1,169 @@
 ---
-layout: default
-title: "SQL Lesson 2"
+layout: tutorial
+title: "Lesson 2: Databases & Tables | SQL Tutorial"
+description: "Understand how data is organized in relational databases"
 ---
-<section style="text-align: center;"><a href="./" style="color: #00d9ff; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #00d9ff; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+
+<section>
+    <h2>🗃️ Lesson 2: Databases & Tables</h2>
+    <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-tip">
+        <h4><i class="fas fa-table"></i> Organizing Information</h4>
+        <p style="margin: 0;">A database is a collection of related data. Data is organized into tables, which consist
+            of columns (fields) and rows (records).</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #00d9ff;">
+
+        <h3>Creating a Database</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>CREATE DATABASE my_app;
+USE my_app;</code></pre>
+
+        <h3>Creating Tables</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE,
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);</code></pre>
+
+        <h3>Common Data Types</h3>
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
+                <thead>
+                    <tr style="background: rgba(0, 217, 255, 0.15);">
+                        <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #00d9ff;">Type</th>
+                        <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #00d9ff;">Description
+                        </th>
+                        <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #00d9ff;">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 0.5rem;">INT</td>
+                        <td>Whole numbers</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">VARCHAR(n)</td>
+                        <td>Text up to n characters</td>
+                        <td>"Hello"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">TEXT</td>
+                        <td>Long text</td>
+                        <td>Articles, descriptions</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">FLOAT / DOUBLE</td>
+                        <td>Decimal numbers</td>
+                        <td>3.14</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">BOOLEAN</td>
+                        <td>True/False</td>
+                        <td>TRUE</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">DATE</td>
+                        <td>Date</td>
+                        <td>'2025-01-15'</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">TIMESTAMP</td>
+                        <td>Date + Time</td>
+                        <td>'2025-01-15 14:30:00'</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Constraints</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>PRIMARY KEY    -- Unique identifier for each row
+NOT NULL       -- Field cannot be empty
+UNIQUE         -- No duplicate values
+DEFAULT value  -- Default value if none given
+AUTO_INCREMENT -- Automatically increases (1, 2, 3...)
+FOREIGN KEY    -- Links to another table</code></pre>
+
+        <h3>Modifying Tables</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>ALTER TABLE users ADD phone VARCHAR(20);
+ALTER TABLE users DROP COLUMN phone;
+DROP TABLE users;  -- Deletes the whole table!</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does PRIMARY KEY do?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Allows duplicates</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Uniquely identifies each row</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) Deletes the table</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What data type stores text up to a
+                specific length?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) INT</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) VARCHAR(n)</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) BOOLEAN</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does NOT NULL mean?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) The field must have a value</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) The field is deleted</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) The field is optional</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-1.html"
+            style="background: #00d9ff; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-3.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            SELECT Queries →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

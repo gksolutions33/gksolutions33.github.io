@@ -1,5 +1,150 @@
 ---
-layout: default
-title: "Java Lesson 7"
+layout: tutorial
+title: "Lesson 7: Methods | Java Tutorial"
+description: "Learn how to write reusable and modular code using Java methods"
 ---
-<section style="text-align: center;"><a href="./" style="color: #7bff6f; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #7bff6f; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #7bff6f; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>📦 Lesson 7: Java Methods (Modular Code)</h2>
+    <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-cube"></i> Organization</h4>
+        <p style="margin: 0;">Methods are blocks of code that only run when called. They help organize your program into
+            logical, reusable parts.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
+
+        <h3>Creating Methods</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>public class Methods {
+
+    // Method with no return value
+    static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    // Method with return value
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method with default-like behavior (overloading)
+    static double area(double radius) {
+        return Math.PI * radius * radius;
+    }
+
+    static double area(double width, double height) {
+        return width * height;
+    }
+
+    public static void main(String[] args) {
+        greet("Alice");              // Hello, Alice!
+        int sum = add(5, 3);         // 8
+
+        System.out.println(area(5));      // Circle area: 78.53
+        System.out.println(area(4, 6));   // Rectangle area: 24.0
+    }
+}</code></pre>
+
+        <h3>Method Overloading</h3>
+        <p style="color: var(--muted);">Same method name, different parameter lists. Java picks the right one
+            automatically!</p>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>static int multiply(int a, int b) { return a * b; }
+static double multiply(double a, double b) { return a * b; }
+static int multiply(int a, int b, int c) { return a * b * c; }
+
+multiply(3, 4);       // Calls int version → 12
+multiply(2.5, 3.0);   // Calls double version → 7.5
+multiply(2, 3, 4);    // Calls 3-arg version → 24</code></pre>
+
+        <h3>Varargs (Variable Arguments)</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>static int sum(int... numbers) {
+    int total = 0;
+    for (int n : numbers) {
+        total += n;
+    }
+    return total;
+}
+
+sum(1, 2);           // 3
+sum(1, 2, 3, 4, 5);  // 15</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'void' mean as return
+                type?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Returns an integer</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Returns nothing</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) Returns a String</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is method overloading?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Same name, different parameters</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Different name, same parameters</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) Deleting a method</label>
+            </div>
+            <button onclick="checkAnswer('q2','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'static' mean for
+                methods?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Can be called without creating an object</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Can't be modified</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) Only runs once</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-6.html"
+            style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-8.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Classes & OOP →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

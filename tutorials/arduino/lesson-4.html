@@ -1,3 +1,126 @@
 ---
+layout: tutorial
+title: "Lesson 4: Analog I/O | Arduino Tutorial"
+description: "Read sensors and control LED brightness with analog"
 ---
-<section style="text-align: center;"><a href="./" style="color: #8c00ff; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">1</a><a href="lesson-2.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">2</a><a href="lesson-3.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">3</a><a href="lesson-4.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">4</a><a href="lesson-5.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">5</a><a href="lesson-6.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">6</a><a href="lesson-7.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">7</a><a href="lesson-8.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">8</a></p></section>
+
+<section>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-wave-square"></i> Analog vs Digital</h4>
+        <ul style="margin: 0; color: var(--muted); line-height: 1.6;">
+            <li><strong>Digital:</strong> ON or OFF (1 or 0)</li>
+            <li><strong>Analog:</strong> Range of values (0 to 1023 for input, 0 to 255 for output)</li>
+        </ul>
+    </div>
+
+    <h3>Analog Input: Reading a Potentiometer</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int potPin = A0;
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    int value = analogRead(potPin);  // 0 to 1023
+    Serial.println(value);
+    delay(100);
+}</code></pre>
+
+    <h3>Analog Output: PWM (LED Brightness)</h3>
+    <p style="color: var(--muted);">PWM (Pulse Width Modulation) simulates analog output. Only works on pins marked
+        with <strong>~</strong> (3, 5, 6, 9, 10, 11).</p>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ledPin = 9;  // Must be a PWM pin (~)
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    // Fade LED in
+    for (int i = 0; i <= 255; i++) {
+        analogWrite(ledPin, i);  // 0=off, 255=full brightness
+        delay(10);
+    }
+    // Fade LED out
+    for (int i = 255; i >= 0; i--) {
+        analogWrite(ledPin, i);
+        delay(10);
+    }
+}</code></pre>
+
+    <h3>Combine: Potentiometer Controls LED</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int potPin = A0;
+int ledPin = 9;
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    int potValue = analogRead(potPin);           // 0-1023
+    int brightness = map(potValue, 0, 1023, 0, 255);  // Scale to 0-255
+    analogWrite(ledPin, brightness);
+}</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What range does analogRead()
+                return?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) 0 to 255</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) 0 to 1023</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) HIGH or LOW</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does the map() function do?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Scales a value from one range to another</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Creates a map of pins</label>
+            </div>
+            <button onclick="checkAnswer('q2','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does PWM stand for?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Pulse Width Modulation</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Power Wave Mode</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

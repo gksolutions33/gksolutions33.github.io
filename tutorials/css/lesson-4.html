@@ -1,12 +1,159 @@
 ---
-layout: default
-title: "Lesson 4: Box Model | CSS Tutorial"
+layout: tutorial
+title: "Lesson 4: Layout - Flexbox | CSS Tutorial"
+description: "Master modern layout design with CSS Flexbox"
 ---
-<section><div style="margin-bottom: 2rem;"><a href="./" style="color: #ff2d95; text-decoration: none;">← Back</a></div><h2>🎨 Lesson 4: Box Model</h2><p class="muted">⏱️ 20 min | Intermediate</p><div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid #ff2d95;"><h3>Understanding Box Model</h3><p>Every element has: Content → Padding → Border → Margin</p><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>div { 
-  content: 100px × 100px;
-  padding: 20px;
-  border: 2px solid black;
-  margin: 10px; 
-}</code></pre><h3>Width & Height</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>div { width: 200px; height: 150px; }
-p { width: 50%; }</code></pre><h3>Border</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>p { border: 2px solid red; }
-p { border-radius: 8px; }</code></pre></div><div style="background: rgba(123,255,111,0.08); padding: 2rem; border-radius: 12px; margin-top: 2rem;"><h3 style="color: #7bff6f;">✅ Quiz</h3><div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7bff6f;"><p style="color: #999;">❓ What's the order in box model?</p><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="a"> A) Margin, Border, Padding, Content</label><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="b"> B) Content, Padding, Border, Margin</label><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: #7bff6f; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">Check</button><div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div></div></div><div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-3.html" style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">← Previous</a><a href="lesson-5.html" style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">Next →</a></div></section><script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:'❌ Try again!';}</script>
+
+<section>
+  <div style="margin-bottom: 2rem;">
+    <a href="./" style="color: #ff2d95; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+  </div>
+
+  <h2>📐 Lesson 4: Layout with Flexbox</h2>
+  <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+  <div class="callout callout-tip">
+    <h4><i class="fas fa-arrows-left-right"></i> Flexing Power</h4>
+    <p style="margin: 0;">Flexbox (Flexible Box Layout) makes it easy to align and distribute space among items in a
+      container, even when their size is unknown.</p>
+  </div>
+
+  <h3>Flexbox = Flexible Box Layout</h3>
+  <p style="color: var(--muted);">Flexbox makes centering, spacing, and aligning items incredibly easy.</p>
+
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.container {
+    display: flex;             /* Enable flexbox */
+    justify-content: center;   /* Horizontal alignment */
+    align-items: center;       /* Vertical alignment */
+    gap: 1rem;                 /* Space between items */
+}
+
+/* Perfect centering! */
+.center-everything {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}</code></pre>
+
+  <h3>justify-content (Main Axis)</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>justify-content: flex-start;     /* Left (default) */
+justify-content: flex-end;       /* Right */
+justify-content: center;         /* Center */
+justify-content: space-between;  /* Even space, no edges */
+justify-content: space-around;   /* Even space, half edges */
+justify-content: space-evenly;   /* Equal space everywhere */</code></pre>
+
+  <h3>align-items (Cross Axis)</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>align-items: stretch;    /* Fill height (default) */
+align-items: flex-start; /* Top */
+align-items: flex-end;   /* Bottom */
+align-items: center;     /* Center vertically */</code></pre>
+
+  <h3>flex-direction</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>flex-direction: row;            /* Left to right (default) */
+flex-direction: row-reverse;    /* Right to left */
+flex-direction: column;         /* Top to bottom */
+flex-direction: column-reverse; /* Bottom to top */</code></pre>
+
+  <h3>flex-wrap & Child Properties</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.container {
+    flex-wrap: wrap;    /* Items wrap to next line */
+}
+
+.item {
+    flex: 1;           /* Grow to fill space equally */
+    flex: 2;           /* Takes 2x the space */
+    flex-shrink: 0;    /* Don't shrink */
+    align-self: flex-end; /* Override alignment */
+    order: -1;         /* Move to first position */
+}</code></pre>
+
+  <h3>Practical Example: Navigation Bar</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1a1a2e;
+}
+
+nav .logo { font-size: 1.5rem; font-weight: bold; }
+nav .links { display: flex; gap: 2rem; }</code></pre>
+
+  </div>
+
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you perfectly center content with
+        flexbox?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="a"> A) text-align: center</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="b"> B) display:flex; justify-content:center; align-items:center</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="c"> C) margin: auto</label>
+      </div>
+      <button onclick="checkAnswer('q1','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does justify-content: space-between
+        do?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="a"> A) Centers all items</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="b"> B) Spreads items with equal space, first and last at edges</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="c"> C) Stacks items vertically</label>
+      </div>
+      <button onclick="checkAnswer('q2','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does flex: 1 do on a child?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="a"> A) Makes it invisible</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="b"> B) Grows to fill available space</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="c"> C) Sets width to 1px</label>
+      </div>
+      <button onclick="checkAnswer('q3','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-3.html"
+      style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a>
+    <a href="lesson-5.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Grid →</a>
+  </div>
+</section>
+
+<script>
+  function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

@@ -1,3 +1,148 @@
 ---
+layout: tutorial
+title: "Lesson 6: Sensors & Input | Arduino Tutorial"
+description: "Connect and read various sensors to interact with the physical world"
 ---
-<section style="text-align: center;"><a href="./" style="color: #8c00ff; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">1</a><a href="lesson-2.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">2</a><a href="lesson-3.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">3</a><a href="lesson-4.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">4</a><a href="lesson-5.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">5</a><a href="lesson-6.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">6</a><a href="lesson-7.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">7</a><a href="lesson-8.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">8</a></p></section>
+
+<section>
+    <h2>🌡️ Lesson 6: Sensors & Real-World Input</h2>
+    <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+    <div class="callout callout-tip">
+        <h4><i class="fas fa-temperature-half"></i> Sensing the World</h4>
+        <p style="margin: 0;">Sensors allow your Arduino to perceive the world around it — light, temperature, distance,
+            motion, and more.</p>
+    </div>
+
+    <h3>Temperature Sensor (TMP36)</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int tempPin = A0;
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    int reading = analogRead(tempPin);
+    float voltage = reading * (5.0 / 1024.0);
+    float tempC = (voltage - 0.5) * 100.0;
+    float tempF = tempC * 9.0 / 5.0 + 32.0;
+
+    Serial.print("Temperature: ");
+    Serial.print(tempC);
+    Serial.println(" °C");
+    delay(1000);
+}</code></pre>
+
+    <h3>Light Sensor (LDR / Photoresistor)</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ldrPin = A1;
+int ledPin = 9;
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    int lightLevel = analogRead(ldrPin);
+    // Dark = high value → LED brighter
+    int brightness = map(lightLevel, 0, 1023, 255, 0);
+    analogWrite(ledPin, brightness);
+    delay(100);
+}</code></pre>
+
+    <h3>Ultrasonic Distance Sensor (HC-SR04)</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int trigPin = 9;
+int echoPin = 10;
+
+void setup() {
+    Serial.begin(9600);
+    pinMode(trigPin, OUTPUT);
+    pinMode(echoPin, INPUT);
+}
+
+void loop() {
+    // Send pulse
+    digitalWrite(trigPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW);
+
+    // Measure echo
+    long duration = pulseIn(echoPin, HIGH);
+    float distance = duration * 0.034 / 2;  // cm
+
+    Serial.print("Distance: ");
+    Serial.print(distance);
+    Serial.println(" cm");
+    delay(500);
+}</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How does the HC-SR04 measure
+                distance?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Using sound waves (ultrasonic)</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Using light</label>
+            </div>
+            <button onclick="checkAnswer('q1','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does an LDR measure?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Temperature</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Light intensity</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) Distance</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What function measures pulse
+                duration?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) pulseIn()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) digitalRead()</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-5.html"
+            style="background: #8c00ff; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-7.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Libraries →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

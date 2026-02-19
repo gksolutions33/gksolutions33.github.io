@@ -1,3 +1,149 @@
+```
 ---
+layout: tutorial
+title: "Lesson 6: Loops | Java Tutorial"
+description: "Master for, while, and do-while loops in Java"
 ---
-<section style="text-align: center;"><a href="./" style="color: #7bff6f; text-decoration: none;">← Back</a><p><a href="lesson-1.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">1</a><a href="lesson-2.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">2</a><a href="lesson-3.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">3</a><a href="lesson-4.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">4</a><a href="lesson-5.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">5</a><a href="lesson-6.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">6</a><a href="lesson-7.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">7</a><a href="lesson-8.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">8</a></p></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #7bff6f; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>🔄 Lesson 6: Loops (Repetition)</h2>
+    <p class="muted">⏱️ Estimated time: 25 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-tip">
+        <h4><i class="fas fa-redo"></i> Automation</h4>
+        <p style="margin: 0;">Loops let you execute a block of code repeatedly, which is essential for processing arrays
+            or performing repetitive tasks.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
+
+        <h3>For Loop</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>for (int i = 0; i &lt; 5; i++) {
+    System.out.println("Count: " + i);
+}
+// 0, 1, 2, 3, 4
+
+// Counting backwards
+for (int i = 10; i &gt; 0; i--) {
+    System.out.println(i);
+}</code></pre>
+
+        <h3>While Loop</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>int count = 0;
+while (count &lt; 5) {
+    System.out.println("Count: " + count);
+    count++;
+}
+
+// Do-While (runs at least once!)
+int num = 10;
+do {
+    System.out.println("Num: " + num);
+    num--;
+} while (num &gt; 0);</code></pre>
+
+        <h3>For-Each Loop (Enhanced For)</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>String[] fruits = {"Apple", "Banana", "Cherry"};
+
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+
+int[] numbers = {10, 20, 30, 40, 50};
+int sum = 0;
+for (int n : numbers) {
+    sum += n;
+}
+System.out.println("Sum: " + sum);  // 150</code></pre>
+
+        <h3>Break & Continue</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>// break — exit loop entirely
+for (int i = 0; i &lt; 10; i++) {
+    if (i == 5) break;
+    System.out.print(i + " ");  // 0 1 2 3 4
+}
+
+// continue — skip current iteration
+for (int i = 0; i &lt; 10; i++) {
+    if (i % 2 == 0) continue;  // Skip evens
+    System.out.print(i + " ");  // 1 3 5 7 9
+}</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ When does a do-while loop check
+                condition?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Before first run</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) After each run (runs at least once)</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) Never</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'continue' do?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Stops the loop</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Skips to the next iteration</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) Restarts the loop</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is for-each used for?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Iterating over arrays/collections easily</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Running code once</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) Sorting arrays</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-5.html"
+            style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-7.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Methods →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

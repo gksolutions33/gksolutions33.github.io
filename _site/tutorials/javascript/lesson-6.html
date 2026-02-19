@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Repeat code with loops" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
-  <title>Lesson 6: Loops | JavaScript Tutorial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Learn how to write reusable code blocks using JavaScript functions" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 6: Functions | JavaScript Tutorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,40 +50,374 @@
 </nav>
 
   <main>
-    <section>
-  <div style="margin-bottom: 2rem;"><a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a></div>
-  <h2>🟡 Lesson 6: Loops</h2>
-  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Beginner</p>
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    <h3>For Loop</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 5; i++) {
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>JAVASCRIPT Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-1">
+                Lesson 1: What is JavaScript?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-2">
+                Lesson 2: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-3">
+                Lesson 3: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-4">
+                Lesson 4: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-5">
+                Lesson 5: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/javascript/lesson-6">
+                Lesson 6: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-7">
+                Lesson 7: Objects & Arrays
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-8">
+                Lesson 8: DOM Manipulation
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">javascript</span>
+        </nav>
+
+        <section>
+  <h2>📦 Lesson 6: JavaScript Functions</h2>
+  <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-cube"></i> Modularity</h4>
+    <p style="margin: 0;">Functions are the building blocks of JavaScript. They allow you to define a block of code,
+      give it a name, and execute it as many times as you want.</p>
+  </div>
+  <h3>For Loop</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 5; i++) {
   console.log("Number:", i);
 }</code></pre>
-    <h3>While Loop</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let count = 0;
+  <h3>While Loop</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let count = 0;
 while (count < 3) {
   console.log("Count:", count);
   count++;
 }</code></pre>
-    <h3>For...of Loop (for arrays)</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let fruits = ["apple", "banana", "orange"];
+  <h3>For...of Loop (for arrays)</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let fruits = ["apple", "banana", "orange"];
 for (let fruit of fruits) {
   console.log(fruit);
 }</code></pre>
-    <h3>Break and Continue</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 10; i++) {
+  <h3>Break and Continue</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 10; i++) {
   if (i === 5) break;      // Stop loop
   if (i === 2) continue;   // Skip this iteration
   console.log(i);
 }</code></pre>
   </div>
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);"><h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);"><p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How many times does for(let i=0; i<3; i++) loop?</p><div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="a"> A) 2</label><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="b"> B) 3</label><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="c"> C) Infinite</label></div><button onclick="checkAnswer('q1','b','✅ 0, 1, 2 = 3 times!')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button><div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div></div>
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How many times does for(let i=0; i<3;
+          i++) loop?</p>
+          <div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0;"><input type="radio"
+                name="q1" value="a"> A) 2</label><label style="display: block; margin: 0.7rem 0;"><input type="radio"
+                name="q1" value="b"> B) 3</label><label style="display: block; margin: 0.7rem 0;"><input type="radio"
+                name="q1" value="c"> C) Infinite</label></div><button
+            onclick="checkAnswer('q1','b','✅ 0, 1, 2 = 3 times!')"
+            style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+            Answer</button>
+          <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
   </div>
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-5.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous</a><a href="lesson-7.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next →</a></div>
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-5.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a><a href="lesson-7.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next
+      →</a></div>
 </section>
-<script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m+' 🎉':'❌ Try again!',document.getElementById(q+'-result').style.color=s.value===a?'var(--accent-green)':'rgba(255,45,149,1)';};</script>
+<script>function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); if (s) document.getElementById(q + '-result').innerHTML = s.value === a ? m + ' 🎉' : '❌ Try again!', document.getElementById(q + '-result').style.color = s.value === a ? 'var(--accent-green)' : 'rgba(255,45,149,1)'; };</script>
 
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

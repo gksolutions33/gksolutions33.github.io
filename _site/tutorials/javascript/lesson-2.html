@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Write your first JavaScript code" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
-  <title>Lesson 2: Your First Script | JavaScript Tutorial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="Learn how to store and manipulate data in JavaScript" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 2: Variables & Data Types | JavaScript Tutorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,58 +50,361 @@
 </nav>
 
   <main>
-    <section>
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>JAVASCRIPT Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-1">
+                Lesson 1: What is JavaScript?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/javascript/lesson-2">
+                Lesson 2: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-3">
+                Lesson 3: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-4">
+                Lesson 4: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-5">
+                Lesson 5: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-6">
+                Lesson 6: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-7">
+                Lesson 7: Objects & Arrays
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-8">
+                Lesson 8: DOM Manipulation
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">javascript</span>
+        </nav>
+
+        <section>
   <div style="margin-bottom: 2rem;">
     <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
   </div>
 
-  <h2>🟡 Lesson 2: Your First Script</h2>
-  <p class="muted">⏱️ Estimated time: 10-15 minutes | Difficulty: Beginner</p>
+  <h2>📦 Lesson 2: JavaScript Variables & Data Types</h2>
+  <p class="muted">⏱️ Estimated time: 20 minutes | Difficulty: Beginner</p>
 
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    
-    <h3>Hello, JavaScript!</h3>
-    <p style="color: var(--muted);">Let's write your first JavaScript program:</p>
-    
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;script&gt;
+  <div class="callout callout-tip">
+    <h4><i class="fas fa-box-open"></i> Storing Data</h4>
+    <p style="margin: 0;">Variables are containers for storing data values. In JavaScript, we use <code>let</code>,
+      <code>const</code>, or <code>var</code> to declare variables.</p>
+  </div>
+
+  <h3>Hello, JavaScript!</h3>
+  <p style="color: var(--muted);">Let's write your first JavaScript program:</p>
+
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;script&gt;
   console.log("Hello, JavaScript!");
 &lt;/script&gt;</code></pre>
 
-    <h3>Where to Put JavaScript</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
-        <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">In HTML Head</p>
-        <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;head&gt;
+  <h3>Where to Put JavaScript</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+    <div
+      style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
+      <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">In HTML Head</p>
+      <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;head&gt;
   &lt;script&gt;
     console.log("Runs first");
   &lt;/script&gt;
 &lt;/head&gt;</code></pre>
-      </div>
-      <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
-        <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">In HTML Body</p>
-        <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;body&gt;
+    </div>
+    <div
+      style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
+      <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">In HTML Body</p>
+      <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;body&gt;
   &lt;script&gt;
     console.log("Runs after HTML loads");
   &lt;/script&gt;
 &lt;/body&gt;</code></pre>
-      </div>
-      <div style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
-        <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">External File</p>
-        <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;script src="app.js"&gt;
-&lt;/script&gt;</code></pre>
-      </div>
     </div>
+    <div
+      style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
+      <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">External File</p>
+      <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;script src="app.js"&gt;
+&lt;/script&gt;</code></pre>
+    </div>
+  </div>
 
-    <h3>Using the Console</h3>
-    <p style="color: var(--muted);">The console is where JavaScript displays messages. Open it:</p>
-    <ol style="color: var(--muted); line-height: 2;">
-      <li>Right-click on a webpage → "Inspect" (or press F12)</li>
-      <li>Click the "Console" tab</li>
-      <li>You'll see messages from JavaScript</li>
-    </ol>
+  <h3>Using the Console</h3>
+  <p style="color: var(--muted);">The console is where JavaScript displays messages. Open it:</p>
+  <ol style="color: var(--muted); line-height: 2;">
+    <li>Right-click on a webpage → "Inspect" (or press F12)</li>
+    <li>Click the "Console" tab</li>
+    <li>You'll see messages from JavaScript</li>
+  </ol>
 
-    <h3>Your First Real Program</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;!DOCTYPE html&gt;
+  <h3>Your First Real Program</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;My First JavaScript&lt;/title&gt;
@@ -113,18 +420,20 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output in console:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>JavaScript is running!
+  <p style="color: var(--muted); margin: 1rem 0;"><strong>Output in console:</strong></p>
+  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>JavaScript is running!
 I can write messages here
 This is awesome!</code></pre>
 
   </div>
 
   <!-- Quiz Section -->
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you write JavaScript?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -137,11 +446,14 @@ This is awesome!</code></pre>
           <input type="radio" name="q1" value="c"> C) Using &lt;code&gt; tags
         </label>
       </div>
-      <button onclick="checkAnswer('q1', 'b', '✅ Correct! Use &lt;script&gt; tags for JavaScript.', 'Script tags')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q1', 'b', '✅ Correct! Use &lt;script&gt; tags for JavaScript.', 'Script tags')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does console.log() do?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -154,11 +466,15 @@ This is awesome!</code></pre>
           <input type="radio" name="q2" value="c"> C) Creates a popup alert
         </label>
       </div>
-      <button onclick="checkAnswer('q2', 'b', '✅ Correct! console.log() shows messages for debugging.', 'Console output')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button
+        onclick="checkAnswer('q2', 'b', '✅ Correct! console.log() shows messages for debugging.', 'Console output')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you open the console?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -171,14 +487,18 @@ This is awesome!</code></pre>
           <input type="radio" name="q3" value="c"> C) Both A and B
         </label>
       </div>
-      <button onclick="checkAnswer('q3', 'c', '✅ Correct! Both methods work to open developer tools.', 'Developer tools')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button
+        onclick="checkAnswer('q3', 'c', '✅ Correct! Both methods work to open developer tools.', 'Developer tools')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
   </div>
 
   <!-- Challenge -->
-  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+  <div
+    style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Create an HTML file with JavaScript that:</p>
     <ol style="color: var(--muted); line-height: 2;">
@@ -190,33 +510,55 @@ This is awesome!</code></pre>
 
   <!-- Navigation -->
   <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="lesson-1.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: What is JavaScript?</a>
-    <a href="lesson-3.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next: Variables →</a>
+    <a href="lesson-1.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous: What is JavaScript?</a>
+    <a href="lesson-3.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Variables →</a>
   </div>
 
 </section>
 
 <script>
-function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-  const resultDiv = document.getElementById(questionName + '-result');
-  
-  if (!selected) {
-    resultDiv.innerHTML = '⚠️ Please select an answer!';
-    resultDiv.style.color = 'var(--accent-yellow)';
-    return;
+  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+    const resultDiv = document.getElementById(questionName + '-result');
+
+    if (!selected) {
+      resultDiv.innerHTML = '⚠️ Please select an answer!';
+      resultDiv.style.color = 'var(--accent-yellow)';
+      return;
+    }
+
+    if (selected.value === correctAnswer) {
+      resultDiv.innerHTML = successMsg + ' 🎉';
+      resultDiv.style.color = 'var(--accent-green)';
+    } else {
+      resultDiv.innerHTML = '❌ Not quite right. Try again!';
+      resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+    }
   }
-  
-  if (selected.value === correctAnswer) {
-    resultDiv.innerHTML = successMsg + ' 🎉';
-    resultDiv.style.color = 'var(--accent-green)';
-  } else {
-    resultDiv.innerHTML = '❌ Not quite right. Try again!';
-    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
-  }
-}
 </script>
 
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

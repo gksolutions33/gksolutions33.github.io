@@ -1,11 +1,153 @@
 ---
-layout: default
-title: "Lesson 3: Properties & Values | CSS Tutorial"
+layout: tutorial
+title: "Lesson 3: Box Model | CSS Tutorial"
+description: "Understand the core concept of CSS - the Box Model"
 ---
-<section><div style="margin-bottom: 2rem;"><a href="./" style="color: #ff2d95; text-decoration: none;">← Back</a></div><h2>🎨 Lesson 3: Properties & Values</h2><p class="muted">⏱️ 15 min | Beginner</p><div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid #ff2d95;"><h3>Color Property</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>p { color: blue; }
-p { color: #0000FF; }
-p { color: rgb(0, 0, 255); }</code></pre><h3>Font Properties</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>p { font-size: 16px; }
-p { font-weight: bold; }
-p { font-family: Arial, sans-serif; }</code></pre><h3>Spacing Properties</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>p { margin: 20px; }
-p { padding: 10px; }
-p { line-height: 1.5; }</code></pre></div><div style="background: rgba(123,255,111,0.08); padding: 2rem; border-radius: 12px; margin-top: 2rem;"><h3 style="color: #7bff6f;">✅ Quiz</h3><div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7bff6f;"><p style="color: #999;">❓ Which sets text color?</p><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="a"> A) background-color</label><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="b"> B) color</label><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: #7bff6f; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">Check</button><div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div></div></div><div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-2.html" style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">← Previous</a><a href="lesson-4.html" style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">Next →</a></div></section><script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:'❌ Try again!';}</script>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #ff2d95; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>📦 Lesson 3: The CSS Box Model</h2>
+    <p class="muted">⏱️ Estimated time: 25 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-boxes-stacked"></i> Everything is a Box</h4>
+        <p style="margin: 0;">In CSS, every element is considered a rectangular box. Understanding the box model is the
+            key to creating layouts.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff2d95;">
+
+        <h3>Every Element is a Box!</h3>
+        <p style="color: var(--muted); font-size: 1.05rem;">Every HTML element is surrounded by 4 layers:
+            <strong>Content → Padding → Border → Margin</strong>
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <div
+                style="display: inline-block; background: rgba(255, 159, 28, 0.15); padding: 2rem; border: 2px dashed #ff9f1c; border-radius: 8px;">
+                <span style="color: #ff9f1c;">Margin (outside space)</span>
+                <div
+                    style="background: rgba(0, 217, 255, 0.15); padding: 1.5rem; border: 2px solid #00d9ff; border-radius: 6px; margin-top: 0.5rem;">
+                    <span style="color: #00d9ff;">Border</span>
+                    <div
+                        style="background: rgba(123, 255, 111, 0.15); padding: 1.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                        <span style="color: var(--accent-green);">Padding (inside space)</span>
+                        <div
+                            style="background: rgba(255, 45, 149, 0.2); padding: 1rem; border-radius: 4px; margin-top: 0.5rem;">
+                            <span style="color: #ff2d95; font-weight: bold;">Content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.box {
+    width: 300px;
+    padding: 20px;        /* Inside spacing */
+    border: 2px solid #ff2d95;
+    margin: 30px;         /* Outside spacing */
+
+    /* Total width = 300 + 20*2 + 2*2 + 30*2 = 404px! */
+}
+
+/* Fix with box-sizing */
+* {
+    box-sizing: border-box;  /* Width INCLUDES padding & border */
+}
+/* Now .box total width = 300px + 30*2 margin = 360px */</code></pre>
+
+        <h3>Margin Shortcuts</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>margin: 10px;              /* All 4 sides */
+margin: 10px 20px;         /* Top/Bottom  Left/Right */
+margin: 10px 20px 30px;    /* Top  Left/Right  Bottom */
+margin: 10px 20px 30px 40px; /* Top Right Bottom Left */
+
+margin: 0 auto;            /* Center horizontally! */
+
+/* Same pattern works for padding */
+padding: 1rem 2rem;</code></pre>
+
+        <h3>Display Property</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>display: block;        /* Full width, new line (div, p, h1) */
+display: inline;       /* Content width only (span, a) */
+display: inline-block; /* Inline but with width/height */
+display: none;         /* Hidden completely */</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does box-sizing: border-box
+                do?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Makes padding add to width</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Includes padding and border in the width</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) Removes the border</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you center an element
+                horizontally?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) margin: 0 auto</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) padding: center</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) align: center</label>
+            </div>
+            <button onclick="checkAnswer('q2','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What are the 4 box model layers in
+                order (outside to inside)?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Content, Border, Padding, Margin</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Margin, Border, Padding, Content</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) Margin, Padding, Border, Content</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-2.html"
+            style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-4.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Flexbox →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

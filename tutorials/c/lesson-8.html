@@ -1,5 +1,193 @@
 ---
-layout: default
-title: "C Lesson 8"
+layout: tutorial
+title: "Lesson 8: Arrays & Memory | C Tutorial"
+description: "Understand memory management and working with arrays in C"
 ---
-<section style="text-align: center;"><a href="./" style="color: #ffd60a; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #ffd60a; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>🧠 Lesson 8: Arrays & Memory Management</h2>
+    <p class="muted">⏱️ Estimated time: 35 minutes | Difficulty: Intermediate</p>
+
+    <div class="callout callout-warning">
+        <h4><i class="fas fa-memory"></i> Direct Access</h4>
+        <p style="margin: 0;">In C, you have direct control over memory. This is powerful but requires care to avoid
+            bugs like memory leaks.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ffd60a;">
+
+        <h3>What Are Pointers?</h3>
+        <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+            A pointer is a variable that stores the <strong>memory address</strong> of another variable. Pointers are
+            one of C's most powerful features!
+        </p>
+
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int age = 25;
+    int *ptr = &amp;age;  // ptr stores the ADDRESS of age
+
+    printf("Value: %d\n", age);       // 25
+    printf("Address: %p\n", &amp;age);    // 0x7ffc...
+    printf("Pointer: %p\n", ptr);     // Same address
+    printf("Deref: %d\n", *ptr);      // 25 (dereference)
+
+    *ptr = 30;  // Change value through pointer
+    printf("Age: %d\n", age);  // 30!
+
+    return 0;
+}</code></pre>
+
+        <div
+            style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #ffd60a;">
+            <p style="margin: 0; color: var(--muted);">
+                <strong>Analogy:</strong> Think of a pointer as a <strong>house address written on paper</strong>. The
+                paper (pointer) isn't the house (value) — it just tells you WHERE the house is. `*ptr` means "go to the
+                house at this address."
+            </p>
+        </div>
+
+        <h3>Pointers and Arrays</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int arr[] = {10, 20, 30, 40, 50};
+int *p = arr;  // Array name IS a pointer!
+
+printf("%d\n", *p);       // 10 (first element)
+printf("%d\n", *(p + 1)); // 20 (second element)
+printf("%d\n", *(p + 2)); // 30 (third element)
+
+// Pointer arithmetic
+for (int *ptr = arr; ptr < arr + 5; ptr++) {
+    printf("%d ", *ptr);
+}</code></pre>
+
+        <h3>Dynamic Memory Allocation</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdlib.h&gt;
+
+// Allocate memory for 5 integers
+int *arr = (int *)malloc(5 * sizeof(int));
+
+if (arr == NULL) {
+    printf("Memory allocation failed!\n");
+    return 1;
+}
+
+// Use the memory
+for (int i = 0; i < 5; i++) {
+    arr[i] = (i + 1) * 10;
+}
+
+// Always free when done!
+free(arr);</code></pre>
+
+        <div
+            style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid rgba(255, 45, 149, 1);">
+            <p style="margin: 0; color: var(--muted);">
+                <strong>⚠️ Memory Leak!</strong> Always <code>free()</code> dynamically allocated memory. Forgetting to
+                free causes memory leaks, which can crash your program!
+            </p>
+        </div>
+
+        <h3>Structs</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>struct Student {
+    char name[50];
+    int age;
+    float gpa;
+};
+
+int main() {
+    struct Student s1 = {"Alice", 20, 3.8};
+    printf("Name: %s\n", s1.name);
+    printf("Age: %d\n", s1.age);
+    printf("GPA: %.1f\n", s1.gpa);
+
+    // Pointer to struct
+    struct Student *ptr = &amp;s1;
+    printf("Name: %s\n", ptr->name);  // Arrow operator
+    return 0;
+}</code></pre>
+
+    </div>
+
+    <!-- Quiz -->
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does * do in front of a
+                pointer?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Gets the address</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Dereferences (gets the value)</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) Multiplies</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct! * dereferences a pointer to get its value.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What function allocates memory
+                dynamically?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) alloc()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) malloc()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) new()</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct! malloc() allocates memory from the heap.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you access struct members
+                via pointer?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) ptr.member</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) ptr->member</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) ptr::member</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct! -> is the arrow operator for pointer-to-struct access.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-7.html"
+            style="background: #ffd60a; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="./"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">🎉
+            Back to All Lessons</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

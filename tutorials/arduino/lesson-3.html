@@ -1,3 +1,125 @@
 ---
+layout: tutorial
+title: "Lesson 3: Digital I/O | Arduino Tutorial"
+description: "Control LEDs and read buttons with digital pins"
 ---
-<section style="text-align: center;"><a href="./" style="color: #8c00ff; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">1</a><a href="lesson-2.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">2</a><a href="lesson-3.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">3</a><a href="lesson-4.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">4</a><a href="lesson-5.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">5</a><a href="lesson-6.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">6</a><a href="lesson-7.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">7</a><a href="lesson-8.html" style="background: #8c00ff; color: #fff; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block; border-radius: 4px;">8</a></p></section>
+
+<section>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-toggle-on"></i> Digital = ON or OFF</h4>
+        <p style="margin: 0;">Digital pins can only be in two states: <strong>HIGH</strong> (5V, ON) or
+            <strong>LOW</strong>
+            (0V, OFF). Like a light switch!</p>
+    </div>
+
+    <h3>Digital Output: Controlling LEDs</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ledPin = 9;
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(ledPin, HIGH);  // LED ON
+    delay(500);
+    digitalWrite(ledPin, LOW);   // LED OFF
+    delay(500);
+}</code></pre>
+
+    <h3>Digital Input: Reading Buttons</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int buttonPin = 2;
+int ledPin = 13;
+
+void setup() {
+    pinMode(buttonPin, INPUT_PULLUP);  // Built-in pull-up resistor
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+    int buttonState = digitalRead(buttonPin);
+
+    if (buttonState == LOW) {      // Button pressed (LOW with pull-up)
+        digitalWrite(ledPin, HIGH); // LED ON
+    } else {
+        digitalWrite(ledPin, LOW);  // LED OFF
+    }
+}</code></pre>
+
+    <h3>Multiple LEDs: Traffic Light</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int red = 11, yellow = 10, green = 9;
+
+void setup() {
+    pinMode(red, OUTPUT);
+    pinMode(yellow, OUTPUT);
+    pinMode(green, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(green, HIGH);  delay(3000);  // Green 3s
+    digitalWrite(green, LOW);
+    digitalWrite(yellow, HIGH); delay(1000);  // Yellow 1s
+    digitalWrite(yellow, LOW);
+    digitalWrite(red, HIGH);    delay(3000);  // Red 3s
+    digitalWrite(red, LOW);
+}</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What two states can a digital pin
+                be?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) HIGH or LOW</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) 0 to 1023</label>
+            </div>
+            <button onclick="checkAnswer('q1','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does INPUT_PULLUP do?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Uses built-in pull-up resistor</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) Makes the pin output</label>
+            </div>
+            <button onclick="checkAnswer('q2','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What function reads a digital pin?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) analogRead()</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) digitalRead()</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

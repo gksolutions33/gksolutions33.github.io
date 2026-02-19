@@ -1,0 +1,17 @@
+<aside class="tutorial-sidebar">
+    {% assign url_parts = page.url | split: '/' %}
+    {% assign course_name = url_parts[2] %}
+    <h3>{{ course_name | replace: '-', ' ' | upcase }} Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        {% assign lessons = site.pages | sort: "url" %}
+        {% for lesson in lessons %}
+        {% if lesson.url contains course_name and lesson.url contains 'lesson-' %}
+        <li class="tutorial-nav-item {% if lesson.url == page.url %}active{% endif %}">
+            <a href="{{ lesson.url | relative_url }}">
+                {{ lesson.title | split: '|' | first | strip }}
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</aside>

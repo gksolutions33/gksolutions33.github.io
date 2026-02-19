@@ -1,5 +1,212 @@
 ---
-layout: default
-title: "Lesson 3-8: C Tutorial"
+layout: tutorial
+title: "Lesson 3: Variables & Data Types | C Tutorial"
+description: "Learn how to store and manage data in C using variables and basic data types"
 ---
-<section><a href="./" style="color: #ffd60a; text-decoration: none;">← Back</a><h2>⚙️ C Lessons 3-8</h2><p style="margin: 2rem 0;"><strong>Lesson 3:</strong> Variables & Data Types | int, char, float, double | scanf/printf</p><p style="margin: 2rem 0;"><strong>Lesson 4:</strong> Operators | Arithmetic, Logical, Comparison | Assignment</p><p style="margin: 2rem 0;"><strong>Lesson 5:</strong> Control Flow | if/else, switch statements | Conditional logic</p><p style="margin: 2rem 0;"><strong>Lesson 6:</strong> Loops | for, while, do-while | Loop control statements</p><p style="margin: 2rem 0;"><strong>Lesson 7:</strong> Functions | Function definition, parameters, return | Modular code</p><p style="margin: 2rem 0;"><strong>Lesson 8:</strong> Arrays & Pointers | Array basics, pointer syntax, dereferencing | Memory management</p><div style="background: #7bff6f; color: #000; padding: 1rem; border-radius: 6px; margin-top: 3rem; text-align: center;"><a href="./" style="color: #000; text-decoration: none; font-weight: bold;">← Back to Lesson Grid</a></div></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #ffd60a; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>📦 Lesson 3: Variables & Data Types</h2>
+    <p class="muted">⏱️ Estimated time: 25 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-box-open"></i> Introduction</h4>
+        <p style="margin: 0;">In C, you need to tell the computer exactly what kind of data you are storing. This is
+            called a "type".</p>
+    </div>
+
+    <h3>What Are Variables?</h3>
+    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+        Variables are <strong>named containers</strong> that store data in your program. In C, you must declare the
+        <strong>type</strong> of data a variable will hold before using it.
+    </p>
+
+    <h4>Declaring & Initializing Variables:</h4>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // Declaration (creating a variable)
+    int age;
+
+    // Initialization (giving it a value)
+    age = 25;
+
+    // Declaration + Initialization (in one line)
+    int score = 95;
+    float height = 5.9;
+    char grade = 'A';
+
+    // Print them
+    printf("Age: %d\n", age);
+    printf("Score: %d\n", score);
+    printf("Height: %.1f\n", height);
+    printf("Grade: %c\n", grade);
+
+    return 0;
+}</code></pre>
+
+    <h3>C Data Types</h3>
+    <div style="overflow-x: auto; margin: 1.5rem 0;">
+        <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
+            <thead>
+                <tr style="background: rgba(255, 214, 10, 0.15);">
+                    <th style="padding: 0.8rem; text-align: left; border-bottom: 2px solid #ffd60a;">Type</th>
+                    <th style="padding: 0.8rem; text-align: left; border-bottom: 2px solid #ffd60a;">Size</th>
+                    <th style="padding: 0.8rem; text-align: left; border-bottom: 2px solid #ffd60a;">Format</th>
+                    <th style="padding: 0.8rem; text-align: left; border-bottom: 2px solid #ffd60a;">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 0.6rem;"><code>int</code></td>
+                    <td style="padding: 0.6rem;">4 bytes</td>
+                    <td style="padding: 0.6rem;"><code>%d</code></td>
+                    <td style="padding: 0.6rem;">42, -7, 0</td>
+                </tr>
+                <tr style="background: rgba(255,255,255,0.02);">
+                    <td style="padding: 0.6rem;"><code>float</code></td>
+                    <td style="padding: 0.6rem;">4 bytes</td>
+                    <td style="padding: 0.6rem;"><code>%f</code></td>
+                    <td style="padding: 0.6rem;">3.14, -0.5</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem;"><code>double</code></td>
+                    <td style="padding: 0.6rem;">8 bytes</td>
+                    <td style="padding: 0.6rem;"><code>%lf</code></td>
+                    <td style="padding: 0.6rem;">3.14159265</td>
+                </tr>
+                <tr style="background: rgba(255,255,255,0.02);">
+                    <td style="padding: 0.6rem;"><code>char</code></td>
+                    <td style="padding: 0.6rem;">1 byte</td>
+                    <td style="padding: 0.6rem;"><code>%c</code></td>
+                    <td style="padding: 0.6rem;">'A', 'z', '9'</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem;"><code>short</code></td>
+                    <td style="padding: 0.6rem;">2 bytes</td>
+                    <td style="padding: 0.6rem;"><code>%hd</code></td>
+                    <td style="padding: 0.6rem;">Small integers</td>
+                </tr>
+                <tr style="background: rgba(255,255,255,0.02);">
+                    <td style="padding: 0.6rem;"><code>long</code></td>
+                    <td style="padding: 0.6rem;">8 bytes</td>
+                    <td style="padding: 0.6rem;"><code>%ld</code></td>
+                    <td style="padding: 0.6rem;">Large integers</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Getting User Input with scanf</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int age;
+    char name[50];  // String (array of characters)
+
+    printf("Enter your name: ");
+    scanf("%s", name);       // Read a string
+
+    printf("Enter your age: ");
+    scanf("%d", &amp;age);       // Read an integer (note the &amp;)
+
+    printf("Hello %s! You are %d years old.\n", name, age);
+    return 0;
+}</code></pre>
+
+    <div
+        style="background: rgba(255, 195, 0, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 3px solid var(--accent-yellow);">
+        <p style="margin: 0; color: var(--muted);">
+            <strong>⚠️ Important:</strong> Notice the <code>&amp;</code> before <code>age</code> in scanf? That's
+            the "address-of" operator. scanf needs the memory address to store the value. Strings (char arrays)
+            don't need it because the array name already IS an address!
+        </p>
+    </div>
+
+    <h3>Type Casting</h3>
+    <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int a = 10, b = 3;
+printf("%d\n", a / b);           // 3 (integer division!)
+printf("%.2f\n", (float)a / b);  // 3.33 (cast to float first)</code></pre>
+
+    </div>
+
+    <!-- Quiz -->
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 1: What format specifier
+                prints an integer?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) %f</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) %d</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) %c</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct! %d is for integers.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 2: Why do we use &amp; in
+                scanf for integers?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) To get the memory address</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) To multiply the value</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) It's optional</label>
+            </div>
+            <button
+                onclick="checkAnswer('q2','a','✅ Correct! &amp; gives scanf the memory address to store the value.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 3: What is the result of
+                10 / 3 in C (both are int)?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) 3.33</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) 3</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) 4</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct! Integer division truncates the decimal.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-2.html"
+            style="background: #ffd60a; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous Lesson</a>
+        <a href="lesson-4.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Operators →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Not quite right. Try again!'; r.style.color = 'rgba(255, 45, 149, 1)'; } }
+</script>

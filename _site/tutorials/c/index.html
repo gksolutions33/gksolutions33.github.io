@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tech tutorials and projects on AI, Python, IoT, and Robotics" />
-  <meta name="keywords" content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <meta name="description"
+    content="Tech tutorials and projects on AI, Python, IoT, and Robotics" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
   <title>C Tutorial - Learn C Programming</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
   <link rel="icon" type="image/png" href="/gksolutions_logo.png">
@@ -14,7 +19,6 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-
 
 <body>
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
@@ -46,79 +50,676 @@
 </nav>
 
   <main>
-    <section>
-  <div style="margin-bottom: 2rem;">
-    <a href="../" style="color: #ffd60a; text-decoration: none; font-weight: 500;">← Back to Tutorials</a>
-  </div>
-
-  <h1 style="margin-bottom: 1rem;">⚡ C Programming Tutorial</h1>
-  <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 3rem;">Master the foundational language of computer science</p>
-  
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-    <a href="lesson-1.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 1</h3><p style="margin: 0; font-weight: bold;">What is C?</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-2.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 2</h3><p style="margin: 0; font-weight: bold;">Setup & First Program</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-3.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 3</h3><p style="margin: 0; font-weight: bold;">Variables & Data Types</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-4.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 4</h3><p style="margin: 0; font-weight: bold;">Operators</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-5.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 5</h3><p style="margin: 0; font-weight: bold;">Control Flow</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
-    <a href="lesson-6.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 6</h3><p style="margin: 0; font-weight: bold;">Functions</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
-    <a href="lesson-7.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 7</h3><p style="margin: 0; font-weight: bold;">Arrays & Strings</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
-    <a href="lesson-8.html" style="text-decoration: none;"><div style="background: rgba(255, 214, 10, 0.1); border: 2px solid rgba(255, 214, 10, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #ffd60a;">Lesson 8</h3><p style="margin: 0; font-weight: bold;">Pointers & Memory</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 25 min</p></div></a>
-  </div>
-
-  <!-- Table of Contents -->
-  <div style="background: rgba(0, 245, 255, 0.05); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
-    <h3 style="margin-top: 0; color: var(--accent-cyan);">📑 Table of Contents</h3>
-    <ol style="columns: 2; column-gap: 2rem; color: var(--muted);">
-      <li><a href="#section-1" style="color: var(--accent-cyan);">What is C?</a></li>
-      <li><a href="#section-2" style="color: var(--accent-cyan);">Setup & First Program</a></li>
-      <li><a href="#section-3" style="color: var(--accent-cyan);">Data Types & Variables</a></li>
-      <li><a href="#section-4" style="color: var(--accent-cyan);">Operators</a></li>
-      <li><a href="#section-5" style="color: var(--accent-cyan);">Control Flow</a></li>
-      <li><a href="#section-6" style="color: var(--accent-cyan);">Functions</a></li>
-      <li><a href="#section-7" style="color: var(--accent-cyan);">Arrays & Strings</a></li>
-      <li><a href="#section-8" style="color: var(--accent-cyan);">Pointers</a></li>
-      <li><a href="#section-9" style="color: var(--accent-cyan);">Structures</a></li>
-      <li><a href="#section-10" style="color: var(--accent-cyan);">Projects</a></li>
-    </ol>
-  </div>
-
-  <!-- Section 1 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    <h3 id="section-1" style="margin-top: 0;">What is C?</h3>
-    <p>C is a procedural programming language created in 1972 by Dennis Ritchie. It's known for its efficiency, simplicity, and close-to-hardware nature, making it perfect for systems programming and embedded systems.</p>
-    <h4>Why Learn C?</h4>
-    <ul style="color: var(--muted);">
-      <li><strong>Foundation:</strong> Understand how computers work at a deeper level</li>
-      <li><strong>Performance:</strong> Write fast, efficient code</li>
-      <li><strong>Embedded Systems:</strong> Program microcontrollers and IoT devices</li>
-      <li><strong>Unix/Linux:</strong> Essential for systems programming</li>
-      <li><strong>Career Prospects:</strong> High demand in embedded systems and systems programming</li>
-    </ul>
-  </div>
-
-  <!-- Section 2 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
-    <h3 id="section-2" style="margin-top: 0;">Setup & First Program</h3>
-    <h4>Installation:</h4>
-    <p style="color: var(--muted);">Windows: Download MinGW or use MSVC compiler<br>Linux: <code>sudo apt-get install gcc</code><br>Mac: Install Xcode Command Line Tools</p>
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
     
-    <h4>Your First C Program:</h4>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>#include <stdio.h>
+    
+    <h3>C Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-1">
+                Lesson 1: What is C?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-2">
+                Lesson 2: Setup & First Program
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-3">
+                Lesson 3: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-4">
+                Lesson 4: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-5">
+                Lesson 5: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-6">
+                Lesson 6: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-7">
+                Lesson 7: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/c/lesson-8">
+                Lesson 8: Arrays & Memory
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-1">
+                Lesson 1: What is C++?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-2">
+                Lesson 2: Setup & First Program
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-3">
+                Lesson 3: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-4">
+                Lesson 4: Classes & Objects
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-5">
+                Lesson 5: Inheritance
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-6">
+                Lesson 6: Polymorphism
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-7">
+                Lesson 7: Templates
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/cpp/lesson-8">
+                Lesson 8: STL & Memory Management
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-1">
+                Lesson 1: What is CSS?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-2">
+                Lesson 2: Selectors & Properties
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-3">
+                Lesson 3: Box Model
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-4">
+                Lesson 4: Layout - Flexbox
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-5">
+                Lesson 5: Layout - Grid
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-6">
+                Lesson 6: Positioning
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-7">
+                Lesson 7: Responsive Design
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/css/lesson-8">
+                Lesson 8: Transitions & Animations
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-1">
+                Lesson 1: What is JavaScript?
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-2">
+                Lesson 2: Variables & Data Types
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-3">
+                Lesson 3: Operators
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-4">
+                Lesson 4: Control Flow
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-5">
+                Lesson 5: Loops
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-6">
+                Lesson 6: Functions
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-7">
+                Lesson 7: Objects & Arrays
+            </a>
+        </li>
+        
+        
+        
+        <li class="tutorial-nav-item ">
+            <a href="/tutorials/javascript/lesson-8">
+                Lesson 8: DOM Manipulation
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">c</span>
+        </nav>
+
+        <section>
+  <div style="margin-bottom: 2rem;">
+    <a href="../" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to Tutorials</a>
+  </div>
+
+  <h1 style="margin-bottom: 0.5rem;">⚡ C Programming Tutorial</h1>
+  <p class="muted" style="font-size: 1.1rem; margin-bottom: 2.5rem;">Master the foundational language of computer
+    science - from basics to memory management.</p>
+
+  <div class="tutorial-grid"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+
+    <!-- Lesson 1 -->
+    <a href="lesson-1.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 214, 10, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 214, 10, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: #ffd60a; display: flex; align-items: center; gap: 10px;"><span>01</span> What
+          is C?</h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Introduction to procedural
+          programming and the history of C.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span style="background: rgba(255, 214, 10, 0.1); color: #ffd60a; padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 2 -->
+    <a href="lesson-2.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 45, 149, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 45, 149, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-pink); display: flex; align-items: center; gap: 10px;">
+          <span>02</span> Setup & First Program
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Install GCC and write your
+          very first 'Hello World' in C.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 3 -->
+    <a href="lesson-3.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(0, 245, 255, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-cyan); display: flex; align-items: center; gap: 10px;">
+          <span>03</span> Variables & Types
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Understand memory and data
+          storage with C types.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 4 -->
+    <a href="lesson-4.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(123, 255, 111, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(123, 255, 111, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-green); display: flex; align-items: center; gap: 10px;">
+          <span>04</span> Operators
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Master math and logic
+          operations in C.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(123, 255, 111, 0.1); color: var(--accent-green); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 5 -->
+    <a href="lesson-5.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 195, 0, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 195, 0, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-yellow); display: flex; align-items: center; gap: 10px;">
+          <span>05</span> Control Flow
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Make decisions with if-else
+          and switch statements.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 195, 0, 0.1); color: var(--accent-yellow); padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 6 -->
+    <a href="lesson-6.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 214, 10, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 214, 10, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: #ffd60a; display: flex; align-items: center; gap: 10px;"><span>06</span>
+          Functions</h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Write modular, reusable
+          blocks of code.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span style="background: rgba(255, 214, 10, 0.1); color: #ffd60a; padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 7 -->
+    <a href="lesson-7.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 45, 149, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 45, 149, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-pink); display: flex; align-items: center; gap: 10px;">
+          <span>07</span> Arrays & Strings
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Master data collections and
+          text manipulation.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 8 -->
+    <a href="lesson-8.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(0, 245, 255, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-cyan); display: flex; align-items: center; gap: 10px;">
+          <span>08</span> Pointers & Memory
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">The 'Zen' of C -
+          understanding memory and addresses.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">⏱️
+            25 min</span>
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">📚
+            Intermediate</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Table of Contents -->
+    <div
+      style="background: rgba(0, 245, 255, 0.05); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
+      <h3 style="margin-top: 0; color: var(--accent-cyan);">📑 Table of Contents</h3>
+      <ol style="columns: 2; column-gap: 2rem; color: var(--muted);">
+        <li><a href="#section-1" style="color: var(--accent-cyan);">What is C?</a></li>
+        <li><a href="#section-2" style="color: var(--accent-cyan);">Setup & First Program</a></li>
+        <li><a href="#section-3" style="color: var(--accent-cyan);">Data Types & Variables</a></li>
+        <li><a href="#section-4" style="color: var(--accent-cyan);">Operators</a></li>
+        <li><a href="#section-5" style="color: var(--accent-cyan);">Control Flow</a></li>
+        <li><a href="#section-6" style="color: var(--accent-cyan);">Functions</a></li>
+        <li><a href="#section-7" style="color: var(--accent-cyan);">Arrays & Strings</a></li>
+        <li><a href="#section-8" style="color: var(--accent-cyan);">Pointers</a></li>
+        <li><a href="#section-9" style="color: var(--accent-cyan);">Structures</a></li>
+        <li><a href="#section-10" style="color: var(--accent-cyan);">Projects</a></li>
+      </ol>
+    </div>
+
+    <!-- Section 1 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+      <h3 id="section-1" style="margin-top: 0;">What is C?</h3>
+      <p>C is a procedural programming language created in 1972 by Dennis Ritchie. It's known for its efficiency,
+        simplicity, and close-to-hardware nature, making it perfect for systems programming and embedded systems.</p>
+      <h4>Why Learn C?</h4>
+      <ul style="color: var(--muted);">
+        <li><strong>Foundation:</strong> Understand how computers work at a deeper level</li>
+        <li><strong>Performance:</strong> Write fast, efficient code</li>
+        <li><strong>Embedded Systems:</strong> Program microcontrollers and IoT devices</li>
+        <li><strong>Unix/Linux:</strong> Essential for systems programming</li>
+        <li><strong>Career Prospects:</strong> High demand in embedded systems and systems programming</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+      <h3 id="section-2" style="margin-top: 0;">Setup & First Program</h3>
+      <h4>Installation:</h4>
+      <p style="color: var(--muted);">Windows: Download MinGW or use MSVC compiler<br>Linux:
+        <code>sudo apt-get install gcc</code><br>Mac: Install Xcode Command Line Tools
+      </p>
+
+      <h4>Your First C Program:</h4>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>#include <stdio.h>
 
 int main() {
     printf("Hello, C World!\n");
     return 0;
 }</code></pre>
 
-    <h4>Compiling & Running:</h4>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>gcc program.c -o program
+      <h4>Compiling & Running:</h4>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>gcc program.c -o program
 ./program</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 3 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
-    <h3 id="section-3" style="margin-top: 0;">Data Types & Variables</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>#include <stdio.h>
+    <!-- Section 3 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+      <h3 id="section-3" style="margin-top: 0;">Data Types & Variables</h3>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>#include <stdio.h>
 
 int main() {
     // Integer types
@@ -147,12 +748,14 @@ int main() {
     
     return 0;
 }</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 4 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
-    <h3 id="section-4" style="margin-top: 0;">Operators</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Arithmetic operators
+    <!-- Section 4 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+      <h3 id="section-4" style="margin-top: 0;">Operators</h3>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Arithmetic operators
 int a = 10, b = 3;
 printf("a + b = %d\n", a + b);     // 13
 printf("a - b = %d\n", a - b);     // 7
@@ -176,12 +779,14 @@ int c = 5;
 c += 3;     // c = c + 3 = 8
 c -= 2;     // c = c - 2 = 6
 c *= 2;     // c = c * 2 = 12</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 5 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    <h3 id="section-5" style="margin-top: 0;">Control Flow</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// If-Else
+    <!-- Section 5 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+      <h3 id="section-5" style="margin-top: 0;">Control Flow</h3>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// If-Else
 int age = 18;
 if (age >= 18) {
     printf("You are an adult\n");
@@ -222,12 +827,14 @@ do {
     printf("%d ", num);
     num++;
 } while (num < 3);</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 6 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
-    <h3 id="section-6" style="margin-top: 0;">Functions</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Function declaration (prototype)
+    <!-- Section 6 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+      <h3 id="section-6" style="margin-top: 0;">Functions</h3>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Function declaration (prototype)
 int add(int a, int b);
 void greet(char *name);
 
@@ -254,12 +861,14 @@ void swap(int *a, int *b) {
     *a = *b;
     *b = temp;
 }</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 7 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
-    <h3 id="section-7" style="margin-top: 0;">Arrays & Strings</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Arrays
+    <!-- Section 7 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+      <h3 id="section-7" style="margin-top: 0;">Arrays & Strings</h3>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Arrays
 int numbers[5] = {1, 2, 3, 4, 5};
 printf("%d\n", numbers[0]);    // 1
 
@@ -287,12 +896,14 @@ strlen(str1);              // Length
 strcpy(str1, str2);        // Copy
 strcmp(str1, str2);        // Compare
 strcat(str1, str2);        // Concatenate</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 8 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
-    <h3 id="section-8" style="margin-top: 0;">Pointers</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>int main() {
+    <!-- Section 8 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+      <h3 id="section-8" style="margin-top: 0;">Pointers</h3>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>int main() {
     int x = 10;
     int *ptr = &x;      // Pointer to x (& = address of)
     
@@ -318,12 +929,14 @@ strcat(str1, str2);        // Concatenate</code></pre>
     
     return 0;
 }</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 9 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    <h3 id="section-9" style="margin-top: 0;">Structures</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Define a structure
+    <!-- Section 9 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+      <h3 id="section-9" style="margin-top: 0;">Structures</h3>
+      <pre
+        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>// Define a structure
 struct Person {
     char name[50];
     int age;
@@ -356,41 +969,60 @@ int main() {
     
     return 0;
 }</code></pre>
-  </div>
+    </div>
 
-  <!-- Section 10 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
-    <h3 id="section-10" style="margin-top: 0;">Projects & Practice</h3>
-    <h4>Beginner Projects:</h4>
-    <ul style="color: var(--muted);">
-      <li>Calculator</li>
-      <li>Number Guessing Game</li>
-      <li>Temperature Converter</li>
-      <li>Simple Grade Calculator</li>
-      <li>Fibonacci Sequence</li>
-    </ul>
+    <!-- Section 10 -->
+    <div
+      style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+      <h3 id="section-10" style="margin-top: 0;">Projects & Practice</h3>
+      <h4>Beginner Projects:</h4>
+      <ul style="color: var(--muted);">
+        <li>Calculator</li>
+        <li>Number Guessing Game</li>
+        <li>Temperature Converter</li>
+        <li>Simple Grade Calculator</li>
+        <li>Fibonacci Sequence</li>
+      </ul>
 
-    <h4>Intermediate Projects:</h4>
-    <ul style="color: var(--muted);">
-      <li>Student Management System</li>
-      <li>Library Management System</li>
-      <li>File I/O Programs</li>
-      <li>Sorting Algorithms</li>
-      <li>Hash Table Implementation</li>
-    </ul>
+      <h4>Intermediate Projects:</h4>
+      <ul style="color: var(--muted);">
+        <li>Student Management System</li>
+        <li>Library Management System</li>
+        <li>File I/O Programs</li>
+        <li>Sorting Algorithms</li>
+        <li>Hash Table Implementation</li>
+      </ul>
 
-    <h4>Advanced Projects:</h4>
-    <ul style="color: var(--muted);">
-      <li>Binary Search Trees</li>
-      <li>Graph Algorithms</li>
-      <li>Operating System Basics</li>
-      <li>Embedded Systems Projects</li>
-      <li>Game Development (with graphics library)</li>
-    </ul>
-  </div>
+      <h4>Advanced Projects:</h4>
+      <ul style="color: var(--muted);">
+        <li>Binary Search Trees</li>
+        <li>Graph Algorithms</li>
+        <li>Operating System Basics</li>
+        <li>Embedded Systems Projects</li>
+        <li>Game Development (with graphics library)</li>
+      </ul>
+    </div>
 
 </section>
 
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+        </script>
+    </article>
+</div>
   </main>
 
   <script>

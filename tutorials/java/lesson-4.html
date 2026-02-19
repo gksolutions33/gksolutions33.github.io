@@ -1,3 +1,144 @@
 ---
+layout: tutorial
+title: "Lesson 4: Java Operators"
+description: "Master arithmetic, logical, and relational operators in Java"
 ---
-<section style="text-align: center;"><a href="./" style="color: #7bff6f; text-decoration: none;">← Back</a><p><a href="lesson-1.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">1</a><a href="lesson-2.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">2</a><a href="lesson-3.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">3</a><a href="lesson-4.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">4</a><a href="lesson-5.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">5</a><a href="lesson-6.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">6</a><a href="lesson-7.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">7</a><a href="lesson-8.html" style="background: #7bff6f; color: #000; padding: 0.5rem 0.8rem; margin: 0.2rem; text-decoration: none; display: inline-block;">8</a></p></section>
+
+<section>
+    <h2>➕ Lesson 4: Java Operators</h2>
+    <p class="muted">⏱️ Estimated time: 20 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-tip">
+        <h4><i class="fas fa-calculator"></i> Logic and Math</h4>
+        <p style="margin: 0;">Java operators are special symbols used to perform operations on variables and values.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
+
+        <h3>Arithmetic Operators</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>int a = 10, b = 3;
+a + b   // 13  Addition
+a - b   // 7   Subtraction
+a * b   // 30  Multiplication
+a / b   // 3   Integer division (truncates!)
+a % b   // 1   Modulus (remainder)
+
+// Watch out for integer division!
+10 / 3     // 3 (not 3.333!)
+10.0 / 3   // 3.333... (use double for decimal)
+
+// Increment / Decrement
+int x = 5;
+x++;  // x is now 6
+x--;  // x is now 5
+x += 10;  // x is now 15</code></pre>
+
+        <h3>Comparison Operators</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>==   // Equal to
+!=   // Not equal to
+&gt;    // Greater than
+&lt;    // Less than
+&gt;=   // Greater than or equal
+&lt;=   // Less than or equal
+
+// Examples
+5 == 5   // true
+5 != 3   // true
+10 &gt; 5   // true</code></pre>
+
+        <h3>Logical Operators</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>&amp;&amp;   // AND — both must be true
+||   // OR  — at least one true
+!    // NOT — reverses boolean
+
+int age = 25;
+boolean hasID = true;
+boolean canDrink = (age &gt;= 21) &amp;&amp; hasID;  // true
+
+// Ternary operator (shorthand if/else)
+String msg = (age &gt;= 18) ? "Adult" : "Minor";  // "Adult"</code></pre>
+
+        <h3>Math Class</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>Math.max(10, 20);    // 20
+Math.min(10, 20);    // 10
+Math.abs(-5);        // 5
+Math.sqrt(16);       // 4.0
+Math.pow(2, 3);      // 8.0
+Math.round(3.7);     // 4
+Math.random();       // Random 0.0 to 1.0</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is 10 / 3 in Java (both ints)?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) 3.333</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) 3</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) 4</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct! Integer division truncates.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does && mean?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) OR</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) AND</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) NOT</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does the ternary operator do?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Shorthand if/else that returns a value</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) A loop</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) A math function</label>
+            </div>
+            <button onclick="checkAnswer('q3','a','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-3.html"
+            style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-5.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Control Flow →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

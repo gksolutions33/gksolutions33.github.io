@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "Python Tutorial | GK Solutions"
 description: "Learn Python from scratch - step-by-step lessons with interactive quizzes for beginners"
 keywords: "Python tutorial, Python for beginners, Python programming, step-by-step learning"
@@ -10,104 +10,169 @@ keywords: "Python tutorial, Python for beginners, Python programming, step-by-st
     <a href="../" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to Tutorials</a>
   </div>
 
-  <h2>🐍 Python Programming - Step by Step</h2>
-  <p class="muted">Learn Python from complete scratch! Work through one lesson at a time. Each lesson has real code examples and interactive quizzes. ⏱️ About 2-3 hours total | 🎯 For absolute beginners</p>
+  <h1 style="margin-bottom: 0.5rem;">🐍 Python Programming Tutorial</h1>
+  <p class="muted" style="font-size: 1.1rem; margin-bottom: 2.5rem;">Master the world's most popular language - from
+    basic syntax to specialized libraries for data science, automation, and AI.</p>
 
-  <!-- Lessons Grid -->
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-    
+  <div class="tutorial-grid"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+
     <!-- Lesson 1 -->
     <a href="lesson-1.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(0, 245, 255, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-cyan)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 245, 255, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-cyan);">1️⃣ What is Python?</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Understand what Python is, why it's awesome, and what you can build.</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 10-15 min</span>
-          <span style="color: var(--accent-cyan);">👶 Beginner</span>
+      <div class="tutorial-card"
+        style="background: rgba(123, 255, 111, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(123, 255, 111, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--text); display: flex; align-items: center; gap: 10px;">
+          <span style="color: var(--accent-green);">01</span> What is Python?
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Understand why Python is the
+          leading choice for developers today and its core features.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(123, 255, 111, 0.1); color: var(--accent-green); padding: 4px 12px; border-radius: 20px;">⏱️
+            10 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
         </div>
       </div>
     </a>
 
     <!-- Lesson 2 -->
     <a href="lesson-2.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(255, 45, 149, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(255, 45, 149, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-pink)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 45, 149, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-pink);">2️⃣ Your First Program</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Write your first Python code! Learn about print and comments.</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 10-15 min</span>
-          <span style="color: var(--accent-pink);">👶 Beginner</span>
+      <div class="tutorial-card"
+        style="background: rgba(255, 45, 149, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 45, 149, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--text); display: flex; align-items: center; gap: 10px;">
+          <span style="color: var(--accent-pink);">02</span> Setup & First Script
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Install Python on your
+          machine and run your very first 'Hello World' program.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
         </div>
       </div>
     </a>
 
     <!-- Lesson 3 -->
     <a href="lesson-3.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(0, 245, 255, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-cyan)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 245, 255, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-cyan);">3️⃣ Variables & Data Types</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Store information in variables. Learn strings, numbers, and booleans.</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 15-20 min</span>
-          <span style="color: var(--accent-cyan);">👶 Beginner</span>
+      <div class="tutorial-card"
+        style="background: rgba(0, 245, 255, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--text); display: flex; align-items: center; gap: 10px;">
+          <span style="color: var(--accent-cyan);">03</span> Variables & Types
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Master how Python handles
+          integers, floats, strings, and dynamic typing.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
         </div>
       </div>
     </a>
 
     <!-- Lesson 4 -->
     <a href="lesson-4.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(255, 45, 149, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(255, 45, 149, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-pink)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 45, 149, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-pink);">4️⃣ Math & Operations</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Do math with Python! Learn addition, multiplication, and more.</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 15-20 min</span>
-          <span style="color: var(--accent-pink);">👶 Beginner</span>
+      <div class="tutorial-card"
+        style="background: rgba(255, 195, 0, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 195, 0, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-yellow); display: flex; align-items: center; gap: 10px;">
+          <span>04</span> Math & Operations
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Do math with Python! Learn
+          addition, multiplication, and more.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 195, 0, 0.1); color: var(--accent-yellow); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
         </div>
       </div>
     </a>
 
     <!-- Lesson 5 -->
     <a href="lesson-5.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(123, 255, 111, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(123, 255, 111, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-green)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(123, 255, 111, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-green);">5️⃣ Making Decisions</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Use if/else to make your program make decisions!</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 15-20 min</span>
-          <span style="color: var(--accent-green);">👶 Beginner</span>
+      <div class="tutorial-card"
+        style="background: rgba(123, 255, 111, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(123, 255, 111, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-green); display: flex; align-items: center; gap: 10px;">
+          <span>05</span> Making Decisions
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Use if/else to make your
+          program make decisions!</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(123, 255, 111, 0.1); color: var(--accent-green); padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
         </div>
       </div>
     </a>
 
     <!-- Lesson 6 -->
     <a href="lesson-6.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(255, 195, 0, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(255, 195, 0, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-yellow)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 195, 0, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-yellow);">6️⃣ Loops</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Repeat code with for and while loops. Save time with automation!</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 15-20 min</span>
-          <span style="color: var(--accent-yellow);">👶 Beginner</span>
+      <div class="tutorial-card"
+        style="background: rgba(255, 195, 0, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 195, 0, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-yellow); display: flex; align-items: center; gap: 10px;">
+          <span>06</span> Loops
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Repeat code with for and
+          while loops. Save time with automation!</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 195, 0, 0.1); color: var(--accent-yellow); padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
         </div>
       </div>
     </a>
 
     <!-- Lesson 7 -->
     <a href="lesson-7.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(0, 245, 255, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-cyan)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 245, 255, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-cyan);">7️⃣ Functions</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Create reusable code blocks. Write once, use everywhere!</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 15-20 min</span>
-          <span style="color: var(--accent-cyan);">📚 Intermediate</span>
+      <div class="tutorial-card"
+        style="background: rgba(0, 245, 255, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(0, 245, 255, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-cyan); display: flex; align-items: center; gap: 10px;">
+          <span>07</span> Functions
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Create reusable code blocks.
+          Write once, use everywhere!</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">📚
+            Intermediate</span>
         </div>
       </div>
     </a>
 
     <!-- Lesson 8 -->
     <a href="lesson-8.html" style="text-decoration: none; color: inherit;">
-      <div style="background: rgba(255, 45, 149, 0.08); padding: 1.5rem; border-radius: 12px; border: 2px solid rgba(255, 45, 149, 0.3); transition: all 0.3s ease; cursor: pointer; height: 100%;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='var(--accent-pink)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255, 45, 149, 0.3)';">
-        <h3 style="margin-top: 0; color: var(--accent-pink);">8️⃣ Lists & Dictionaries</h3>
-        <p style="color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0;">Store multiple items. Organize data with lists and dictionaries!</p>
-        <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.85rem;">
-          <span style="color: var(--muted);">⏱️ 20-25 min</span>
-          <span style="color: var(--accent-pink);">📚 Intermediate</span>
+      <div class="tutorial-card"
+        style="background: rgba(255, 45, 149, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 45, 149, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-pink); display: flex; align-items: center; gap: 10px;">
+          <span>08</span> Lists & Dictionaries
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Store multiple items.
+          Organize data with lists and dictionaries!</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">⏱️
+            25 min</span>
+          <span
+            style="background: rgba(255, 195, 0, 0.1); color: var(--accent-yellow); padding: 4px 12px; border-radius: 20px;">📚
+            Intermediate</span>
         </div>
       </div>
     </a>
@@ -115,7 +180,8 @@ keywords: "Python tutorial, Python for beginners, Python programming, step-by-st
   </div>
 
   <!-- How to Use This Tutorial -->
-  <div style="background: rgba(0, 245, 255, 0.05); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
+  <div
+    style="background: rgba(0, 245, 255, 0.05); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
     <h3 style="margin-top: 0; color: var(--accent-cyan);">💡 How to Use This Tutorial</h3>
     <ol style="color: var(--muted); line-height: 1.9;">
       <li><strong>Start with Lesson 1</strong> - Read the concepts and understand the big picture</li>
@@ -128,7 +194,8 @@ keywords: "Python tutorial, Python for beginners, Python programming, step-by-st
   </div>
 
   <!-- Tips for Success -->
-  <div style="background: rgba(255, 45, 149, 0.05); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(255, 45, 149, 0.2);">
+  <div
+    style="background: rgba(255, 45, 149, 0.05); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(255, 45, 149, 0.2);">
     <h3 style="margin-top: 0; color: var(--accent-pink);">⭐ Tips for Success</h3>
     <ul style="color: var(--muted); line-height: 1.9;">
       <li>✅ <strong>Type out the code</strong> - Don't copy/paste. Your fingers learn!</li>

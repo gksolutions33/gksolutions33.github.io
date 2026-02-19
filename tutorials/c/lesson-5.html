@@ -1,5 +1,183 @@
 ---
-layout: default
-title: "C Lesson 5"
+layout: tutorial
+title: "Lesson 5: Control Flow | C Tutorial"
+description: "Master if-else statements and switch cases to control the logic of your C programs"
 ---
-<section style="text-align: center;"><a href="./" style="color: #ffd60a; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #ffd60a; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #ffd60a; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>🚦 Lesson 5: Control Flow (Decision Making)</h2>
+    <p class="muted">⏱️ Estimated time: 25 minutes | Difficulty: Beginner</p>
+
+    <div class="callout callout-note">
+        <h4><i class="fas fa-code-branch"></i> Logic Power</h4>
+        <p style="margin: 0;">Control flow allows your program to make decisions and execute different code based on
+            conditions.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ffd60a;">
+
+        <h3>If / Else Statements</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int age = 18;
+
+    if (age >= 18) {
+        printf("You are an adult\n");
+    } else if (age >= 13) {
+        printf("You are a teenager\n");
+    } else {
+        printf("You are a child\n");
+    }
+
+    // Ternary operator (shorthand if/else)
+    int x = 10;
+    char *result = (x > 5) ? "Big" : "Small";
+    printf("%s\n", result);  // Big
+
+    return 0;
+}</code></pre>
+
+        <h3>Switch Statement</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int day = 3;
+switch (day) {
+    case 1: printf("Monday\n"); break;
+    case 2: printf("Tuesday\n"); break;
+    case 3: printf("Wednesday\n"); break;
+    case 4: printf("Thursday\n"); break;
+    case 5: printf("Friday\n"); break;
+    default: printf("Weekend\n");
+}</code></pre>
+
+        <div
+            style="background: rgba(255, 195, 0, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 3px solid var(--accent-yellow);">
+            <p style="margin: 0; color: var(--muted);">
+                <strong>⚠️ Don't forget <code>break;</code>!</strong> Without it, execution "falls through" to the next
+                case.
+            </p>
+        </div>
+
+        <h3>For Loop</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>// Print 0 to 4
+for (int i = 0; i < 5; i++) {
+    printf("%d ", i);  // 0 1 2 3 4
+}
+
+// Countdown
+for (int i = 10; i > 0; i--) {
+    printf("%d...", i);
+}
+printf("Liftoff!\n");</code></pre>
+
+        <h3>While Loop</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int count = 0;
+while (count < 3) {
+    printf("Count: %d\n", count);
+    count++;
+}
+
+// Do-While (executes at least once)
+int num;
+do {
+    printf("Enter a positive number: ");
+    scanf("%d", &amp;num);
+} while (num <= 0);</code></pre>
+
+        <h3>Break &amp; Continue</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>// break: exit the loop
+for (int i = 0; i < 10; i++) {
+    if (i == 5) break;    // Stop at 5
+    printf("%d ", i);      // 0 1 2 3 4
+}
+
+// continue: skip current iteration
+for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) continue;  // Skip even numbers
+    printf("%d ", i);            // 1 3 5 7 9
+}</code></pre>
+
+    </div>
+
+    <!-- Quiz -->
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What happens without break in a
+                switch case?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) Compiler error</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) Fall-through to next case</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) Nothing</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct! Without break, execution falls through.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How many times does: for(int i=0;
+                i&lt;3; i++) run?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) 2 times</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) 3 times</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="c"> C) 4 times</label>
+            </div>
+            <button onclick="checkAnswer('q2','b','✅ Correct! i goes 0, 1, 2 = 3 iterations.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'continue' do in a loop?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Exits the loop</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Skips to next iteration</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) Restarts the program</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct! continue skips the rest of the current iteration.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-4.html"
+            style="background: #ffd60a; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-6.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Functions →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

@@ -1,43 +1,89 @@
 ---
-layout: default
-title: "Lesson 4: Operators & Math | JavaScript Tutorial"
-description: "Learn arithmetic and comparison operators"
+layout: tutorial
+title: "Lesson 4: Control Flow | JavaScript Tutorial"
+description: "Learn how to make decisions in your code using if-else and switch"
 ---
 
 <section>
-  <div style="margin-bottom: 2rem;"><a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a></div>
-  <h2>🟡 Lesson 4: Operators & Math</h2>
-  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Beginner</p>
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    <h3>Arithmetic Operators</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let a = 10, b = 3;
+  <h2>🚦 Lesson 4: Control Flow (Decision Making)</h2>
+  <p class="muted">⏱️ Estimated time: 25 minutes | Difficulty: Beginner</p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-code-branch"></i> Conditional Logic</h4>
+    <p style="margin: 0;">Control flow allows your program to execute different pieces of code depending on whether a
+      condition is true or false.</p>
+  </div>
+  <h3>Arithmetic Operators</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let a = 10, b = 3;
 console.log(a + b);      // 13 (addition)
 console.log(a - b);      // 7 (subtraction)
 console.log(a * b);      // 30 (multiplication)
 console.log(a / b);      // 3.333... (division)
 console.log(a % b);      // 1 (remainder)
 console.log(a ** b);     // 1000 (exponentiation)</code></pre>
-    <h3>Comparison Operators</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>console.log(5 == 5);     // true
+  <h3>Comparison Operators</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>console.log(5 == 5);     // true
 console.log(5 === "5");  // false (different types)
 console.log(5 != 3);     // true
 console.log(5 > 3);      // true
 console.log(5 < 3);      // false
 console.log(5 >= 5);     // true</code></pre>
-    <h3>Logical Operators</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let isStudent = true;
+  <h3>Logical Operators</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let isStudent = true;
 let hasID = true;
 
 console.log(isStudent && hasID);  // true (AND)
 console.log(isStudent || false);  // true (OR)
 console.log(!isStudent);          // false (NOT)</code></pre>
   </div>
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);"><p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is 10 % 3?</p><div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q1" value="a"> A) 3</label><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q1" value="b"> B) 1</label><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q1" value="c"> C) 10</label></div><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button><div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div></div>
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);"><p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Is 5 === "5" true?</p><div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q2" value="a"> A) Yes</label><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q2" value="b"> B) No</label></div><button onclick="checkAnswer('q2','b','✅ === checks type too!')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button><div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div></div>
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);"><p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does && mean?</p><div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q3" value="a"> A) OR</label><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q3" value="b"> B) AND</label></label><label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q3" value="c"> C) NOT</label></div><button onclick="checkAnswer('q3','b','✅ Both conditions must be true!')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button><div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div></div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is 10 % 3?</p>
+      <div style="margin-left: 1.5rem;"><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q1"
+            value="a"> A) 3</label><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q1"
+            value="b"> B) 1</label><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q1"
+            value="c"> C) 10</label></div><button onclick="checkAnswer('q1','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Is 5 === "5" true?</p>
+      <div style="margin-left: 1.5rem;"><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q2"
+            value="a"> A) Yes</label><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q2"
+            value="b"> B) No</label></div><button onclick="checkAnswer('q2','b','✅ === checks type too!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does && mean?</p>
+      <div style="margin-left: 1.5rem;"><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q3"
+            value="a"> A) OR</label><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q3"
+            value="b"> B) AND</label></label><label
+          style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio" name="q3"
+            value="c"> C) NOT</label></div><button onclick="checkAnswer('q3','b','✅ Both conditions must be true!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
   </div>
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-3.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous</a><a href="lesson-5.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next →</a></div>
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-3.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a><a href="lesson-5.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next
+      →</a></div>
 </section>
-<script>function checkAnswer(q, a, m){let s=document.querySelector(`input[name="${q}"]:checked`);let r=document.getElementById(q+'-result');if(!s){r.innerHTML='⚠️ Select an answer!';r.style.color='var(--accent-yellow)';return}r.innerHTML=s.value===a?m+' 🎉':'❌ Try again!';r.style.color=s.value===a?'var(--accent-green)':'rgba(255,45,149,1)'};</script>
+<script>function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Select an answer!'; r.style.color = 'var(--accent-yellow)'; return } r.innerHTML = s.value === a ? m + ' 🎉' : '❌ Try again!'; r.style.color = s.value === a ? 'var(--accent-green)' : 'rgba(255,45,149,1)' };</script>

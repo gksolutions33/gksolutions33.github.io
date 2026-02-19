@@ -1,7 +1,7 @@
 ---
-layout: default
-title: "Lesson 3: Variables and Data Types | Python Tutorial"
-description: "Learn how to store information using variables in Python"
+layout: tutorial
+title: "Lesson 3: Operators | Python Tutorial"
+description: "Master mathematical and logical operators in Python"
 ---
 
 <section>
@@ -9,94 +9,108 @@ description: "Learn how to store information using variables in Python"
     <a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
   </div>
 
-  <h2>🟢 Lesson 3: Variables and Data Types</h2>
-  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Beginner</p>
+  <h2>➕ Lesson 3: Python Operators</h2>
+  <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
-  <!-- Lesson Content -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    
-    <h3>What is a Variable?</h3>
-    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-      <strong>A variable is a container that stores information.</strong> Think of it like a labeled box where you put things for later use.
+  <div class="callout callout-tip">
+    <h4><i class="fas fa-calculator"></i> Logic and Math</h4>
+    <p style="margin: 0;">Operators are special symbols that carry out arithmetic or logical computation. Python makes
+      math super easy!</p>
+  </div>
+
+  <h3>What is a Variable?</h3>
+  <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
+    <strong>A variable is a container that stores information.</strong> Think of it like a labeled box where you put
+    things for later use.
+  </p>
+
+  <h4>Real-World Analogy:</h4>
+  <div
+    style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
+    <p style="margin: 0; color: var(--muted);">
+      Imagine your refrigerator:
+    <ul style="margin-top: 1rem; color: var(--muted);">
+      <li>📦 Each shelf is labeled (variable name)</li>
+      <li>🥛 What's on the shelf is the data (value)</li>
+      <li>🔄 You can change what's in the shelf (variable can change)</li>
+      <li>📝 You remember which shelf has what (the label)</li>
+    </ul>
     </p>
+  </div>
 
-    <h4>Real-World Analogy:</h4>
-    <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
-      <p style="margin: 0; color: var(--muted);">
-        Imagine your refrigerator:
-        <ul style="margin-top: 1rem; color: var(--muted);">
-          <li>📦 Each shelf is labeled (variable name)</li>
-          <li>🥛 What's on the shelf is the data (value)</li>
-          <li>🔄 You can change what's in the shelf (variable can change)</li>
-          <li>📝 You remember which shelf has what (the label)</li>
-        </ul>
-      </p>
-    </div>
-
-    <h3>Creating Variables</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>name = "Alice"
+  <h3>Creating Variables</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>name = "Alice"
 age = 25
 height = 5.6
 is_student = True</code></pre>
 
-    <p style="color: var(--muted); margin-top: 1rem;">
-      The pattern is: <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">variable_name = value</code>
-    </p>
+  <p style="color: var(--muted); margin-top: 1rem;">
+    The pattern is: <code
+      style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">variable_name = value</code>
+  </p>
 
-    <h3>Data Types - Different Kinds of Information</h3>
-    <p style="color: var(--muted);">Python automatically detects what type of information you're storing:</p>
+  <h3>Data Types - Different Kinds of Information</h3>
+  <p style="color: var(--muted);">Python automatically detects what type of information you're storing:</p>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-      
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
-        <h4 style="margin-top: 0; color: var(--accent-cyan);">String (Text)</h4>
-        <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Any text, always in quotes</p>
-        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>name = "Bob"
+  <div
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
+
+    <div
+      style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
+      <h4 style="margin-top: 0; color: var(--accent-cyan);">String (Text)</h4>
+      <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Any text, always in quotes</p>
+      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>name = "Bob"
 city = 'New York'
 greeting = "Hello!"</code></pre>
-      </div>
-
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
-        <h4 style="margin-top: 0; color: var(--accent-pink);">Integer (Whole Numbers)</h4>
-        <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Numbers without decimals</p>
-        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>age = 25
-year = 2024
-score = -5</code></pre>
-      </div>
-
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
-        <h4 style="margin-top: 0; color: var(--accent-green);">Float (Decimal Numbers)</h4>
-        <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Numbers with decimals</p>
-        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>height = 5.9
-price = 19.99
-temperature = -3.5</code></pre>
-      </div>
-
-      <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-yellow);">
-        <h4 style="margin-top: 0; color: var(--accent-yellow);">Boolean (True/False)</h4>
-        <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Only True or False</p>
-        <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>is_student = True
-is_raining = False
-is_adult = True</code></pre>
-      </div>
-
     </div>
 
-    <h3>Using Variables</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>name = "Alice"
+    <div
+      style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
+      <h4 style="margin-top: 0; color: var(--accent-pink);">Integer (Whole Numbers)</h4>
+      <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Numbers without decimals</p>
+      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>age = 25
+year = 2024
+score = -5</code></pre>
+    </div>
+
+    <div
+      style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
+      <h4 style="margin-top: 0; color: var(--accent-green);">Float (Decimal Numbers)</h4>
+      <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Numbers with decimals</p>
+      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>height = 5.9
+price = 19.99
+temperature = -3.5</code></pre>
+    </div>
+
+    <div
+      style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-yellow);">
+      <h4 style="margin-top: 0; color: var(--accent-yellow);">Boolean (True/False)</h4>
+      <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Only True or False</p>
+      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>is_student = True
+is_raining = False
+is_adult = True</code></pre>
+    </div>
+
+  </div>
+
+  <h3>Using Variables</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>name = "Alice"
 age = 25
 
 print("My name is", name)
 print("I am", age, "years old")
 print("Next year I will be", age + 1)</code></pre>
 
-    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>My name is Alice
+  <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>My name is Alice
 I am 25 years old
 Next year I will be 26</code></pre>
 
-    <h3>Changing Variables</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>score = 10
+  <h3>Changing Variables</h3>
+  <pre
+    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>score = 10
 print("Score:", score)
 
 score = 15
@@ -105,43 +119,47 @@ print("New score:", score)
 score = score + 5
 print("Even better:", score)</code></pre>
 
-    <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Score: 10
+  <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
+  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Score: 10
 New score: 15
 Even better: 20</code></pre>
 
-    <h3>Naming Variables (Best Practices)</h3>
-    <div style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">✅ Good Variable Names:</p>
-      <pre style="margin: 0 0 1.5rem 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px; color: var(--accent-green);"><code>name = "Bob"
+  <h3>Naming Variables (Best Practices)</h3>
+  <div style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+    <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">✅ Good Variable Names:</p>
+    <pre
+      style="margin: 0 0 1.5rem 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px; color: var(--accent-green);"><code>name = "Bob"
 user_age = 25
 is_student = True
 total_price = 99.99</code></pre>
 
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❌ Bad Variable Names:</p>
-      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px; color: rgba(255, 45, 149, 1);"><code>n = "Bob"
+    <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❌ Bad Variable Names:</p>
+    <pre
+      style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px; color: rgba(255, 45, 149, 1);"><code>n = "Bob"
 x = 25
 a = True
 t_p = 99.99</code></pre>
-    </div>
+  </div>
 
-    <h4>Rules for Variable Names:</h4>
-    <ul style="color: var(--muted); line-height: 2;">
-      <li>✅ Use lowercase with underscores: <code>first_name</code></li>
-      <li>✅ Use descriptive names: <code>student_count</code> not <code>sc</code></li>
-      <li>❌ Don't start with numbers: <code>123name</code></li>
-      <li>❌ Don't use spaces: <code>first name</code></li>
-      <li>❌ Don't use special characters: <code>user@name</code></li>
-    </ul>
+  <h4>Rules for Variable Names:</h4>
+  <ul style="color: var(--muted); line-height: 2;">
+    <li>✅ Use lowercase with underscores: <code>first_name</code></li>
+    <li>✅ Use descriptive names: <code>student_count</code> not <code>sc</code></li>
+    <li>❌ Don't start with numbers: <code>123name</code></li>
+    <li>❌ Don't use spaces: <code>first name</code></li>
+    <li>❌ Don't use special characters: <code>user@name</code></li>
+  </ul>
 
   </div>
 
   <!-- Quiz Section -->
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <!-- Question 1 -->
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What data type is "25"?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -154,12 +172,15 @@ t_p = 99.99</code></pre>
           <input type="radio" name="q1" value="c"> C) Float
         </label>
       </div>
-      <button onclick="checkAnswer('q1', 'b', '✅ Correct! 25 is an integer (whole number).', 'Data types')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q1', 'b', '✅ Correct! 25 is an integer (whole number).', 'Data types')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
     <!-- Question 2 -->
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What data type is "Hello"?</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
@@ -172,13 +193,17 @@ t_p = 99.99</code></pre>
           <input type="radio" name="q2" value="c"> C) Boolean
         </label>
       </div>
-      <button onclick="checkAnswer('q2', 'a', '✅ Correct! Text in quotes is a string.', 'String data type')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q2', 'a', '✅ Correct! Text in quotes is a string.', 'String data type')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
     <!-- Question 3 -->
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is the output of this code?<br>age = 10<br>age = age + 5<br>print(age)</p>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is the output of this code?<br>age =
+        10<br>age = age + 5<br>print(age)</p>
       <div style="margin-left: 1.5rem;">
         <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
           <input type="radio" name="q3" value="a"> A) 10
@@ -190,14 +215,17 @@ t_p = 99.99</code></pre>
           <input type="radio" name="q3" value="c"> C) 15
         </label>
       </div>
-      <button onclick="checkAnswer('q3', 'c', '✅ Correct! 10 + 5 = 15', 'Variable operations')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button>
+      <button onclick="checkAnswer('q3', 'c', '✅ Correct! 10 + 5 = 15', 'Variable operations')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
       <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
     </div>
 
   </div>
 
   <!-- Challenge -->
-  <div style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
+  <div
+    style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
     <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
@@ -210,29 +238,33 @@ t_p = 99.99</code></pre>
 
   <!-- Navigation -->
   <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="lesson-2.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous: Your First Program</a>
-    <a href="lesson-4.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next: Math & Operations →</a>
+    <a href="lesson-2.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous: Your First Program</a>
+    <a href="lesson-4.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Math & Operations →</a>
   </div>
 
 </section>
 
 <script>
-function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-  const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-  const resultDiv = document.getElementById(questionName + '-result');
-  
-  if (!selected) {
-    resultDiv.innerHTML = '⚠️ Please select an answer!';
-    resultDiv.style.color = 'var(--accent-yellow)';
-    return;
+  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
+    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
+    const resultDiv = document.getElementById(questionName + '-result');
+
+    if (!selected) {
+      resultDiv.innerHTML = '⚠️ Please select an answer!';
+      resultDiv.style.color = 'var(--accent-yellow)';
+      return;
+    }
+
+    if (selected.value === correctAnswer) {
+      resultDiv.innerHTML = successMsg + ' 🎉';
+      resultDiv.style.color = 'var(--accent-green)';
+    } else {
+      resultDiv.innerHTML = '❌ Not quite right. Try again!';
+      resultDiv.style.color = 'rgba(255, 45, 149, 1)';
+    }
   }
-  
-  if (selected.value === correctAnswer) {
-    resultDiv.innerHTML = successMsg + ' 🎉';
-    resultDiv.style.color = 'var(--accent-green)';
-  } else {
-    resultDiv.innerHTML = '❌ Not quite right. Try again!';
-    resultDiv.style.color = 'rgba(255, 45, 149, 1)';
-  }
-}
 </script>

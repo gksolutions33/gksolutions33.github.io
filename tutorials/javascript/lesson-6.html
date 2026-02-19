@@ -1,39 +1,61 @@
 ---
-layout: default
-title: "Lesson 6: Loops | JavaScript Tutorial"
-description: "Repeat code with loops"
+layout: tutorial
+title: "Lesson 6: Functions | JavaScript Tutorial"
+description: "Learn how to write reusable code blocks using JavaScript functions"
 ---
 
 <section>
-  <div style="margin-bottom: 2rem;"><a href="./" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;">← Back to All Lessons</a></div>
-  <h2>🟡 Lesson 6: Loops</h2>
-  <p class="muted">⏱️ Estimated time: 15-20 minutes | Difficulty: Beginner</p>
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
-    <h3>For Loop</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 5; i++) {
+  <h2>📦 Lesson 6: JavaScript Functions</h2>
+  <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-cube"></i> Modularity</h4>
+    <p style="margin: 0;">Functions are the building blocks of JavaScript. They allow you to define a block of code,
+      give it a name, and execute it as many times as you want.</p>
+  </div>
+  <h3>For Loop</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 5; i++) {
   console.log("Number:", i);
 }</code></pre>
-    <h3>While Loop</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let count = 0;
+  <h3>While Loop</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let count = 0;
 while (count < 3) {
   console.log("Count:", count);
   count++;
 }</code></pre>
-    <h3>For...of Loop (for arrays)</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let fruits = ["apple", "banana", "orange"];
+  <h3>For...of Loop (for arrays)</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let fruits = ["apple", "banana", "orange"];
 for (let fruit of fruits) {
   console.log(fruit);
 }</code></pre>
-    <h3>Break and Continue</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 10; i++) {
+  <h3>Break and Continue</h3>
+  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>for (let i = 0; i < 10; i++) {
   if (i === 5) break;      // Stop loop
   if (i === 2) continue;   // Skip this iteration
   console.log(i);
 }</code></pre>
   </div>
-  <div style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);"><h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-    <div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);"><p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How many times does for(let i=0; i<3; i++) loop?</p><div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="a"> A) 2</label><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="b"> B) 3</label><label style="display: block; margin: 0.7rem 0;"><input type="radio" name="q1" value="c"> C) Infinite</label></div><button onclick="checkAnswer('q1','b','✅ 0, 1, 2 = 3 times!')" style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check Answer</button><div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div></div>
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How many times does for(let i=0; i<3;
+          i++) loop?</p>
+          <div style="margin-left: 1.5rem;"><label style="display: block; margin: 0.7rem 0;"><input type="radio"
+                name="q1" value="a"> A) 2</label><label style="display: block; margin: 0.7rem 0;"><input type="radio"
+                name="q1" value="b"> B) 3</label><label style="display: block; margin: 0.7rem 0;"><input type="radio"
+                name="q1" value="c"> C) Infinite</label></div><button
+            onclick="checkAnswer('q1','b','✅ 0, 1, 2 = 3 times!')"
+            style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+            Answer</button>
+          <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+    </div>
   </div>
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-5.html" style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">← Previous</a><a href="lesson-7.html" style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next →</a></div>
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-5.html"
+      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a><a href="lesson-7.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next
+      →</a></div>
 </section>
-<script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m+' 🎉':'❌ Try again!',document.getElementById(q+'-result').style.color=s.value===a?'var(--accent-green)':'rgba(255,45,149,1)';};</script>
+<script>function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); if (s) document.getElementById(q + '-result').innerHTML = s.value === a ? m + ' 🎉' : '❌ Try again!', document.getElementById(q + '-result').style.color = s.value === a ? 'var(--accent-green)' : 'rgba(255,45,149,1)'; };</script>

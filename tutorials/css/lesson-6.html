@@ -1,13 +1,140 @@
 ---
-layout: default
-title: "Lesson 6: Grid | CSS Tutorial"
+layout: tutorial
+title: "Lesson 6: Positioning | CSS Tutorial"
+description: "Learn how to precisely place elements using CSS positioning"
 ---
-<section><div style="margin-bottom: 2rem;"><a href="./" style="color: #ff2d95; text-decoration: none;">← Back</a></div><h2>🎨 Lesson 6: Grid</h2><p class="muted">⏱️ 20 min | Intermediate</p><div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid #ff2d95;"><h3>Grid Container</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.container { 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-}</code></pre><h3>Grid Rows & Columns</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.container { 
-  grid-template-columns: 100px 200px auto;
-  grid-template-rows: 50px auto;
-}</code></pre><h3>Grid Item Placement</h3><pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px;"><code>.item { grid-column: 1 / 3; }   /* Span 2 columns */
-.item { grid-row: 1 / 3; }      /* Span 2 rows */</code></pre></div><div style="background: rgba(123,255,111,0.08); padding: 2rem; border-radius: 12px; margin-top: 2rem;"><h3 style="color: #7bff6f;">✅ Quiz</h3><div style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #7bff6f;"><p style="color: #999;">❓ How many columns in this grid?<br>grid-template-columns: 1fr 1fr 1fr</p><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="a"> A) 2 columns</label><label style="display: block; margin: 0.5rem 0;"><input type="radio" name="q1" value="b"> B) 3 columns</label><button onclick="checkAnswer('q1','b','✅ Correct!')" style="background: #7bff6f; color: #000; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 1rem;">Check</button><div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div></div></div><div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;"><a href="lesson-5.html" style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">← Previous</a><a href="lesson-7.html" style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none;">Next →</a></div></section><script>function checkAnswer(q,a,m){let s=document.querySelector(`input[name="${q}"]:checked`);if(s)document.getElementById(q+'-result').innerHTML=s.value===a?m:'❌ Try again!';}</script>
+
+<section>
+  <h2>📍 Lesson 6: CSS Positioning</h2>
+  <p class="muted">⏱️ Estimated time: 20 minutes | Difficulty: Intermediate</p>
+
+  <div class="callout callout-tip">
+    <h4><i class="fas fa-location-dot"></i> Exact Placement</h4>
+    <p style="margin: 0;">The <code>position</code> property specifies the type of positioning method used for an
+      element (static, relative, fixed, absolute, or sticky).</p>
+  </div>
+
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff2d95;">
+
+    <h3>Position Values</h3>
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Static (default) - normal document flow */
+position: static;
+
+/* Relative - offset from normal position */
+position: relative;
+top: 10px; left: 20px;  /* Moves down 10, right 20 */
+
+/* Absolute - positioned relative to nearest positioned parent */
+.parent { position: relative; }
+.child {
+    position: absolute;
+    top: 0; right: 0;  /* Top-right corner of parent */
+}
+
+/* Fixed - stays in place during scroll */
+.navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Sticky - switches between relative and fixed */
+.header {
+    position: sticky;
+    top: 0;  /* Sticks when scrolled to top */
+}</code></pre>
+
+    <h3>Z-Index (Stacking Order)</h3>
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Higher z-index = appears on top */
+.modal { z-index: 1000; }
+.overlay { z-index: 999; }
+.content { z-index: 1; }
+/* z-index only works on positioned elements! */</code></pre>
+
+    <h3>Float & Clear (Legacy)</h3>
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>img { float: left; margin-right: 1rem; }
+.clearfix::after { content: ""; display: block; clear: both; }
+/* Use Flexbox/Grid instead of floats for layout! */</code></pre>
+
+    <h3>Overflow</h3>
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>overflow: visible;  /* Content overflows (default) */
+overflow: hidden;   /* Content clipped */
+overflow: scroll;   /* Always show scrollbar */
+overflow: auto;     /* Scrollbar only when needed */</code></pre>
+
+  </div>
+
+  <div
+    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which position stays fixed during scroll?
+      </p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="a"> A) relative</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="b"> B) fixed</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q1" value="c"> C) absolute</label>
+      </div>
+      <button onclick="checkAnswer('q1','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does z-index control?</p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="a"> A) Zoom level</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="b"> B) Stacking order (which element is on top)</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q2" value="c"> C) Font size</label>
+      </div>
+      <button onclick="checkAnswer('q2','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+    <div
+      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Absolute positioning is relative to what?
+      </p>
+      <div style="margin-left: 1.5rem;">
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="a"> A) The browser window</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="b"> B) The nearest positioned ancestor</label>
+        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
+            name="q3" value="c"> C) The next sibling</label>
+      </div>
+      <button onclick="checkAnswer('q3','b','✅ Correct!')"
+        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+        Answer</button>
+      <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+    </div>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+    <a href="lesson-5.html"
+      style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+      Previous</a>
+    <a href="lesson-7.html"
+      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+      Responsive Design →</a>
+  </div>
+</section>
+
+<script>
+  function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>

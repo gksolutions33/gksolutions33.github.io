@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "SQL Tutorial - Master Database Programming"
 description: "Learn SQL and database management from basics to optimization."
 ---
@@ -9,22 +9,175 @@ description: "Learn SQL and database management from basics to optimization."
     <a href="../" style="color: #00d9ff; text-decoration: none; font-weight: 500;">← Back to Tutorials</a>
   </div>
 
-  <h1 style="margin-bottom: 1rem;">🗄️ SQL Tutorial</h1>
-  <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 3rem;">Master database design, queries, and optimization</p>
-  
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-    <a href="lesson-1.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 1</h3><p style="margin: 0; font-weight: bold;">What is SQL?</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-2.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 2</h3><p style="margin: 0; font-weight: bold;">Databases & Tables</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-3.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 3</h3><p style="margin: 0; font-weight: bold;">SELECT Queries</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-4.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 4</h3><p style="margin: 0; font-weight: bold;">WHERE & Filtering</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 15 min</p></div></a>
-    <a href="lesson-5.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 5</h3><p style="margin: 0; font-weight: bold;">Joins</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
-    <a href="lesson-6.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 6</h3><p style="margin: 0; font-weight: bold;">Aggregation Functions</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
-    <a href="lesson-7.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 7</h3><p style="margin: 0; font-weight: bold;">INSERT/UPDATE/DELETE</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 20 min</p></div></a>
-    <a href="lesson-8.html" style="text-decoration: none;"><div style="background: rgba(0, 217, 255, 0.1); border: 2px solid rgba(0, 217, 255, 0.3); padding: 1.5rem; border-radius: 8px;"><h3 style="margin: 0 0 0.5rem 0; color: #00d9ff;">Lesson 8</h3><p style="margin: 0; font-weight: bold;">Indexes & Optimization</p><p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">⏱️ 25 min</p></div></a>
+  <h1 style="margin-bottom: 0.5rem;">🗄️ SQL Database Programming</h1>
+  <p class="muted" style="font-size: 1.1rem; margin-bottom: 2.5rem;">Master database design, queries, and optimization -
+    from basic SELECT statements to complex JOINS and indexing.</p>
+
+  <div class="tutorial-grid"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+
+    <!-- Lesson 1 -->
+    <a href="lesson-1.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(0, 217, 255, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(0, 217, 255, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--text); display: flex; align-items: center; gap: 10px;"><span
+            style="color: #00d9ff;">01</span> What
+          is SQL?</h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Understand the foundation of
+          relational databases and how SQL works.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span style="background: rgba(0, 217, 255, 0.1); color: #00d9ff; padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 2 -->
+    <a href="lesson-2.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 45, 149, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 45, 149, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-pink); display: flex; align-items: center; gap: 10px;">
+          <span>02</span> DBs & Tables
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Learn how to create
+          databases and define structured tables with constraints.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 3 -->
+    <a href="lesson-3.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(123, 255, 111, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(123, 255, 111, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-green); display: flex; align-items: center; gap: 10px;">
+          <span>03</span> SELECT Queries
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Master the art of fetching
+          precisely the data you need from tables.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(123, 255, 111, 0.1); color: var(--accent-green); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 4 -->
+    <a href="lesson-4.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 195, 0, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 195, 0, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-yellow); display: flex; align-items: center; gap: 10px;">
+          <span>04</span> WHERE & Filtering
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Filter records efficiently
+          using logical operators and pattern matching.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 195, 0, 0.1); color: var(--accent-yellow); padding: 4px 12px; border-radius: 20px;">⏱️
+            15 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 5 -->
+    <a href="lesson-5.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(0, 217, 255, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(0, 217, 255, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--text); display: flex; align-items: center; gap: 10px;"><span
+            style="color: #00d9ff;">05</span> Joins
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Combine data from multiple
+          tables using INNER, LEFT, and RIGHT joins.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span style="background: rgba(0, 217, 255, 0.1); color: #00d9ff; padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 6 -->
+    <a href="lesson-6.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 45, 149, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 45, 149, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-pink); display: flex; align-items: center; gap: 10px;">
+          <span>06</span> Aggregations
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Summarize data with
+          functions like AVG, SUM, and GROUP BY.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(0, 245, 255, 0.1); color: var(--accent-cyan); padding: 4px 12px; border-radius: 20px;">👶
+            Beginner</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 7 -->
+    <a href="lesson-7.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(123, 255, 111, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(123, 255, 111, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-green); display: flex; align-items: center; gap: 10px;">
+          <span>07</span> DML Statements
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Modify your data with
+          INSERT, UPDATE, and DELETE operations.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(123, 255, 111, 0.1); color: var(--accent-green); padding: 4px 12px; border-radius: 20px;">⏱️
+            20 min</span>
+          <span
+            style="background: rgba(255, 45, 149, 0.1); color: var(--accent-pink); padding: 4px 12px; border-radius: 20px;">📚
+            Intermediate</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Lesson 8 -->
+    <a href="lesson-8.html" style="text-decoration: none; color: inherit;">
+      <div class="tutorial-card"
+        style="background: rgba(255, 159, 28, 0.05); padding: 1.75rem; border-radius: 12px; border: 1px solid rgba(255, 159, 28, 0.2); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;">
+        <h3 style="margin-top: 0; color: var(--accent-orange); display: flex; align-items: center; gap: 10px;">
+          <span>08</span> Optimization
+        </h3>
+        <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">Speed up your queries using
+          indexes and performance tuning techniques.</p>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.8rem;">
+          <span
+            style="background: rgba(255, 159, 28, 0.1); color: var(--accent-orange); padding: 4px 12px; border-radius: 20px;">⏱️
+            25 min</span>
+          <span
+            style="background: rgba(255, 195, 0, 0.1); color: var(--accent-yellow); padding: 4px 12px; border-radius: 20px;">🚀
+            Advanced</span>
+        </div>
+      </div>
+    </a>
   </div>
 
   <!-- Quick Navigation -->
-  <div style="background: rgba(0, 245, 255, 0.05); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
+  <div
+    style="background: rgba(0, 245, 255, 0.05); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(0, 245, 255, 0.2);">
     <h3 style="margin-top: 0; color: var(--accent-cyan);">📑 Table of Contents</h3>
     <ol style="columns: 2; column-gap: 2rem; color: var(--muted);">
       <li><a href="#section-1" style="color: var(--accent-cyan);">Database Basics</a></li>
@@ -41,9 +194,11 @@ description: "Learn SQL and database management from basics to optimization."
   </div>
 
   <!-- Section 1 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
     <h3 id="section-1" style="margin-top: 0;">Database Basics</h3>
-    <p>SQL (Structured Query Language) is used to manage relational databases. A database is a structured collection of data organized in tables with rows and columns.</p>
+    <p>SQL (Structured Query Language) is used to manage relational databases. A database is a structured collection of
+      data organized in tables with rows and columns.</p>
     <h4>Key Concepts:</h4>
     <ul style="color: var(--muted);">
       <li><strong>Table:</strong> Collection of related data organized in rows and columns</li>
@@ -65,9 +220,11 @@ description: "Learn SQL and database management from basics to optimization."
   </div>
 
   <!-- Section 2 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
     <h3 id="section-2" style="margin-top: 0;">Creating Databases</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Create database
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Create database
 CREATE DATABASE college;
 USE college;
 
@@ -109,9 +266,11 @@ DROP TABLE students;</code></pre>
   </div>
 
   <!-- Section 3 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
     <h3 id="section-3" style="margin-top: 0;">SELECT Queries</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Basic SELECT
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Basic SELECT
 SELECT * FROM students;
 SELECT name, email FROM students;
 
@@ -148,9 +307,11 @@ SELECT * FROM students WHERE email IS NOT NULL;</code></pre>
   </div>
 
   <!-- Section 4 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
     <h3 id="section-4" style="margin-top: 0;">INSERT, UPDATE, DELETE</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- INSERT single row
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- INSERT single row
 INSERT INTO students (name, email, age, gpa)
 VALUES ('John Doe', 'john@example.com', 20, 3.5);
 
@@ -179,9 +340,11 @@ TRUNCATE TABLE students;</code></pre>
   </div>
 
   <!-- Section 5 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
     <h3 id="section-5" style="margin-top: 0;">Joins</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- INNER JOIN (only matching rows)
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- INNER JOIN (only matching rows)
 SELECT students.name, courses.course_name
 FROM students
 INNER JOIN student_courses ON students.id = student_courses.student_id
@@ -216,9 +379,11 @@ JOIN students b ON a.age = b.age AND a.id < b.id;</code></pre>
   </div>
 
   <!-- Section 6 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
     <h3 id="section-6" style="margin-top: 0;">Aggregation Functions</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- COUNT
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- COUNT
 SELECT COUNT(*) FROM students;
 SELECT COUNT(DISTINCT age) FROM students;
 
@@ -255,9 +420,11 @@ ORDER BY avg_gpa DESC;</code></pre>
   </div>
 
   <!-- Section 7 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-green);">
     <h3 id="section-7" style="margin-top: 0;">Subqueries</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Subquery in WHERE
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Subquery in WHERE
 SELECT * FROM students
 WHERE gpa > (SELECT AVG(gpa) FROM students);
 
@@ -289,9 +456,11 @@ WHERE EXISTS (
   </div>
 
   <!-- Section 8 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-yellow);">
     <h3 id="section-8" style="margin-top: 0;">Indexes & Performance</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Create index
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Create index
 CREATE INDEX idx_email ON students(email);
 CREATE INDEX idx_name ON students(name);
 
@@ -319,9 +488,11 @@ EXPLAIN SELECT * FROM students WHERE email = 'john@example.com';
   </div>
 
   <!-- Section 9 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
     <h3 id="section-9" style="margin-top: 0;">Transactions</h3>
-    <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Start transaction
+    <pre
+      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>-- Start transaction
 START TRANSACTION;
 
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
@@ -346,7 +517,8 @@ COMMIT;</code></pre>
   </div>
 
   <!-- Section 10 -->
-  <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
+  <div
+    style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-pink);">
     <h3 id="section-10" style="margin-top: 0;">Projects & Practice</h3>
     <h4>Beginner Projects:</h4>
     <ul style="color: var(--muted);">

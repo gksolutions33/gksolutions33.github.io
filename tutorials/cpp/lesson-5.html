@@ -1,5 +1,174 @@
 ---
-layout: default
-title: "Lesson 5-8 | C++"
+layout: tutorial
+title: "Lesson 5: Inheritance | C++ Tutorial"
+description: "Master inheritance in C++ to build complex class hierarchies"
 ---
-<section style="text-align: center;"><a href="./" style="color: #ff9f1c; text-decoration: none;">← Back</a><p style="margin: 2rem 0;"><a href="lesson-1.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">1</a> <a href="lesson-2.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">2</a> <a href="lesson-3.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">3</a> <a href="lesson-4.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">4</a> <a href="lesson-5.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">5</a> <a href="lesson-6.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">6</a> <a href="lesson-7.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">7</a> <a href="lesson-8.html" style="background: #ff9f1c; color: #000; padding: 0.7rem 1rem; border-radius: 6px; text-decoration: none; margin: 0.3rem;">8</a></p></section>
+
+<section>
+    <div style="margin-bottom: 2rem;">
+        <a href="./" style="color: #ff9f1c; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
+    </div>
+
+    <h2>🧬 Lesson 5: Inheritance (Hierarchies)</h2>
+    <p class="muted">⏱️ Estimated time: 30 minutes | Difficulty: Intermediate</p>
+
+    <div class="callout callout-tip">
+        <h4><i class="fas fa-sitemap"></i> Parent and Child</h4>
+        <p style="margin: 0;">Inheritance allows a class (child) to inherit properties and methods from another class
+            (parent), promoting code reuse and logical grouping.</p>
+    </div>
+
+    <div
+        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff9f1c;">
+
+        <h3>What is Inheritance?</h3>
+        <p style="color: var(--muted); font-size: 1.05rem;">Inheritance lets a child class <strong>inherit</strong>
+            properties and methods from a parent class, promoting code reuse.</p>
+
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+using namespace std;
+
+// Base class (parent)
+class Animal {
+public:
+    string name;
+    void eat() { cout &lt;&lt; name &lt;&lt; " is eating" &lt;&lt; endl; }
+    void sleep() { cout &lt;&lt; name &lt;&lt; " is sleeping" &lt;&lt; endl; }
+};
+
+// Derived class (child)
+class Dog : public Animal {
+public:
+    void bark() { cout &lt;&lt; name &lt;&lt; " says Woof!" &lt;&lt; endl; }
+};
+
+class Cat : public Animal {
+public:
+    void meow() { cout &lt;&lt; name &lt;&lt; " says Meow!" &lt;&lt; endl; }
+};
+
+int main() {
+    Dog d;
+    d.name = "Buddy";
+    d.eat();    // Inherited from Animal
+    d.bark();   // Dog's own method
+
+    Cat c;
+    c.name = "Whiskers";
+    c.eat();    // Inherited
+    c.meow();   // Cat's own method
+    return 0;
+}</code></pre>
+
+        <h3>Constructor Inheritance</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Shape {
+protected:
+    string color;
+public:
+    Shape(string c) : color(c) {}
+    void showColor() { cout &lt;&lt; "Color: " &lt;&lt; color &lt;&lt; endl; }
+};
+
+class Circle : public Shape {
+    double radius;
+public:
+    Circle(string c, double r) : Shape(c), radius(r) {}
+    double area() { return 3.14159 * radius * radius; }
+};
+
+int main() {
+    Circle c("Red", 5.0);
+    c.showColor();  // Color: Red
+    cout &lt;&lt; "Area: " &lt;&lt; c.area() &lt;&lt; endl;
+    return 0;
+}</code></pre>
+
+        <h3>Multiple Inheritance</h3>
+        <pre
+            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Flyable {
+public:
+    void fly() { cout &lt;&lt; "Flying!" &lt;&lt; endl; }
+};
+
+class Swimmable {
+public:
+    void swim() { cout &lt;&lt; "Swimming!" &lt;&lt; endl; }
+};
+
+// Duck can both fly AND swim
+class Duck : public Flyable, public Swimmable {
+public:
+    void quack() { cout &lt;&lt; "Quack!" &lt;&lt; endl; }
+};</code></pre>
+
+    </div>
+
+    <div
+        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
+        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What keyword is used for
+                inheritance?</p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="a"> A) extends</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="b"> B) : public</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q1" value="c"> C) inherits</label>
+            </div>
+            <button onclick="checkAnswer('q1','b','✅ Correct! C++ uses : public for inheritance.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Can C++ do multiple inheritance?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="a"> A) Yes</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q2" value="b"> B) No</label>
+            </div>
+            <button onclick="checkAnswer('q2','a','✅ Correct! C++ supports multiple inheritance.')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+        <div
+            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
+            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'protected' access mean?
+            </p>
+            <div style="margin-left: 1.5rem;">
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="a"> A) Accessible everywhere</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="b"> B) Accessible in class and derived classes</label>
+                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
+                        type="radio" name="q3" value="c"> C) Not accessible at all</label>
+            </div>
+            <button onclick="checkAnswer('q3','b','✅ Correct!')"
+                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
+                Answer</button>
+            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
+        <a href="lesson-4.html"
+            style="background: #ff9f1c; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
+            Previous</a>
+        <a href="lesson-6.html"
+            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
+            Polymorphism →</a>
+    </div>
+</section>
+
+<script>
+    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
+</script>
