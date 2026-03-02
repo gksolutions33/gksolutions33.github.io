@@ -19,7 +19,7 @@
     content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials, CSE, ECE" />
   <title>GK SOLUTIONS - Home</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Favicon / browser tab icon -->
@@ -29,13 +29,14 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
-<body>
+<body class="home-page">
   <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
     <div style="display:flex; align-items:center; gap:1rem;">
       <a href="/" style="display:inline-flex; align-items:center; gap:0.8rem; text-decoration:none;">
         <div>
           <div class="site-title" style="font-size:1.15rem; font-weight:800; color:var(--text);">GK SOLUTIONS</div>
-          <div class="site-sub" style="font-size:0.86rem; color:var(--muted);">AI • IoT • Arduino • Projects & Tutorials</div>
+          <div class="site-sub" style="font-size:0.86rem; color:var(--muted);">AI • IoT • Arduino • Projects & Tutorials
+          </div>
         </div>
       </a>
     </div>
@@ -59,380 +60,413 @@
 </nav>
 
   <main>
-    <section id="projects">
-  <h2 style="margin:0 0 1rem 0; font-size:1.3rem">Projects — Departments</h2>
-
-  <!-- Department cards -->
-  <div class="dept-grid" role="list">
-    <div class="dept-card neon-cse" tabindex="0" data-dept="CSE">
-      <div class="dept-name">CSE</div>
-      <div class="dept-desc">Computer Science & Software Projects</div>
-    </div>
-
-    <div class="dept-card neon-ai" tabindex="0" data-dept="AI">
-      <div class="dept-name">AI</div>
-      <div class="dept-desc">Machine Learning & Deep Learning</div>
-    </div>
-
-    <div class="dept-card neon-ece" tabindex="0" data-dept="ECE">
-      <div class="dept-name">ECE</div>
-      <div class="dept-desc">Embedded Systems & Electronics</div>
-    </div>
-
-    <div class="dept-card neon-robotics" tabindex="0" data-dept="Robotics">
-      <div class="dept-name">Robotics</div>
-      <div class="dept-desc">Mechatronics & Robotics Projects</div>
+    <div class="hero-section">
+  <div class="hero-background"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Build Real-World AI & IoT Projects</h2>
+    <p>Learn Arduino, ESP32, Machine Learning and Robotics with step-by-step practical tutorials.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="hero-btn primary">Explore Projects</a>
+      <a href="/tutorials/" class="hero-btn secondary">Start Learning</a>
     </div>
   </div>
+</div>
 
-  <!-- Projects area: will be filtered based on department selected -->
-  <div class="projects-area">
-    <div class="projects-header">
-      <div>
-        <h3 id="selected-dept" style="margin:0">Select a department above</h3>
-        <div class="muted" id="projects-count">&nbsp;</div>
-      </div>
-      <div>
-        <button id="show-all" class="btn btn-outline">Show All</button>
-      </div>
+<section class="modern-section">
+  <h2>Why GK Solutions?</h2>
+  <div class="feature-cards">
+    <div class="feature-card">
+      <h3>Real Projects</h3>
+      <p>Work on practical systems like smart inventory, IoT notice boards and AI detection systems.</p>
     </div>
-
-    <div class="projects-list" id="projects-list">
-      <!-- Example project cards (each has data-dept attribute) -->
-
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Driver Dowsiness</div>
-        <div class="project-title">Driver Dowsiness</div>
-        <div class="project-meta">NumPy • Python</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-1.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Image And</div>
-        <div class="project-title">Image And Text Plagiarism Detection</div>
-        <div class="project-meta">Fortran • JavaScript • Jupyter Notebook • Roff • Jinja • C • Meson • XSLT • Shell • React</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-2.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Cyber Threats</div>
-        <div class="project-title">Cyber Threats</div>
-        <div class="project-meta">CSS • JavaScript • Python • HTML</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-3.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/cyber-threats" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Solar Panel</div>
-        <div class="project-title">Solar Panel Detection Clasification</div>
-        <div class="project-meta">Python • scikit-learn • FastAPI • pandas • Flask • HTML • Raspberry Pi • NumPy</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-4.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/solar-panel-detection-clasification" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Automated Pest</div>
-        <div class="project-title">Automated Pest Disease Detection For Agriculture</div>
-        <div class="project-meta">Python • Keras • Flask • TensorFlow • HTML • NumPy</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-5.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Automated-pest-disease-detection-for-agriculture" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="CSE">
-        <div class="project-thumb">CSE — Grama Soil</div>
-        <div class="project-title">Grama Soil Express App</div>
-        <div class="project-meta">Java • Express</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-6.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/grama-soil-express-app" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="CSE">
-        <div class="project-thumb">CSE — Real Time</div>
-        <div class="project-title">Real Time Learning Assistant</div>
-        <div class="project-meta">CSS • HTML • JavaScript</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-7.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/real-time-learning-assistant" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="CSE">
-        <div class="project-thumb">CSE — Comprehensive Automated</div>
-        <div class="project-title">Comprehensive Automated Doc Verification</div>
-        <div class="project-meta">Flask • Python</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-8.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/comprehensive-automated-doc-verification" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Deep Learning</div>
-        <div class="project-title">Deep Learning Techniques For Diabetic Retinopathy Classification </div>
-        <div class="project-meta">Python • Jupyter Notebook</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-9.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Deep-Learning-Techniques-for-Diabetic-Retinopathy-classification-" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Audio Data</div>
-        <div class="project-title">Audio Data Preparation And Argument Using Tensorflow </div>
-        <div class="project-meta">TensorFlow • NumPy • Flask • Python</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-10.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Audio-data-preparation-and-argument-using-tensorflow-" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="ECE">
-        <div class="project-thumb">ECE — Patient Health</div>
-        <div class="project-title">Patient Health Monitoring</div>
-        <div class="project-meta">Arduino • IoT • Python • ESP32</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-11.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/patient-health-monitoring" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="ECE">
-        <div class="project-thumb">ECE — Smart Parking</div>
-        <div class="project-title">Smart Parking </div>
-        <div class="project-meta">IoT • ESP32 • Arduino • Raspberry Pi</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-12.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/smart-parking-" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Rag Knowledge</div>
-        <div class="project-title">Rag Knowledge Chat Boot</div>
-        <div class="project-meta">Python • Jupyter Notebook</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-13.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Rag-knowledge-chat-boot" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Ai Based</div>
-        <div class="project-title">Ai Based Hr Screening Chatbot</div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-14.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Ai-based-hr-screening-chatbot" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Heart Disease</div>
-        <div class="project-title">Heart Disease Detection Naive Bayes </div>
-        <div class="project-meta">Python • scikit-learn • pandas • Flask • HTML • NumPy</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-15.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Heart-disease-detection-naive-bayes-" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Automatic Traffic</div>
-        <div class="project-title">Automatic Traffic Signal Control Using Ai</div>
-        <div class="project-meta">Python</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-16.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Automatic-traffic-signal-control-using-AI" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="CSE">
-        <div class="project-thumb">CSE — Go Grocery</div>
-        <div class="project-title">Go Grocery Serve App</div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-17.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/go-grocery-serve-app" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Skin Disease</div>
-        <div class="project-title">Skin Disease Detection And Classification Using Cnn</div>
-        <div class="project-meta">JavaScript • Python • Keras • Flask • TensorFlow • HTML • CSS • NumPy</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-18.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Skin-disease-detection-and-classification-using-cnn" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="Robotics">
-        <div class="project-thumb">Robotics — Autonomous Drone</div>
-        <div class="project-title">Autonomous Drone</div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-19.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/autonomous-drone" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Road Condition</div>
-        <div class="project-title">Road Condition Monitoring</div>
-        <div class="project-meta">Python</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-20.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/road-condition-monitoring" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="CSE">
-        <div class="project-thumb">CSE — Blockchain</div>
-        <div class="project-title">Blockchain</div>
-        <div class="project-meta">CSS • JavaScript • HTML • Solidity</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-21.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/blockchain" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Emotion Detection</div>
-        <div class="project-title">Emotion Detection From Speech And Facial Expression </div>
-        <div class="project-meta">Batchfile • Python • Express</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-22.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Emotion-detection-from-speech-and-facial-expression-" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="CSE">
-        <div class="project-thumb">CSE — My Personal</div>
-        <div class="project-title">My Personal Chef</div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-23.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/my-personal-chef" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Vitamin Deficiency</div>
-        <div class="project-title">Vitamin Deficiency</div>
-        <div class="project-meta">IoT</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-24.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/vitamin-deficiency" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Face Detcetion</div>
-        <div class="project-title">Face Detcetion And Security Alert</div>
-        <div class="project-meta">NumPy • Python</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-25.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/face-detcetion-and-security-alert" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Multilingual Chatbot</div>
-        <div class="project-title">Multilingual Chatbot Rasa</div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-26.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Multilingual-chatbot-rasa" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Breast Cancer</div>
-        <div class="project-title">Breast Cancer Detection Using Cnn </div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-27.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Breast-cancer-detection-using-cnn-" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Genetic Diseases</div>
-        <div class="project-title">Genetic Diseases </div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-28.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Genetic-diseases-" target="_blank">Source</a>
-        </div>
-      </div>
-      
-      <div class="project-card" data-dept="AI">
-        <div class="project-thumb">AI — Fine Tuning</div>
-        <div class="project-title">Fine Tuning Llm</div>
-        <div class="project-meta"></div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-29.html">View</a>
-          <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Fine-tuning-llm" target="_blank">Source</a>
-        </div>
-      </div>
-      
+    <div class="feature-card">
+      <h3>Step-by-Step Guides</h3>
+      <p>Clear explanations from circuit design to coding and deployment.</p>
+    </div>
+    <div class="feature-card">
+      <h3>AI & Robotics</h3>
+      <p>Explore YOLO, ESP32-CAM, Firebase integration and embedded AI systems.</p>
     </div>
   </div>
 </section>
 
-<!-- Tutorials / other content placeholders -->
-<section id="tutorials" style="margin-top:3rem">
-  <article style="background:transparent; padding:0">
-    <h2 style="margin-bottom:0.25rem">Latest Tutorials</h2>
-    <p class="muted">Short guides and step-by-step tutorials will appear here.</p>
-  </article>
-</section>
+<div class="container">
+  <section id="projects">
+    <h2 style="margin:0 0 1rem 0; font-size:1.3rem">Projects — Departments</h2>
+
+    <!-- Department cards -->
+    <div class="dept-grid" role="list">
+      <div class="dept-card neon-cse" tabindex="0" data-dept="CSE">
+        <div class="dept-name">CSE</div>
+        <div class="dept-desc">Computer Science & Software Projects</div>
+      </div>
+
+      <div class="dept-card neon-ai" tabindex="0" data-dept="AI">
+        <div class="dept-name">AI</div>
+        <div class="dept-desc">Machine Learning & Deep Learning</div>
+      </div>
+
+      <div class="dept-card neon-ece" tabindex="0" data-dept="ECE">
+        <div class="dept-name">ECE</div>
+        <div class="dept-desc">Embedded Systems & Electronics</div>
+      </div>
+
+      <div class="dept-card neon-robotics" tabindex="0" data-dept="Robotics">
+        <div class="dept-name">Robotics</div>
+        <div class="dept-desc">Mechatronics & Robotics Projects</div>
+      </div>
+    </div>
+
+    <!-- Projects area: will be filtered based on department selected -->
+    <div class="projects-area">
+      <div class="projects-header">
+        <div>
+          <h3 id="selected-dept" style="margin:0">Select a department above</h3>
+          <div class="muted" id="projects-count">&nbsp;</div>
+        </div>
+        <div>
+          <button id="show-all" class="btn btn-outline">Show All</button>
+        </div>
+      </div>
+
+      <div class="projects-list" id="projects-list">
+        <!-- Example project cards (each has data-dept attribute) -->
+
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Driver Dowsiness</div>
+          <div class="project-title">Driver Dowsiness</div>
+          <div class="project-meta">NumPy • Python</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-1.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/driver-dowsiness" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Image And</div>
+          <div class="project-title">Image And Text Plagiarism Detection</div>
+          <div class="project-meta">Fortran • JavaScript • Jupyter Notebook • Roff • Jinja • C • Meson • XSLT • Shell • React</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-2.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Image-and-text-plagiarism-detection" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Cyber Threats</div>
+          <div class="project-title">Cyber Threats</div>
+          <div class="project-meta">CSS • JavaScript • Python • HTML</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-3.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/cyber-threats" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Solar Panel</div>
+          <div class="project-title">Solar Panel Detection Clasification</div>
+          <div class="project-meta">Python • scikit-learn • FastAPI • pandas • Flask • HTML • Raspberry Pi • NumPy</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-4.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/solar-panel-detection-clasification" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Automated Pest</div>
+          <div class="project-title">Automated Pest Disease Detection For Agriculture</div>
+          <div class="project-meta">Python • Keras • Flask • TensorFlow • HTML • NumPy</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-5.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Automated-pest-disease-detection-for-agriculture" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="CSE">
+          <div class="project-thumb">CSE — Grama Soil</div>
+          <div class="project-title">Grama Soil Express App</div>
+          <div class="project-meta">Java • Express</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-6.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/grama-soil-express-app" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="CSE">
+          <div class="project-thumb">CSE — Real Time</div>
+          <div class="project-title">Real Time Learning Assistant</div>
+          <div class="project-meta">CSS • HTML • JavaScript</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-7.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/real-time-learning-assistant" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="CSE">
+          <div class="project-thumb">CSE — Comprehensive Automated</div>
+          <div class="project-title">Comprehensive Automated Doc Verification</div>
+          <div class="project-meta">Flask • Python</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-8.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/comprehensive-automated-doc-verification" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Deep Learning</div>
+          <div class="project-title">Deep Learning Techniques For Diabetic Retinopathy Classification </div>
+          <div class="project-meta">Python • Jupyter Notebook</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-9.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Deep-Learning-Techniques-for-Diabetic-Retinopathy-classification-" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Audio Data</div>
+          <div class="project-title">Audio Data Preparation And Argument Using Tensorflow </div>
+          <div class="project-meta">TensorFlow • NumPy • Flask • Python</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-10.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Audio-data-preparation-and-argument-using-tensorflow-" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="ECE">
+          <div class="project-thumb">ECE — Patient Health</div>
+          <div class="project-title">Patient Health Monitoring</div>
+          <div class="project-meta">Arduino • IoT • Python • ESP32</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-11.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/patient-health-monitoring" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="ECE">
+          <div class="project-thumb">ECE — Smart Parking</div>
+          <div class="project-title">Smart Parking </div>
+          <div class="project-meta">IoT • ESP32 • Arduino • Raspberry Pi</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-12.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/smart-parking-" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Rag Knowledge</div>
+          <div class="project-title">Rag Knowledge Chat Boot</div>
+          <div class="project-meta">Python • Jupyter Notebook</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-13.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Rag-knowledge-chat-boot" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Ai Based</div>
+          <div class="project-title">Ai Based Hr Screening Chatbot</div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-14.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Ai-based-hr-screening-chatbot" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Heart Disease</div>
+          <div class="project-title">Heart Disease Detection Naive Bayes </div>
+          <div class="project-meta">Python • scikit-learn • pandas • Flask • HTML • NumPy</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-15.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Heart-disease-detection-naive-bayes-" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Automatic Traffic</div>
+          <div class="project-title">Automatic Traffic Signal Control Using Ai</div>
+          <div class="project-meta">Python</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-16.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Automatic-traffic-signal-control-using-AI" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="CSE">
+          <div class="project-thumb">CSE — Go Grocery</div>
+          <div class="project-title">Go Grocery Serve App</div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-17.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/go-grocery-serve-app" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Skin Disease</div>
+          <div class="project-title">Skin Disease Detection And Classification Using Cnn</div>
+          <div class="project-meta">JavaScript • Python • Keras • Flask • TensorFlow • HTML • CSS • NumPy</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-18.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Skin-disease-detection-and-classification-using-cnn" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="Robotics">
+          <div class="project-thumb">Robotics — Autonomous Drone</div>
+          <div class="project-title">Autonomous Drone</div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-19.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/autonomous-drone" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Road Condition</div>
+          <div class="project-title">Road Condition Monitoring</div>
+          <div class="project-meta">Python</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-20.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/road-condition-monitoring" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="CSE">
+          <div class="project-thumb">CSE — Blockchain</div>
+          <div class="project-title">Blockchain</div>
+          <div class="project-meta">CSS • JavaScript • HTML • Solidity</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-21.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/blockchain" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Emotion Detection</div>
+          <div class="project-title">Emotion Detection From Speech And Facial Expression </div>
+          <div class="project-meta">Batchfile • Python • Express</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-22.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Emotion-detection-from-speech-and-facial-expression-" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="CSE">
+          <div class="project-thumb">CSE — My Personal</div>
+          <div class="project-title">My Personal Chef</div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-23.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/my-personal-chef" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Vitamin Deficiency</div>
+          <div class="project-title">Vitamin Deficiency</div>
+          <div class="project-meta">IoT</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-24.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/vitamin-deficiency" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Face Detcetion</div>
+          <div class="project-title">Face Detcetion And Security Alert</div>
+          <div class="project-meta">NumPy • Python</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-25.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/face-detcetion-and-security-alert" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Multilingual Chatbot</div>
+          <div class="project-title">Multilingual Chatbot Rasa</div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-26.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Multilingual-chatbot-rasa" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Breast Cancer</div>
+          <div class="project-title">Breast Cancer Detection Using Cnn </div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-27.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Breast-cancer-detection-using-cnn-" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Genetic Diseases</div>
+          <div class="project-title">Genetic Diseases </div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-28.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Genetic-diseases-" target="_blank">Source</a>
+          </div>
+        </div>
+        
+        <div class="project-card" data-dept="AI">
+          <div class="project-thumb">AI — Fine Tuning</div>
+          <div class="project-title">Fine Tuning Llm</div>
+          <div class="project-meta"></div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-29.html">View</a>
+            <a class="btn btn-primary" href="https://github.com/Universal-college-projects/Fine-tuning-llm" target="_blank">Source</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutorials / other content placeholders -->
+  <section id="tutorials" style="margin-top:3rem">
+    <article style="background:transparent; padding:0">
+      <h2 style="margin-bottom:0.25rem">Latest Tutorials</h2>
+      <p class="muted">Short guides and step-by-step tutorials will appear here.</p>
+    </article>
+  </section>
+</div>
   </main>
 
   <script>
-  (function(){
-    var root = document.documentElement;
-    function applyTheme(mode){
-      if(mode === 'dark') root.classList.add('dark-theme'); else root.classList.remove('dark-theme');
-      try{ localStorage.setItem('theme', mode); }catch(e){}
-      updateButton();
-    }
-    function updateButton(){
-      var btn = document.getElementById('theme-toggle');
-      if(!btn) return;
-      btn.textContent = root.classList.contains('dark-theme') ? '☀️ Light' : '🌙 Dark';
-    }
-    var stored = null;
-    try{ stored = localStorage.getItem('theme'); }catch(e){}
-    if(stored){ applyTheme(stored); }
-    else {
-      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      applyTheme(prefersDark ? 'dark' : 'light');
-    }
-    document.addEventListener('click', function(e){
-      if(!e.target) return;
-      if(e.target.id === 'theme-toggle'){
-        var isDark = root.classList.contains('dark-theme');
-        applyTheme(isDark ? 'light' : 'dark');
+    (function () {
+      var root = document.documentElement;
+      function applyTheme(mode) {
+        if (mode === 'dark') root.classList.add('dark-theme'); else root.classList.remove('dark-theme');
+        try { localStorage.setItem('theme', mode); } catch (e) { }
+        updateButton();
       }
-    });
-    document.addEventListener('DOMContentLoaded', updateButton);
-  })();
+      function updateButton() {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        btn.textContent = root.classList.contains('dark-theme') ? '☀️ Light' : '🌙 Dark';
+      }
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) { }
+      if (stored) { applyTheme(stored); }
+      else {
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+      }
+      document.addEventListener('click', function (e) {
+        if (!e.target) return;
+        if (e.target.id === 'theme-toggle') {
+          var isDark = root.classList.contains('dark-theme');
+          applyTheme(isDark ? 'light' : 'dark');
+        }
+      });
+      document.addEventListener('DOMContentLoaded', updateButton);
+    })();
   </script>
 
   <footer>

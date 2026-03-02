@@ -77,7 +77,7 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
   margin: 0;
   background: var(--bg);
   background-attachment: fixed;
@@ -98,9 +98,106 @@ h4,
 h5,
 h6,
 .site-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Poppins', 'Outfit', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+/* ===================================
+   Hero Section with Collage Background
+   =================================== */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.25rem;
+  overflow: hidden;
+  margin-top: -3.5rem;
+  /* Offset header padding if needed */
+  background-color: #0f172a;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/collage_background.png');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.4) saturate(1.2);
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.6), #0f172a 90%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-section h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.hero-section p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #cbd5e1;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-btn.primary {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.hero-btn.primary:hover {
+  background: #0ea5e9;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.hero-btn.secondary:hover {
+  background: rgba(56, 189, 248, 0.1);
+  transform: translateY(-3px);
 }
 
 /* ===================================
@@ -146,7 +243,7 @@ nav a {
   border: 1px solid var(--nav-border);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 0.9rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Poppins', 'Outfit', sans-serif;
 }
 
 nav a:hover {
@@ -172,6 +269,21 @@ main {
   margin: 2rem auto;
   padding: 0 1rem;
   flex: 1;
+}
+
+/* Container for constrained content */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Home page layout overrides */
+.home-page main {
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* ===================================
@@ -372,6 +484,67 @@ main {
 
 .btn-primary:hover {
   box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+}
+
+/* ===================================
+   New Sections (from index111.html)
+   =================================== */
+.modern-section {
+  padding: 6rem 1.25rem;
+  text-align: center;
+}
+
+.modern-section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.modern-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--nav-border);
+  transition: all 0.3s ease;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-card h3 {
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.feature-card p {
+  color: var(--muted);
 }
 
 /* ===================================

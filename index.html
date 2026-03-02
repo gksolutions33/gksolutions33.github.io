@@ -1,71 +1,105 @@
 ---
 layout: default
+is_home: true
 title: "GK SOLUTIONS - Home"
 description: "Tech tutorials and projects on AI, Python, IoT, and Robotics. Explore CSE, AI, ECE, and Robotics
 projects."
 keywords: "AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials, CSE, ECE"
 ---
 
-<section id="projects">
-  <h2 style="margin:0 0 1rem 0; font-size:1.3rem">Projects — Departments</h2>
-
-  <!-- Department cards -->
-  <div class="dept-grid" role="list">
-    <div class="dept-card neon-cse" tabindex="0" data-dept="CSE">
-      <div class="dept-name">CSE</div>
-      <div class="dept-desc">Computer Science & Software Projects</div>
-    </div>
-
-    <div class="dept-card neon-ai" tabindex="0" data-dept="AI">
-      <div class="dept-name">AI</div>
-      <div class="dept-desc">Machine Learning & Deep Learning</div>
-    </div>
-
-    <div class="dept-card neon-ece" tabindex="0" data-dept="ECE">
-      <div class="dept-name">ECE</div>
-      <div class="dept-desc">Embedded Systems & Electronics</div>
-    </div>
-
-    <div class="dept-card neon-robotics" tabindex="0" data-dept="Robotics">
-      <div class="dept-name">Robotics</div>
-      <div class="dept-desc">Mechatronics & Robotics Projects</div>
+<div class="hero-section">
+  <div class="hero-background"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h2>Build Real-World AI & IoT Projects</h2>
+    <p>Learn Arduino, ESP32, Machine Learning and Robotics with step-by-step practical tutorials.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="hero-btn primary">Explore Projects</a>
+      <a href="{{ '/tutorials/' | relative_url }}" class="hero-btn secondary">Start Learning</a>
     </div>
   </div>
+</div>
 
-  <!-- Projects area: will be filtered based on department selected -->
-  <div class="projects-area">
-    <div class="projects-header">
-      <div>
-        <h3 id="selected-dept" style="margin:0">Select a department above</h3>
-        <div class="muted" id="projects-count">&nbsp;</div>
+<section class="modern-section">
+  <h2>Why GK Solutions?</h2>
+  <div class="feature-cards">
+    <div class="feature-card">
+      <h3>Real Projects</h3>
+      <p>Work on practical systems like smart inventory, IoT notice boards and AI detection systems.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Step-by-Step Guides</h3>
+      <p>Clear explanations from circuit design to coding and deployment.</p>
+    </div>
+    <div class="feature-card">
+      <h3>AI & Robotics</h3>
+      <p>Explore YOLO, ESP32-CAM, Firebase integration and embedded AI systems.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <section id="projects">
+    <h2 style="margin:0 0 1rem 0; font-size:1.3rem">Projects — Departments</h2>
+
+    <!-- Department cards -->
+    <div class="dept-grid" role="list">
+      <div class="dept-card neon-cse" tabindex="0" data-dept="CSE">
+        <div class="dept-name">CSE</div>
+        <div class="dept-desc">Computer Science & Software Projects</div>
       </div>
-      <div>
-        <button id="show-all" class="btn btn-outline">Show All</button>
+
+      <div class="dept-card neon-ai" tabindex="0" data-dept="AI">
+        <div class="dept-name">AI</div>
+        <div class="dept-desc">Machine Learning & Deep Learning</div>
+      </div>
+
+      <div class="dept-card neon-ece" tabindex="0" data-dept="ECE">
+        <div class="dept-name">ECE</div>
+        <div class="dept-desc">Embedded Systems & Electronics</div>
+      </div>
+
+      <div class="dept-card neon-robotics" tabindex="0" data-dept="Robotics">
+        <div class="dept-name">Robotics</div>
+        <div class="dept-desc">Mechatronics & Robotics Projects</div>
       </div>
     </div>
 
-    <div class="projects-list" id="projects-list">
-      <!-- Example project cards (each has data-dept attribute) -->
-
-      {% for project in site.data.projects.projects %}
-      <div class="project-card" data-dept="{{ project.department }}">
-        <div class="project-thumb">{{ project.department }} — {{ project.title | truncatewords: 2, "" }}</div>
-        <div class="project-title">{{ project.title }}</div>
-        <div class="project-meta">{{ project.technologies | join: " • " }}</div>
-        <div class="project-actions">
-          <a class="btn btn-outline" href="project-{{ forloop.index }}.html">View</a>
-          <a class="btn btn-primary" href="{{ project.repo_url }}" target="_blank">Source</a>
+    <!-- Projects area: will be filtered based on department selected -->
+    <div class="projects-area">
+      <div class="projects-header">
+        <div>
+          <h3 id="selected-dept" style="margin:0">Select a department above</h3>
+          <div class="muted" id="projects-count">&nbsp;</div>
+        </div>
+        <div>
+          <button id="show-all" class="btn btn-outline">Show All</button>
         </div>
       </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
-<!-- Tutorials / other content placeholders -->
-<section id="tutorials" style="margin-top:3rem">
-  <article style="background:transparent; padding:0">
-    <h2 style="margin-bottom:0.25rem">Latest Tutorials</h2>
-    <p class="muted">Short guides and step-by-step tutorials will appear here.</p>
-  </article>
-</section>
+      <div class="projects-list" id="projects-list">
+        <!-- Example project cards (each has data-dept attribute) -->
+
+        {% for project in site.data.projects.projects %}
+        <div class="project-card" data-dept="{{ project.department }}">
+          <div class="project-thumb">{{ project.department }} — {{ project.title | truncatewords: 2, "" }}</div>
+          <div class="project-title">{{ project.title }}</div>
+          <div class="project-meta">{{ project.technologies | join: " • " }}</div>
+          <div class="project-actions">
+            <a class="btn btn-outline" href="project-{{ forloop.index }}.html">View</a>
+            <a class="btn btn-primary" href="{{ project.repo_url }}" target="_blank">Source</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutorials / other content placeholders -->
+  <section id="tutorials" style="margin-top:3rem">
+    <article style="background:transparent; padding:0">
+      <h2 style="margin-bottom:0.25rem">Latest Tutorials</h2>
+      <p class="muted">Short guides and step-by-step tutorials will appear here.</p>
+    </article>
+  </section>
+</div>
