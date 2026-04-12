@@ -18,11 +18,25 @@ description: "Master modern layout design with CSS Flexbox"
       container, even when their size is unknown.</p>
   </div>
 
-  <h3>Flexbox = Flexible Box Layout</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#flexbox-flexible-box-layout">Flexbox = Flexible Box Layout</a></li>
+      <li><a href="#justify-content-main-axis">justify-content (Main Axis)</a></li>
+      <li><a href="#align-items-cross-axis">align-items (Cross Axis)</a></li>
+      <li><a href="#flex-direction">flex-direction</a></li>
+      <li><a href="#flex-wrap-child-properties">flex-wrap & Child Properties</a></li>
+      <li><a href="#practical-example-navigation-bar">Practical Example: Navigation Bar</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="flexbox-flexible-box-layout">Flexbox = Flexible Box Layout</h3>
   <p style="color: var(--muted);">Flexbox makes centering, spacing, and aligning items incredibly easy.</p>
 
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.container {
+  <pre><code>.container {
     display: flex;             /* Enable flexbox */
     justify-content: center;   /* Horizontal alignment */
     align-items: center;       /* Vertical alignment */
@@ -36,33 +50,32 @@ description: "Master modern layout design with CSS Flexbox"
     align-items: center;
     height: 100vh;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-  <h3>justify-content (Main Axis)</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>justify-content: flex-start;     /* Left (default) */
+
+  <h3 id="justify-content-main-axis">justify-content (Main Axis)</h3>
+  <pre><code>justify-content: flex-start;     /* Left (default) */
 justify-content: flex-end;       /* Right */
 justify-content: center;         /* Center */
 justify-content: space-between;  /* Even space, no edges */
 justify-content: space-around;   /* Even space, half edges */
 justify-content: space-evenly;   /* Equal space everywhere */</code></pre>
 
-  <h3>align-items (Cross Axis)</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>align-items: stretch;    /* Fill height (default) */
+  <h3 id="align-items-cross-axis">align-items (Cross Axis)</h3>
+  <pre><code>align-items: stretch;    /* Fill height (default) */
 align-items: flex-start; /* Top */
 align-items: flex-end;   /* Bottom */
 align-items: center;     /* Center vertically */</code></pre>
 
-  <h3>flex-direction</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>flex-direction: row;            /* Left to right (default) */
+  <h3 id="flex-direction">flex-direction</h3>
+  <pre><code>flex-direction: row;            /* Left to right (default) */
 flex-direction: row-reverse;    /* Right to left */
 flex-direction: column;         /* Top to bottom */
 flex-direction: column-reverse; /* Bottom to top */</code></pre>
 
-  <h3>flex-wrap & Child Properties</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.container {
+  <h3 id="flex-wrap-child-properties">flex-wrap & Child Properties</h3>
+  <pre><code>.container {
     flex-wrap: wrap;    /* Items wrap to next line */
 }
 
@@ -74,9 +87,8 @@ flex-direction: column-reverse; /* Bottom to top */</code></pre>
     order: -1;         /* Move to first position */
 }</code></pre>
 
-  <h3>Practical Example: Navigation Bar</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>nav {
+  <h3 id="practical-example-navigation-bar">Practical Example: Navigation Bar</h3>
+  <pre><code>nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -91,7 +103,7 @@ nav .links { display: flex; gap: 2rem; }</code></pre>
 
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you perfectly center content with

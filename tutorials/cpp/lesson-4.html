@@ -17,12 +17,23 @@ description: "Enter the world of Object-Oriented Programming with C++ classes an
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff9f1c;">
 
-        <h3>What is a Class?</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-a-class">What is a Class?</a></li>
+      <li><a href="#constructors">Constructors</a></li>
+      <li><a href="#access-modifiers">Access Modifiers</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-a-class">What is a Class?</h3>
         <p style="color: var(--muted); font-size: 1.05rem;">A class is a <strong>blueprint</strong> for creating
             objects. It bundles data (attributes) and functions (methods) together.</p>
 
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+        <pre><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
@@ -52,10 +63,12 @@ int main() {
     cout &lt;&lt; "Age: " &lt;&lt; car1.getAge() &lt;&lt; endl;
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Constructors</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Student {
+
+        <h3 id="constructors">Constructors</h3>
+        <pre><code>class Student {
 private:
     string name;
     int age;
@@ -92,7 +105,7 @@ int main() {
     return 0;
 }</code></pre>
 
-        <h3>Access Modifiers</h3>
+        <h3 id="access-modifiers">Access Modifiers</h3>
         <ul style="color: var(--muted); line-height: 2.2;">
             <li><code>public:</code> — Accessible from anywhere</li>
             <li><code>private:</code> — Only accessible inside the class</li>
@@ -103,7 +116,7 @@ int main() {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is a constructor?</p>

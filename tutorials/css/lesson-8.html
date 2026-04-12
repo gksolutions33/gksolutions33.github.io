@@ -14,10 +14,22 @@ description: "Bring your web pages to life with CSS transitions and animations"
       motion without using JavaScript.</p>
   </div>
 
-  <h3>Transitions</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#transitions">Transitions</a></li>
+      <li><a href="#transforms">Transforms</a></li>
+      <li><a href="#keyframe-animations">Keyframe Animations</a></li>
+      <li><a href="#animation-properties">Animation Properties</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="transitions">Transitions</h3>
   <p style="color: var(--muted);">Transitions create smooth changes between property states (like hover effects).</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.button {
+  <pre><code>.button {
     background: #ff2d95;
     transform: scale(1);
     transition: all 0.3s ease;
@@ -31,10 +43,12 @@ description: "Bring your web pages to life with CSS transitions and animations"
 
 /* Specific properties */
 transition: background 0.3s ease, transform 0.2s ease-out;</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-  <h3>Transforms</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>transform: translateX(50px);     /* Move right */
+
+  <h3 id="transforms">Transforms</h3>
+  <pre><code>transform: translateX(50px);     /* Move right */
 transform: translateY(-20px);    /* Move up */
 transform: rotate(45deg);        /* Rotate */
 transform: scale(1.5);           /* Scale up */
@@ -43,9 +57,8 @@ transform: skewX(10deg);         /* Skew */
 /* Combine transforms */
 transform: translateY(-5px) rotate(5deg) scale(1.1);</code></pre>
 
-  <h3>Keyframe Animations</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>@keyframes fadeIn {
+  <h3 id="keyframe-animations">Keyframe Animations</h3>
+  <pre><code>@keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
 }
@@ -65,9 +78,8 @@ transform: translateY(-5px) rotate(5deg) scale(1.1);</code></pre>
 .heart { animation: pulse 2s ease infinite; }
 .loader { animation: spin 1s linear infinite; }</code></pre>
 
-  <h3>Animation Properties</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>animation-name: fadeIn;
+  <h3 id="animation-properties">Animation Properties</h3>
+  <pre><code>animation-name: fadeIn;
 animation-duration: 0.5s;
 animation-timing-function: ease;  /* ease, linear, ease-in-out */
 animation-delay: 0.2s;
@@ -82,7 +94,7 @@ animation: fadeIn 0.5s ease 0.2s infinite alternate forwards;</code></pre>
 
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What's the difference between transitions

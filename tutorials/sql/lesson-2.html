@@ -17,14 +17,29 @@ description: "Understand how data is organized in relational databases"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #00d9ff;">
 
-        <h3>Creating a Database</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>CREATE DATABASE my_app;
-USE my_app;</code></pre>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#creating-a-database">Creating a Database</a></li>
+      <li><a href="#creating-tables">Creating Tables</a></li>
+      <li><a href="#common-data-types">Common Data Types</a></li>
+      <li><a href="#constraints">Constraints</a></li>
+      <li><a href="#modifying-tables">Modifying Tables</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
 
-        <h3>Creating Tables</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>CREATE TABLE users (
+  <h3 id="creating-a-database">Creating a Database</h3>
+        <pre><code>CREATE DATABASE my_app;
+USE my_app;</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
+
+        <h3 id="creating-tables">Creating Tables</h3>
+        <pre><code>CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(255) UNIQUE,
@@ -32,7 +47,7 @@ USE my_app;</code></pre>
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );</code></pre>
 
-        <h3>Common Data Types</h3>
+        <h3 id="common-data-types">Common Data Types</h3>
         <div style="overflow-x: auto;">
             <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
                 <thead>
@@ -83,18 +98,16 @@ USE my_app;</code></pre>
             </table>
         </div>
 
-        <h3>Constraints</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>PRIMARY KEY    -- Unique identifier for each row
+        <h3 id="constraints">Constraints</h3>
+        <pre><code>PRIMARY KEY    -- Unique identifier for each row
 NOT NULL       -- Field cannot be empty
 UNIQUE         -- No duplicate values
 DEFAULT value  -- Default value if none given
 AUTO_INCREMENT -- Automatically increases (1, 2, 3...)
 FOREIGN KEY    -- Links to another table</code></pre>
 
-        <h3>Modifying Tables</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>ALTER TABLE users ADD phone VARCHAR(20);
+        <h3 id="modifying-tables">Modifying Tables</h3>
+        <pre><code>ALTER TABLE users ADD phone VARCHAR(20);
 ALTER TABLE users DROP COLUMN phone;
 DROP TABLE users;  -- Deletes the whole table!</code></pre>
 
@@ -102,7 +115,7 @@ DROP TABLE users;  -- Deletes the whole table!</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does PRIMARY KEY do?</p>

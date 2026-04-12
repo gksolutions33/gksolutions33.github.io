@@ -22,7 +22,23 @@ description: "Master repetitive tasks in Python using for and while loops"
   <div
     style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
 
-    <h3>What is an If Statement?</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-an-if-statement">What is an If Statement?</a></li>
+      <li><a href="#basic-if-statement">Basic If Statement</a></li>
+      <li><a href="#comparison-operators">Comparison Operators</a></li>
+      <li><a href="#if-else-statement">If/Else Statement</a></li>
+      <li><a href="#if-elif-else-multiple-conditions">If/Elif/Else (Multiple Conditions)</a></li>
+      <li><a href="#combining-conditions-with-and-or">Combining Conditions with AND/OR</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-an-if-statement">What is an If Statement?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       <strong>An if statement lets your program make decisions.</strong> It runs different code based on conditions.
     </p>
@@ -36,62 +52,61 @@ description: "Master repetitive tasks in Python using for and while loops"
       </p>
     </div>
 
-    <h3>Basic If Statement</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 18
+    <h3 id="basic-if-statement">Basic If Statement</h3>
+    <pre><code>age = 18
 
 if age >= 18:
     print("You can vote!")
     print("Welcome to voting!")</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
 
     <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>You can vote!
+    <pre><code>You can vote!
 Welcome to voting!</code></pre>
 
-    <h3>Comparison Operators</h3>
+    <h3 id="comparison-operators">Comparison Operators</h3>
     <p style="color: var(--muted);">These are used in if statements to compare values:</p>
 
     <div
       style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
       <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">== Equal</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if name == "Alice":
+        <pre><code>if name == "Alice":
     print("Hi Alice!")</code></pre>
       </div>
       <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">!= Not Equal</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if name != "Bob":
+        <pre><code>if name != "Bob":
     print("You're not Bob!")</code></pre>
       </div>
       <div style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;"> > Greater</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if score > 50:
+        <pre><code>if score > 50:
     print("You passed!")</code></pre>
       </div>
       <div style="background: rgba(255, 195, 0, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-yellow); font-weight: bold;">
           < Less</p>
-            <pre
-              style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if age < 13:
+            <pre><code>if age < 13:
     print("You're a kid!")</code></pre>
       </div>
       <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">>= Greater or Equal</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if score >= 90:
+        <pre><code>if score >= 90:
     print("Grade: A")</code></pre>
       </div>
       <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">
           <= Less or Equal</p>
-            <pre
-              style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>if age <= 12:
+            <pre><code>if age <= 12:
     print("Child price")</code></pre>
       </div>
     </div>
 
-    <h3>If/Else Statement</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 15
+    <h3 id="if-else-statement">If/Else Statement</h3>
+    <pre><code>age = 15
 
 if age >= 18:
     print("You can vote!")
@@ -99,11 +114,10 @@ else:
     print("You can't vote yet.")</code></pre>
 
     <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>You can't vote yet.</code></pre>
+    <pre><code>You can't vote yet.</code></pre>
 
-    <h3>If/Elif/Else (Multiple Conditions)</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>score = 85
+    <h3 id="if-elif-else-multiple-conditions">If/Elif/Else (Multiple Conditions)</h3>
+    <pre><code>score = 85
 
 if score >= 90:
     print("Grade: A")
@@ -115,11 +129,10 @@ else:
     print("Grade: F")</code></pre>
 
     <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Grade: B</code></pre>
+    <pre><code>Grade: B</code></pre>
 
-    <h3>Combining Conditions with AND/OR</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>age = 25
+    <h3 id="combining-conditions-with-and-or">Combining Conditions with AND/OR</h3>
+    <pre><code>age = 25
 has_license = True
 
 # AND: Both must be true
@@ -135,7 +148,7 @@ if age < 13 or age > 65:
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
@@ -202,7 +215,7 @@ if age < 13 or age > 65:
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Asks the user for their age</li>

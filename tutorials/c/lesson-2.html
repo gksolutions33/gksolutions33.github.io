@@ -13,7 +13,20 @@ description: "Setting up your C environment and writing your very first Hello Wo
     <p style="margin: 0;">How to set up a C compiler, use an IDE, and understand the structure of a basic C program.</p>
   </div>
 
-  <h3>Setting Up Your C Environment</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#setting-up-your-c-environment">Setting Up Your C Environment</a></li>
+      <li><a href="#your-first-c-program">Your First C Program</a></li>
+      <li><a href="#compiling-running">Compiling & Running</a></li>
+      <li><a href="#more-examples">More Examples</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="setting-up-your-c-environment">Setting Up Your C Environment</h3>
   <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
     Unlike Python, C is a <strong>compiled language</strong>. You need a <strong>compiler</strong> to convert your C
     code into an executable program your computer can run.
@@ -32,22 +45,22 @@ description: "Setting up your C environment and writing your very first Hello Wo
     <div
       style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
       <h4 style="margin-top: 0; color: #ffd60a;">🐧 Linux</h4>
-      <pre
-        style="background: rgba(0,0,0,0.5); padding: 0.8rem; border-radius: 6px; margin: 0;"><code>sudo apt-get install gcc</code></pre>
+      <pre><code>sudo apt-get install gcc</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
       <p style="margin: 0.5rem 0 0 0; color: var(--muted);">GCC comes pre-installed on most Linux distros!</p>
     </div>
     <div
       style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
       <h4 style="margin-top: 0; color: #ffd60a;">🍎 macOS</h4>
-      <pre
-        style="background: rgba(0,0,0,0.5); padding: 0.8rem; border-radius: 6px; margin: 0;"><code>xcode-select --install</code></pre>
+      <pre><code>xcode-select --install</code></pre>
       <p style="margin: 0.5rem 0 0 0; color: var(--muted);">Installs Clang compiler (compatible with GCC)</p>
     </div>
   </div>
 
   <h4>Step 2: Verify Installation</h4>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>gcc --version
+  <pre><code>gcc --version
 # Should show something like: gcc (GCC) 13.2.0</code></pre>
 
   <h4>Step 3: Choose a Code Editor</h4>
@@ -57,11 +70,10 @@ description: "Setting up your C environment and writing your very first Hello Wo
     <li>📝 <strong>Notepad++</strong> — Lightweight text editor</li>
   </ul>
 
-  <h3>Your First C Program</h3>
+  <h3 id="your-first-c-program">Your First C Program</h3>
   <p style="color: var(--muted); font-size: 1.05rem;">Create a file called <code>hello.c</code> and type this:</p>
 
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+  <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     printf("Hello, World!\n");
@@ -79,9 +91,8 @@ int main() {
     <li><code>{ }</code> — Curly braces define a block of code</li>
   </ul>
 
-  <h3>Compiling & Running</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code># Step 1: Compile
+  <h3 id="compiling-running">Compiling & Running</h3>
+  <pre><code># Step 1: Compile
 gcc hello.c -o hello
 
 # Step 2: Run
@@ -98,9 +109,8 @@ hello.exe        # Windows
     </p>
   </div>
 
-  <h3>More Examples</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+  <h3 id="more-examples">More Examples</h3>
+  <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     printf("My name is GK Solutions\n");
@@ -114,7 +124,7 @@ int main() {
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">

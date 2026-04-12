@@ -18,22 +18,37 @@ description: "Master for, while, and do-while loops to automate repetitive tasks
             working with lists or performing repeated calculations.</p>
     </div>
 
-    <h3>What Are Functions?</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-are-functions">What Are Functions?</a></li>
+      <li><a href="#creating-functions">Creating Functions</a></li>
+      <li><a href="#function-prototypes">Function Prototypes</a></li>
+      <li><a href="#pass-by-value-vs-pass-by-reference">Pass by Value vs Pass by Reference</a></li>
+      <li><a href="#recursion">Recursion</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-are-functions">What Are Functions?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
         Functions are <strong>reusable blocks of code</strong> that perform a specific task. They help organize your
         program and avoid repeating code.
     </p>
 
     <h4>Function Syntax:</h4>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>return_type function_name(parameters) {
+    <pre><code>return_type function_name(parameters) {
     // function body
     return value;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Creating Functions</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+
+    <h3 id="creating-functions">Creating Functions</h3>
+    <pre><code>#include &lt;stdio.h&gt;
 
 // Function that returns a value
 int add(int a, int b) {
@@ -60,11 +75,10 @@ int main() {
     return 0;
 }</code></pre>
 
-    <h3>Function Prototypes</h3>
+    <h3 id="function-prototypes">Function Prototypes</h3>
     <p style="color: var(--muted);">If you define a function after main(), you need a <strong>prototype</strong> at
         the top:</p>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+    <pre><code>#include &lt;stdio.h&gt;
 
 // Prototype (declaration)
 int multiply(int a, int b);
@@ -79,9 +93,8 @@ int multiply(int a, int b) {
     return a * b;
 }</code></pre>
 
-    <h3>Pass by Value vs Pass by Reference</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>// Pass by value (copy)
+    <h3 id="pass-by-value-vs-pass-by-reference">Pass by Value vs Pass by Reference</h3>
+    <pre><code>// Pass by value (copy)
 void doubleValue(int x) {
     x = x * 2;  // Only changes the local copy
 }
@@ -101,9 +114,8 @@ int main() {
     return 0;
 }</code></pre>
 
-    <h3>Recursion</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int factorial(int n) {
+    <h3 id="recursion">Recursion</h3>
+    <pre><code>int factorial(int n) {
     if (n <= 1) return 1;        // Base case
     return n * factorial(n - 1);  // Recursive call
 }
@@ -115,7 +127,7 @@ printf("%d\n", factorial(5));  // 120</code></pre>
     <!-- Quiz -->
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">

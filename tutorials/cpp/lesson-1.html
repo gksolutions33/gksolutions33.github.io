@@ -5,152 +5,111 @@ description: "Discover the power of C++ - the language behind high-performance g
 ---
 
 <section>
-  <div style="margin-bottom: 2rem;">
-    <a href="./" style="color: #ff9f1c; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
-  </div>
-
-  <h2>🚀 Lesson 1: What is C++?</h2>
+  <h2>C++ Language Introduction</h2>
   <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-cpp">What is C++ Programming?</a></li>
+      <li><a href="#why-learn">Why Should We Learn C++?</a></li>
+      <li><a href="#hello-world">First C++ Program (Hello World)</a></li>
+      <li><a href="#code-explanation">Explanation of the C++ Program</a></li>
+      <li><a href="#applications">Applications of C++</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-cpp">What is C++ Programming?</h3>
+  <p>
+    <strong>C++</strong> is a high-level, general-purpose programming language created by <strong>Bjarne Stroustrup</strong> in 1979 as an extension of the C programming language. It stands for "C with Classes," seamlessly blending procedural programming with object-oriented programming (OOP).
+  </p>
+
   <div class="callout callout-note">
-    <h4><i class="fas fa-info-circle"></i> The Powerhouse</h4>
+    <h4><i class="fas fa-info-circle"></i> Note on Paradigm</h4>
     <p style="margin: 0;">
-      <strong>C++ is a high-performance, object-oriented programming language</strong> developed by Bjarne Stroustrup as
-      an extension of C. It is widely used in game development, high-frequency trading, and operating systems.
+      C++ provides features of an object-oriented language, like classes, inheritance, and polymorphism, while retaining the raw speed, efficiency, and low-level memory manipulation capabilities of C.
     </p>
   </div>
 
-  <div
-    style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff9f1c;">
+  <h3 id="why-learn">Why Should We Learn C++?</h3>
+  <p>Learning C++ makes you a versatile systems programmer with a deep understanding of memory management.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li>It's blazingly fast because it compiles directly to native machine code.</li>
+    <li>Supports <strong>Object-Oriented Programming</strong> ensuring code reusability and structured design.</li>
+    <li>Features a rich <strong>Standard Template Library (STL)</strong>, providing out-of-the-box data structures and algorithms.</li>
+    <li>C++ is extremely scalable. It can handle resource-intensive applications effortlessly.</li>
+  </ul>
 
-    <h3>What is C++?</h3>
-    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-      <strong>C++</strong> was created by <strong>Bjarne Stroustrup</strong> in 1979 as an extension of C. It adds
-      <strong>object-oriented programming</strong> (OOP) features like classes, inheritance, and polymorphism while
-      keeping C's speed and low-level access.
-    </p>
+  <h3 id="hello-world">First C++ Program (Hello World)</h3>
+  <p>Let's look at a basic C++ program that prints a message to the console.</p>
 
-    <h4>C++ = C + Classes + More</h4>
-    <div
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
-      <div
-        style="background: rgba(255, 159, 28, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ff9f1c;">
-        <h4 style="margin-top: 0; color: #ff9f1c;">🎯 Object-Oriented</h4>
-        <p style="margin: 0; color: var(--muted);">Classes, objects, inheritance, polymorphism</p>
-      </div>
-      <div
-        style="background: rgba(255, 159, 28, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ff9f1c;">
-        <h4 style="margin-top: 0; color: #ff9f1c;">⚡ High Performance</h4>
-        <p style="margin: 0; color: var(--muted);">Compiled to machine code, zero-cost abstractions</p>
-      </div>
-      <div
-        style="background: rgba(255, 159, 28, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ff9f1c;">
-        <h4 style="margin-top: 0; color: #ff9f1c;">📚 STL</h4>
-        <p style="margin: 0; color: var(--muted);">Standard Template Library with vectors, maps, algorithms</p>
-      </div>
-      <div
-        style="background: rgba(255, 159, 28, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ff9f1c;">
-        <h4 style="margin-top: 0; color: #ff9f1c;">🎮 Industry Standard</h4>
-        <p style="margin: 0; color: var(--muted);">Game engines, browsers, OS kernels, databases</p>
-      </div>
-    </div>
-
-    <h3>What Can You Build?</h3>
-    <ul style="color: var(--muted); line-height: 2.2; font-size: 1.05rem;">
-      <li>🎮 <strong>Game Engines</strong> — Unreal Engine, Unity (core), CryEngine</li>
-      <li>🌐 <strong>Browsers</strong> — Chrome, Firefox, Edge</li>
-      <li>🗄️ <strong>Databases</strong> — MongoDB, MySQL</li>
-      <li>🤖 <strong>AI/ML</strong> — TensorFlow, PyTorch backends</li>
-      <li>💻 <strong>Operating Systems</strong> — Windows, macOS components</li>
-    </ul>
-
-    <h3>Your First C++ Program</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+  <pre><code>// Simple C++ program to display "Hello World"
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    // Print statement
+    cout &lt;&lt; "Hello World";
+
     return 0;
 }</code></pre>
 
-    <h4>Key Differences from C:</h4>
-    <ul style="color: var(--muted); line-height: 2;">
-      <li><code>iostream</code> instead of <code>stdio.h</code></li>
-      <li><code>cout &lt;&lt;</code> instead of <code>printf()</code></li>
-      <li><code>cin &gt;&gt;</code> instead of <code>scanf()</code></li>
-      <li><code>using namespace std;</code> to avoid typing <code>std::</code> everywhere</li>
-    </ul>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box">Hello World</div>
 
+  <div class="gfg-complexity">
+    <span>Time Complexity:</span> O(1)<br/>
+    <span>Space Complexity:</span> O(1)
   </div>
 
-  <!-- Quiz -->
-  <div
-    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+  <h3 id="code-explanation">Explanation of the C++ Program</h3>
+  <p>Let's break down this code block carefully.</p>
 
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Who created C++?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q1" value="a"> A) Dennis Ritchie</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q1" value="b"> B) Bjarne Stroustrup</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q1" value="c"> C) James Gosling</label>
-      </div>
-      <button onclick="checkAnswer('q1','b','✅ Correct!')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
-    </div>
-
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does cout do?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q2" value="a"> A) Reads input</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q2" value="b"> B) Prints output to screen</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q2" value="c"> C) Creates a file</label>
-      </div>
-      <button onclick="checkAnswer('q2','b','✅ Correct! cout outputs to the console.')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
-    </div>
-
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ C++ adds what major feature over C?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q3" value="a"> A) Variables</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q3" value="b"> B) Object-oriented programming</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q3" value="c"> C) Loops</label>
-      </div>
-      <button onclick="checkAnswer('q3','b','✅ Correct! OOP is the defining feature of C++.')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>#include &lt;iostream&gt;</code></h4>
+      <p class="muted">A preprocessor directive that includes the Input/Output stream library, which allows us to use <code>cout</code> and <code>cin</code>.</p>
     </div>
   </div>
 
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="./"
-      style="background: #ff9f1c; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
-      Back to Lessons</a>
-    <a href="lesson-2.html"
-      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
-      Setup & First Program →</a>
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>using namespace std;</code></h4>
+      <p class="muted">Tells the compiler to use the standard namespace. Without this, we'd have to write <code>std::cout</code> instead of just <code>cout</code>.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>int main()</code></h4>
+      <p class="muted">The main function where the runtime execution of the code originates.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">4</div>
+    <div class="gfg-step-content">
+      <h4><code>cout &lt;&lt; "Hello World";</code></h4>
+      <p class="muted"><strong>C</strong>haracter <strong>OUT</strong>put prints the string. The <code>&lt;&lt;</code> operator sends the text to the output stream.</p>
+    </div>
+  </div>
+
+  <h3 id="applications">Applications of C++</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Game Engines:</strong> Unreal Engine is famously built entirely on C++ for hardware-level rendering speeds.</li>
+    <li><strong>Browsers:</strong> Google Chrome (V8 engine) and Firefox.</li>
+    <li><strong>Databases:</strong> Large-scale databases like MongoDB and MySQL.</li>
+    <li><strong>Operating Systems:</strong> macOS and parts of Windows rely on C++ for UI frameworks.</li>
+  </ul>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: Variables and Data Types →</a>
   </div>
 </section>
-
-<script>
-  function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
-</script>

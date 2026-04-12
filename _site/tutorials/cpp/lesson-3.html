@@ -340,6 +340,8 @@
         
         
         
+        
+        
     </ul>
 </aside>
 
@@ -371,9 +373,20 @@
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff9f1c;">
 
-        <h3>C++ Data Types</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#c-data-types">C++ Data Types</a></li>
+      <li><a href="#type-casting">Type Casting</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="c-data-types">C++ Data Types</h3>
+        <pre><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
@@ -399,10 +412,12 @@ int main() {
     cout &lt;&lt; "Active: " &lt;&lt; boolalpha &lt;&lt; isActive &lt;&lt; endl;
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Type Casting</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>// C-style cast
+
+        <h3 id="type-casting">Type Casting</h3>
+        <pre><code>// C-style cast
 int a = (int)3.14;  // 3
 
 // C++ style casts (preferred)
@@ -417,9 +432,8 @@ double dbl = stod("3.14"); // String to double
 // Number to string
 string s = to_string(42);  // "42"</code></pre>
 
-        <h3>References</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>int original = 10;
+        <h3 id="references">References</h3>
+        <pre><code>int original = 10;
 int &amp;ref = original;  // ref IS original
 
 ref = 20;
@@ -429,7 +443,7 @@ cout &lt;&lt; original;  // 20 (changed through reference!)</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'auto' do in C++?</p>
@@ -511,6 +525,127 @@ cout &lt;&lt; original;  // 20 (changed through reference!)</code></pre>
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>

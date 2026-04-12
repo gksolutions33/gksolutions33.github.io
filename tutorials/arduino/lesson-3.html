@@ -13,9 +13,20 @@ description: "Control LEDs and read buttons with digital pins"
             (0V, OFF). Like a light switch!</p>
     </div>
 
-    <h3>Digital Output: Controlling LEDs</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ledPin = 9;
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#digital-output-controlling-leds">Digital Output: Controlling LEDs</a></li>
+      <li><a href="#digital-input-reading-buttons">Digital Input: Reading Buttons</a></li>
+      <li><a href="#multiple-leds-traffic-light">Multiple LEDs: Traffic Light</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="digital-output-controlling-leds">Digital Output: Controlling LEDs</h3>
+    <pre><code>int ledPin = 9;
 
 void setup() {
     pinMode(ledPin, OUTPUT);
@@ -27,10 +38,12 @@ void loop() {
     digitalWrite(ledPin, LOW);   // LED OFF
     delay(500);
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Digital Input: Reading Buttons</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int buttonPin = 2;
+
+    <h3 id="digital-input-reading-buttons">Digital Input: Reading Buttons</h3>
+    <pre><code>int buttonPin = 2;
 int ledPin = 13;
 
 void setup() {
@@ -48,9 +61,8 @@ void loop() {
     }
 }</code></pre>
 
-    <h3>Multiple LEDs: Traffic Light</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int red = 11, yellow = 10, green = 9;
+    <h3 id="multiple-leds-traffic-light">Multiple LEDs: Traffic Light</h3>
+    <pre><code>int red = 11, yellow = 10, green = 9;
 
 void setup() {
     pinMode(red, OUTPUT);
@@ -71,7 +83,7 @@ void loop() {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What two states can a digital pin

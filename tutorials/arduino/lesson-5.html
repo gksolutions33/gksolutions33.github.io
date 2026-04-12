@@ -17,14 +17,26 @@ description: "Learn how to talk to your computer using the Serial Monitor"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #8c00ff;">
 
-        <h3>What is Serial?</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-serial">What is Serial?</a></li>
+      <li><a href="#sending-data-arduino-computer">Sending Data (Arduino → Computer)</a></li>
+      <li><a href="#receiving-data-computer-arduino">Receiving Data (Computer → Arduino)</a></li>
+      <li><a href="#serial-plotter">Serial Plotter</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-serial">What is Serial?</h3>
         <p style="color: var(--muted);">Serial communication lets Arduino send and receive data to/from your computer
             through the USB cable. Open the <strong>Serial Monitor</strong> in Arduino IDE (Tools → Serial Monitor or
             Ctrl+Shift+M).</p>
 
-        <h3>Sending Data (Arduino → Computer)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>void setup() {
+        <h3 id="sending-data-arduino-computer">Sending Data (Arduino → Computer)</h3>
+        <pre><code>void setup() {
     Serial.begin(9600);  // Start serial at 9600 baud
 }
 
@@ -34,10 +46,12 @@ void loop() {
     Serial.println(25.5);
     delay(1000);
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Receiving Data (Computer → Arduino)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ledPin = 13;
+
+        <h3 id="receiving-data-computer-arduino">Receiving Data (Computer → Arduino)</h3>
+        <pre><code>int ledPin = 13;
 
 void setup() {
     Serial.begin(9600);
@@ -58,10 +72,9 @@ void loop() {
     }
 }</code></pre>
 
-        <h3>Serial Plotter</h3>
+        <h3 id="serial-plotter">Serial Plotter</h3>
         <p style="color: var(--muted);">Use Tools → Serial Plotter to visualize data as a graph in real-time!</p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>void loop() {
+        <pre><code>void loop() {
     int sensorValue = analogRead(A0);
     Serial.println(sensorValue);  // Shows as graph!
     delay(50);
@@ -71,7 +84,7 @@ void loop() {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does Serial.begin(9600) do?

@@ -14,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Discover the world of electronics and programming with Arduino" />
+    content="Discover the world of Arduino and physical computing" />
   <meta name="keywords"
     content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
   <title>Lesson 1: What is Arduino? | Arduino Tutorial</title>
@@ -340,6 +340,8 @@
         
         
         
+        
+        
     </ul>
 </aside>
 
@@ -355,133 +357,111 @@
         </nav>
 
         <section>
-    <h2>🤖 Lesson 1: What is Arduino?</h2>
-    <p class="muted">⏱️ Estimated time: 10 minutes | Difficulty: Beginner</p>
+  <h2>Arduino Introduction</h2>
+  <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
-    <div class="callout callout-note">
-        <h4><i class="fas fa-microchip"></i> The Brains of Your Project</h4>
-        <p style="margin: 0;">
-            <strong>Arduino is an open-source electronics platform</strong> based on easy-to-use hardware and software.
-            It's designed for anyone making interactive projects — from blinking lights to complex robots.
-        </p>
-    </div>
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-arduino">What is Arduino?</a></li>
+      <li><a href="#why-learn">Why Learn Arduino?</a></li>
+      <li><a href="#hello-world">The "Hello World" of Hardware (Blink)</a></li>
+      <li><a href="#code-explanation">Explanation of the Arduino Program</a></li>
+      <li><a href="#applications">Applications of Arduino</a></li>
+    </ul>
+  </div>
 
-    <div
-        style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #8c00ff;">
+  <h3 id="what-is-arduino">What is Arduino?</h3>
+  <p>
+    <strong>Arduino</strong> is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects. Arduino consists of both a physical programmable circuit board (often referred to as a microcontroller) and a piece of software, or IDE (Integrated Development Environment) that runs on your computer.
+  </p>
 
-        <h3>Arduino = Electronics Made Easy</h3>
-        <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">Arduino is an open-source microcontroller
-            platform that lets you create interactive electronic projects. It's a tiny computer on a board that can read
-            sensors, control motors, blink LEDs, and so much more!</p>
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> Note on Simplicity</h4>
+    <p style="margin: 0;">
+      Unlike most previous programmable circuit boards, the Arduino does not need an extra piece of hardware (called a programmer) in order to load new code onto the board — you can simply use a USB cable.
+    </p>
+  </div>
 
-        <h3>What Can You Build?</h3>
-        <ul style="color: var(--muted); line-height: 2.2;">
-            <li>💡 LED displays and light shows</li>
-            <li>🌡️ Weather stations & temperature monitors</li>
-            <li>🤖 Robots and motor-controlled systems</li>
-            <li>🏠 Home automation (smart lights, locks)</li>
-            <li>🎮 Custom game controllers</li>
-            <li>📡 IoT (Internet of Things) devices</li>
-        </ul>
+  <h3 id="why-learn">Why Learn Arduino?</h3>
+  <p>Arduino makes interacting with the physical world through code easier than ever.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Inexpensive:</strong> Arduino boards are relatively inexpensive compared to other microcontroller platforms.</li>
+    <li><strong>Cross-platform:</strong> The Arduino IDE runs on Windows, Macintosh OSX, and Linux.</li>
+    <li><strong>Simple code environment:</strong> Uses a simplified version of C++, making it extremely accessible for beginners.</li>
+    <li><strong>Open source hardware:</strong> You can build your own boards or alter the existing ones.</li>
+  </ul>
 
-        <h3>Arduino Board Overview</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>┌─────────────────────────────────┐
-│         Arduino Uno             │
-│                                 │
-│  [USB Port]        [Power Port] │
-│                                 │
-│  Digital Pins: 0-13  (I/O)     │
-│  Analog Pins:  A0-A5 (Input)   │
-│  5V & 3.3V Power               │
-│  GND (Ground)                   │
-│  Built-in LED: Pin 13          │
-└─────────────────────────────────┘</code></pre>
+  <h3 id="hello-world">The "Hello World" of Hardware (Blink)</h3>
+  <p>In the programming world, the first program is usually "Hello World". In the microcontroller world, making an LED blink is the equivalent.</p>
 
-        <h3>Arduino Programming Language</h3>
-        <p style="color: var(--muted);">Arduino uses a simplified version of C/C++. Every Arduino program (called a
-            <strong>sketch</strong>) has two main functions:
-        </p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>void setup() {
-    // Runs ONCE when Arduino starts
-    // Configure pins, initialize settings
+  <pre><code>// Simple Arduino code to blink the built-in LED
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
-    // Runs FOREVER (repeating)
-    // Your main code goes here
+  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
+  delay(1000);                      // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off
+  delay(1000);                      // wait for a second
 }</code></pre>
 
-    </div>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It on Hardware</a>
+  
+  <div class="gfg-output-box">Simulation Output: \nLED State: HIGH (1s)\nLED State: LOW (1s)\n[Repeats infinitely...]</div>
 
-    <div
-        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How many times does setup() run?
-            </p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="a"> A) Forever</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="b"> B) Once</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="c"> C) Never</label>
-            </div>
-            <button onclick="checkAnswer('q1','b','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is an Arduino program called?
-            </p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="a"> A) A sketch</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="b"> B) A script</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="c"> C) A module</label>
-            </div>
-            <button onclick="checkAnswer('q2','a','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which function repeats
-                continuously?</p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q3" value="a"> A) setup()</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q3" value="b"> B) loop()</label>
-            </div>
-            <button onclick="checkAnswer('q3','b','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
-    </div>
+  <h3 id="code-explanation">Explanation of the Arduino Program</h3>
+  <p>Arduino code is fundamentally split into two main functions.</p>
 
-    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-        <a href="./"
-            style="background: #8c00ff; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
-            Back to Lessons</a>
-        <a href="lesson-2.html"
-            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
-            Setup & Components →</a>
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>void setup() { ... }</code></h4>
+      <p class="muted">The <code>setup()</code> function is called once when the sketch starts. Use it to initialize variables, pin modes, start using libraries, etc.</p>
     </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>pinMode(LED_BUILTIN, OUTPUT);</code></h4>
+      <p class="muted">Configures the specified pin to behave either as an input or an output. Here, we tell the board that the built-in LED pin will be outputting electricity.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>void loop() { ... }</code></h4>
+      <p class="muted">After <code>setup()</code> finishes, the <code>loop()</code> function does precisely what its name suggests, and loops consecutively, allowing your program to change and respond.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">4</div>
+    <div class="gfg-step-content">
+      <h4><code>digitalWrite(pin, state);</code> and <code>delay();</code></h4>
+      <p class="muted"><code>digitalWrite</code> sets the voltage to HIGH (5V) or LOW (0V). <code>delay(1000)</code> pauses the program for 1000 milliseconds (1 second).</p>
+    </div>
+  </div>
+
+  <h3 id="applications">Applications of Arduino</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Robotics:</strong> Motor control, sensor reading, and autonomous navigation.</li>
+    <li><strong>Home Automation:</strong> Controlling lights, reading temperature sensors, IoT applications.</li>
+    <li><strong>Prototyping:</strong> Rapidly testing hardware ideas before pushing them to production PCB boards.</li>
+    <li><strong>Interactive Art:</strong> Installations that respond to sound, light, or human presence.</li>
+  </ul>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: Breadboards & Components →</a>
+  </div>
 </section>
-
-<script>
-    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
-</script>
 
         <script>
             // Add copy buttons to all pre blocks
@@ -498,6 +478,127 @@ void loop() {
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>

@@ -21,14 +21,26 @@ description: "Understand memory management and working with arrays in C"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ffd60a;">
 
-        <h3>What Are Pointers?</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-are-pointers">What Are Pointers?</a></li>
+      <li><a href="#pointers-and-arrays">Pointers and Arrays</a></li>
+      <li><a href="#dynamic-memory-allocation">Dynamic Memory Allocation</a></li>
+      <li><a href="#structs">Structs</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-are-pointers">What Are Pointers?</h3>
         <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
             A pointer is a variable that stores the <strong>memory address</strong> of another variable. Pointers are
             one of C's most powerful features!
         </p>
 
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+        <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     int age = 25;
@@ -44,6 +56,9 @@ int main() {
 
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
 
         <div
             style="background: rgba(255, 214, 10, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid #ffd60a;">
@@ -54,9 +69,8 @@ int main() {
             </p>
         </div>
 
-        <h3>Pointers and Arrays</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int arr[] = {10, 20, 30, 40, 50};
+        <h3 id="pointers-and-arrays">Pointers and Arrays</h3>
+        <pre><code>int arr[] = {10, 20, 30, 40, 50};
 int *p = arr;  // Array name IS a pointer!
 
 printf("%d\n", *p);       // 10 (first element)
@@ -68,9 +82,8 @@ for (int *ptr = arr; ptr < arr + 5; ptr++) {
     printf("%d ", *ptr);
 }</code></pre>
 
-        <h3>Dynamic Memory Allocation</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdlib.h&gt;
+        <h3 id="dynamic-memory-allocation">Dynamic Memory Allocation</h3>
+        <pre><code>#include &lt;stdlib.h&gt;
 
 // Allocate memory for 5 integers
 int *arr = (int *)malloc(5 * sizeof(int));
@@ -96,9 +109,8 @@ free(arr);</code></pre>
             </p>
         </div>
 
-        <h3>Structs</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>struct Student {
+        <h3 id="structs">Structs</h3>
+        <pre><code>struct Student {
     char name[50];
     int age;
     float gpa;
@@ -121,7 +133,7 @@ int main() {
     <!-- Quiz -->
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">

@@ -14,9 +14,21 @@ description: "Learn how to modify database records using SQL"
             conditions (especially for <code>UPDATE</code> and <code>DELETE</code>) to avoid accidental data loss!</p>
     </div>
 
-    <h3>INSERT — Add New Data</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- Insert one row
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#insert-add-new-data">INSERT — Add New Data</a></li>
+      <li><a href="#update-modify-existing-data">UPDATE — Modify Existing Data</a></li>
+      <li><a href="#delete-remove-data">DELETE — Remove Data</a></li>
+      <li><a href="#safety-tips">⚠️ Safety Tips</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="insert-add-new-data">INSERT — Add New Data</h3>
+    <pre><code>-- Insert one row
 INSERT INTO users (name, email, age)
 VALUES ('Alice', 'alice@email.com', 25);
 
@@ -25,10 +37,12 @@ INSERT INTO users (name, email, age) VALUES
   ('Bob', 'bob@email.com', 30),
   ('Charlie', 'charlie@mail.io', 22),
   ('Diana', 'diana@test.com', 28);</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>UPDATE — Modify Existing Data</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- Update specific row
+
+    <h3 id="update-modify-existing-data">UPDATE — Modify Existing Data</h3>
+    <pre><code>-- Update specific row
 UPDATE users SET age = 26 WHERE name = 'Alice';
 
 -- Update multiple columns
@@ -38,9 +52,8 @@ WHERE id = 2;
 -- ⚠️ Without WHERE, updates ALL rows!
 UPDATE users SET age = 0;  -- DANGER! Changes everyone!</code></pre>
 
-    <h3>DELETE — Remove Data</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- Delete specific row
+    <h3 id="delete-remove-data">DELETE — Remove Data</h3>
+    <pre><code>-- Delete specific row
 DELETE FROM users WHERE id = 3;
 
 -- Delete with condition
@@ -52,7 +65,7 @@ DELETE FROM users;  -- DANGER! Removes everything!
 -- TRUNCATE: faster way to delete all rows
 TRUNCATE TABLE users;</code></pre>
 
-    <h3>⚠️ Safety Tips</h3>
+    <h3 id="safety-tips">⚠️ Safety Tips</h3>
     <ul style="color: var(--muted); line-height: 2.2;">
         <li>🔒 Always use <strong>WHERE</strong> with UPDATE and DELETE</li>
         <li>🧪 Test with SELECT first: <code>SELECT * FROM users WHERE id = 3;</code></li>
@@ -64,7 +77,7 @@ TRUNCATE TABLE users;</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What happens if you run DELETE

@@ -21,13 +21,25 @@ description: "Learn how to use Arduino libraries to simplify complex tasks"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #8c00ff;">
 
-        <h3>What are Libraries?</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-are-libraries">What are Libraries?</a></li>
+      <li><a href="#servo-motor-control">Servo Motor Control</a></li>
+      <li><a href="#lcd-display-liquidcrystal">LCD Display (LiquidCrystal)</a></li>
+      <li><a href="#dht-temperature-humidity-sensor">DHT Temperature & Humidity Sensor</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-are-libraries">What are Libraries?</h3>
         <p style="color: var(--muted);">Libraries are pre-written code that add functionality to your Arduino. Install
             via: Sketch → Include Library → Manage Libraries.</p>
 
-        <h3>Servo Motor Control</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>#include &lt;Servo.h&gt;
+        <h3 id="servo-motor-control">Servo Motor Control</h3>
+        <pre><code>#include &lt;Servo.h&gt;
 
 Servo myServo;
 
@@ -45,10 +57,12 @@ void loop() {
         delay(15);
     }
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>LCD Display (LiquidCrystal)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>#include &lt;LiquidCrystal.h&gt;
+
+        <h3 id="lcd-display-liquidcrystal">LCD Display (LiquidCrystal)</h3>
+        <pre><code>#include &lt;LiquidCrystal.h&gt;
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
@@ -65,9 +79,8 @@ void loop() {
     delay(500);
 }</code></pre>
 
-        <h3>DHT Temperature & Humidity Sensor</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>#include &lt;DHT.h&gt;
+        <h3 id="dht-temperature-humidity-sensor">DHT Temperature & Humidity Sensor</h3>
+        <pre><code>#include &lt;DHT.h&gt;
 
 #define DHTPIN 2
 #define DHTTYPE DHT11
@@ -92,7 +105,7 @@ void loop() {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you include a library?</p>

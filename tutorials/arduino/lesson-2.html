@@ -14,7 +14,20 @@ description: "Install the Arduino IDE and learn about common electronic componen
             LEDs, resistors, and breadboards.</p>
     </div>
 
-    <h3>Step 1: Install Arduino IDE</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#step-1-install-arduino-ide">Step 1: Install Arduino IDE</a></li>
+      <li><a href="#essential-components">Essential Components</a></li>
+      <li><a href="#your-first-sketch-blink">Your First Sketch: Blink</a></li>
+      <li><a href="#upload-your-sketch">Upload Your Sketch</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="step-1-install-arduino-ide">Step 1: Install Arduino IDE</h3>
     <ol style="color: var(--muted); line-height: 2.2;">
         <li>Download from <code>arduino.cc/en/software</code></li>
         <li>Install with default settings</li>
@@ -23,7 +36,7 @@ description: "Install the Arduino IDE and learn about common electronic componen
         <li>Select port: Tools → Port → COMx (Windows) or /dev/tty (Mac/Linux)</li>
     </ol>
 
-    <h3>Essential Components</h3>
+    <h3 id="essential-components">Essential Components</h3>
     <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
             <thead>
@@ -61,9 +74,8 @@ description: "Install the Arduino IDE and learn about common electronic componen
         </table>
     </div>
 
-    <h3>Your First Sketch: Blink</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>// Blink the built-in LED on pin 13
+    <h3 id="your-first-sketch-blink">Your First Sketch: Blink</h3>
+    <pre><code>// Blink the built-in LED on pin 13
 void setup() {
     pinMode(13, OUTPUT);  // Set pin 13 as output
 }
@@ -74,8 +86,11 @@ void loop() {
     digitalWrite(13, LOW);   // LED OFF
     delay(1000);             // Wait 1 second
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Upload Your Sketch</h3>
+
+    <h3 id="upload-your-sketch">Upload Your Sketch</h3>
     <ol style="color: var(--muted); line-height: 2.2;">
         <li>Click ✓ (Verify) to check for errors</li>
         <li>Click → (Upload) to send code to Arduino</li>
@@ -86,7 +101,7 @@ void loop() {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does pinMode() do?</p>

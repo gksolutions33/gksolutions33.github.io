@@ -18,13 +18,25 @@ description: "Discover generic programming using C++ templates"
             your code extremely flexible and reusable.</p>
     </div>
 
-    <h3>What Are Templates?</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-are-templates">What Are Templates?</a></li>
+      <li><a href="#function-templates">Function Templates</a></li>
+      <li><a href="#class-templates">Class Templates</a></li>
+      <li><a href="#multiple-template-parameters">Multiple Template Parameters</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-are-templates">What Are Templates?</h3>
     <p style="color: var(--muted); font-size: 1.05rem;">Templates let you write <strong>generic code</strong> that
         works with any data type. Write once, use with int, double, string, or any type!</p>
 
-    <h3>Function Templates</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+    <h3 id="function-templates">Function Templates</h3>
+    <pre><code>#include &lt;iostream&gt;
 using namespace std;
 
 template &lt;typename T&gt;
@@ -38,10 +50,12 @@ int main() {
     cout &lt;&lt; getMax('a', 'z') &lt;&lt; endl;     // z (char)
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Class Templates</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>template &lt;typename T&gt;
+
+    <h3 id="class-templates">Class Templates</h3>
+    <pre><code>template &lt;typename T&gt;
 class Box {
     T value;
 public:
@@ -61,9 +75,8 @@ int main() {
     return 0;
 }</code></pre>
 
-    <h3>Multiple Template Parameters</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>template &lt;typename K, typename V&gt;
+    <h3 id="multiple-template-parameters">Multiple Template Parameters</h3>
+    <pre><code>template &lt;typename K, typename V&gt;
 class Pair {
     K key;
     V value;
@@ -83,7 +96,7 @@ score.display();  // 1: 95.5</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does template&lt;typename

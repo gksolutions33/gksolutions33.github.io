@@ -14,12 +14,24 @@ description: "Master complex two-dimensional layouts with CSS Grid"
       two-dimensional layouts with ease.</p>
   </div>
 
-  <h3>Grid = 2D Layout System</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#grid-2d-layout-system">Grid = 2D Layout System</a></li>
+      <li><a href="#placing-items">Placing Items</a></li>
+      <li><a href="#grid-template-areas">Grid Template Areas</a></li>
+      <li><a href="#alignment">Alignment</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="grid-2d-layout-system">Grid = 2D Layout System</h3>
   <p style="color: var(--muted);">While Flexbox handles one dimension (row OR column), Grid handles <strong>both
       dimensions</strong> simultaneously!</p>
 
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.container {
+  <pre><code>.container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;  /* 3 equal columns */
     grid-template-rows: auto auto;        /* 2 auto rows */
@@ -30,10 +42,12 @@ description: "Master complex two-dimensional layouts with CSS Grid"
 grid-template-columns: repeat(3, 1fr);     /* 3 equal */
 grid-template-columns: 200px 1fr 200px;    /* Fixed-Flex-Fixed */
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive! */</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-  <h3>Placing Items</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.item {
+
+  <h3 id="placing-items">Placing Items</h3>
+  <pre><code>.item {
     grid-column: 1 / 3;    /* Span columns 1 to 3 */
     grid-row: 1 / 2;       /* Span row 1 */
 }
@@ -42,9 +56,8 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive! */</
 .wide { grid-column: span 2; }  /* Span 2 columns */
 .tall { grid-row: span 2; }     /* Span 2 rows */</code></pre>
 
-  <h3>Grid Template Areas</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.layout {
+  <h3 id="grid-template-areas">Grid Template Areas</h3>
+  <pre><code>.layout {
     display: grid;
     grid-template-areas:
         "header  header  header"
@@ -59,9 +72,8 @@ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive! */</
 .content { grid-area: content; }
 .footer  { grid-area: footer; }</code></pre>
 
-  <h3>Alignment</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Align all items */
+  <h3 id="alignment">Alignment</h3>
+  <pre><code>/* Align all items */
 justify-items: center;  /* Horizontal */
 align-items: center;    /* Vertical */
 place-items: center;    /* Both! */
@@ -73,7 +85,7 @@ place-items: center;    /* Both! */
 
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does repeat(3, 1fr) create?</p>

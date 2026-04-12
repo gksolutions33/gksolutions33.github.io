@@ -9,18 +9,30 @@ description: "Learn how to use polymorphism in C++ for flexible and dynamic code
         <a href="./" style="color: #ff9f1c; text-decoration: none; font-weight: 500;">← Back to All Lessons</a>
     </div>
 
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>int add(int a, int b) { return a + b; }
+    <pre><code>int add(int a, int b) { return a + b; }
 double add(double a, double b) { return a + b; }
 int add(int a, int b, int c) { return a + b + c; }
 
 cout &lt;&lt; add(2, 3) &lt;&lt; endl;       // 5 (int version)
 cout &lt;&lt; add(2.5, 3.1) &lt;&lt; endl;   // 5.6 (double version)
 cout &lt;&lt; add(1, 2, 3) &lt;&lt; endl;    // 6 (3-arg version)</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Operator Overloading</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Vector {
+
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#operator-overloading">Operator Overloading</a></li>
+      <li><a href="#virtual-functions-runtime-polymorphism">Virtual Functions (Runtime Polymorphism)</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="operator-overloading">Operator Overloading</h3>
+    <pre><code>class Vector {
 public:
     double x, y;
     Vector(double x, double y) : x(x), y(y) {}
@@ -37,9 +49,8 @@ Vector a(1, 2), b(3, 4);
 Vector c = a + b;  // Uses our + operator!
 c.print();         // (4, 6)</code></pre>
 
-    <h3>Virtual Functions (Runtime Polymorphism)</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Shape {
+    <h3 id="virtual-functions-runtime-polymorphism">Virtual Functions (Runtime Polymorphism)</h3>
+    <pre><code>class Shape {
 public:
     virtual double area() { return 0; }  // virtual!
     virtual ~Shape() {}
@@ -71,7 +82,7 @@ for (auto s : shapes) {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What keyword enables runtime

@@ -259,6 +259,8 @@
         
         
         
+        
+        
         <li class="tutorial-nav-item ">
             <a href="/tutorials/python/lesson-1">
                 Lesson 1: What is Python?
@@ -368,60 +370,76 @@
       conditions. It's the logic of your script!</p>
   </div>
 
-  <h3>Basic Math Operations</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#basic-math-operations">Basic Math Operations</a></li>
+      <li><a href="#order-of-operations">Order of Operations</a></li>
+      <li><a href="#working-with-real-numbers">Working with Real Numbers</a></li>
+      <li><a href="#shortcut-operators">Shortcut Operators</a></li>
+      <li><a href="#real-world-example-calculating-a-tip">Real-World Example: Calculating a Tip</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="basic-math-operations">Basic Math Operations</h3>
   <p style="color: var(--muted);">Python can do all kinds of math for you. Here are the basic operators:</p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
     <div
       style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">+ Addition</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>result = 5 + 3
+      <pre><code>result = 5 + 3
 print(result)  # 8</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
     </div>
     <div
       style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">- Subtraction</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>result = 10 - 4
+      <pre><code>result = 10 - 4
 print(result)  # 6</code></pre>
     </div>
     <div
       style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">* Multiplication</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>result = 6 * 7
+      <pre><code>result = 6 * 7
 print(result)  # 42</code></pre>
     </div>
     <div
       style="background: rgba(255, 195, 0, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-yellow);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-yellow); font-weight: bold;">/ Division</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>result = 20 / 4
+      <pre><code>result = 20 / 4
 print(result)  # 5.0</code></pre>
     </div>
     <div
       style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">// Floor Division</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>result = 20 // 3
+      <pre><code>result = 20 // 3
 print(result)  # 6</code></pre>
     </div>
     <div
       style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">% Modulus (Remainder)</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>result = 20 % 3
+      <pre><code>result = 20 % 3
 print(result)  # 2</code></pre>
     </div>
   </div>
 
-  <h3>Order of Operations</h3>
+  <h3 id="order-of-operations">Order of Operations</h3>
   <p style="color: var(--muted);">Python follows the same order as math class: PEMDAS/BODMAS</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>result = 2 + 3 * 4
+  <pre><code>result = 2 + 3 * 4
 print(result)  # 14 (not 20!)
 
 result = (2 + 3) * 4
 print(result)  # 20</code></pre>
 
-  <h3>Working with Real Numbers</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>price = 19.99
+  <h3 id="working-with-real-numbers">Working with Real Numbers</h3>
+  <pre><code>price = 19.99
 tax = price * 0.08
 total = price + tax
 
@@ -430,33 +448,31 @@ print("Tax:", tax)
 print("Total:", total)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Item: 19.99
+  <pre><code>Item: 19.99
 Tax: 1.5992
 Total: 21.5892</code></pre>
 
-  <h3>Shortcut Operators</h3>
+  <h3 id="shortcut-operators">Shortcut Operators</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
     <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Long Way:</p>
-      <pre
-        style="margin: 0 0 1rem 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>points = 10
+      <pre><code>points = 10
 points = points + 5</code></pre>
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Shortcut:</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>points = 10
+      <pre><code>points = 10
 points += 5</code></pre>
     </div>
     <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">Similarly:</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>x = 10
+      <pre><code>x = 10
 x -= 3    # 7
 x *= 2    # 14
 x /= 2    # 7.0</code></pre>
     </div>
   </div>
 
-  <h3>Real-World Example: Calculating a Tip</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>bill_amount = 45.50
+  <h3 id="real-world-example-calculating-a-tip">Real-World Example: Calculating a Tip</h3>
+  <pre><code>bill_amount = 45.50
 tip_percentage = 20
 
 tip = bill_amount * (tip_percentage / 100)
@@ -467,7 +483,7 @@ print("Tip (20%):", tip)
 print("Total: $", total_with_tip)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Bill: $ 45.5
+  <pre><code>Bill: $ 45.5
 Tip (20%): 9.1
 Total: $ 54.6</code></pre>
 
@@ -476,7 +492,7 @@ Total: $ 54.6</code></pre>
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
@@ -546,7 +562,7 @@ Total: $ 54.6</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Stores a price in a variable</li>
@@ -605,6 +621,127 @@ Total: $ 54.6</code></pre>
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>

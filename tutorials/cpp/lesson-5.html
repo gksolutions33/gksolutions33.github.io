@@ -21,12 +21,23 @@ description: "Master inheritance in C++ to build complex class hierarchies"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff9f1c;">
 
-        <h3>What is Inheritance?</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-inheritance">What is Inheritance?</a></li>
+      <li><a href="#constructor-inheritance">Constructor Inheritance</a></li>
+      <li><a href="#multiple-inheritance">Multiple Inheritance</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-inheritance">What is Inheritance?</h3>
         <p style="color: var(--muted); font-size: 1.05rem;">Inheritance lets a child class <strong>inherit</strong>
             properties and methods from a parent class, promoting code reuse.</p>
 
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+        <pre><code>#include &lt;iostream&gt;
 using namespace std;
 
 // Base class (parent)
@@ -60,10 +71,12 @@ int main() {
     c.meow();   // Cat's own method
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Constructor Inheritance</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Shape {
+
+        <h3 id="constructor-inheritance">Constructor Inheritance</h3>
+        <pre><code>class Shape {
 protected:
     string color;
 public:
@@ -85,9 +98,8 @@ int main() {
     return 0;
 }</code></pre>
 
-        <h3>Multiple Inheritance</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>class Flyable {
+        <h3 id="multiple-inheritance">Multiple Inheritance</h3>
+        <pre><code>class Flyable {
 public:
     void fly() { cout &lt;&lt; "Flying!" &lt;&lt; endl; }
 };
@@ -107,7 +119,7 @@ public:
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What keyword is used for

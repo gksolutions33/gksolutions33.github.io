@@ -21,9 +21,20 @@ description: "Master decision-making in Java using if-else statements and switch
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
 
-        <h3>If / Else</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>int score = 85;
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#if-else">If / Else</a></li>
+      <li><a href="#switch-statement">Switch Statement</a></li>
+      <li><a href="#nested-conditions">Nested Conditions</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="if-else">If / Else</h3>
+        <pre><code>int score = 85;
 
 if (score >= 90) {
     System.out.println("Grade: A");
@@ -35,10 +46,12 @@ if (score >= 90) {
     System.out.println("Grade: F");
 }
 // Output: Grade: B</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Switch Statement</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>String day = "Monday";
+
+        <h3 id="switch-statement">Switch Statement</h3>
+        <pre><code>String day = "Monday";
 
 switch (day) {
     case "Monday":
@@ -62,9 +75,8 @@ String type = switch (day) {
     default -> "Weekday";
 };</code></pre>
 
-        <h3>Nested Conditions</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>int age = 25;
+        <h3 id="nested-conditions">Nested Conditions</h3>
+        <pre><code>int age = 25;
 boolean hasLicense = true;
 
 if (age >= 18) {
@@ -86,7 +98,7 @@ if (age >= 18 &amp;&amp; hasLicense) {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What happens without 'break' in

@@ -18,7 +18,23 @@ description: "Master mathematical and logical operators in Python"
       math super easy!</p>
   </div>
 
-  <h3>What is a Variable?</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-a-variable">What is a Variable?</a></li>
+      <li><a href="#creating-variables">Creating Variables</a></li>
+      <li><a href="#data-types-different-kinds-of-information">Data Types - Different Kinds of Information</a></li>
+      <li><a href="#using-variables">Using Variables</a></li>
+      <li><a href="#changing-variables">Changing Variables</a></li>
+      <li><a href="#naming-variables-best-practices">Naming Variables (Best Practices)</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-a-variable">What is a Variable?</h3>
   <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
     <strong>A variable is a container that stores information.</strong> Think of it like a labeled box where you put
     things for later use.
@@ -38,19 +54,21 @@ description: "Master mathematical and logical operators in Python"
     </p>
   </div>
 
-  <h3>Creating Variables</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>name = "Alice"
+  <h3 id="creating-variables">Creating Variables</h3>
+  <pre><code>name = "Alice"
 age = 25
 height = 5.6
 is_student = True</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
 
   <p style="color: var(--muted); margin-top: 1rem;">
     The pattern is: <code
       style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">variable_name = value</code>
   </p>
 
-  <h3>Data Types - Different Kinds of Information</h3>
+  <h3 id="data-types-different-kinds-of-information">Data Types - Different Kinds of Information</h3>
   <p style="color: var(--muted);">Python automatically detects what type of information you're storing:</p>
 
   <div
@@ -60,7 +78,7 @@ is_student = True</code></pre>
       style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
       <h4 style="margin-top: 0; color: var(--accent-cyan);">String (Text)</h4>
       <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Any text, always in quotes</p>
-      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>name = "Bob"
+      <pre><code>name = "Bob"
 city = 'New York'
 greeting = "Hello!"</code></pre>
     </div>
@@ -69,7 +87,7 @@ greeting = "Hello!"</code></pre>
       style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
       <h4 style="margin-top: 0; color: var(--accent-pink);">Integer (Whole Numbers)</h4>
       <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Numbers without decimals</p>
-      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>age = 25
+      <pre><code>age = 25
 year = 2024
 score = -5</code></pre>
     </div>
@@ -78,7 +96,7 @@ score = -5</code></pre>
       style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
       <h4 style="margin-top: 0; color: var(--accent-green);">Float (Decimal Numbers)</h4>
       <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Numbers with decimals</p>
-      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>height = 5.9
+      <pre><code>height = 5.9
 price = 19.99
 temperature = -3.5</code></pre>
     </div>
@@ -87,16 +105,15 @@ temperature = -3.5</code></pre>
       style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-yellow);">
       <h4 style="margin-top: 0; color: var(--accent-yellow);">Boolean (True/False)</h4>
       <p style="margin: 0.5rem 0; color: var(--muted); font-size: 0.9rem;">Only True or False</p>
-      <pre style="margin: 0; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 4px; font-size: 0.85rem;"><code>is_student = True
+      <pre><code>is_student = True
 is_raining = False
 is_adult = True</code></pre>
     </div>
 
   </div>
 
-  <h3>Using Variables</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>name = "Alice"
+  <h3 id="using-variables">Using Variables</h3>
+  <pre><code>name = "Alice"
 age = 25
 
 print("My name is", name)
@@ -104,13 +121,12 @@ print("I am", age, "years old")
 print("Next year I will be", age + 1)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>My name is Alice
+  <pre><code>My name is Alice
 I am 25 years old
 Next year I will be 26</code></pre>
 
-  <h3>Changing Variables</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>score = 10
+  <h3 id="changing-variables">Changing Variables</h3>
+  <pre><code>score = 10
 print("Score:", score)
 
 score = 15
@@ -120,22 +136,20 @@ score = score + 5
 print("Even better:", score)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Score: 10
+  <pre><code>Score: 10
 New score: 15
 Even better: 20</code></pre>
 
-  <h3>Naming Variables (Best Practices)</h3>
+  <h3 id="naming-variables-best-practices">Naming Variables (Best Practices)</h3>
   <div style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
     <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">✅ Good Variable Names:</p>
-    <pre
-      style="margin: 0 0 1.5rem 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px; color: var(--accent-green);"><code>name = "Bob"
+    <pre><code>name = "Bob"
 user_age = 25
 is_student = True
 total_price = 99.99</code></pre>
 
     <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❌ Bad Variable Names:</p>
-    <pre
-      style="margin: 0; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px; color: rgba(255, 45, 149, 1);"><code>n = "Bob"
+    <pre><code>n = "Bob"
 x = 25
 a = True
 t_p = 99.99</code></pre>
@@ -155,7 +169,7 @@ t_p = 99.99</code></pre>
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <!-- Question 1 -->
     <div
@@ -226,7 +240,7 @@ t_p = 99.99</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Creates variables for your name, age, and favorite food</li>

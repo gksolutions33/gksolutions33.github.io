@@ -14,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Learn the language of data and how to communicate with databases" />
+    content="Master the fundamental language used to manage data in Relational Databases" />
   <meta name="keywords"
     content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
   <title>Lesson 1: What is SQL? | SQL Tutorial</title>
@@ -66,6 +66,8 @@
     
     <h3>SQL Tutorial</h3>
     <ul class="tutorial-nav-list">
+        
+        
         
         
         
@@ -355,143 +357,109 @@
         </nav>
 
         <section>
-    <h2>📊 Lesson 1: What is SQL?</h2>
-    <p class="muted">⏱️ Estimated time: 10 minutes | Difficulty: Beginner</p>
+  <h2>SQL Language Introduction</h2>
+  <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
-    <div class="callout callout-note">
-        <h4><i class="fas fa-database"></i> The Language of Data</h4>
-        <p style="margin: 0;">
-            <strong>SQL (Structured Query Language)</strong> is the standard language for dealing with Relational
-            Databases. It is used to insert, search, update, and delete database records.
-        </p>
-    </div>
-
-    <h3>SQL = Structured Query Language</h3>
-    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">SQL is the standard language for storing,
-        retrieving, and managing data in <strong>relational databases</strong>. It's used by virtually every
-        application that works with data.</p>
-
-    <h3>Where SQL is Used</h3>
-    <ul style="color: var(--muted); line-height: 2.2;">
-        <li>📱 Mobile apps (SQLite)</li>
-        <li>🌐 Web applications (MySQL, PostgreSQL)</li>
-        <li>🏢 Enterprise systems (Oracle, SQL Server)</li>
-        <li>📊 Data analysis & reporting</li>
-        <li>🤖 Machine learning data pipelines</li>
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-sql">What is SQL?</a></li>
+      <li><a href="#why-learn">Why Should We Learn SQL?</a></li>
+      <li><a href="#hello-world">First SQL Query (Hello Data)</a></li>
+      <li><a href="#code-explanation">Explanation of the SQL Query</a></li>
+      <li><a href="#applications">Types of SQL Commands</a></li>
     </ul>
+  </div>
 
-    <h3>What is a Relational Database?</h3>
-    <p style="color: var(--muted);">Data is organized in <strong>tables</strong> (like spreadsheets) with rows and
-        columns. Tables can relate to each other.</p>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>┌──────────────── users ────────────────┐
-│ id │ name    │ email           │ age  │
-│────│─────────│─────────────────│──────│
-│ 1  │ Alice   │ alice@email.com │ 25   │
-│ 2  │ Bob     │ bob@email.com   │ 30   │
-│ 3  │ Charlie │ charlie@mail.io │ 22   │
-└───────────────────────────────────────┘</code></pre>
+  <h3 id="what-is-sql">What is SQL?</h3>
+  <p>
+    <strong>SQL (Structured Query Language)</strong> is a standard computer language for relational database management and data manipulation. SQL is used to query, insert, update and modify data in relational databases (like MySQL, PostgreSQL, Oracle, SQL Server).
+  </p>
 
-    <h3>Popular Databases</h3>
-    <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
-            <thead>
-                <tr style="background: rgba(0, 217, 255, 0.15);">
-                    <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #00d9ff;">Database</th>
-                    <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #00d9ff;">Best For</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 0.5rem;">MySQL</td>
-                    <td style="padding: 0.5rem;">Web apps, WordPress</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.5rem;">PostgreSQL</td>
-                    <td style="padding: 0.5rem;">Advanced features, data integrity</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.5rem;">SQLite</td>
-                    <td style="padding: 0.5rem;">Mobile apps, small projects</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.5rem;">SQL Server</td>
-                    <td style="padding: 0.5rem;">Enterprise, Microsoft stack</td>
-                </tr>
-            </tbody>
-        </table>
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> Note on Pronunciation</h4>
+    <p style="margin: 0;">
+      SQL is pronounced either as "S-Q-L" or as "Sequel". It is a declarative language, meaning you tell the system <em>what</em> data you want, rather than <em>how</em> to retrieve it. The database engine figures out the how!
+    </p>
+  </div>
+
+  <h3 id="why-learn">Why Should We Learn SQL?</h3>
+  <p>Data is the oil of the 21st century. SQL is the machinery used to extract it.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Universal Demand:</strong> Whether you are a backend developer, data analyst, product manager, or machine learning engineer, querying databases is an essential skill.</li>
+    <li><strong>Allows Large Volume Processing:</strong> Unlike Excel, which struggles with millions of rows of data, SQL databases handle staggering amounts of data with rapid retrieval speeds.</li>
+    <li><strong>Standardized:</strong> Though there are different "flavors" of SQL (MySQL vs PostgreSQL), the core syntax (SELECT, WHERE, JOIN) is standard across all of them.</li>
+  </ul>
+
+  <h3 id="hello-world">First SQL Query (Hello Data)</h3>
+  <p>The "Hello World" of SQL is simply querying all the data from an existing table.</p>
+
+  <pre><code>-- Select all columns from the 'users' table
+SELECT * FROM users;</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Run Query</a>
+  
+  <div class="gfg-output-box">
+| id | first_name | last_name | email            |
+|----|------------|-----------|------------------|
+| 1  | John       | Doe       | john@example.com |
+| 2  | Jane       | Smith     | jane@example.com |
+  </div>
+
+  <div class="gfg-complexity">
+    <span>Time Complexity:</span> O(N) where N is the number of rows in the table without indexed filtering.
+  </div>
+
+  <h3 id="code-explanation">Explanation of the SQL Query</h3>
+  <p>Let's dissect this simple query.</p>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>--</code> (Comments)</h4>
+      <p class="muted">Double dashes <code>--</code> are used to write single-line comments in SQL. The database engine ignores this text.</p>
     </div>
+  </div>
 
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>SELECT</code></h4>
+      <p class="muted">The <code>SELECT</code> statement is used to select data from a database. The data returned is stored in a result table, called the result-set.</p>
     </div>
+  </div>
 
-    <div
-        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does SQL stand for?</p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="a"> A) Simple Query Language</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="b"> B) Structured Query Language</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="c"> C) System Query Logic</label>
-            </div>
-            <button onclick="checkAnswer('q1','b','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How is data organized in a
-                relational database?</p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="a"> A) In files</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="b"> B) In tables with rows and columns</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="c"> C) In folders</label>
-            </div>
-            <button onclick="checkAnswer('q2','b','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which database is best for mobile
-                apps?</p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q3" value="a"> A) Oracle</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q3" value="b"> B) SQLite</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q3" value="c"> C) SQL Server</label>
-            </div>
-            <button onclick="checkAnswer('q3','b','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>*</code> (Asterisk)</h4>
+      <p class="muted">The asterisk character <code>*</code> is a wildcard that means "all columns". This tells the database to return every column present in the table.</p>
     </div>
+  </div>
 
-    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-        <a href="./"
-            style="background: #00d9ff; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
-            Back to Lessons</a>
-        <a href="lesson-2.html"
-            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
-            Databases & Tables →</a>
+  <div class="gfg-step">
+    <div class="gfg-step-num">4</div>
+    <div class="gfg-step-content">
+      <h4><code>FROM users;</code></h4>
+      <p class="muted">The <code>FROM</code> clause specifies which table you want to query. In this case, we are querying the table named <code>users</code>. The semicolon <code>;</code> is the standard way to separate each SQL statement in database systems.</p>
     </div>
+  </div>
+
+  <h3 id="applications">Types of SQL Commands</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>DDL (Data Definition Language):</strong> Defines the database schema (e.g. <code>CREATE</code>, <code>DROP</code>, <code>ALTER</code>).</li>
+    <li><strong>DML (Data Manipulation Language):</strong> Manipulates the data present in the database (e.g. <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>).</li>
+    <li><strong>DQL (Data Query Language):</strong> Used to fetch data from the database (e.g. <code>SELECT</code>).</li>
+    <li><strong>DCL (Data Control Language):</strong> Manages who has rights/permissions to the database (e.g. <code>GRANT</code>, <code>REVOKE</code>).</li>
+  </ul>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: WHERE Clause & Filtering →</a>
+  </div>
 </section>
-
-<script>
-    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
-</script>
 
         <script>
             // Add copy buttons to all pre blocks
@@ -508,6 +476,127 @@
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>

@@ -17,9 +17,21 @@ description: "Master CSS selectors to target elements and properties to change t
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff2d95;">
 
-        <h3>CSS Selectors</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Element selector */
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#css-selectors">CSS Selectors</a></li>
+      <li><a href="#specificity-priority-order">Specificity (Priority Order)</a></li>
+      <li><a href="#colors-in-css">Colors in CSS</a></li>
+      <li><a href="#units">Units</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="css-selectors">CSS Selectors</h3>
+        <pre><code>/* Element selector */
 p { color: white; }
 
 /* Class selector (.) */
@@ -48,8 +60,11 @@ li:nth-child(2n) { background: rgba(255,255,255,0.05); }
 /* Pseudo-elements */
 p::first-line { font-weight: bold; }
 h1::before { content: "🎨 "; }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Specificity (Priority Order)</h3>
+
+        <h3 id="specificity-priority-order">Specificity (Priority Order)</h3>
         <div style="overflow-x: auto; margin: 1rem 0;">
             <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
                 <thead>
@@ -85,17 +100,15 @@ h1::before { content: "🎨 "; }</code></pre>
             </table>
         </div>
 
-        <h3>Colors in CSS</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>color: red;                    /* Named */
+        <h3 id="colors-in-css">Colors in CSS</h3>
+        <pre><code>color: red;                    /* Named */
 color: #ff2d95;                /* Hex */
 color: rgb(255, 45, 149);      /* RGB */
 color: rgba(255, 45, 149, 0.5); /* RGBA (with transparency) */
 color: hsl(330, 100%, 59%);    /* HSL */</code></pre>
 
-        <h3>Units</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>font-size: 16px;    /* Pixels (fixed) */
+        <h3 id="units">Units</h3>
+        <pre><code>font-size: 16px;    /* Pixels (fixed) */
 font-size: 1rem;    /* Relative to root (recommended!) */
 font-size: 1.2em;   /* Relative to parent */
 width: 50%;         /* Percentage of parent */
@@ -106,7 +119,7 @@ height: 100vh;      /* Viewport height */</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which selector has the highest

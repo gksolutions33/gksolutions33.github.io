@@ -15,8 +15,21 @@ description: "Learn how to use JavaScript to interact with web pages"
     <p style="margin: 0;">The DOM (Document Object Model) is what allows JavaScript to interact with HTML elements,
       change their styles, and respond to clicks or keyboard input.</p>
   </div>
-  <h3>Selecting Elements</h3>
-  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>// By ID
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#selecting-elements">Selecting Elements</a></li>
+      <li><a href="#changing-content">Changing Content</a></li>
+      <li><a href="#click-events">Click Events</a></li>
+      <li><a href="#interactive-example">Interactive Example</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="selecting-elements">Selecting Elements</h3>
+  <pre><code>// By ID
 let elem = document.getElementById('myId');
 
 // By class
@@ -24,16 +37,19 @@ let elems = document.querySelectorAll('.myClass');
 
 // By selector
 let first = document.querySelector('p');</code></pre>
-  <h3>Changing Content</h3>
-  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let button = document.getElementById('myBtn');
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
+  <h3 id="changing-content">Changing Content</h3>
+  <pre><code>let button = document.getElementById('myBtn');
 button.textContent = "Click me!";
 button.style.color = "blue";</code></pre>
-  <h3>Click Events</h3>
-  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>let btn = document.getElementById('myBtn');
+  <h3 id="click-events">Click Events</h3>
+  <pre><code>let btn = document.getElementById('myBtn');
 btn.addEventListener('click', function() {
   console.log("Button clicked!");
 });</code></pre>
-  <h3>Interactive Example</h3>
+  <h3 id="interactive-example">Interactive Example</h3>
   <p>Try this out:</p>
   <button id="demoBtn"
     style="background: var(--accent-cyan); color: #000; padding: 0.7rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 1rem 0;">Click
@@ -42,7 +58,7 @@ btn.addEventListener('click', function() {
   </div>
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What method gets an element by ID?</p>

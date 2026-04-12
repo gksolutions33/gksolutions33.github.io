@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZJM8TNBX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H6ZJM8TNBX');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Learn the foundational markup language of the World Wide Web" />
+  <meta name="keywords"
+    content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
+  <title>Lesson 1: What is HTML? | HTML Tutorial</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Favicon / browser tab icon -->
+  <link rel="icon" type="image/png" href="/gksolutions_logo.png">
+  <link rel="apple-touch-icon" href="/gksolutions_logo.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body class="">
+  <header style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <a href="/" style="display:inline-flex; align-items:center; gap:0.8rem; text-decoration:none;">
+        <div>
+          <div class="site-title" style="font-size:1.15rem; font-weight:800; color:var(--text);">GK SOLUTIONS</div>
+          <div class="site-sub" style="font-size:0.86rem; color:var(--muted);">AI • IoT • Arduino • Projects & Tutorials
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="site-sub" style="color:var(--muted); font-size:0.85rem;">DEFEAT THE FEAR</div>
+      <button id="theme-toggle" class="btn btn-outline" aria-label="Toggle theme">🌙 Dark</button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="/market.html">Market Updates</a>
+    <a href="/index.html">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/tutorials/">Tutorials</a>
+    <a href="/Papers.html">Papers</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+</nav>
+
+  <main>
+    <div class="tutorial-container">
+    <aside class="tutorial-sidebar">
+    
+    
+    <h3>HTML Tutorial</h3>
+    <ul class="tutorial-nav-list">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="tutorial-nav-item active">
+            <a href="/tutorials/html/lesson-1">
+                Lesson 1: What is HTML?
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </ul>
+</aside>
+
+    <article class="tutorial-content">
+        <nav class="breadcrumb"
+            style="margin-bottom: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">
+            <a href="/" style="color: var(--accent-cyan); text-decoration: none;">Home</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <a href="/tutorials/"
+                style="color: var(--accent-cyan); text-decoration: none;">Tutorials</a>
+            <span style="margin: 0 0.75rem; opacity: 0.5;">/</span>
+            <span style="color: var(--text);">html</span>
+        </nav>
+
+        <section>
+  <h2>HTML Introduction</h2>
+  <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
+
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-html">What is HTML?</a></li>
+      <li><a href="#why-learn">Why Should We Learn HTML?</a></li>
+      <li><a href="#hello-world">First HTML Document (Hello Web)</a></li>
+      <li><a href="#code-explanation">Explanation of the HTML Code</a></li>
+      <li><a href="#applications">Applications of HTML</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-html">What is HTML?</h3>
+  <p>
+    <strong>HTML (HyperText Markup Language)</strong> is the standard markup language for documents designed to be displayed in a web browser. It defines the meaning and structure of web content. HTML uses "markup" to annotate text, images, and other content for display in a Web browser. 
+  </p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> HTML is not a Programming Language</h4>
+    <p style="margin: 0;">
+      A very important distinction: HTML is a <em>Markup</em> language, not a programming language. It cannot perform logic (like math, if/else statements, or loops). That's what JavaScript is for!
+    </p>
+  </div>
+
+  <h3 id="why-learn">Why Should We Learn HTML?</h3>
+  <p>Every single website on the Internet—from Google to Amazon to this very site—is built using HTML. It is the absolute foundation of Web Development.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Create A Web presence:</strong> If you want to put anything on the web, you need HTML.</li>
+    <li><strong>Understand the Web:</strong> Even if you are a backend developer or designer, understanding HTML semantics is required to understand how clients digest your server data.</li>
+    <li><strong>Easy to Learn:</strong> HTML is arguably the easiest technical language to learn, making it the perfect stepping stone into web development.</li>
+  </ul>
+
+  <h3 id="hello-world">First HTML Document (Hello Web)</h3>
+  <p>HTML documents consist of a series of elements, which you use to enclose (or wrap) different parts of the content to make it appear a certain way.</p>
+
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is my very first paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box" style="background: var(--card); color: var(--text); border-color: var(--nav-border); font-family: 'Inter', sans-serif;">
+    <h1 style="margin-top: 0;">Hello World!</h1>
+    <p style="margin-bottom: 0;">This is my very first paragraph.</p>
+  </div>
+
+  <h3 id="code-explanation">Explanation of the HTML Code</h3>
+  <p>Let's dissect the simple HTML skeleton.</p>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;!DOCTYPE html&gt;</code></h4>
+      <p class="muted">The doctype declaration. It defines that this document is an HTML5 document.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;html&gt; ... &lt;/html&gt;</code></h4>
+      <p class="muted">The root element of an HTML page. All other elements must be descendants of this element.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;head&gt; ... &lt;/head&gt;</code></h4>
+      <p class="muted">Contains meta information about the HTML page (like the title, character set, styles, scripts, and other meta information).</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">4</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;body&gt; ... &lt;/body&gt;</code></h4>
+      <p class="muted">The document's body. It contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">5</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code></h4>
+      <p class="muted"><code>&lt;h1&gt;</code> defines a large heading. <code>&lt;p&gt;</code> defines a paragraph. Notice both start with an opening tag <code>&lt;&gt;</code> and end with a closing tag <code>&lt;/&gt;</code>.</p>
+    </div>
+  </div>
+
+  <h3 id="applications">Applications of HTML</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Web Page Development:</strong> Every web page ever built.</li>
+    <li><strong>Internet Navigation:</strong> Hypertext (the H in HTML) allows users to seamlessly navigate via hyperlinks.</li>
+    <li><strong>Offline Web Applications:</strong> Using HTML5 applications cache and offline storage capabilities.</li>
+  </ul>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: HTML Elements & Tags →</a>
+  </div>
+</section>
+
+
+        <script>
+            // Add copy buttons to all pre blocks
+            document.querySelectorAll('pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerText = 'Copy';
+                button.onclick = () => {
+                    const code = pre.querySelector('code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => button.innerText = 'Copy', 2000);
+                    });
+                };
+                pre.appendChild(button);
+            });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
+        </script>
+    </article>
+</div>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function applyTheme(mode) {
+        if (mode === 'dark') root.classList.add('dark-theme'); else root.classList.remove('dark-theme');
+        try { localStorage.setItem('theme', mode); } catch (e) { }
+        updateButton();
+      }
+      function updateButton() {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        btn.textContent = root.classList.contains('dark-theme') ? '☀️ Light' : '🌙 Dark';
+      }
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) { }
+      if (stored) { applyTheme(stored); }
+      else {
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+      }
+      document.addEventListener('click', function (e) {
+        if (!e.target) return;
+        if (e.target.id === 'theme-toggle') {
+          var isDark = root.classList.contains('dark-theme');
+          applyTheme(isDark ? 'light' : 'dark');
+        }
+      });
+      document.addEventListener('DOMContentLoaded', updateButton);
+    })();
+  </script>
+
+  <footer>
+    &copy; 2025 GK Solutions • Built with ❤️ on GitHub Pages
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

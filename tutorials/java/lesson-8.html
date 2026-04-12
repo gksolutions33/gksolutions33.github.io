@@ -17,9 +17,21 @@ description: "Master Object-Oriented Programming (OOP) concepts in Java"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
 
-        <h3>Creating Classes</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>public class Student {
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#creating-classes">Creating Classes</a></li>
+      <li><a href="#inheritance">Inheritance</a></li>
+      <li><a href="#interfaces">Interfaces</a></li>
+      <li><a href="#arraylist-dynamic-arrays">ArrayList (Dynamic Arrays)</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="creating-classes">Creating Classes</h3>
+        <pre><code>public class Student {
     // Fields (attributes)
     private String name;
     private int age;
@@ -47,10 +59,12 @@ description: "Master Object-Oriented Programming (OOP) concepts in Java"
 // Usage
 Student s = new Student("Alice", 20, 3.8);
 s.display();  // Alice, Age: 20, GPA: 3.8</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Inheritance</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>class Animal {
+
+        <h3 id="inheritance">Inheritance</h3>
+        <pre><code>class Animal {
     String name;
     void eat() { System.out.println(name + " is eating"); }
 }
@@ -67,9 +81,8 @@ d.name = "Buddy";
 d.eat();    // Buddy is eating kibble
 d.bark();   // Buddy says Woof!</code></pre>
 
-        <h3>Interfaces</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>interface Drawable {
+        <h3 id="interfaces">Interfaces</h3>
+        <pre><code>interface Drawable {
     void draw();            // Abstract method
     default void fill() {   // Default implementation
         System.out.println("Filling...");
@@ -87,9 +100,8 @@ class Circle implements Drawable {
 
 // A class can implement multiple interfaces!</code></pre>
 
-        <h3>ArrayList (Dynamic Arrays)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>import java.util.ArrayList;
+        <h3 id="arraylist-dynamic-arrays">ArrayList (Dynamic Arrays)</h3>
+        <pre><code>import java.util.ArrayList;
 
 ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();
 names.add("Alice");
@@ -106,7 +118,7 @@ for (String name : names) {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What keyword is used for

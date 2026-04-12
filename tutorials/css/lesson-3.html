@@ -21,7 +21,19 @@ description: "Understand the core concept of CSS - the Box Model"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff2d95;">
 
-        <h3>Every Element is a Box!</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#every-element-is-a-box">Every Element is a Box!</a></li>
+      <li><a href="#margin-shortcuts">Margin Shortcuts</a></li>
+      <li><a href="#display-property">Display Property</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="every-element-is-a-box">Every Element is a Box!</h3>
         <p style="color: var(--muted); font-size: 1.05rem;">Every HTML element is surrounded by 4 layers:
             <strong>Content → Padding → Border → Margin</strong>
         </p>
@@ -45,8 +57,7 @@ description: "Understand the core concept of CSS - the Box Model"
             </div>
         </div>
 
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>.box {
+        <pre><code>.box {
     width: 300px;
     padding: 20px;        /* Inside spacing */
     border: 2px solid #ff2d95;
@@ -60,10 +71,12 @@ description: "Understand the core concept of CSS - the Box Model"
     box-sizing: border-box;  /* Width INCLUDES padding & border */
 }
 /* Now .box total width = 300px + 30*2 margin = 360px */</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Margin Shortcuts</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>margin: 10px;              /* All 4 sides */
+
+        <h3 id="margin-shortcuts">Margin Shortcuts</h3>
+        <pre><code>margin: 10px;              /* All 4 sides */
 margin: 10px 20px;         /* Top/Bottom  Left/Right */
 margin: 10px 20px 30px;    /* Top  Left/Right  Bottom */
 margin: 10px 20px 30px 40px; /* Top Right Bottom Left */
@@ -73,9 +86,8 @@ margin: 0 auto;            /* Center horizontally! */
 /* Same pattern works for padding */
 padding: 1rem 2rem;</code></pre>
 
-        <h3>Display Property</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>display: block;        /* Full width, new line (div, p, h1) */
+        <h3 id="display-property">Display Property</h3>
+        <pre><code>display: block;        /* Full width, new line (div, p, h1) */
 display: inline;       /* Content width only (span, a) */
 display: inline-block; /* Inline but with width/height */
 display: none;         /* Hidden completely */</code></pre>
@@ -84,7 +96,7 @@ display: none;         /* Hidden completely */</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does box-sizing: border-box

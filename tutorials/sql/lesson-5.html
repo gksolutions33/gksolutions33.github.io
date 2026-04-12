@@ -21,42 +21,55 @@ description: "Master SQL Joins to combine data from multiple tables"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #00d9ff;">
 
-        <h3>Why Joins?</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#why-joins">Why Joins?</a></li>
+      <li><a href="#sample-tables">Sample Tables</a></li>
+      <li><a href="#inner-join-most-common">INNER JOIN (Most Common)</a></li>
+      <li><a href="#left-join">LEFT JOIN</a></li>
+      <li><a href="#right-join-full-join">RIGHT JOIN & FULL JOIN</a></li>
+      <li><a href="#table-aliases">Table Aliases</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="why-joins">Why Joins?</h3>
         <p style="color: var(--muted);">Data is split across tables. Joins combine related data from multiple tables
             into one result.</p>
 
-        <h3>Sample Tables</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- users: id | name    | email
+        <h3 id="sample-tables">Sample Tables</h3>
+        <pre><code>-- users: id | name    | email
 -- orders: id | user_id | product | amount</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>INNER JOIN (Most Common)</h3>
+
+        <h3 id="inner-join-most-common">INNER JOIN (Most Common)</h3>
         <p style="color: var(--muted);">Returns only rows that match in both tables.</p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT users.name, orders.product, orders.amount
+        <pre><code>SELECT users.name, orders.product, orders.amount
 FROM users
 INNER JOIN orders ON users.id = orders.user_id;</code></pre>
 
-        <h3>LEFT JOIN</h3>
+        <h3 id="left-join">LEFT JOIN</h3>
         <p style="color: var(--muted);">Returns all rows from left table + matching rows from right. NULL if no match.
         </p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT users.name, orders.product
+        <pre><code>SELECT users.name, orders.product
 FROM users
 LEFT JOIN orders ON users.id = orders.user_id;
 -- Shows ALL users, even those with no orders</code></pre>
 
-        <h3>RIGHT JOIN & FULL JOIN</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- RIGHT JOIN: all rows from right table
+        <h3 id="right-join-full-join">RIGHT JOIN & FULL JOIN</h3>
+        <pre><code>-- RIGHT JOIN: all rows from right table
 SELECT * FROM users RIGHT JOIN orders ON users.id = orders.user_id;
 
 -- FULL JOIN: all rows from both tables
 SELECT * FROM users FULL JOIN orders ON users.id = orders.user_id;</code></pre>
 
-        <h3>Table Aliases</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT u.name, o.product, o.amount
+        <h3 id="table-aliases">Table Aliases</h3>
+        <pre><code>SELECT u.name, o.product, o.amount
 FROM users u
 JOIN orders o ON u.id = o.user_id
 WHERE o.amount > 100;</code></pre>
@@ -65,7 +78,7 @@ WHERE o.amount > 100;</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does INNER JOIN return?</p>

@@ -3,124 +3,120 @@ layout: tutorial
 title: "Lesson 1: What is C? | C Tutorial"
 description: "Learn what C is, why it matters, and how it powers the modern world"
 ---
-
 <section>
-  <h2>⚙️ Lesson 1: What is C? (And Why Does It Matter?)</h2>
+  <h2>C Language Introduction</h2>
   <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
-  <div class="callout callout-note">
-    <h4><i class="fas fa-info-circle"></i> What Exactly is C?</h4>
-    <p style="margin: 0;">
-      <strong>C is a general-purpose, procedural programming language</strong> created by Dennis Ritchie at Bell Labs in
-      1972. It's one of the most influential languages ever created — Unix, Linux, Windows, and even other languages
-      like Python and Java were built using C!
-    </p>
-  </div>
-
-  <h3>Key Characteristics of C</h3>
-  <ul style="color: var(--muted); line-height: 2.2;">
-    <li><strong>Compiled:</strong> Code is converted to machine code before execution — making it fast</li>
-    <li><strong>Low-Level Access:</strong> Direct access to memory through pointers</li>
-    <li><strong>Portable:</strong> Write once, compile on any platform</li>
-    <li><strong>Procedural:</strong> Organized using functions (no classes like in OOP)</li>
-    <li><strong>Efficient:</strong> Minimal runtime overhead — perfect for systems programming</li>
-  </ul>
-
-  <div class="callout callout-tip">
-    <h4><i class="fas fa-lightbulb"></i> A Simple Analogy</h4>
-    <p style="margin: 0;">
-      Think of programming languages like vehicles:
-    </p>
-    <ul style="margin-top: 1rem; color: var(--muted);">
-      <li>🚗 <strong>Python</strong> = Automatic car (easy to drive, handles a lot for you)</li>
-      <li>🏎️ <strong>C</strong> = Manual race car (more control, more power, but you need to know what you're doing)
-      </li>
-      <li>🔧 C gives you control over every gear, every part of the engine</li>
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-c">What is C Programming?</a></li>
+      <li><a href="#why-learn">Why Should We Learn C?</a></li>
+      <li><a href="#hello-world">First C Program (Hello World)</a></li>
+      <li><a href="#code-explanation">Explanation of the C Program</a></li>
+      <li><a href="#applications">Applications of C</a></li>
     </ul>
   </div>
 
-  <h3>Why Learn C?</h3>
-  <div
-    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-    <div style="background: var(--glass); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
-      <h4 style="margin-top: 0; color: #ffd60a;">🏗️ Foundation of Everything</h4>
-      <p style="margin: 0; color: var(--muted);">Operating systems, databases, compilers — all built with C. Learning C
-        means understanding how computers really work.</p>
-    </div>
-    <div style="background: var(--glass); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
-      <h4 style="margin-top: 0; color: #ffd60a;">⚡ Blazing Fast</h4>
-      <p style="margin: 0; color: var(--muted);">C code runs extremely fast because it compiles directly to machine code
-        with minimal overhead.</p>
-    </div>
-    <div style="background: var(--glass); padding: 1.5rem; border-radius: 8px; border-left: 3px solid #ffd60a;">
-      <h4 style="margin-top: 0; color: #ffd60a;">🤖 Embedded Systems</h4>
-      <p style="margin: 0; color: var(--muted);">Arduino, IoT devices, microcontrollers — C is the language of embedded
-        systems and hardware programming.</p>
-    </div>
-  </div>
-
-  <h3>Your First Look at C Code</h3>
-  <pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-    printf("Hello, World!\n");
-    return 0;
-}</code></pre>
-  <p class="muted" style="margin-top: 1rem;">
-    Don't worry if this looks confusing right now! In the next lesson, we'll break down every single line and write your
-    first program. 🚀
+  <h3 id="what-is-c">What is C Programming?</h3>
+  <p>
+    <strong>C</strong> is a general-purpose, procedural programming language developed in 1972 by <strong>Dennis Ritchie</strong> at the Bell Telephone Laboratories. It was originally developed to write the UNIX operating system. C is considered the mother of all modern programming languages because most compilers, JVMs, and kernels are written in C, and most programming languages follow C syntax (like C++, Java, and Python's CPython implementation).
   </p>
 
-  <!-- Quiz Section -->
-  <div class="callout callout-note"
-    style="border-left-width: 4px; border-color: var(--accent-green); background: rgba(123, 255, 111, 0.05);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz - Test Your Knowledge!</h3>
-    <p class="muted">Try to answer these questions to make sure you understand the lesson!</p>
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> Note on Evolution</h4>
+    <p style="margin: 0;">
+      Despite being over 50 years old, C remains one of the most widely used programming languages today due to its performance, simplicity, and low-level memory access capabilities.
+    </p>
+  </div>
 
-    <div
-      style="background: var(--glass); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">
-      <p style="margin: 0 0 1rem 0; font-weight: bold;">❓ Question 1: Who created the C programming language?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="a"> A) Guido van Rossum
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="b"> B) Dennis Ritchie
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="c"> C) James Gosling
-        </label>
-      </div>
-      <button onclick="checkAnswer('q1', 'b', '✅ Correct! Dennis Ritchie created C at Bell Labs in 1972.', 'C history')"
-        class="btn btn-primary" style="margin-top: 1rem;">Check Answer</button>
-      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
+  <h3 id="why-learn">Why Should We Learn C?</h3>
+  <p>Learning C builds a solid foundation for understanding how computers actually function under the hood.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li>C is a <strong>middle-level language</strong>. It bridges the gap between machine-level languages and high-level languages, allowing for both system programming (like OS creation) and application programming.</li>
+    <li>It provides incredibly fast execution speed compared to interpreted languages like Python or Java since it is directly compiled to machine code.</li>
+    <li>Direct manipulation of hardware and memory through <strong>pointers</strong> gives programmers immense control.</li>
+    <li>C is the lingua franca of embedded systems ranging from smartwatches and microwaves to industrial robots.</li>
+  </ul>
+
+  <h3 id="hello-world">First C Program (Hello World)</h3>
+  <p>Let's look at the absolute simplest program you can write in C. This program just prints the words "Hello World" to the screen.</p>
+
+  <pre><code>// Simple C program to display "Hello World"
+#include &lt;stdio.h&gt;
+
+int main() {
+    // Print statement
+    printf("Hello World");
+
+    return 0;
+}</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box">Hello World</div>
+
+  <div class="gfg-complexity">
+    <span>Time Complexity:</span> O(1) inside main execution.<br/>
+    <span>Space Complexity:</span> O(1) as no extra memory is statically allocated.
+  </div>
+
+  <h3 id="code-explanation">Explanation of the C Program</h3>
+  <p>Let us break down the program line-by-line to understand how a C program actually works.</p>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>#include &lt;stdio.h&gt;</code></h4>
+      <p class="muted">This is a preprocessor command that tells the C compiler to include the Standard Input Output library <code>stdio.h</code> before compiling the source code. Without this, we couldn't use the <code>printf()</code> function!</p>
     </div>
   </div>
 
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>int main()</code></h4>
+      <p class="muted">This is the main function. <strong>Every C program must have a main() function.</strong> Execution of the program always starts at the main function, no matter where it is located in the code.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>{ ... }</code></h4>
+      <p class="muted">Curly brackets define a block of code. The code inside the brackets forms the body of the <code>main</code> function.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">4</div>
+    <div class="gfg-step-content">
+      <h4><code>printf("Hello World");</code></h4>
+      <p class="muted"><code>printf()</code> is a standard library function used to print data to the console. Notice the semicolon <code>;</code> at the end. In C, every statement must end with a semicolon!</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">5</div>
+    <div class="gfg-step-content">
+      <h4><code>return 0;</code></h4>
+      <p class="muted">The <code>return 0;</code> statement terminates the <code>main()</code> function and returns the integer 0 to the operating system. Returning 0 typically means the program executed successfully without any errors.</p>
+    </div>
+  </div>
+
+  <h3 id="applications">Applications of C</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Operating Systems:</strong> Windows, Linux, UNIX, and Android kernel parts are written in C.</li>
+    <li><strong>Embedded Systems:</strong> Microcontrollers and microprocessors rely heavily on C for fast, low-footprint execution.</li>
+    <li><strong>Databases:</strong> Popular databases like MySQL, PostgreSQL, and Oracle are primarily written in C/C++.</li>
+    <li><strong>Compilers:</strong> Most modern language compilers (even for Python, Java's JVM) are written in C.</li>
+    <li><strong>Game Engines:</strong> Early hardware-restricted games and base engines rely on C for its unparalleled speed.</li>
+  </ul>
+
   <!-- Navigation -->
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Back to Lessons</a>
-    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next: Setup & First Program →</a>
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: Setup C Environment →</a>
   </div>
 </section>
-
-<script>
-  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-    const resultDiv = document.getElementById(questionName + '-result');
-
-    if (!selected) {
-      resultDiv.innerHTML = '⚠️ Please select an answer!';
-      resultDiv.style.color = 'var(--accent-yellow)';
-      return;
-    }
-
-    if (selected.value === correctAnswer) {
-      resultDiv.innerHTML = successMsg + ' 🎉';
-      resultDiv.style.color = 'var(--accent-green)';
-    } else {
-      resultDiv.innerHTML = '❌ Not quite right. Try again!';
-      resultDiv.style.color = 'var(--accent-pink)';
-    }
-  }
-</script>

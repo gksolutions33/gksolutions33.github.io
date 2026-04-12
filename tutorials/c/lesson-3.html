@@ -18,15 +18,27 @@ description: "Learn how to store and manage data in C using variables and basic 
             called a "type".</p>
     </div>
 
-    <h3>What Are Variables?</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-are-variables">What Are Variables?</a></li>
+      <li><a href="#c-data-types">C Data Types</a></li>
+      <li><a href="#getting-user-input-with-scanf">Getting User Input with scanf</a></li>
+      <li><a href="#type-casting">Type Casting</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-are-variables">What Are Variables?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
         Variables are <strong>named containers</strong> that store data in your program. In C, you must declare the
         <strong>type</strong> of data a variable will hold before using it.
     </p>
 
     <h4>Declaring & Initializing Variables:</h4>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+    <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     // Declaration (creating a variable)
@@ -48,8 +60,11 @@ int main() {
 
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>C Data Types</h3>
+
+    <h3 id="c-data-types">C Data Types</h3>
     <div style="overflow-x: auto; margin: 1.5rem 0;">
         <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
             <thead>
@@ -101,9 +116,8 @@ int main() {
         </table>
     </div>
 
-    <h3>Getting User Input with scanf</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+    <h3 id="getting-user-input-with-scanf">Getting User Input with scanf</h3>
+    <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     int age;
@@ -128,9 +142,8 @@ int main() {
         </p>
     </div>
 
-    <h3>Type Casting</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int a = 10, b = 3;
+    <h3 id="type-casting">Type Casting</h3>
+    <pre><code>int a = 10, b = 3;
 printf("%d\n", a / b);           // 3 (integer division!)
 printf("%.2f\n", (float)a / b);  // 3.33 (cast to float first)</code></pre>
 
@@ -139,7 +152,7 @@ printf("%.2f\n", (float)a / b);  // 3.33 (cast to float first)</code></pre>
     <!-- Quiz -->
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">

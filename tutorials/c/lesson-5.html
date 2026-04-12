@@ -21,9 +21,22 @@ description: "Master if-else statements and switch cases to control the logic of
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ffd60a;">
 
-        <h3>If / Else Statements</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#if-else-statements">If / Else Statements</a></li>
+      <li><a href="#switch-statement">Switch Statement</a></li>
+      <li><a href="#for-loop">For Loop</a></li>
+      <li><a href="#while-loop">While Loop</a></li>
+      <li><a href="#break-amp-continue">Break &amp; Continue</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="if-else-statements">If / Else Statements</h3>
+        <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     int age = 18;
@@ -43,10 +56,12 @@ int main() {
 
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Switch Statement</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int day = 3;
+
+        <h3 id="switch-statement">Switch Statement</h3>
+        <pre><code>int day = 3;
 switch (day) {
     case 1: printf("Monday\n"); break;
     case 2: printf("Tuesday\n"); break;
@@ -64,9 +79,8 @@ switch (day) {
             </p>
         </div>
 
-        <h3>For Loop</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>// Print 0 to 4
+        <h3 id="for-loop">For Loop</h3>
+        <pre><code>// Print 0 to 4
 for (int i = 0; i < 5; i++) {
     printf("%d ", i);  // 0 1 2 3 4
 }
@@ -77,9 +91,8 @@ for (int i = 10; i > 0; i--) {
 }
 printf("Liftoff!\n");</code></pre>
 
-        <h3>While Loop</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int count = 0;
+        <h3 id="while-loop">While Loop</h3>
+        <pre><code>int count = 0;
 while (count < 3) {
     printf("Count: %d\n", count);
     count++;
@@ -92,9 +105,8 @@ do {
     scanf("%d", &amp;num);
 } while (num <= 0);</code></pre>
 
-        <h3>Break &amp; Continue</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>// break: exit the loop
+        <h3 id="break-amp-continue">Break &amp; Continue</h3>
+        <pre><code>// break: exit the loop
 for (int i = 0; i < 10; i++) {
     if (i == 5) break;    // Stop at 5
     printf("%d ", i);      // 0 1 2 3 4
@@ -111,7 +123,7 @@ for (int i = 0; i < 10; i++) {
     <!-- Quiz -->
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">

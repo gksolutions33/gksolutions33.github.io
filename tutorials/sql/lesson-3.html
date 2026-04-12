@@ -21,9 +21,21 @@ description: "Master the most fundamental SQL command: SELECT"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #00d9ff;">
 
-        <h3>Basic SELECT</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- Get all columns
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#basic-select">Basic SELECT</a></li>
+      <li><a href="#order-by-sorting">ORDER BY (Sorting)</a></li>
+      <li><a href="#limit-offset">LIMIT & OFFSET</a></li>
+      <li><a href="#distinct-remove-duplicates">DISTINCT (Remove Duplicates)</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="basic-select">Basic SELECT</h3>
+        <pre><code>-- Get all columns
 SELECT * FROM users;
 
 -- Get specific columns
@@ -31,27 +43,27 @@ SELECT name, email FROM users;
 
 -- Alias columns
 SELECT name AS "Full Name", age AS "Years" FROM users;</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>ORDER BY (Sorting)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT * FROM users ORDER BY name ASC;    -- A to Z
+
+        <h3 id="order-by-sorting">ORDER BY (Sorting)</h3>
+        <pre><code>SELECT * FROM users ORDER BY name ASC;    -- A to Z
 SELECT * FROM users ORDER BY age DESC;     -- Highest first
 SELECT * FROM users ORDER BY age DESC, name ASC; -- Multiple</code></pre>
 
-        <h3>LIMIT & OFFSET</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT * FROM users LIMIT 10;           -- First 10 rows
+        <h3 id="limit-offset">LIMIT & OFFSET</h3>
+        <pre><code>SELECT * FROM users LIMIT 10;           -- First 10 rows
 SELECT * FROM users LIMIT 10 OFFSET 20; -- Rows 21-30 (pagination)</code></pre>
 
-        <h3>DISTINCT (Remove Duplicates)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT DISTINCT city FROM users;  -- Unique cities only</code></pre>
+        <h3 id="distinct-remove-duplicates">DISTINCT (Remove Duplicates)</h3>
+        <pre><code>SELECT DISTINCT city FROM users;  -- Unique cities only</code></pre>
 
     </div>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does SELECT * mean?</p>

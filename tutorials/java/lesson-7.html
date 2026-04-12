@@ -21,9 +21,20 @@ description: "Learn how to write reusable and modular code using Java methods"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
 
-        <h3>Creating Methods</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>public class Methods {
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#creating-methods">Creating Methods</a></li>
+      <li><a href="#method-overloading">Method Overloading</a></li>
+      <li><a href="#varargs-variable-arguments">Varargs (Variable Arguments)</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="creating-methods">Creating Methods</h3>
+        <pre><code>public class Methods {
 
     // Method with no return value
     static void greet(String name) {
@@ -52,12 +63,14 @@ description: "Learn how to write reusable and modular code using Java methods"
         System.out.println(area(4, 6));   // Rectangle area: 24.0
     }
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Method Overloading</h3>
+
+        <h3 id="method-overloading">Method Overloading</h3>
         <p style="color: var(--muted);">Same method name, different parameter lists. Java picks the right one
             automatically!</p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>static int multiply(int a, int b) { return a * b; }
+        <pre><code>static int multiply(int a, int b) { return a * b; }
 static double multiply(double a, double b) { return a * b; }
 static int multiply(int a, int b, int c) { return a * b * c; }
 
@@ -65,9 +78,8 @@ multiply(3, 4);       // Calls int version → 12
 multiply(2.5, 3.0);   // Calls double version → 7.5
 multiply(2, 3, 4);    // Calls 3-arg version → 24</code></pre>
 
-        <h3>Varargs (Variable Arguments)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>static int sum(int... numbers) {
+        <h3 id="varargs-variable-arguments">Varargs (Variable Arguments)</h3>
+        <pre><code>static int sum(int... numbers) {
     int total = 0;
     for (int n : numbers) {
         total += n;
@@ -82,7 +94,7 @@ sum(1, 2, 3, 4, 5);  // 15</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does 'void' mean as return

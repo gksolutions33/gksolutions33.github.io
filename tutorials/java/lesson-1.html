@@ -1,149 +1,104 @@
 ---
 layout: tutorial
 title: "Lesson 1: What is Java? | Java Tutorial"
-description: "Discover the world of Java - the language that runs on billions of devices"
+description: "Learn why Java is the backbone of enterprise software and Android apps"
 ---
 
 <section>
-    <h2>☕ Lesson 1: What is Java?</h2>
-    <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
+  <h2>Java Language Introduction</h2>
+  <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
-    <div class="callout callout-note">
-        <h4><i class="fas fa-mug-hot"></i> Write Once, Run Anywhere</h4>
-        <p style="margin: 0;">
-            <strong>Java is a high-level, class-based, object-oriented programming language</strong> designed to have as
-            few implementation dependencies as possible. It is famous for its "Write Once, Run Anywhere" (WORA)
-            philosophy.
-        </p>
-    </div>
-
-    <h3>Java is Everywhere</h3>
-    <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-        Java is one of the most popular programming languages in the world. It runs on <strong>billions of
-            devices</strong> — from Android phones to enterprise servers to IoT devices. Its motto: <em>"Write Once,
-            Run Anywhere!"</em>
-    </p>
-
-    <h3>Why Learn Java?</h3>
-    <ul style="color: var(--muted); line-height: 2.2;">
-        <li>🏢 <strong>Enterprise</strong> — Most large companies use Java backend systems</li>
-        <li>📱 <strong>Android</strong> — Primary language for Android app development</li>
-        <li>🔒 <strong>Type Safety</strong> — Catches errors before running</li>
-        <li>🌐 <strong>Cross-Platform</strong> — JVM runs on any operating system</li>
-        <li>💼 <strong>Jobs</strong> — One of the most in-demand programming skills</li>
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-java">What is Java Programming?</a></li>
+      <li><a href="#why-learn">Why Should We Learn Java?</a></li>
+      <li><a href="#hello-world">First Java Program (Hello World)</a></li>
+      <li><a href="#code-explanation">Explanation of the Java Program</a></li>
+      <li><a href="#applications">Applications of Java</a></li>
     </ul>
+  </div>
 
-    <h3>How Java Works</h3>
-    <p style="color: var(--muted);">Java code is compiled to <strong>bytecode</strong>, which runs on the Java
-        Virtual Machine (JVM). This is why Java works on any platform!</p>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>Your Code (.java) → Compile → Bytecode (.class) → JVM → Runs Anywhere!</code></pre>
+  <h3 id="what-is-java">What is Java Programming?</h3>
+  <p>
+    <strong>Java</strong> is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It was developed by <strong>James Gosling</strong> at Sun Microsystems (which has since been acquired by Oracle Corporation) and released in 1995.
+  </p>
 
-    <h3>Java vs Other Languages</h3>
-    <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
-            <thead>
-                <tr style="background: rgba(123, 255, 111, 0.15);">
-                    <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #7bff6f;">Feature</th>
-                    <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #7bff6f;">Java</th>
-                    <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #7bff6f;">Python</th>
-                    <th style="padding: 0.6rem; text-align: left; border-bottom: 2px solid #7bff6f;">C++</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 0.5rem;">Typing</td>
-                    <td>Static</td>
-                    <td>Dynamic</td>
-                    <td>Static</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.5rem;">Speed</td>
-                    <td>Fast</td>
-                    <td>Slower</td>
-                    <td>Fastest</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.5rem;">Memory</td>
-                    <td>Managed (GC)</td>
-                    <td>Managed</td>
-                    <td>Manual</td>
-                </tr>
-                <tr>
-                    <td style="padding: 0.5rem;">OOP</td>
-                    <td>Required</td>
-                    <td>Optional</td>
-                    <td>Optional</td>
-                </tr>
-            </tbody>
-        </table>
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> Write Once, Run Anywhere (WORA)</h4>
+    <p style="margin: 0;">
+      Java is famous for its WORA philosophy, meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. This is achieved by running the code on a JVM (Java Virtual Machine).
+    </p>
+  </div>
+
+  <h3 id="why-learn">Why Should We Learn Java?</h3>
+  <p>Java is the undisputed king of enterprise-level architecture.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Platform Independent:</strong> As long as the target machine has a JVM installed, the Java bytecode will run flawlessly whether it's Windows, Mac, or Linux.</li>
+    <li><strong>Purely Object-Oriented:</strong> Everything in Java is an object (except primitive types), ensuring extremely organized, scalable codebases.</li>
+    <li><strong>Memory Management:</strong> Java handles memory allocation and deallocation automatically using an incredible feature called the <strong>Garbage Collector</strong>.</li>
+    <li><strong>Multithreading:</strong> Java provides an inherently built-in way to run multiple parts of a program concurrently to maximize CPU utilization.</li>
+  </ul>
+
+  <h3 id="hello-world">First Java Program (Hello World)</h3>
+  <p>Java requires every line of code to be encapsulated within a Class. This makes the "Hello World" slightly more verbose than Python or C.</p>
+
+  <pre><code>// Simple Java program to display "Hello World"
+class HelloWorld {
+    public static void main(String[] args) {
+        // Print statement
+        System.out.println("Hello World");
+    }
+}</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box">Hello World</div>
+
+  <div class="gfg-complexity">
+    <span>Time Complexity:</span> O(1)<br/>
+    <span>Space Complexity:</span> O(1)
+  </div>
+
+  <h3 id="code-explanation">Explanation of the Java Program</h3>
+  <p>Because Java is strictly object-oriented, even a basic print statement involves a class and structural keywords.</p>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>class HelloWorld { ... }</code></h4>
+      <p class="muted">In Java, every application begins with a class name, and that class must match the filename. `HelloWorld` is the name of the class.</p>
     </div>
+  </div>
 
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>public static void main(String[] args)</code></h4>
+      <p class="muted"><code>public</code> means anyone can access it. <code>static</code> means the method can be run without creating an instance of the class containing it. <code>void</code> means the method doesn't return anything. <code>main</code> is the entry point of the program.</p>
     </div>
+  </div>
 
-    <div
-        style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What makes Java cross-platform?</p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="a"> A) It compiles to machine code</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="b"> B) It runs on the JVM (Java Virtual Machine)</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q1" value="c"> C) It only works on Windows</label>
-            </div>
-            <button onclick="checkAnswer('q1','b','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is Java primarily used for?
-            </p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="a"> A) Only web design</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="b"> B) Enterprise apps, Android, backend systems</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q2" value="c"> C) Only game development</label>
-            </div>
-            <button onclick="checkAnswer('q2','b','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
-        <div
-            style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-            <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Is Java statically or dynamically
-                typed?</p>
-            <div style="margin-left: 1.5rem;">
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q3" value="a"> A) Statically typed</label>
-                <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input
-                        type="radio" name="q3" value="b"> B) Dynamically typed</label>
-            </div>
-            <button onclick="checkAnswer('q3','a','✅ Correct!')"
-                style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-                Answer</button>
-            <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
-        </div>
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>System.out.println("Hello World");</code></h4>
+      <p class="muted"><code>System</code> is a built-in class. <code>out</code> is a static member of the System class representing standard output stream. <code>println()</code> is the method to print the string to the console and append a new line.</p>
     </div>
+  </div>
 
-    <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-        <a href="./"
-            style="background: #7bff6f; color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
-            Back to Lessons</a>
-        <a href="lesson-2.html"
-            style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
-            Setup & First Program →</a>
-    </div>
+  <h3 id="applications">Applications of Java</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Android Apps:</strong> Until Kotlin came around, Java was the exclusive language for Android Application development.</li>
+    <li><strong>Enterprise Software:</strong> Large scale banking, backend, and billing software heavily rely on Java's stability and Spring Framework.</li>
+    <li><strong>Big Data Technologies:</strong> Hadoop and other big data frameworks are written in Java.</li>
+    <li><strong>Server-side Applications:</strong> Apache, JBoss, GlassFish, etc.</li>
+  </ul>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: Variables and Data Types →</a>
+  </div>
 </section>
-
-<script>
-    function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
-</script>

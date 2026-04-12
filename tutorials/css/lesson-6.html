@@ -17,9 +17,21 @@ description: "Learn how to precisely place elements using CSS positioning"
   <div
     style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ff2d95;">
 
-    <h3>Position Values</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Static (default) - normal document flow */
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#position-values">Position Values</a></li>
+      <li><a href="#z-index-stacking-order">Z-Index (Stacking Order)</a></li>
+      <li><a href="#float-clear-legacy">Float & Clear (Legacy)</a></li>
+      <li><a href="#overflow">Overflow</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="position-values">Position Values</h3>
+    <pre><code>/* Static (default) - normal document flow */
 position: static;
 
 /* Relative - offset from normal position */
@@ -46,24 +58,24 @@ top: 10px; left: 20px;  /* Moves down 10, right 20 */
     position: sticky;
     top: 0;  /* Sticks when scrolled to top */
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Z-Index (Stacking Order)</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Higher z-index = appears on top */
+
+    <h3 id="z-index-stacking-order">Z-Index (Stacking Order)</h3>
+    <pre><code>/* Higher z-index = appears on top */
 .modal { z-index: 1000; }
 .overlay { z-index: 999; }
 .content { z-index: 1; }
 /* z-index only works on positioned elements! */</code></pre>
 
-    <h3>Float & Clear (Legacy)</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>img { float: left; margin-right: 1rem; }
+    <h3 id="float-clear-legacy">Float & Clear (Legacy)</h3>
+    <pre><code>img { float: left; margin-right: 1rem; }
 .clearfix::after { content: ""; display: block; clear: both; }
 /* Use Flexbox/Grid instead of floats for layout! */</code></pre>
 
-    <h3>Overflow</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>overflow: visible;  /* Content overflows (default) */
+    <h3 id="overflow">Overflow</h3>
+    <pre><code>overflow: visible;  /* Content overflows (default) */
 overflow: hidden;   /* Content clipped */
 overflow: scroll;   /* Always show scrollbar */
 overflow: auto;     /* Scrollbar only when needed */</code></pre>
@@ -72,7 +84,7 @@ overflow: auto;     /* Scrollbar only when needed */</code></pre>
 
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which position stays fixed during scroll?

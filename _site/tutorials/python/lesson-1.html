@@ -259,6 +259,8 @@
         
         
         
+        
+        
         <li class="tutorial-nav-item active">
             <a href="/tutorials/python/lesson-1">
                 Lesson 1: What is Python?
@@ -355,246 +357,115 @@
         </nav>
 
         <section>
-  <h2>🟢 Lesson 1: What is Python?</h2>
+  <h2>Python Language Introduction</h2>
   <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
-  <div class="callout callout-note">
-    <h4><i class="fas fa-info-circle"></i> The Simple Powerhouse</h4>
-    <p style="margin: 0;"><strong>Python is a high-level, interpreted programming language</strong> known for its
-      readability and simplicity. It's the perfect first language for beginners.</p>
-  </div>
-
-  <h3>What Exactly is Python?</h3>
-  <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-    <strong>Python is a high-level, interpreted programming language</strong> created by Guido van Rossum in 1991. It
-    emphasizes code readability and simplicity, making it ideal for beginners and professionals alike. Unlike compiled
-    languages, Python code is executed line-by-line by an interpreter.
-  </p>
-
-  <h4>Key Characteristics of Python:</h4>
-  <ul style="color: var(--muted); line-height: 2.2;">
-    <li><strong>Interpreted:</strong> Code runs directly without compilation</li>
-    <li><strong>Dynamically Typed:</strong> No need to declare variable types</li>
-    <li><strong>Object-Oriented:</strong> Supports classes and objects</li>
-    <li><strong>Simple Syntax:</strong> Reads like natural English</li>
-    <li><strong>Versatile:</strong> Works on Windows, Mac, Linux, etc.</li>
-  </ul>
-
-  <h4>A Simple Analogy:</h4>
-  <div
-    style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
-    <p style="margin: 0; color: var(--muted);">
-      Think of Python like giving instructions to a robot:
-    <ul style="margin-top: 1rem; color: var(--muted);">
-      <li>🤖 The robot is your computer</li>
-      <li>💬 Python is the instruction manual language</li>
-      <li>✅ If you write clear instructions, the robot works perfectly</li>
-      <li>❌ If your instructions are confusing, the robot gets confused</li>
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-python">What is Python Programming?</a></li>
+      <li><a href="#history">Brief History of Python</a></li>
+      <li><a href="#why-learn">Why Should We Learn Python?</a></li>
+      <li><a href="#hello-world">First Python Program (Hello World)</a></li>
+      <li><a href="#code-explanation">Explanation of the Python Program</a></li>
+      <li><a href="#applications">Applications of Python</a></li>
     </ul>
+  </div>
+
+  <h3 id="what-is-python">What is Python Programming?</h3>
+  <p>
+    <strong>Python</strong> is a high-level, general-purpose, and very popular programming language. Python programming language (latest release is Python 3) is being used in web development, Machine Learning applications, along with all cutting-edge technology in Software Industry. Python language is being used by almost all tech-giant companies like Google, Amazon, Facebook, Instagram, Dropbox, Uber etc.
+  </p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> Note on Readability</h4>
+    <p style="margin: 0;">
+      The biggest strength of Python is a huge standard library that can be used for the following: Machine Learning, GUI Applications (like Kivy, Tkinter, PyQt), Web frameworks (like Django, Flask), Image processing, and Web scraping. Most importantly, Python code is extremely readable and resembles plain English!
     </p>
   </div>
 
-  <h3>Why Learn Python?</h3>
-  <div
-    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0;">
-    <div
-      style="background: rgba(123, 255, 111, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
-      <h4 style="margin-top: 0; color: var(--accent-green);">📚 Easy to Learn</h4>
-      <p style="margin: 0; color: var(--muted);">Python reads almost like English. It's one of the easiest programming
-        languages to learn.</p>
-    </div>
-    <div
-      style="background: rgba(123, 255, 111, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
-      <h4 style="margin-top: 0; color: var(--accent-green);">💼 Great for Jobs</h4>
-      <p style="margin: 0; color: var(--muted);">Companies love Python. Learn it and you'll be hire-able as a developer.
-      </p>
-    </div>
-    <div
-      style="background: rgba(123, 255, 111, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
-      <h4 style="margin-top: 0; color: var(--accent-green);">🎯 Super Powerful</h4>
-      <p style="margin: 0; color: var(--muted);">Used for AI, websites, data science, games, and automation.</p>
-    </div>
-    <div
-      style="background: rgba(123, 255, 111, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
-      <h4 style="margin-top: 0; color: var(--accent-green);">🆓 100% Free</h4>
-      <p style="margin: 0; color: var(--muted);">Open source and completely free to use. No expensive software needed!
-      </p>
-    </div>
-  </div>
-
-  <h3>What Can You Build with Python?</h3>
-  <ul style="color: var(--muted); line-height: 2.2; font-size: 1.05rem;">
-    <li>🌐 <strong>Websites</strong> - Instagram, Spotify, Netflix use Python on the backend!</li>
-    <li>🤖 <strong>AI & Machine Learning</strong> - Programs that learn from data</li>
-    <li>📊 <strong>Data Analysis</strong> - Analyze millions of data points instantly</li>
-    <li>🎮 <strong>Games</strong> - Build fun interactive games</li>
-    <li>🔧 <strong>Automation</strong> - Make boring tasks automatic</li>
-    <li>📱 <strong>Mobile Apps</strong> - Build apps for Android devices</li>
+  <h3 id="history">Brief History of Python</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li>Python was conceptually created by <strong>Guido Van Rossum</strong> in the late 1980s.</li>
+    <li>It was published for the first time in <strong>February 1991</strong> at the National Research Institute for Mathematics and Computer Science in the Netherlands.</li>
+    <li>Python's name is derived from the British comedy group <strong>"Monty Python"</strong>, as Guido was a huge fan of "Monty Python's Flying Circus".</li>
   </ul>
 
-  <h3>Installation - Get Python on Your Computer</h3>
+  <h3 id="why-learn">Why Should We Learn Python?</h3>
+  <p>Python provides an unmatched learning curve for beginners and immense power for experts.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Interpreted:</strong> Python code runs directly line-by-line, which makes debugging incredibly easy compared to compiled languages like C or C++.</li>
+    <li><strong>Dynamically Typed:</strong> You don't need to declare whether a variable is an integer or string. Python figures it out at runtime!</li>
+    <li><strong>Object-Oriented:</strong> Supports classes, objects, and all modern programming paradigms.</li>
+    <li><strong>Extensive Community:</strong> Millions of developers write Python, meaning any issue you face has likely already been solved on StackOverflow.</li>
+  </ul>
 
-  <h4>Step 1: Download Python</h4>
-  <ol style="color: var(--muted); line-height: 2;">
-    <li>Go to <a href="https://python.org" target="_blank" style="color: var(--accent-cyan);">python.org</a></li>
-    <li>Click "Downloads"</li>
-    <li>Download Python 3.12 or newer (NOT Python 2!)</li>
-  </ol>
+  <h3 id="hello-world">First Python Program (Hello World)</h3>
+  <p>Let's look at the absolute simplest program you can write in Python. The simplicity of Python is truly staggering when compared to C or Java.</p>
 
-  <h4>Step 2: Install on Windows</h4>
-  <ol style="color: var(--muted); line-height: 2;">
-    <li>Find the downloaded file and double-click it</li>
-    <li><strong>IMPORTANT:</strong> Check the box that says "Add Python to PATH" ✓</li>
-    <li>Click "Install Now"</li>
-    <li>Wait for installation to complete</li>
-  </ol>
+  <pre><code># Simple Python program to display "Hello World"
 
-  <div
-    style="background: rgba(255, 195, 0, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 3px solid var(--accent-yellow);">
-    <p style="margin: 0; color: var(--muted);">
-      <strong>⚠️ Beginner Mistake:</strong> Don't forget to check "Add Python to PATH"! This step is crucial. If you
-      miss it, Python won't work properly.
+# Print statement
+print("Hello World")</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box">Hello World</div>
+
+  <div class="gfg-complexity">
+    <span>Time Complexity:</span> O(1)<br/>
+    <span>Space Complexity:</span> O(1)
+  </div>
+
+  <div class="callout callout-tip">
+    <h4><i class="fas fa-lightbulb"></i> Fun Fact</h4>
+    <p style="margin: 0;">
+      In C, writing a Hello World program takes about 5 lines of code. In Java, it takes about 5 lines of code. In Python, it takes exactly 1 line of code. No semicolons, no curly braces, no main functions required!
     </p>
   </div>
 
-  <h4>Step 3: Verify Installation</h4>
-  <ol style="color: var(--muted); line-height: 2;">
-    <li>Press <strong>Windows + R</strong> on your keyboard</li>
-    <li>Type <code>cmd</code> and press Enter</li>
-    <li>Type this command: <code>python --version</code></li>
-    <li>Press Enter</li>
-    <li>You should see something like: <code>Python 3.12.0</code></li>
-  </ol>
+  <h3 id="code-explanation">Explanation of the Python Program</h3>
+  <p>There isn't much to break down, because python reads like English, but let's go over the specifics.</p>
 
-  <p style="color: var(--accent-green); margin-top: 2rem; font-weight: bold; font-size: 1.05rem;">
-    ✅ If you see a version number, Python is installed correctly!
-  </p>
-
-  <h3>What's Next?</h3>
-  <p style="color: var(--muted); font-size: 1.05rem;">
-    In the next lesson, you'll write your first Python program! It's going to be awesome. 🚀
-  </p>
-
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>#</code> (Comments)</h4>
+      <p class="muted">Lines starting with a hash `#` are comments. They are completely ignored by the Python interpreter and are meant solely for human readers to understand what the code does.</p>
+    </div>
   </div>
 
-  <!-- Quiz Section -->
-  <div
-    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz - Test Your Knowledge!</h3>
-    <p style="color: var(--muted); margin-bottom: 1.5rem;">Try to answer these questions to make sure you understand the
-      lesson!</p>
-
-    <!-- Question 1 -->
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 1: What should you check when
-        installing Python on Windows?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="a"> A) "Add Python to PATH"
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="b"> B) "Delete System Files"
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="c"> C) "Upgrade Windows"
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="d"> D) "Install Antivirus"
-        </label>
-      </div>
-      <button
-        onclick="checkAnswer('q1', 'a', '✅ Correct! Adding Python to PATH is crucial.', 'Check Python 3.12 documentation')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>print()</code></h4>
+      <p class="muted"><code>print()</code> is a built-in Python function that outputs the given text (or variables) to the console.</p>
     </div>
-
-    <!-- Question 2 -->
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 2: What is Python primarily used
-        for?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q2" value="a"> A) Only for mathematical calculations
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q2" value="b"> B) Web development, AI, data science, automation, and more
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q2" value="c"> C) Only for creating games
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q2" value="d"> D) Only for building smartphones
-        </label>
-      </div>
-      <button onclick="checkAnswer('q2', 'b', '✅ Correct! Python is extremely versatile.', 'Python basics overview')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
-    </div>
-
-    <!-- Question 3 -->
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Question 3: Which command verifies Python
-        installation?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q3" value="a"> A) python --check
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q3" value="b"> B) python --version
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q3" value="c"> C) python --test
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q3" value="d"> D) python --info
-        </label>
-      </div>
-      <button
-        onclick="checkAnswer('q3', 'b', '✅ Correct! python --version shows your Python version.', 'Command-line basics')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
-    </div>
-
   </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>"Hello World"</code></h4>
+      <p class="muted">The text inside the quotation marks is a <strong>String</strong>—a basic data type used to represent text in programming.</p>
+    </div>
+  </div>
+
+  <h3 id="applications">Applications of Python</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Data Science & AI:</strong> The undisputed king of AI with libraries like TensorFlow, PyTorch, Pandas, and NumPy.</li>
+    <li><strong>Web Development:</strong> Backend frameworks like Django and Flask are used by companies like Instagram and Pinterest.</li>
+    <li><strong>Automation & Scripting:</strong> Easily automate boring tasks on your computer (e.g., renaming thousands of files automatically).</li>
+    <li><strong>Cybersecurity:</strong> Penetration testing and writing hacking scripts are extremely common in Python.</li>
+  </ul>
 
   <!-- Navigation -->
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="./"
-      style="background: var(--accent-pink); color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
-      Back to Lessons</a>
-    <a href="lesson-2.html"
-      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next
-      Lesson: Your First Program →</a>
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: Variables and Data Types →</a>
   </div>
-
 </section>
-
-<script>
-  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-    const resultDiv = document.getElementById(questionName + '-result');
-
-    if (!selected) {
-      resultDiv.innerHTML = '⚠️ Please select an answer!';
-      resultDiv.style.color = 'var(--accent-yellow)';
-      return;
-    }
-
-    if (selected.value === correctAnswer) {
-      resultDiv.innerHTML = successMsg + ' 🎉';
-      resultDiv.style.color = 'var(--accent-green)';
-    } else {
-      resultDiv.innerHTML = '❌ Not quite right. Try again!';
-      resultDiv.style.color = 'rgba(255, 45, 149, 1)';
-    }
-  }
-</script>
 
         <script>
             // Add copy buttons to all pre blocks
@@ -611,6 +482,127 @@
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>

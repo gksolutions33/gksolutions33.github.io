@@ -18,20 +18,36 @@ description: "Learn how to store and manipulate data in JavaScript"
       <code>const</code>, or <code>var</code> to declare variables.</p>
   </div>
 
-  <h3>Hello, JavaScript!</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#hello-javascript">Hello, JavaScript!</a></li>
+      <li><a href="#where-to-put-javascript">Where to Put JavaScript</a></li>
+      <li><a href="#using-the-console">Using the Console</a></li>
+      <li><a href="#your-first-real-program">Your First Real Program</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="hello-javascript">Hello, JavaScript!</h3>
   <p style="color: var(--muted);">Let's write your first JavaScript program:</p>
 
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;script&gt;
+  <pre><code>&lt;script&gt;
   console.log("Hello, JavaScript!");
 &lt;/script&gt;</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-  <h3>Where to Put JavaScript</h3>
+
+  <h3 id="where-to-put-javascript">Where to Put JavaScript</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
     <div
       style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">In HTML Head</p>
-      <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;head&gt;
+      <pre><code>&lt;head&gt;
   &lt;script&gt;
     console.log("Runs first");
   &lt;/script&gt;
@@ -40,7 +56,7 @@ description: "Learn how to store and manipulate data in JavaScript"
     <div
       style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">In HTML Body</p>
-      <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;body&gt;
+      <pre><code>&lt;body&gt;
   &lt;script&gt;
     console.log("Runs after HTML loads");
   &lt;/script&gt;
@@ -49,12 +65,12 @@ description: "Learn how to store and manipulate data in JavaScript"
     <div
       style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">External File</p>
-      <pre style="margin: 0; font-size: 0.8rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>&lt;script src="app.js"&gt;
+      <pre><code>&lt;script src="app.js"&gt;
 &lt;/script&gt;</code></pre>
     </div>
   </div>
 
-  <h3>Using the Console</h3>
+  <h3 id="using-the-console">Using the Console</h3>
   <p style="color: var(--muted);">The console is where JavaScript displays messages. Open it:</p>
   <ol style="color: var(--muted); line-height: 2;">
     <li>Right-click on a webpage → "Inspect" (or press F12)</li>
@@ -62,9 +78,8 @@ description: "Learn how to store and manipulate data in JavaScript"
     <li>You'll see messages from JavaScript</li>
   </ol>
 
-  <h3>Your First Real Program</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>&lt;!DOCTYPE html&gt;
+  <h3 id="your-first-real-program">Your First Real Program</h3>
+  <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;My First JavaScript&lt;/title&gt;
@@ -81,7 +96,7 @@ description: "Learn how to store and manipulate data in JavaScript"
 &lt;/html&gt;</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output in console:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>JavaScript is running!
+  <pre><code>JavaScript is running!
 I can write messages here
 This is awesome!</code></pre>
 
@@ -90,7 +105,7 @@ This is awesome!</code></pre>
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
@@ -159,7 +174,7 @@ This is awesome!</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Create an HTML file with JavaScript that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Logs 3 different messages to the console</li>

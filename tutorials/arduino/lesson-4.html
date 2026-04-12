@@ -14,9 +14,20 @@ description: "Read sensors and control LED brightness with analog"
         </ul>
     </div>
 
-    <h3>Analog Input: Reading a Potentiometer</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int potPin = A0;
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#analog-input-reading-a-potentiometer">Analog Input: Reading a Potentiometer</a></li>
+      <li><a href="#analog-output-pwm-led-brightness">Analog Output: PWM (LED Brightness)</a></li>
+      <li><a href="#combine-potentiometer-controls-led">Combine: Potentiometer Controls LED</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="analog-input-reading-a-potentiometer">Analog Input: Reading a Potentiometer</h3>
+    <pre><code>int potPin = A0;
 
 void setup() {
     Serial.begin(9600);
@@ -27,12 +38,14 @@ void loop() {
     Serial.println(value);
     delay(100);
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Analog Output: PWM (LED Brightness)</h3>
+
+    <h3 id="analog-output-pwm-led-brightness">Analog Output: PWM (LED Brightness)</h3>
     <p style="color: var(--muted);">PWM (Pulse Width Modulation) simulates analog output. Only works on pins marked
         with <strong>~</strong> (3, 5, 6, 9, 10, 11).</p>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ledPin = 9;  // Must be a PWM pin (~)
+    <pre><code>int ledPin = 9;  // Must be a PWM pin (~)
 
 void setup() {
     pinMode(ledPin, OUTPUT);
@@ -51,9 +64,8 @@ void loop() {
     }
 }</code></pre>
 
-    <h3>Combine: Potentiometer Controls LED</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int potPin = A0;
+    <h3 id="combine-potentiometer-controls-led">Combine: Potentiometer Controls LED</h3>
+    <pre><code>int potPin = A0;
 int ledPin = 9;
 
 void setup() {
@@ -70,7 +82,7 @@ void loop() {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What range does analogRead()

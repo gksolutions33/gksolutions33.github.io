@@ -259,6 +259,8 @@
         
         
         
+        
+        
         <li class="tutorial-nav-item ">
             <a href="/tutorials/python/lesson-1">
                 Lesson 1: What is Python?
@@ -364,7 +366,23 @@
       an ordered list, the other is a set of key-value pairs.</p>
   </div>
 
-  <h3>What is a Function?</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-a-function">What is a Function?</a></li>
+      <li><a href="#creating-a-function">Creating a Function</a></li>
+      <li><a href="#using-a-function">Using a Function</a></li>
+      <li><a href="#functions-with-parameters">Functions with Parameters</a></li>
+      <li><a href="#functions-with-return-values">Functions with Return Values</a></li>
+      <li><a href="#multiple-parameters">Multiple Parameters</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-a-function">What is a Function?</h3>
   <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
     <strong>A function is a reusable block of code.</strong> Instead of writing the same code over and over, you create
     it once and use it many times!
@@ -380,15 +398,16 @@
     </p>
   </div>
 
-  <h3>Creating a Function</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet():
+  <h3 id="creating-a-function">Creating a Function</h3>
+  <pre><code>def greet():
     print("Hello!")
     print("Welcome!")</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-  <h3>Using a Function</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet():
+
+  <h3 id="using-a-function">Using a Function</h3>
+  <pre><code>def greet():
     print("Hello!")
     print("Welcome!")
 
@@ -398,17 +417,16 @@ greet()
 greet()</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello!
+  <pre><code>Hello!
 Welcome!
 Hello!
 Welcome!
 Hello!
 Welcome!</code></pre>
 
-  <h3>Functions with Parameters</h3>
+  <h3 id="functions-with-parameters">Functions with Parameters</h3>
   <p style="color: var(--muted);">Parameters are values you pass to a function:</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet(name):
+  <pre><code>def greet(name):
     print("Hello,", name)
     print("Nice to meet you!")
 
@@ -416,15 +434,14 @@ greet("Alice")
 greet("Bob")</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello, Alice
+  <pre><code>Hello, Alice
 Nice to meet you!
 Hello, Bob
 Nice to meet you!</code></pre>
 
-  <h3>Functions with Return Values</h3>
+  <h3 id="functions-with-return-values">Functions with Return Values</h3>
   <p style="color: var(--muted);">Use return to send a value back from a function:</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def add(a, b):
+  <pre><code>def add(a, b):
     result = a + b
     return result
 
@@ -433,12 +450,11 @@ print(answer)
 print(add(10, 20))</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>8
+  <pre><code>8
 30</code></pre>
 
-  <h3>Multiple Parameters</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def calculate_price(quantity, price_per_item):
+  <h3 id="multiple-parameters">Multiple Parameters</h3>
+  <pre><code>def calculate_price(quantity, price_per_item):
     total = quantity * price_per_item
     return total
 
@@ -446,14 +462,14 @@ cost = calculate_price(5, 10)
 print("Total cost:", cost)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Total cost: 50</code></pre>
+  <pre><code>Total cost: 50</code></pre>
 
   </div>
 
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
@@ -520,7 +536,7 @@ print("Total cost:", cost)</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a function that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Takes a name as a parameter</li>
@@ -580,6 +596,127 @@ print("Total cost:", cost)</code></pre>
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>

@@ -21,23 +21,36 @@ description: "Learn how to filter database results using the WHERE clause"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #00d9ff;">
 
-        <h3>WHERE Clause</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT * FROM users WHERE age > 25;
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#where-clause">WHERE Clause</a></li>
+      <li><a href="#like-pattern-matching">LIKE (Pattern Matching)</a></li>
+      <li><a href="#in-between">IN & BETWEEN</a></li>
+      <li><a href="#null-checks">NULL Checks</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="where-clause">WHERE Clause</h3>
+        <pre><code>SELECT * FROM users WHERE age > 25;
 SELECT * FROM users WHERE name = 'Alice';
 SELECT * FROM users WHERE age >= 18 AND age <= 30;
 SELECT * FROM users WHERE city = 'NYC' OR city = 'LA';</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>LIKE (Pattern Matching)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- % = any characters, _ = single character
+
+        <h3 id="like-pattern-matching">LIKE (Pattern Matching)</h3>
+        <pre><code>-- % = any characters, _ = single character
 SELECT * FROM users WHERE name LIKE 'A%';      -- Starts with A
 SELECT * FROM users WHERE email LIKE '%@gmail%'; -- Contains @gmail
 SELECT * FROM users WHERE name LIKE '_ob';       -- 3 chars ending in "ob"</code></pre>
 
-        <h3>IN & BETWEEN</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- IN: match any value in a list
+        <h3 id="in-between">IN & BETWEEN</h3>
+        <pre><code>-- IN: match any value in a list
 SELECT * FROM users WHERE city IN ('NYC', 'LA', 'Chicago');
 
 -- BETWEEN: range of values
@@ -47,16 +60,15 @@ SELECT * FROM users WHERE age BETWEEN 20 AND 30;
 SELECT * FROM users WHERE city NOT IN ('NYC', 'LA');
 SELECT * FROM users WHERE name NOT LIKE 'A%';</code></pre>
 
-        <h3>NULL Checks</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>SELECT * FROM users WHERE phone IS NULL;      -- No phone
+        <h3 id="null-checks">NULL Checks</h3>
+        <pre><code>SELECT * FROM users WHERE phone IS NULL;      -- No phone
 SELECT * FROM users WHERE phone IS NOT NULL;   -- Has phone</code></pre>
 
     </div>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does % mean in LIKE patterns?

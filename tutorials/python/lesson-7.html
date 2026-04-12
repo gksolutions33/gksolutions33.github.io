@@ -14,7 +14,23 @@ description: "Master data collections in Python"
       an ordered list, the other is a set of key-value pairs.</p>
   </div>
 
-  <h3>What is a Function?</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-a-function">What is a Function?</a></li>
+      <li><a href="#creating-a-function">Creating a Function</a></li>
+      <li><a href="#using-a-function">Using a Function</a></li>
+      <li><a href="#functions-with-parameters">Functions with Parameters</a></li>
+      <li><a href="#functions-with-return-values">Functions with Return Values</a></li>
+      <li><a href="#multiple-parameters">Multiple Parameters</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-a-function">What is a Function?</h3>
   <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
     <strong>A function is a reusable block of code.</strong> Instead of writing the same code over and over, you create
     it once and use it many times!
@@ -30,15 +46,16 @@ description: "Master data collections in Python"
     </p>
   </div>
 
-  <h3>Creating a Function</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet():
+  <h3 id="creating-a-function">Creating a Function</h3>
+  <pre><code>def greet():
     print("Hello!")
     print("Welcome!")</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-  <h3>Using a Function</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet():
+
+  <h3 id="using-a-function">Using a Function</h3>
+  <pre><code>def greet():
     print("Hello!")
     print("Welcome!")
 
@@ -48,17 +65,16 @@ greet()
 greet()</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello!
+  <pre><code>Hello!
 Welcome!
 Hello!
 Welcome!
 Hello!
 Welcome!</code></pre>
 
-  <h3>Functions with Parameters</h3>
+  <h3 id="functions-with-parameters">Functions with Parameters</h3>
   <p style="color: var(--muted);">Parameters are values you pass to a function:</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def greet(name):
+  <pre><code>def greet(name):
     print("Hello,", name)
     print("Nice to meet you!")
 
@@ -66,15 +82,14 @@ greet("Alice")
 greet("Bob")</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello, Alice
+  <pre><code>Hello, Alice
 Nice to meet you!
 Hello, Bob
 Nice to meet you!</code></pre>
 
-  <h3>Functions with Return Values</h3>
+  <h3 id="functions-with-return-values">Functions with Return Values</h3>
   <p style="color: var(--muted);">Use return to send a value back from a function:</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def add(a, b):
+  <pre><code>def add(a, b):
     result = a + b
     return result
 
@@ -83,12 +98,11 @@ print(answer)
 print(add(10, 20))</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>8
+  <pre><code>8
 30</code></pre>
 
-  <h3>Multiple Parameters</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>def calculate_price(quantity, price_per_item):
+  <h3 id="multiple-parameters">Multiple Parameters</h3>
+  <pre><code>def calculate_price(quantity, price_per_item):
     total = quantity * price_per_item
     return total
 
@@ -96,14 +110,14 @@ cost = calculate_price(5, 10)
 print("Total cost:", cost)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Total cost: 50</code></pre>
+  <pre><code>Total cost: 50</code></pre>
 
   </div>
 
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
@@ -170,7 +184,7 @@ print("Total cost:", cost)</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a function that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Takes a name as a parameter</li>

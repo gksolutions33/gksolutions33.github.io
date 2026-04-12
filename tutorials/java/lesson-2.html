@@ -14,23 +14,37 @@ description: "Install the JDK and write your very first Java program"
             or VS Code.</p>
     </div>
 
-    <h3>Step 1: Install Java JDK</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#step-1-install-java-jdk">Step 1: Install Java JDK</a></li>
+      <li><a href="#step-2-choose-an-ide">Step 2: Choose an IDE</a></li>
+      <li><a href="#your-first-java-program">Your First Java Program</a></li>
+      <li><a href="#compile-run">Compile & Run</a></li>
+      <li><a href="#breaking-down-the-code">Breaking Down the Code</a></li>
+      <li><a href="#getting-user-input">Getting User Input</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="step-1-install-java-jdk">Step 1: Install Java JDK</h3>
     <ol style="color: var(--muted); line-height: 2.2;">
         <li>Download <strong>JDK 21</strong> (LTS) from <code>adoptium.net</code> or <code>oracle.com</code></li>
         <li>Install with default settings</li>
         <li>Verify: <code>java --version</code> and <code>javac --version</code></li>
     </ol>
 
-    <h3>Step 2: Choose an IDE</h3>
+    <h3 id="step-2-choose-an-ide">Step 2: Choose an IDE</h3>
     <ul style="color: var(--muted); line-height: 2.2;">
         <li><strong>IntelliJ IDEA</strong> (Community) — Best for Java</li>
         <li><strong>VS Code</strong> + Java Extension Pack — Lightweight</li>
         <li><strong>Eclipse</strong> — Classic Java IDE</li>
     </ul>
 
-    <h3>Your First Java Program</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>// File: HelloWorld.java
+    <h3 id="your-first-java-program">Your First Java Program</h3>
+    <pre><code>// File: HelloWorld.java
 // Class name MUST match filename!
 
 public class HelloWorld {
@@ -39,15 +53,17 @@ public class HelloWorld {
         System.out.println("Welcome to Java! ☕");
     }
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Compile & Run</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>$ javac HelloWorld.java    # Compile → creates HelloWorld.class
+
+    <h3 id="compile-run">Compile & Run</h3>
+    <pre><code>$ javac HelloWorld.java    # Compile → creates HelloWorld.class
 $ java HelloWorld          # Run the bytecode
 Hello, World!
 Welcome to Java! ☕</code></pre>
 
-    <h3>Breaking Down the Code</h3>
+    <h3 id="breaking-down-the-code">Breaking Down the Code</h3>
     <ul style="color: var(--muted); line-height: 2.2;">
         <li><code>public class HelloWorld</code> — Every Java program needs a class</li>
         <li><code>public static void main(String[] args)</code> — Entry point, always this signature</li>
@@ -56,9 +72,8 @@ Welcome to Java! ☕</code></pre>
         <li>Every statement ends with <code>;</code></li>
     </ul>
 
-    <h3>Getting User Input</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>import java.util.Scanner;
+    <h3 id="getting-user-input">Getting User Input</h3>
+    <pre><code>import java.util.Scanner;
 
 public class UserInput {
     public static void main(String[] args) {
@@ -74,7 +89,7 @@ public class UserInput {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What command compiles a Java file?

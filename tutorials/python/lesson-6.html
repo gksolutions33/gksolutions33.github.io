@@ -18,7 +18,23 @@ description: "Learn how to write reusable code blocks using Python functions"
       code cleaner, shorter, and easier to debug.</p>
   </div>
 
-  <h3>What is a Loop?</h3>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-a-loop">What is a Loop?</a></li>
+      <li><a href="#for-loops">For Loops</a></li>
+      <li><a href="#for-loop-with-counter">For Loop with Counter</a></li>
+      <li><a href="#while-loops">While Loops</a></li>
+      <li><a href="#looping-through-lists">Looping Through Lists</a></li>
+      <li><a href="#loop-control">Loop Control</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-a-loop">What is a Loop?</h3>
   <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
     <strong>A loop repeats code multiple times.</strong> Instead of writing the same line over and over, you use a loop!
   </p>
@@ -33,62 +49,61 @@ description: "Learn how to write reusable code blocks using Python functions"
     </p>
   </div>
 
-  <h3>For Loops</h3>
+  <h3 id="for-loops">For Loops</h3>
   <p style="color: var(--muted);">Use a for loop to repeat code a specific number of times:</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>for i in range(5):
+  <pre><code>for i in range(5):
     print("Hello!")</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Hello!
+  <pre><code>Hello!
 Hello!
 Hello!
 Hello!
 Hello!</code></pre>
 
-  <h3>For Loop with Counter</h3>
+  <h3 id="for-loop-with-counter">For Loop with Counter</h3>
   <p style="color: var(--muted);">The counter (i) changes each time through the loop:</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>for i in range(1, 6):
+  <pre><code>for i in range(1, 6):
     print("Number:", i)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Number: 1
+  <pre><code>Number: 1
 Number: 2
 Number: 3
 Number: 4
 Number: 5</code></pre>
 
-  <h3>While Loops</h3>
+  <h3 id="while-loops">While Loops</h3>
   <p style="color: var(--muted);">Use a while loop to repeat code WHILE a condition is true:</p>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>count = 1
+  <pre><code>count = 1
 while count <= 3:
     print("Count:", count)
     count = count + 1</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Count: 1
+  <pre><code>Count: 1
 Count: 2
 Count: 3</code></pre>
 
-  <h3>Looping Through Lists</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
+  <h3 id="looping-through-lists">Looping Through Lists</h3>
+  <pre><code>fruits = ["apple", "banana", "orange"]
 
 for fruit in fruits:
     print("I like", fruit)</code></pre>
 
   <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-  <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>I like apple
+  <pre><code>I like apple
 I like banana
 I like orange</code></pre>
 
-  <h3>Loop Control</h3>
+  <h3 id="loop-control">Loop Control</h3>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
     <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">break - Exit Loop</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>for i in range(10):
+      <pre><code>for i in range(10):
     if i == 3:
         break
     print(i)
@@ -96,7 +111,7 @@ I like orange</code></pre>
     </div>
     <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
       <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">continue - Skip This</p>
-      <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>for i in range(5):
+      <pre><code>for i in range(5):
     if i == 2:
         continue
     print(i)
@@ -109,7 +124,7 @@ I like orange</code></pre>
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
@@ -178,7 +193,7 @@ I like orange</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Uses a loop to print numbers 1 through 10</li>

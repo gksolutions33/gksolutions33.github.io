@@ -1,0 +1,119 @@
+---
+layout: tutorial
+title: "Lesson 1: What is HTML? | HTML Tutorial"
+description: "Learn the foundational markup language of the World Wide Web"
+---
+
+<section>
+  <h2>HTML Introduction</h2>
+  <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
+
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-html">What is HTML?</a></li>
+      <li><a href="#why-learn">Why Should We Learn HTML?</a></li>
+      <li><a href="#hello-world">First HTML Document (Hello Web)</a></li>
+      <li><a href="#code-explanation">Explanation of the HTML Code</a></li>
+      <li><a href="#applications">Applications of HTML</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-html">What is HTML?</h3>
+  <p>
+    <strong>HTML (HyperText Markup Language)</strong> is the standard markup language for documents designed to be displayed in a web browser. It defines the meaning and structure of web content. HTML uses "markup" to annotate text, images, and other content for display in a Web browser. 
+  </p>
+
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> HTML is not a Programming Language</h4>
+    <p style="margin: 0;">
+      A very important distinction: HTML is a <em>Markup</em> language, not a programming language. It cannot perform logic (like math, if/else statements, or loops). That's what JavaScript is for!
+    </p>
+  </div>
+
+  <h3 id="why-learn">Why Should We Learn HTML?</h3>
+  <p>Every single website on the Internet—from Google to Amazon to this very site—is built using HTML. It is the absolute foundation of Web Development.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Create A Web presence:</strong> If you want to put anything on the web, you need HTML.</li>
+    <li><strong>Understand the Web:</strong> Even if you are a backend developer or designer, understanding HTML semantics is required to understand how clients digest your server data.</li>
+    <li><strong>Easy to Learn:</strong> HTML is arguably the easiest technical language to learn, making it the perfect stepping stone into web development.</li>
+  </ul>
+
+  <h3 id="hello-world">First HTML Document (Hello Web)</h3>
+  <p>HTML documents consist of a series of elements, which you use to enclose (or wrap) different parts of the content to make it appear a certain way.</p>
+
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;This is my very first paragraph.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box" style="background: var(--card); color: var(--text); border-color: var(--nav-border); font-family: 'Inter', sans-serif;">
+    <h1 style="margin-top: 0;">Hello World!</h1>
+    <p style="margin-bottom: 0;">This is my very first paragraph.</p>
+  </div>
+
+  <h3 id="code-explanation">Explanation of the HTML Code</h3>
+  <p>Let's dissect the simple HTML skeleton.</p>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;!DOCTYPE html&gt;</code></h4>
+      <p class="muted">The doctype declaration. It defines that this document is an HTML5 document.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;html&gt; ... &lt;/html&gt;</code></h4>
+      <p class="muted">The root element of an HTML page. All other elements must be descendants of this element.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;head&gt; ... &lt;/head&gt;</code></h4>
+      <p class="muted">Contains meta information about the HTML page (like the title, character set, styles, scripts, and other meta information).</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">4</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;body&gt; ... &lt;/body&gt;</code></h4>
+      <p class="muted">The document's body. It contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">5</div>
+    <div class="gfg-step-content">
+      <h4><code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code></h4>
+      <p class="muted"><code>&lt;h1&gt;</code> defines a large heading. <code>&lt;p&gt;</code> defines a paragraph. Notice both start with an opening tag <code>&lt;&gt;</code> and end with a closing tag <code>&lt;/&gt;</code>.</p>
+    </div>
+  </div>
+
+  <h3 id="applications">Applications of HTML</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Web Page Development:</strong> Every web page ever built.</li>
+    <li><strong>Internet Navigation:</strong> Hypertext (the H in HTML) allows users to seamlessly navigate via hyperlinks.</li>
+    <li><strong>Offline Web Applications:</strong> Using HTML5 applications cache and offline storage capabilities.</li>
+  </ul>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: HTML Elements & Tags →</a>
+  </div>
+</section>

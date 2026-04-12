@@ -17,12 +17,24 @@ description: "Learn how to organize your C code using reusable functions"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ffd60a;">
 
-        <h3>Arrays</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#arrays">Arrays</a></li>
+      <li><a href="#2d-arrays-matrices">2D Arrays (Matrices)</a></li>
+      <li><a href="#strings-in-c">Strings in C</a></li>
+      <li><a href="#common-string-functions">Common String Functions</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="arrays">Arrays</h3>
         <p style="color: var(--muted); font-size: 1.05rem;">An array stores multiple values of the <strong>same
                 type</strong> in contiguous memory.</p>
 
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+        <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     // Declare and initialize
@@ -43,10 +55,12 @@ int main() {
 
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>2D Arrays (Matrices)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int matrix[3][3] = {
+
+        <h3 id="2d-arrays-matrices">2D Arrays (Matrices)</h3>
+        <pre><code>int matrix[3][3] = {
     {1, 2, 3},
     {4, 5, 6},
     {7, 8, 9}
@@ -62,12 +76,11 @@ for (int i = 0; i < 3; i++) {
     printf("\n");
 }</code></pre>
 
-        <h3>Strings in C</h3>
+        <h3 id="strings-in-c">Strings in C</h3>
         <p style="color: var(--muted);">In C, strings are <strong>arrays of characters</strong> ending with a null
             terminator <code>'\0'</code>.</p>
 
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+        <pre><code>#include &lt;stdio.h&gt;
 #include &lt;string.h&gt;  // String functions
 
 int main() {
@@ -90,7 +103,7 @@ int main() {
     return 0;
 }</code></pre>
 
-        <h3>Common String Functions</h3>
+        <h3 id="common-string-functions">Common String Functions</h3>
         <div style="overflow-x: auto; margin: 1rem 0;">
             <table style="width: 100%; border-collapse: collapse; color: var(--muted);">
                 <thead>
@@ -129,7 +142,7 @@ int main() {
     <!-- Quiz -->
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">

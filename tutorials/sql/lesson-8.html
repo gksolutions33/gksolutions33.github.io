@@ -21,19 +21,34 @@ description: "Learn how to speed up your SQL queries with indexes and optimizati
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #00d9ff;">
 
-        <h3>What is an Index?</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-an-index">What is an Index?</a></li>
+      <li><a href="#views-virtual-tables">Views (Virtual Tables)</a></li>
+      <li><a href="#subqueries">Subqueries</a></li>
+      <li><a href="#transactions">Transactions</a></li>
+      <li><a href="#performance-tips">Performance Tips</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-an-index">What is an Index?</h3>
         <p style="color: var(--muted);">An index is like a book's table of contents — it helps the database find data
             faster without scanning every row.</p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>CREATE INDEX idx_email ON users(email);
+        <pre><code>CREATE INDEX idx_email ON users(email);
 CREATE INDEX idx_name_age ON users(name, age);  -- Composite
 
 -- Drop an index
 DROP INDEX idx_email ON users;</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Views (Virtual Tables)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- Create a view (saved query)
+
+        <h3 id="views-virtual-tables">Views (Virtual Tables)</h3>
+        <pre><code>-- Create a view (saved query)
 CREATE VIEW active_users AS
 SELECT name, email FROM users WHERE active = TRUE;
 
@@ -43,9 +58,8 @@ SELECT * FROM active_users;
 -- Drop a view
 DROP VIEW active_users;</code></pre>
 
-        <h3>Subqueries</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>-- Users who placed orders
+        <h3 id="subqueries">Subqueries</h3>
+        <pre><code>-- Users who placed orders
 SELECT name FROM users
 WHERE id IN (SELECT user_id FROM orders);
 
@@ -53,9 +67,8 @@ WHERE id IN (SELECT user_id FROM orders);
 SELECT name, age FROM users
 WHERE age > (SELECT AVG(age) FROM users);</code></pre>
 
-        <h3>Transactions</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 217, 255, 0.3);"><code>BEGIN TRANSACTION;
+        <h3 id="transactions">Transactions</h3>
+        <pre><code>BEGIN TRANSACTION;
   UPDATE accounts SET balance = balance - 100 WHERE id = 1;
   UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;  -- Save changes
@@ -63,7 +76,7 @@ COMMIT;  -- Save changes
 -- If something goes wrong:
 ROLLBACK;  -- Undo everything</code></pre>
 
-        <h3>Performance Tips</h3>
+        <h3 id="performance-tips">Performance Tips</h3>
         <ul style="color: var(--muted); line-height: 2.2;">
             <li>📊 Index columns used in WHERE and JOIN</li>
             <li>🚫 Avoid <code>SELECT *</code> — only select needed columns</li>
@@ -75,7 +88,7 @@ ROLLBACK;  -- Undo everything</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #00d9ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does an index do?</p>

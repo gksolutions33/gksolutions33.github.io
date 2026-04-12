@@ -17,10 +17,21 @@ description: "Build your first complete electronic projects"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #8c00ff;">
 
-        <h3>Project 1: Alarm System</h3>
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#project-1-alarm-system">Project 1: Alarm System</a></li>
+      <li><a href="#project-2-smart-night-light">Project 2: Smart Night Light</a></li>
+      <li><a href="#project-3-temperature-monitor-with-led-warning">Project 3: Temperature Monitor with LED Warning</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="project-1-alarm-system">Project 1: Alarm System</h3>
         <p style="color: var(--muted);">Ultrasonic sensor triggers buzzer when something is too close.</p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int trigPin = 9, echoPin = 10, buzzer = 8;
+        <pre><code>int trigPin = 9, echoPin = 10, buzzer = 8;
 
 void setup() {
     pinMode(trigPin, OUTPUT);
@@ -41,11 +52,13 @@ void loop() {
     }
     delay(100);
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Project 2: Smart Night Light</h3>
+
+        <h3 id="project-2-smart-night-light">Project 2: Smart Night Light</h3>
         <p style="color: var(--muted);">LED turns on automatically when it gets dark.</p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int ldrPin = A0, ledPin = 9;
+        <pre><code>int ldrPin = A0, ledPin = 9;
 
 void setup() {
     pinMode(ledPin, OUTPUT);
@@ -66,9 +79,8 @@ void loop() {
     delay(200);
 }</code></pre>
 
-        <h3>Project 3: Temperature Monitor with LED Warning</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(140, 0, 255, 0.3);"><code>int tempPin = A0;
+        <h3 id="project-3-temperature-monitor-with-led-warning">Project 3: Temperature Monitor with LED Warning</h3>
+        <pre><code>int tempPin = A0;
 int greenLED = 11, yellowLED = 10, redLED = 9;
 
 void setup() {
@@ -103,7 +115,7 @@ void loop() {
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #8c00ff;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What function plays a tone on a

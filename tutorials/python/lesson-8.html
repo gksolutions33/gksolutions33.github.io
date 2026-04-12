@@ -21,80 +21,96 @@ description: "Learn how to use external libraries to supercharge your Python scr
   <div
     style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
 
-    <h3>What is a List?</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-a-list">What is a List?</a></li>
+      <li><a href="#accessing-list-items">Accessing List Items</a></li>
+      <li><a href="#modifying-lists">Modifying Lists</a></li>
+      <li><a href="#what-is-a-dictionary">What is a Dictionary?</a></li>
+      <li><a href="#accessing-dictionary-items">Accessing Dictionary Items</a></li>
+      <li><a href="#modifying-dictionaries">Modifying Dictionaries</a></li>
+      <li><a href="#real-world-example-student-database">Real-World Example: Student Database</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+      <li><a href="#challenge-create-a-contact-list">🎯 Challenge - Create a Contact List</a></li>
+      <li><a href="#congratulations">🎉 Congratulations! 🎉</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-a-list">What is a List?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       <strong>A list stores multiple values in one variable.</strong> Think of it like a shopping list!
     </p>
 
     <h4>Creating a List:</h4>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
+    <pre><code>fruits = ["apple", "banana", "orange"]
 numbers = [1, 2, 3, 4, 5]
 mixed = ["Alice", 25, True, 3.14]</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Accessing List Items</h3>
+
+    <h3 id="accessing-list-items">Accessing List Items</h3>
     <p style="color: var(--muted);">Lists use indexing (starting at 0):</p>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>fruits = ["apple", "banana", "orange"]
+    <pre><code>fruits = ["apple", "banana", "orange"]
 
 print(fruits[0])   # apple
 print(fruits[1])   # banana
 print(fruits[2])   # orange
 print(fruits[-1])  # orange (last item)</code></pre>
 
-    <h3>Modifying Lists</h3>
+    <h3 id="modifying-lists">Modifying Lists</h3>
     <div
       style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
       <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">Change Item</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>fruits[0] = "mango"
+        <pre><code>fruits[0] = "mango"
 print(fruits)
 # ['mango', 'banana', 'orange']</code></pre>
       </div>
       <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">Add Item</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>fruits.append("grape")
+        <pre><code>fruits.append("grape")
 print(fruits)
 # [..., "grape"]</code></pre>
       </div>
       <div style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">Remove Item</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>fruits.remove("banana")
+        <pre><code>fruits.remove("banana")
 print(fruits)
 # ["apple", "orange"]</code></pre>
       </div>
       <div style="background: rgba(255, 195, 0, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-yellow); font-weight: bold;">List Length</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>fruits = ["apple", "banana"]
+        <pre><code>fruits = ["apple", "banana"]
 print(len(fruits))
 # 2</code></pre>
       </div>
     </div>
 
-    <h3>What is a Dictionary?</h3>
+    <h3 id="what-is-a-dictionary">What is a Dictionary?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       <strong>A dictionary stores data with labels (called keys).</strong> Instead of positions, you use meaningful
       names!
     </p>
 
     <h4>Creating a Dictionary:</h4>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {
+    <pre><code>student = {
     "name": "Alice",
     "age": 20,
     "major": "Computer Science"
 }</code></pre>
 
-    <h3>Accessing Dictionary Items</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {"name": "Alice", "age": 20}
+    <h3 id="accessing-dictionary-items">Accessing Dictionary Items</h3>
+    <pre><code>student = {"name": "Alice", "age": 20}
 
 print(student["name"])   # Alice
 print(student["age"])    # 20</code></pre>
 
-    <h3>Modifying Dictionaries</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>student = {"name": "Alice", "age": 20}
+    <h3 id="modifying-dictionaries">Modifying Dictionaries</h3>
+    <pre><code>student = {"name": "Alice", "age": 20}
 
 # Change a value
 student["age"] = 21
@@ -108,12 +124,10 @@ del student["city"]
 print(student)</code></pre>
 
     <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre
-      style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>{'name': 'Alice', 'age': 21}</code></pre>
+    <pre><code>{'name': 'Alice', 'age': 21}</code></pre>
 
-    <h3>Real-World Example: Student Database</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code># List of dictionaries
+    <h3 id="real-world-example-student-database">Real-World Example: Student Database</h3>
+    <pre><code># List of dictionaries
 students = [
     {"name": "Alice", "grade": "A"},
     {"name": "Bob", "grade": "B"},
@@ -125,7 +139,7 @@ for student in students:
     print(student["name"], "got grade", student["grade"])</code></pre>
 
     <p style="color: var(--muted); margin: 1rem 0;"><strong>Output:</strong></p>
-    <pre style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 4px;"><code>Alice got grade A
+    <pre><code>Alice got grade A
 Bob got grade B
 Charlie got grade A</code></pre>
 
@@ -134,7 +148,7 @@ Charlie got grade A</code></pre>
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
@@ -206,7 +220,7 @@ Charlie got grade A</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge - Create a Contact List</h3>
+    <h3 id="challenge-create-a-contact-list" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge - Create a Contact List</h3>
     <p style="color: var(--muted);">Write a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Creates a dictionary for 3 contacts (name, phone, email)</li>
@@ -221,7 +235,7 @@ Charlie got grade A</code></pre>
   <!-- Celebration Section -->
   <div
     style="background: rgba(123, 255, 111, 0.15); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.5); text-align: center;">
-    <h3 style="color: var(--accent-green); margin-top: 0;">🎉 Congratulations! 🎉</h3>
+    <h3 id="congratulations" style="color: var(--accent-green); margin-top: 0;">🎉 Congratulations! 🎉</h3>
     <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8;">
       You've completed the Python tutorial! You now know:
     </p>

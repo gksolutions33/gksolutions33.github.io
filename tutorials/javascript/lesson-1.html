@@ -1,199 +1,98 @@
 ---
 layout: tutorial
 title: "Lesson 1: What is JavaScript? | JavaScript Tutorial"
-description: "Discover the power of JavaScript - the programming language of the web"
+description: "Discover the language that powers the interactive web"
 ---
 
 <section>
-  <h2>🟡 Lesson 1: What is JavaScript?</h2>
-  <p class="muted">⏱️ Estimated time: 10-15 minutes | Difficulty: Beginner</p>
+  <h2>JavaScript Language Introduction</h2>
+  <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
-  <div class="callout callout-note">
-    <h4><i class="fas fa-bolt"></i> The Language of the Web</h4>
-    <p style="margin: 0;"><strong>JavaScript is the programming language of the web.</strong> It makes websites
-      interactive, dynamic, and responsive to user actions.</p>
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-javascript">What is JavaScript?</a></li>
+      <li><a href="#why-learn">Why Should We Learn JavaScript?</a></li>
+      <li><a href="#hello-world">First JavaScript Code (Hello World)</a></li>
+      <li><a href="#code-explanation">Explanation of the JavaScript Code</a></li>
+      <li><a href="#applications">Applications of JavaScript</a></li>
+    </ul>
   </div>
 
-  <h3>What is JavaScript?</h3>
-  <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-    <strong>JavaScript is the programming language of the web.</strong> It makes websites interactive, dynamic, and
-    responsive to what you do!
+  <h3 id="what-is-javascript">What is JavaScript?</h3>
+  <p>
+    <strong>JavaScript (often abbreviated as JS)</strong> is a lightweight, interpreted, object-oriented language with first-class functions. It is best known as the scripting language for web pages, but it's used in many non-browser environments as well (such as Node.js). 
   </p>
 
-  <h4>Real-World Analogy:</h4>
-  <div
-    style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-left: 3px solid var(--accent-cyan);">
-    <p style="margin: 0; color: var(--muted);">
-      Think of a website like a house:<br>
-      🏠 <strong>HTML</strong> = The structure (walls, rooms, doors)<br>
-      🎨 <strong>CSS</strong> = The decoration (paint, furniture)<br>
-      ⚡ <strong>JavaScript</strong> = The electricity (lights that turn on/off, door that opens, smart features)
+  <div class="callout callout-note">
+    <h4><i class="fas fa-info-circle"></i> JavaScript is NOT Java</h4>
+    <p style="margin: 0;">
+      A common beginner mistake is confusing Java with JavaScript. Despite the similar name (which was just a marketing tactic in 1995), the two languages have entirely different syntaxes, semantics, and use cases. Java is for backend servers, Android, and desktop apps. JavaScript is for dynamic browser interactivity (and recently backend servers via Node.js).
     </p>
   </div>
 
-  <h3>What Can You Build?</h3>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
-    <div
-      style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
-      <h4 style="margin-top: 0; color: var(--accent-cyan);">Interactive Forms</h4>
-      <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Validate user input, show/hide fields, enable
-        buttons</p>
-    </div>
-    <div
-      style="background: rgba(255, 45, 149, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-pink);">
-      <h4 style="margin-top: 0; color: var(--accent-pink);">Web Games</h4>
-      <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Create interactive games in the browser</p>
-    </div>
-    <div
-      style="background: rgba(123, 255, 111, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
-      <h4 style="margin-top: 0; color: var(--accent-green);">Real-Time Apps</h4>
-      <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Chat apps, live updates, notifications</p>
-    </div>
-    <div
-      style="background: rgba(255, 195, 0, 0.08); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--accent-yellow);">
-      <h4 style="margin-top: 0; color: var(--accent-yellow);">Single Page Apps</h4>
-      <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Full apps without page reloads (Gmail, Google Docs)
-      </p>
-    </div>
-  </div>
-
-  <h3>Key JavaScript Facts</h3>
-  <ul style="color: var(--muted); line-height: 2;">
-    <li>✅ Runs in your browser (no installation needed)</li>
-    <li>✅ Works with HTML and CSS</li>
-    <li>✅ Used by 99% of websites</li>
-    <li>✅ Also runs on servers (Node.js)</li>
-    <li>✅ Easy to learn, powerful when you master it</li>
+  <h3 id="why-learn">Why Should We Learn JavaScript?</h3>
+  <p>Javascript is the only programming language native to web browsers.</p>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Client-Side Execution:</strong> Executing code directly in the user's browser saves server bandwidth and provides immediate feedback to the user (e.g. form validation).</li>
+    <li><strong>Extremely Versatile:</strong> What started as a simple browser tool can now be used for backend servers (Node.js), mobile apps (React Native), and desktop apps (Electron).</li>
+    <li><strong>Asynchronous Processing:</strong> JavaScript handles asynchronous operations beautifully using Promises and Async/Await, ensuring web applications don't freeze while fetching data.</li>
   </ul>
 
-  <h3>JavaScript vs Python vs HTML</h3>
-  <div style="background: rgba(0, 245, 255, 0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
-    <p style="margin: 0.5rem 0; color: var(--muted);"><strong>HTML</strong> - Creates the content (text, buttons,
-      images)</p>
-    <p style="margin: 0.5rem 0; color: var(--muted);"><strong>CSS</strong> - Styles the content (colors, sizes, layout)
-    </p>
-    <p style="margin: 0.5rem 0; color: var(--muted);"><strong>JavaScript</strong> - Makes things happen (animations,
-      responses, logic)</p>
-    <p style="margin: 0.5rem 0; color: var(--muted);"><strong>Python</strong> - Powers the backend (servers, data
-      processing)</p>
+  <h3 id="hello-world">First JavaScript Code (Hello World)</h3>
+  <p>In modern web development, JavaScript usually interacts with the DOM (Document Object Model) or prints to the developer console.</p>
+
+  <pre><code>// Simple JavaScript code to log "Hello World"
+console.log("Hello World");</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box">> Hello World</div>
+
+  <div class="gfg-complexity">
+    <span>Time Complexity:</span> O(1)<br/>
+    <span>Space Complexity:</span> O(1)
   </div>
 
-  </div>
+  <h3 id="code-explanation">Explanation of the JavaScript Code</h3>
+  <p>Like Python, basic JavaScript syntax is incredibly straightforward.</p>
 
-  <!-- Quiz Section -->
-  <div
-    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is the main purpose of JavaScript?
-      </p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="a"> A) Create website structure
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="b"> B) Make websites interactive and dynamic
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q1" value="c"> C) Style websites with colors
-        </label>
-      </div>
-      <button
-        onclick="checkAnswer('q1', 'b', '✅ Correct! JavaScript makes websites interactive.', 'JavaScript purpose')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q1-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>//</code> (Comments)</h4>
+      <p class="muted">Lines starting with double slashes are single-line comments. They are ignored by the JavaScript engine executing the code.</p>
     </div>
-
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Where does JavaScript run?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q2" value="a"> A) Only on servers
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q2" value="b"> B) In your web browser
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q2" value="c"> C) Only in Google Chrome
-        </label>
-      </div>
-      <button
-        onclick="checkAnswer('q2', 'b', '✅ Correct! JavaScript runs in your browser (and also servers with Node.js).', 'JavaScript environment')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q2-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
-    </div>
-
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which is easier to learn: JavaScript or
-        Python?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q3" value="a"> A) JavaScript
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q3" value="b"> B) Python
-        </label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);">
-          <input type="radio" name="q3" value="c"> C) They're about the same
-        </label>
-      </div>
-      <button
-        onclick="checkAnswer('q3', 'c', '✅ Correct! Both are beginner-friendly with slightly different syntax.', 'Learning difficulty')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q3-result" style="margin-top: 1rem; color: var(--accent-green); font-weight: bold;"></div>
-    </div>
-
   </div>
 
-  <!-- Challenge -->
-  <div
-    style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
-    <p style="color: var(--muted);">Visit these websites and notice what's interactive (that's probably JavaScript!):
-    </p>
-    <ul style="color: var(--muted); line-height: 2;">
-      <li>🔗 Google.com - Search suggestions</li>
-      <li>🔗 Twitter.com - Live updates, infinite scroll</li>
-      <li>🔗 Trello.com - Drag and drop cards</li>
-    </ul>
-    <p style="color: var(--muted); margin-top: 1.5rem;"><strong>Tip:</strong> Open developer tools (F12) and look for
-      JavaScript files!</p>
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>console</code></h4>
+      <p class="muted">The <code>console</code> object provides access to the browser's debugging console.</p>
+    </div>
   </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>.log("...")</code></h4>
+      <p class="muted">The <code>log()</code> method outputs a message to the web console. This is the primary way developers debug Javascript code in the browser.</p>
+    </div>
+  </div>
+
+  <h3 id="applications">Applications of JavaScript</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Interactive Websites:</strong> Animations, dynamic forms, updating data without page refreshes (AJAX).</li>
+    <li><strong>Frontend Frameworks:</strong> React, Vue, Angular—the foundation of modern web apps like Facebook and Netflix UI.</li>
+    <li><strong>Server-Side:</strong> Node.js enables developers to use JavaScript to write server-side code and APIs.</li>
+    <li><strong>Mobile Applications:</strong> Using frameworks like React Native to write cross-platform mobile apps using merely JavaScript.</li>
+  </ul>
 
   <!-- Navigation -->
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <div></div>
-    <a href="lesson-2.html"
-      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
-      Your First Script →</a>
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: Variables (var, let, const) →</a>
   </div>
-
 </section>
-
-<script>
-  function checkAnswer(questionName, correctAnswer, successMsg, resource) {
-    const selected = document.querySelector(`input[name="${questionName}"]:checked`);
-    const resultDiv = document.getElementById(questionName + '-result');
-
-    if (!selected) {
-      resultDiv.innerHTML = '⚠️ Please select an answer!';
-      resultDiv.style.color = 'var(--accent-yellow)';
-      return;
-    }
-
-    if (selected.value === correctAnswer) {
-      resultDiv.innerHTML = successMsg + ' 🎉';
-      resultDiv.style.color = 'var(--accent-green)';
-    } else {
-      resultDiv.innerHTML = '❌ Not quite right. Try again!';
-      resultDiv.style.color = 'rgba(255, 45, 149, 1)';
-    }
-  }
-</script>

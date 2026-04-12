@@ -21,9 +21,21 @@ description: "Learn how Java stores and manages data using strongly-typed variab
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #7bff6f;">
 
-        <h3>Primitive Data Types</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>// Integer types
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#primitive-data-types">Primitive Data Types</a></li>
+      <li><a href="#strings-reference-type">Strings (Reference Type)</a></li>
+      <li><a href="#constants-var">Constants & var</a></li>
+      <li><a href="#type-casting">Type Casting</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="primitive-data-types">Primitive Data Types</h3>
+        <pre><code>// Integer types
 byte small = 127;          // -128 to 127
 short medium = 32000;      // -32,768 to 32,767
 int normal = 2000000000;   // Most common
@@ -36,10 +48,12 @@ double precise = 3.14159265358979;  // More precise (default)
 // Other types
 boolean alive = true;      // true or false only
 char letter = 'A';         // Single character (use single quotes!)</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Strings (Reference Type)</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>String name = "Alice";   // Use double quotes!
+
+        <h3 id="strings-reference-type">Strings (Reference Type)</h3>
+        <pre><code>String name = "Alice";   // Use double quotes!
 String greeting = "Hello, " + name + "!";  // Concatenation
 
 // String methods
@@ -49,18 +63,16 @@ name.charAt(0);          // 'A'
 name.equals("Alice");    // true (use this, NOT ==!)
 name.contains("li");     // true</code></pre>
 
-        <h3>Constants & var</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>final int MAX = 100;      // Constant — can't change
+        <h3 id="constants-var">Constants & var</h3>
+        <pre><code>final int MAX = 100;      // Constant — can't change
 // MAX = 200;             // Error!
 
 // Type inference (Java 10+)
 var age = 25;             // Compiler infers int
 var name = "Bob";         // Compiler infers String</code></pre>
 
-        <h3>Type Casting</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(123, 255, 111, 0.3);"><code>// Widening (automatic): smaller → larger
+        <h3 id="type-casting">Type Casting</h3>
+        <pre><code>// Widening (automatic): smaller → larger
 int x = 10;
 double y = x;  // 10.0 (auto)
 
@@ -80,7 +92,7 @@ String s2 = Integer.toString(42);</code></pre>
 
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #7bff6f;">
             <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which is the default decimal type

@@ -14,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Learn how CSS brings style and beauty to web pages" />
+    content="Learn how to style your web pages with Cascading Style Sheets" />
   <meta name="keywords"
     content="AI, IoT, Arduino, Python, Machine Learning, Robotics, Projects, Tutorials" />
   <title>Lesson 1: What is CSS? | CSS Tutorial</title>
@@ -340,6 +340,8 @@
         
         
         
+        
+        
     </ul>
 </aside>
 
@@ -355,149 +357,97 @@
         </nav>
 
         <section>
-  <h2>🎨 Lesson 1: What is CSS?</h2>
+  <h2>CSS Introduction</h2>
   <p class="muted">⏱️ Estimated time: 15 minutes | Difficulty: Beginner</p>
 
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-css">What is CSS?</a></li>
+      <li><a href="#why-learn">Why Should We Learn CSS?</a></li>
+      <li><a href="#hello-world">First CSS Syntax (Hello Style)</a></li>
+      <li><a href="#code-explanation">Explanation of the CSS Syntax</a></li>
+      <li><a href="#how-to-add">How to Add CSS to HTML</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-css">What is CSS?</h3>
+  <p>
+    <strong>CSS (Cascading Style Sheets)</strong> is a stylesheet language used to describe the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. While HTML builds the skeleton of a website, CSS is responsible for the skin—colors, layouts, fonts, and responsiveness.
+  </p>
+
   <div class="callout callout-note">
-    <h4><i class="fas fa-palette"></i> The Stylist</h4>
+    <h4><i class="fas fa-info-circle"></i> Note on Separation of Concerns</h4>
     <p style="margin: 0;">
-      <strong>CSS (Cascading Style Sheets)</strong> is the language we use to style an HTML document. It describes how
-      HTML elements should be displayed on screen, paper, or in other media.
+      By separating the presentation (CSS) from the structure (HTML), web developers improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, and enable multiple web pages to share formatting by specifying the relevant CSS in a separate <code>.css</code> file.
     </p>
   </div>
 
-  <h3>CSS = Cascading Style Sheets</h3>
-  <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
-    CSS controls how HTML elements <strong>look</strong> on a page — colors, fonts, spacing, layout, animations, and
-    more. If HTML is the skeleton, CSS is the skin and clothing!
-  </p>
-
-  <h3>3 Ways to Add CSS</h3>
-
-  <h4>1. Inline CSS (directly on element)</h4>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>&lt;p style="color: red; font-size: 20px;"&gt;Hello!&lt;/p&gt;</code></pre>
-
-  <h4>2. Internal CSS (in &lt;style&gt; tag)</h4>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>&lt;head&gt;
-  &lt;style&gt;
-    p { color: blue; font-size: 18px; }
-  &lt;/style&gt;
-&lt;/head&gt;</code></pre>
-
-  <h4>3. External CSS (separate file — recommended!)</h4>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>&lt;!-- In HTML --&gt;
-&lt;link rel="stylesheet" href="style.css"&gt;
-
-/* In style.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a2e;
-    color: white;
-}
-
-h1 {
-    color: #ff2d95;
-    text-align: center;
-}</code></pre>
-
-  <h3>CSS Syntax</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>selector {
-    property: value;
-    property: value;
-}
-
-/* Example */
-h1 {
-    color: #ff2d95;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}</code></pre>
-
-  <h3>Common CSS Properties</h3>
+  <h3 id="why-learn">Why Should We Learn CSS?</h3>
+  <p>To be a Frontend Developer, mastering CSS is equally as important as HTML and JavaScript.</p>
   <ul style="color: var(--muted); line-height: 2.2;">
-    <li><code>color</code> — Text color</li>
-    <li><code>background-color</code> — Background color</li>
-    <li><code>font-size</code> — Text size</li>
-    <li><code>font-family</code> — Font type</li>
-    <li><code>margin</code> — Space outside element</li>
-    <li><code>padding</code> — Space inside element</li>
-    <li><code>border</code> — Border around element</li>
-    <li><code>width</code> / <code>height</code> — Dimensions</li>
+    <li><strong>Saves Time:</strong> You can write CSS once and then reuse the same sheet in multiple HTML pages.</li>
+    <li><strong>Easy Maintenance:</strong> To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.</li>
+    <li><strong>Superior Styles to HTML:</strong> CSS has a much wider array of attributes than HTML, so you can give a far better look to your HTML page in comparison to HTML attributes.</li>
+    <li><strong>Device Compatibility:</strong> CSS enables responsive web design. It allows the web page presentation to adapt to different devices (mobile, tablet, desktop).</li>
   </ul>
 
+  <h3 id="hello-world">First CSS Syntax (Hello Style)</h3>
+  <p>A CSS rule set consists of a selector and a declaration block. Let's see how we style an HTML heading.</p>
+
+  <pre><code>/* This is a CSS comment */
+h1 {
+  color: blue;
+  font-size: 24px;
+}</code></pre>
+
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  
+  <div class="gfg-output-box">
+    <h1 style="color: blue; font-size: 24px; margin: 0;">This is a styled heading</h1>
   </div>
 
-  <div
-    style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What does CSS stand for?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q1" value="a"> A) Computer Style Sheets</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q1" value="b"> B) Cascading Style Sheets</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q1" value="c"> C) Creative Style System</label>
-      </div>
-      <button onclick="checkAnswer('q1','b','✅ Correct!')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q1-result" style="margin-top: 1rem; font-weight: bold;"></div>
-    </div>
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-pink);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which method of adding CSS is
-        recommended?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q2" value="a"> A) Inline</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q2" value="b"> B) External stylesheet</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q2" value="c"> C) Internal</label>
-      </div>
-      <button onclick="checkAnswer('q2','b','✅ Correct!')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q2-result" style="margin-top: 1rem; font-weight: bold;"></div>
-    </div>
-    <div
-      style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-yellow);">
-      <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ Which property changes text color?</p>
-      <div style="margin-left: 1.5rem;">
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q3" value="a"> A) background-color</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q3" value="b"> B) color</label>
-        <label style="display: block; margin: 0.7rem 0; cursor: pointer; color: var(--muted);"><input type="radio"
-            name="q3" value="c"> C) font-color</label>
-      </div>
-      <button onclick="checkAnswer('q3','b','✅ Correct!')"
-        style="background: var(--accent-green); color: #000; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 1rem;">Check
-        Answer</button>
-      <div id="q3-result" style="margin-top: 1rem; font-weight: bold;"></div>
+  <h3 id="code-explanation">Explanation of the CSS Syntax</h3>
+  <p>Let's dissect the simple CSS rule we just wrote.</p>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">1</div>
+    <div class="gfg-step-content">
+      <h4><code>h1</code> (The Selector)</h4>
+      <p class="muted">The selector points to the HTML element you want to style. In this case, we are selecting all <code>&lt;h1&gt;</code> elements on the page.</p>
     </div>
   </div>
 
-  <div style="display: flex; justify-content: space-between; margin-top: 3rem; gap: 1rem;">
-    <a href="./"
-      style="background: #ff2d95; color: #fff; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">←
-      Back to Lessons</a>
-    <a href="lesson-2.html"
-      style="background: var(--accent-green); color: #000; padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: bold;">Next:
-      Selectors & Properties →</a>
+  <div class="gfg-step">
+    <div class="gfg-step-num">2</div>
+    <div class="gfg-step-content">
+      <h4><code>{ ... }</code> (The Declaration Block)</h4>
+      <p class="muted">The declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value.</p>
+    </div>
+  </div>
+
+  <div class="gfg-step">
+    <div class="gfg-step-num">3</div>
+    <div class="gfg-step-content">
+      <h4><code>color: blue;</code> (Property and Value)</h4>
+      <p class="muted"><code>color</code> is the property, and <code>blue</code> is the value. This tells the browser to make the text color of the <code>h1</code> element blue. The declaration always ends with a semicolon <code>;</code>.</p>
+    </div>
+  </div>
+
+  <h3 id="how-to-add">How to Add CSS to HTML</h3>
+  <ul style="color: var(--muted); line-height: 2.2;">
+    <li><strong>Inline CSS:</strong> Using the <code>style</code> attribute inside HTML elements. Good for quick, single-element fixes but heavily frowned upon for large apps.</li>
+    <li><strong>Internal/Embedded CSS:</strong> Using the <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section of the HTML document.</li>
+    <li><strong>External CSS:</strong> Using the <code>&lt;link&gt;</code> element to link to an external CSS file. <strong>This is the standard and best practice.</strong></li>
+  </ul>
+
+  <!-- Navigation -->
+  <div style="display: flex; justify-content: space-between; margin-top: 4rem; gap: 1rem; border-top: 1px solid var(--nav-border); padding-top: 2rem;">
+    <a href="./" class="btn btn-outline" style="padding: 1rem 2rem;">← Overview</a>
+    <a href="lesson-2.html" class="btn btn-primary" style="padding: 1rem 2rem;">Next Lesson: Selectors & Colors →</a>
   </div>
 </section>
-
-<script>
-  function checkAnswer(q, a, m) { let s = document.querySelector(`input[name="${q}"]:checked`); let r = document.getElementById(q + '-result'); if (!s) { r.innerHTML = '⚠️ Please select an answer!'; r.style.color = 'var(--accent-yellow)'; return; } if (s.value === a) { r.innerHTML = m + ' 🎉'; r.style.color = 'var(--accent-green)'; } else { r.innerHTML = '❌ Try again!'; r.style.color = 'rgba(255,45,149,1)'; } }
-</script>
 
         <script>
             // Add copy buttons to all pre blocks
@@ -514,6 +464,127 @@ h1 {
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>

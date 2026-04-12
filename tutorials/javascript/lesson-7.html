@@ -13,33 +13,49 @@ description: "Master complex data structures in JavaScript"
     <p style="margin: 0;">Arrays and Objects are the primary ways to store collections of data in JavaScript. Arrays are
       ordered lists, while Objects are collections of key-value pairs.</p>
   </div>
-  <h3>Creating Functions</h3>
-  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>function greet() {
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#creating-functions">Creating Functions</a></li>
+      <li><a href="#functions-with-parameters">Functions with Parameters</a></li>
+      <li><a href="#return-values">Return Values</a></li>
+      <li><a href="#arrow-functions">Arrow Functions</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="creating-functions">Creating Functions</h3>
+  <pre><code>function greet() {
   console.log("Hello!");
 }
 
 greet();   // Call the function</code></pre>
-  <h3>Functions with Parameters</h3>
-  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>function greet(name) {
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
+  <h3 id="functions-with-parameters">Functions with Parameters</h3>
+  <pre><code>function greet(name) {
   console.log("Hello, " + name);
 }
 
 greet("Alice");
 greet("Bob");</code></pre>
-  <h3>Return Values</h3>
-  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>function add(a, b) {
+  <h3 id="return-values">Return Values</h3>
+  <pre><code>function add(a, b) {
   return a + b;
 }
 
 let result = add(5, 3);
 console.log(result);  // 8</code></pre>
-  <h3>Arrow Functions</h3>
-  <pre style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto;"><code>const multiply = (a, b) => a * b;
+  <h3 id="arrow-functions">Arrow Functions</h3>
+  <pre><code>const multiply = (a, b) => a * b;
 console.log(multiply(4, 5));  // 20</code></pre>
   </div>
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ How do you call a function named "sayHi"?

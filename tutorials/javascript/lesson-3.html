@@ -17,14 +17,26 @@ description: "Master arithmetic, comparison, and logical operators in JavaScript
   <div
     style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-cyan);">
 
-    <h3>What is a Variable?</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#what-is-a-variable">What is a Variable?</a></li>
+      <li><a href="#creating-variables-let-const-var">Creating Variables (let, const, var)</a></li>
+      <li><a href="#data-types">Data Types</a></li>
+      <li><a href="#changing-variables">Changing Variables</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="what-is-a-variable">What is a Variable?</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       <strong>A variable stores information.</strong> It's like a labeled box where you put data.
     </p>
 
-    <h3>Creating Variables (let, const, var)</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>// Using let (recommended)
+    <h3 id="creating-variables-let-const-var">Creating Variables (let, const, var)</h3>
+    <pre><code>// Using let (recommended)
 let name = "Alice";
 let age = 25;
 
@@ -34,30 +46,32 @@ const gravity = 9.8;
 
 console.log(name);      // Alice
 console.log(age);       // 25</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Data Types</h3>
+
+    <h3 id="data-types">Data Types</h3>
     <div
       style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
       <div style="background: rgba(0, 245, 255, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-cyan); font-weight: bold;">String</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>let city = "NYC";
+        <pre><code>let city = "NYC";
 let msg = 'Hello';</code></pre>
       </div>
       <div style="background: rgba(255, 45, 149, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-pink); font-weight: bold;">Number</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>let age = 25;
+        <pre><code>let age = 25;
 let price = 19.99;</code></pre>
       </div>
       <div style="background: rgba(123, 255, 111, 0.08); padding: 1rem; border-radius: 8px;">
         <p style="margin: 0 0 0.5rem 0; color: var(--accent-green); font-weight: bold;">Boolean</p>
-        <pre style="margin: 0; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.7rem; border-radius: 4px;"><code>let isStudent = true;
+        <pre><code>let isStudent = true;
 let isActive = false;</code></pre>
       </div>
     </div>
 
-    <h3>Changing Variables</h3>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>let score = 10;
+    <h3 id="changing-variables">Changing Variables</h3>
+    <pre><code>let score = 10;
 console.log(score);     // 10
 
 score = 20;
@@ -71,7 +85,7 @@ console.log(score);     // 25</code></pre>
   <!-- Quiz -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--accent-cyan);">

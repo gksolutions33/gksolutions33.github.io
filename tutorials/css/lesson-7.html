@@ -14,14 +14,28 @@ description: "Learn how to make your websites look great on any device"
       automatically adjusts for different screen sizes and viewports.</p>
   </div>
 
-  <h3>The Viewport Meta Tag</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>&lt;!-- Always add this to &lt;head&gt; --&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+  
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#the-viewport-meta-tag">The Viewport Meta Tag</a></li>
+      <li><a href="#media-queries">Media Queries</a></li>
+      <li><a href="#responsive-typography">Responsive Typography</a></li>
+      <li><a href="#responsive-grid-pattern">Responsive Grid Pattern</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
 
-  <h3>Media Queries</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Mobile first approach */
+  <h3 id="the-viewport-meta-tag">The Viewport Meta Tag</h3>
+  <pre><code>&lt;!-- Always add this to &lt;head&gt; --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
+
+  <h3 id="media-queries">Media Queries</h3>
+  <pre><code>/* Mobile first approach */
 .container { padding: 1rem; }
 
 /* Tablet (768px+) */
@@ -41,9 +55,8 @@ description: "Learn how to make your websites look great on any device"
     .container { max-width: 1140px; }
 }</code></pre>
 
-  <h3>Responsive Typography</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Use clamp for fluid font sizes */
+  <h3 id="responsive-typography">Responsive Typography</h3>
+  <pre><code>/* Use clamp for fluid font sizes */
 h1 { font-size: clamp(1.5rem, 4vw, 3rem); }
 p  { font-size: clamp(0.9rem, 2vw, 1.1rem); }
 
@@ -53,9 +66,8 @@ img {
     height: auto;
 }</code></pre>
 
-  <h3>Responsive Grid Pattern</h3>
-  <pre
-    style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 45, 149, 0.3);"><code>/* Auto-responsive cards — no media query needed! */
+  <h3 id="responsive-grid-pattern">Responsive Grid Pattern</h3>
+  <pre><code>/* Auto-responsive cards — no media query needed! */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -73,7 +85,7 @@ nav {
 
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+    <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
     <div
       style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff2d95;">
       <p style="margin: 0 0 1rem 0; color: var(--muted); font-weight: bold;">❓ What is "mobile-first" design?</p>

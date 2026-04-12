@@ -13,12 +13,23 @@ description: "Install a C++ compiler and write your first Hello World program"
         <p style="margin: 0;">To write C++, you need a compiler like GCC or Clang and a code editor like VS Code.</p>
     </div>
 
-    <h3>Setting Up C++</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#setting-up-c">Setting Up C++</a></li>
+      <li><a href="#your-first-c-program">Your First C++ Program</a></li>
+      <li><a href="#c-vs-c-key-improvements">C++ vs C: Key Improvements</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="setting-up-c">Setting Up C++</h3>
     <p style="color: var(--muted);">C++ uses the same compilers as C (GCC, Clang, MSVC) but with <code>g++</code>
         instead of <code>gcc</code>.</p>
 
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code># Verify installation
+    <pre><code># Verify installation
 g++ --version
 
 # Compile
@@ -27,10 +38,12 @@ g++ hello.cpp -o hello
 # Run
 ./hello       # Linux/Mac
 hello.exe     # Windows</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-    <h3>Your First C++ Program</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>#include &lt;iostream&gt;
+
+    <h3 id="your-first-c-program">Your First C++ Program</h3>
+    <pre><code>#include &lt;iostream&gt;
 #include &lt;string&gt;
 using namespace std;
 
@@ -61,9 +74,8 @@ int main() {
         <li><code>endl</code> — End line (like <code>\n</code>)</li>
     </ul>
 
-    <h3>C++ vs C: Key Improvements</h3>
-    <pre
-        style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 159, 28, 0.3);"><code>// C style
+    <h3 id="c-vs-c-key-improvements">C++ vs C: Key Improvements</h3>
+    <pre><code>// C style
 char name[50];
 printf("Name: %s\n", name);
 
@@ -86,7 +98,7 @@ int &amp;ref = x;  // ref IS x</code></pre>
     <!-- Quiz -->
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ff9f1c;">

@@ -16,9 +16,21 @@ description: "Master arithmetic, logical, and assignment operators in C"
     <div
         style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #ffd60a;">
 
-        <h3>Arithmetic Operators</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>#include &lt;stdio.h&gt;
+        
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#arithmetic-operators">Arithmetic Operators</a></li>
+      <li><a href="#comparison-operators">Comparison Operators</a></li>
+      <li><a href="#logical-operators">Logical Operators</a></li>
+      <li><a href="#assignment-operators">Assignment Operators</a></li>
+      <li><a href="#quick-quiz">✅ Quick Quiz</a></li>
+    </ul>
+  </div>
+
+  <h3 id="arithmetic-operators">Arithmetic Operators</h3>
+        <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     int a = 10, b = 3;
@@ -33,11 +45,13 @@ int main() {
     x--;  // 5 (decrement)
     return 0;
 }</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
 
-        <h3>Comparison Operators</h3>
+
+        <h3 id="comparison-operators">Comparison Operators</h3>
         <p style="color: var(--muted);">Return 1 (true) or 0 (false):</p>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int a = 10, b = 5;
+        <pre><code>int a = 10, b = 5;
 printf("%d\n", a == b);   // 0 (equal to)
 printf("%d\n", a != b);   // 1 (not equal)
 printf("%d\n", a > b);    // 1 (greater than)
@@ -45,9 +59,8 @@ printf("%d\n", a < b);    // 0 (less than)
 printf("%d\n", a >= 10);  // 1 (greater or equal)
 printf("%d\n", b <= 5);   // 1 (less or equal)</code></pre>
 
-        <h3>Logical Operators</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int x = 1, y = 0;
+        <h3 id="logical-operators">Logical Operators</h3>
+        <pre><code>int x = 1, y = 0;
 printf("%d\n", x &amp;&amp; y);  // 0 (AND: both must be true)
 printf("%d\n", x || y);  // 1 (OR: at least one true)
 printf("%d\n", !x);      // 0 (NOT: reverses)
@@ -57,9 +70,8 @@ if (age >= 18 &amp;&amp; hasLicense) {
     printf("You can drive!\n");
 }</code></pre>
 
-        <h3>Assignment Operators</h3>
-        <pre
-            style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(255, 214, 10, 0.3);"><code>int c = 10;
+        <h3 id="assignment-operators">Assignment Operators</h3>
+        <pre><code>int c = 10;
 c += 5;   // c = 15
 c -= 3;   // c = 12
 c *= 2;   // c = 24
@@ -71,7 +83,7 @@ c %= 4;   // c = 2</code></pre>
     <!-- Quiz -->
     <div
         style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-        <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
+        <h3 id="quick-quiz" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz</h3>
 
         <div
             style="background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid #ffd60a;">

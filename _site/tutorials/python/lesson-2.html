@@ -259,6 +259,8 @@
         
         
         
+        
+        
         <li class="tutorial-nav-item ">
             <a href="/tutorials/python/lesson-1">
                 Lesson 1: What is Python?
@@ -372,23 +374,47 @@
         create a variable. Python handles it for you!</p>
     </div>
 
-    <h3>🎯 Your Goal: Write "Hello, World!"</h3>
+    
+  <!-- GFG Style Table of Contents -->
+  <div class="gfg-article-toc">
+    <h4>Table of Contents</h4>
+    <ul>
+      <li><a href="#your-goal-write-hello-world">🎯 Your Goal: Write "Hello, World!"</a></li>
+      <li><a href="#step-1-open-your-text-editor">Step 1: Open Your Text Editor</a></li>
+      <li><a href="#step-2-write-your-first-program">Step 2: Write Your First Program</a></li>
+      <li><a href="#step-3-save-your-file">Step 3: Save Your File</a></li>
+      <li><a href="#step-4-run-your-program">Step 4: Run Your Program!</a></li>
+      <li><a href="#let-s-get-fancier">Let's Get Fancier!</a></li>
+      <li><a href="#more-examples-to-try">More Examples to Try:</a></li>
+      <li><a href="#common-beginner-mistakes">Common Beginner Mistakes:</a></li>
+      <li><a href="#key-points">🔑 Key Points</a></li>
+      <li><a href="#try-it-online">🧪 Try It Online</a></li>
+      <li><a href="#practice-exercises">📝 Practice Exercises</a></li>
+      <li><a href="#further-reading">📚 Further Reading</a></li>
+      <li><a href="#quick-quiz-test-your-knowledge">✅ Quick Quiz - Test Your Knowledge!</a></li>
+      <li><a href="#challenge">🎯 Challenge</a></li>
+    </ul>
+  </div>
+
+  <h3 id="your-goal-write-hello-world">🎯 Your Goal: Write "Hello, World!"</h3>
     <p style="color: var(--muted); font-size: 1.05rem; line-height: 1.8;">
       Every programmer writes this program as their first one. It's a rite of passage! 🎓
     </p>
 
-    <h3>Step 1: Open Your Text Editor</h3>
+    <h3 id="step-1-open-your-text-editor">Step 1: Open Your Text Editor</h3>
     <ol style="color: var(--muted); line-height: 2.2;">
       <li>Open <strong>VS Code</strong> (or Notepad if you don't have VS Code)</li>
       <li>Create a new file</li>
       <li>Go to File → New File</li>
     </ol>
 
-    <h3>Step 2: Write Your First Program</h3>
+    <h3 id="step-2-write-your-first-program">Step 2: Write Your First Program</h3>
     <p style="color: var(--muted);">Type (don't copy-paste!) the following code:</p>
 
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>print("Hello, World!")</code></pre>
+    <pre><code>print("Hello, World!")</code></pre>
+  <a href="#" class="gfg-tryIt"><i class="fas fa-play"></i> Try It Yourself</a>
+  <div class="gfg-output-box">Output...</div>
+
 
     <p style="color: var(--muted); margin-top: 1rem;">
       That's it! Just one line of code. Here's what it means:
@@ -401,14 +427,14 @@
       </ul>
     </div>
 
-    <h3>Step 3: Save Your File</h3>
+    <h3 id="step-3-save-your-file">Step 3: Save Your File</h3>
     <ol style="color: var(--muted); line-height: 2.2;">
       <li>Press <strong>Ctrl + S</strong> (or File → Save)</li>
       <li>Name it: <code>hello.py</code> (the <strong>.py</strong> is important!)</li>
       <li>Save it somewhere you'll remember (like your Desktop)</li>
     </ol>
 
-    <h3>Step 4: Run Your Program!</h3>
+    <h3 id="step-4-run-your-program">Step 4: Run Your Program!</h3>
     <ol style="color: var(--muted); line-height: 2.2;">
       <li>Open Command Prompt (CMD) or PowerShell</li>
       <li>Navigate to your file's folder (type: <code>cd Desktop</code>)</li>
@@ -421,11 +447,10 @@
         style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">Hello, World!</code>
     </p>
 
-    <h3>Let's Get Fancier!</h3>
+    <h3 id="let-s-get-fancier">Let's Get Fancier!</h3>
     <p style="color: var(--muted);">Now try this code:</p>
 
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2); margin: 1rem 0;"><code>print("Hello, World!")
+    <pre><code>print("Hello, World!")
 print("My name is Python!")
 print("I'm awesome!")
 print("")
@@ -435,11 +460,10 @@ print("Welcome to programming!")</code></pre>
       Run this program and you'll see multiple lines of output! Each <code>print()</code> creates a new line.
     </p>
 
-    <h3>More Examples to Try:</h3>
+    <h3 id="more-examples-to-try">More Examples to Try:</h3>
 
     <h4>Example 1: Using Numbers</h4>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>print(5 + 3)
+    <pre><code>print(5 + 3)
 print(10 * 4)
 print(20 / 5)</code></pre>
     <p style="color: var(--muted); margin-top: 0.5rem;">Output: <code
@@ -448,18 +472,16 @@ print(20 / 5)</code></pre>
         style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">4.0</code></p>
 
     <h4>Example 2: Combining Text and Numbers</h4>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>print("I have", 5, "apples")</code></pre>
+    <pre><code>print("I have", 5, "apples")</code></pre>
     <p style="color: var(--muted); margin-top: 0.5rem;">Output: <code
         style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px;">I have 5 apples</code></p>
 
     <h4>Example 3: Getting Input from Users</h4>
-    <pre
-      style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; overflow-x: auto; border: 1px solid rgba(0, 245, 255, 0.2);"><code>name = input("What is your name? ")
+    <pre><code>name = input("What is your name? ")
 print("Hello,", name)</code></pre>
     <p style="color: var(--muted); margin-top: 0.5rem;">When you run this, it asks for your name, then says hello!</p>
 
-    <h3>Common Beginner Mistakes:</h3>
+    <h3 id="common-beginner-mistakes">Common Beginner Mistakes:</h3>
     <div style="background: rgba(255, 45, 149, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
       <div style="margin-bottom: 1rem;">
         <p style="margin: 0; color: var(--muted); font-weight: bold;">❌ Mistake 1: Forgetting parentheses</p>
@@ -488,7 +510,7 @@ print("Hello,", name)</code></pre>
 
   <!-- Key Points & Practice (W3Schools / GeeksforGeeks style) -->
   <div style="background: rgba(0,0,0,0.03); padding: 1.5rem; border-radius: 12px; margin: 2rem 0;">
-    <h3 style="margin-top: 0;">🔑 Key Points</h3>
+    <h3 id="key-points" style="margin-top: 0;">🔑 Key Points</h3>
     <ul style="color: var(--muted); line-height: 1.9;">
       <li><strong>print()</strong> shows text or values on the screen.</li>
       <li>Strings (text) must be wrapped in quotes: <code>"hello"</code> or <code>'hello'</code>.</li>
@@ -498,7 +520,7 @@ print("Hello,", name)</code></pre>
       <li>Common beginner errors: missing parentheses, wrong quotes, wrong file extension.</li>
     </ul>
 
-    <h3 style="margin-top: 1rem;">🧪 Try It Online</h3>
+    <h3 id="try-it-online" style="margin-top: 1rem;">🧪 Try It Online</h3>
     <p style="color: var(--muted); margin-bottom: 0.5rem;">Quick online editors to experiment with code (safe and
       instant):</p>
     <ul style="color: var(--muted);">
@@ -510,7 +532,7 @@ print("Hello,", name)</code></pre>
           style="color: var(--accent-cyan);">GeeksforGeeks - Python examples</a></li>
     </ul>
 
-    <h3 style="margin-top: 1rem;">📝 Practice Exercises</h3>
+    <h3 id="practice-exercises" style="margin-top: 1rem;">📝 Practice Exercises</h3>
     <ol style="color: var(--muted); line-height: 1.9; margin-bottom: 0.5rem;">
       <li>Create a program that asks for the user's age and prints "You are X years old".</li>
       <li>Write a small calculator that asks for two numbers and prints their sum, difference, product, and quotient.
@@ -518,7 +540,7 @@ print("Hello,", name)</code></pre>
     </ol>
     <details style="color: var(--muted);">
       <summary style="cursor: pointer; font-weight: bold;">Show sample answers</summary>
-      <pre style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px; margin-top: 1rem; overflow-x: auto;"><code># Exercise 1
+      <pre><code># Exercise 1
 age = input("How old are you? ")
 print("You are", age, "years old")
 
@@ -531,7 +553,7 @@ print("Product:", x * y)
 print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
     </details>
 
-    <h3 style="margin-top: 1rem;">📚 Further Reading</h3>
+    <h3 id="further-reading" style="margin-top: 1rem;">📚 Further Reading</h3>
     <p style="color: var(--muted); margin: 0;">Learn more reference-style material and examples from the originals:</p>
     <ul style="color: var(--muted);">
       <li><a href="https://www.w3schools.com/python/" target="_blank" style="color: var(--accent-cyan);">W3Schools
@@ -545,7 +567,7 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
   <!-- Quiz Section -->
   <div
     style="background: rgba(123, 255, 111, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(123, 255, 111, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz - Test Your Knowledge!</h3>
+    <h3 id="quick-quiz-test-your-knowledge" style="margin-top: 0; color: var(--accent-green);">✅ Quick Quiz - Test Your Knowledge!</h3>
 
     <!-- Question 1 -->
     <div
@@ -627,7 +649,7 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
   <!-- Challenge -->
   <div
     style="background: rgba(255, 195, 0, 0.08); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 2px solid rgba(255, 195, 0, 0.3);">
-    <h3 style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
+    <h3 id="challenge" style="margin-top: 0; color: var(--accent-yellow);">🎯 Challenge</h3>
     <p style="color: var(--muted);">Try writing a program that:</p>
     <ol style="color: var(--muted); line-height: 2;">
       <li>Asks the user for their favorite color</li>
@@ -686,6 +708,127 @@ print("Quotient:", x / y if y != 0 else "undefined")</code></pre>
                 };
                 pre.appendChild(button);
             });
+
+            // --- IDE Execution Logic ---
+            const modal = document.createElement('div');
+            modal.className = 'ide-modal';
+            modal.id = 'ideModal';
+            modal.innerHTML = `
+                <div class="ide-modal-content">
+                    <div class="ide-header">
+                        <h3><i class="fas fa-terminal" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> GK Solutions IDE</h3>
+                        <button class="ide-close" id="ideClose">&times;</button>
+                    </div>
+                    <div class="ide-body">
+                        <div class="ide-editor">
+                            <textarea id="ideCode" spellcheck="false"></textarea>
+                            <div class="ide-controls">
+                                <span id="ideLanguageDisplay" style="color: var(--muted); font-weight: bold; text-transform: uppercase;"></span>
+                                <button class="ide-run-btn" id="ideRunBtn"><i class="fas fa-play"></i> Run Code</button>
+                            </div>
+                        </div>
+                        <div class="ide-output">
+                            <h4>Output</h4>
+                            <pre class="ide-output-console" id="ideConsole">Ready...</pre>
+                            <iframe class="ide-iframe-output" id="ideIframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            const ideCode = document.getElementById('ideCode');
+            const runBtn = document.getElementById('ideRunBtn');
+            const ideConsole = document.getElementById('ideConsole');
+            const ideIframe = document.getElementById('ideIframe');
+            const closeBtn = document.getElementById('ideClose');
+            const langDisplay = document.getElementById('ideLanguageDisplay');
+            
+            // Map URL categories to Piston API languages
+            const langMap = {
+                'python': { lang: 'python', version: '*' },
+                'java': { lang: 'java', version: '*' },
+                'c': { lang: 'c', version: '*' },
+                'cpp': { lang: 'cpp', version: '*' },
+                'arduino': { lang: 'c', version: '*' }, // Fallback to raw C for basic checks
+                'sql': { lang: 'sqlite3', version: '*' },
+                'javascript': { lang: 'javascript', version: '*' },
+                'html': { lang: 'html' },
+                'css': { lang: 'css' }
+            };
+
+            const urlPath = window.location.pathname.toLowerCase();
+            let currentLangObj = null;
+            let currentLangKey = 'unknown';
+            for (const key in langMap) {
+                if (urlPath.includes('/tutorials/' + key + '/')) {
+                    currentLangObj = langMap[key];
+                    currentLangKey = key;
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.gfg-tryIt').forEach((btn) => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Grab code from previous PRE block
+                    let curr = btn.previousElementSibling;
+                    while(curr && curr.tagName.toLowerCase() !== 'pre') {
+                        curr = curr.previousElementSibling;
+                    }
+                    if (curr) {
+                        const codeElem = curr.querySelector('code');
+                        ideCode.value = codeElem ? codeElem.innerText : curr.innerText;
+                    } else {
+                        ideCode.value = "// Could not locate code block automatically.";
+                    }
+                    
+                    langDisplay.innerText = currentLangKey;
+                    ideConsole.innerText = "Ready...";
+                    ideConsole.style.display = 'block';
+                    ideIframe.style.display = 'none';
+                    ideIframe.srcdoc = "";
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeBtn.onclick = () => modal.style.display = 'none';
+            window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; }
+
+            runBtn.onclick = async () => {
+                if (!currentLangObj) {
+                    ideConsole.innerText = "Error: Language context unknown.";
+                    return;
+                }
+                const code = ideCode.value;
+                if (currentLangKey === 'html' || currentLangKey === 'css') {
+                    ideConsole.style.display = 'none';
+                    ideIframe.style.display = 'block';
+                    ideIframe.srcdoc = currentLangKey === 'css' ? `<style>${code}</style><h1>Style Preview Active</h1>` : code;
+                    return;
+                }
+                
+                ideConsole.innerText = "Compiling & executing...";
+                try {
+                    const res = await fetch("https://emkc.org/api/v2/piston/execute", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            language: currentLangObj.lang,
+                            version: currentLangObj.version,
+                            files: [{ content: code }]
+                        })
+                    });
+                    const data = await res.json();
+                    if (data.run && data.run.output !== undefined) {
+                        ideConsole.innerText = data.run.output || "[Program finished with no output]";
+                    } else {
+                        ideConsole.innerText = "API Error:\n" + JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    ideConsole.innerText = "Network Error: " + err.message;
+                }
+            };
         </script>
     </article>
 </div>
