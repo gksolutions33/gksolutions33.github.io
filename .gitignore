@@ -1,0 +1,8 @@
+# Local environment & config
+config.local.js
+config.backup.js
+
+# Local server scripts / temp files
+*.log
+.DS_Store
+Thumbs.db

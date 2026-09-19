@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — GK Services</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ADMIN LOGIN
+════════════════════════════════════════════════════════════ -->
+<div class="admin-login" id="admin-login-page">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-icon" aria-hidden="true">🔧</div>
+      <h1 id="login-company-name">GK Services</h1>
+      <p>Admin Panel — Secure Login</p>
+    </div>
+
+    <div class="login-err" id="login-err" role="alert"></div>
+
+    <div class="inp-group">
+      <label class="inp-label" for="admin-password-input">Password</label>
+      <input
+        type="password"
+        id="admin-password-input"
+        class="inp-field"
+        placeholder="Enter admin password"
+        autocomplete="current-password"
+        aria-required="true"
+        onkeydown="if(event.key==='Enter')doLogin()"
+      />
+    </div>
+
+    <button id="login-btn" class="btn btn-primary btn-lg" onclick="doLogin()" style="width:100%">
+      Login →
+    </button>
+
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.75rem;color:var(--slate-500)">
+      <a href="index.html" style="color:var(--sky-400)">← Back to website</a>
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ADMIN PANEL
+════════════════════════════════════════════════════════════ -->
+<div class="admin-panel" id="admin-panel-page">
+
+  <!-- Header -->
+  <header class="admin-hdr" role="banner">
+    <div class="admin-hdr-brand">
+      <div class="icon" aria-hidden="true">🔧</div>
+      <span id="admin-brand-label">AppliFix Repairs</span>
+      <span style="color:var(--slate-500);font-weight:400;font-size:var(--text-sm)">/ Admin</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:0.75rem">
+      <button id="refresh-btn" class="btn btn-sm btn-ghost" onclick="loadRequests()" title="Refresh data" aria-label="Refresh data">
+        ↻ Refresh
+      </button>
+      <a href="index.html" class="btn btn-sm btn-ghost" aria-label="Go to website">🌐 Website</a>
+      <button id="logout-btn" class="btn btn-sm btn-danger" onclick="doLogout()" aria-label="Log out">Logout</button>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <main class="admin-body" id="admin-body">
+
+    <!-- ── Stats ──────────────────────────────────────────── -->
+    <div class="admin-section-title">Overview</div>
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card">
+        <div class="stat-lbl">Total Requests</div>
+        <div class="stat-val c-teal" id="stat-total">—</div>
+        <div class="stat-sub">All time</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-lbl">Today</div>
+        <div class="stat-val c-sky" id="stat-today">—</div>
+        <div class="stat-sub" id="stat-today-date">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-lbl">Washing Machine</div>
+        <div class="stat-val c-green" id="stat-wm">—</div>
+        <div class="stat-sub">requests</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-lbl">Refrigerator</div>
+        <div class="stat-val c-amber" id="stat-fridge">—</div>
+        <div class="stat-sub">requests</div>
+      </div>
+    </div>
+
+    <!-- ── Breakdown charts ───────────────────────────────── -->
+    <div class="breakdown-card">
+      <div class="breakdown-grid">
+        <div>
+          <div class="breakdown-title">Requests by Brand</div>
+          <div id="brand-breakdown"></div>
+        </div>
+        <div>
+          <div class="breakdown-title">Requests by Age</div>
+          <div id="age-breakdown"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Filters ────────────────────────────────────────── -->
+    <div class="filters-bar" role="search" aria-label="Filter requests">
+      <input
+        type="search"
+        id="search-input"
+        class="f-input f-search"
+        placeholder="🔍 Search mobile, name, or area…"
+        aria-label="Search by mobile number, name, or area"
+        oninput="applyFilters()"
+      />
+      <select id="filter-appliance" class="f-input" aria-label="Filter by appliance" onchange="applyFilters()">
+        <option value="">All Appliances</option>
+        <option value="Washing Machine">Washing Machine</option>
+        <option value="Refrigerator">Refrigerator</option>
+      </select>
+      <select id="filter-status" class="f-input" aria-label="Filter by status" onchange="applyFilters()">
+        <option value="">All Statuses</option>
+        <option value="New">New</option>
+        <option value="Contacted">Contacted</option>
+        <option value="Service Scheduled">Service Scheduled</option>
+        <option value="Completed">Completed</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+      <select id="filter-brand" class="f-input" aria-label="Filter by brand" onchange="applyFilters()">
+        <option value="">All Brands</option>
+      </select>
+      <select id="filter-age" class="f-input" aria-label="Filter by age" onchange="applyFilters()">
+        <option value="">All Ages</option>
+        <option value="Less than 1 year">Less than 1 year</option>
+        <option value="1–2 years">1–2 years</option>
+        <option value="2–3 years">2–3 years</option>
+        <option value="3–5 years">3–5 years</option>
+        <option value="5–7 years">5–7 years</option>
+        <option value="More than 7 years">More than 7 years</option>
+        <option value="Don't Know">Don't Know</option>
+      </select>
+      <input type="date" id="filter-date" class="f-input" aria-label="Filter by date" onchange="applyFilters()" title="Filter by date" />
+      <button class="btn btn-sm btn-ghost" onclick="clearFilters()" aria-label="Clear all filters">✕ Clear</button>
+    </div>
+
+    <!-- ── Table ──────────────────────────────────────────── -->
+    <div class="admin-section-title" id="table-count-label">Requests</div>
+    <div class="table-wrap" role="region" aria-label="Service requests table">
+      <table class="req-table" id="req-table" aria-live="polite">
+        <thead>
+          <tr>
+            <th scope="col">Date &amp; Time</th>
+            <th scope="col">Mobile &amp; Name</th>
+            <th scope="col">Area / Locality</th>
+            <th scope="col">Appliance</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Age</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="req-tbody">
+          <tr><td colspan="8" class="table-info">
+            <div class="spinner" aria-label="Loading…"></div>
+            <p>Loading requests…</p>
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination" aria-label="Pagination"></div>
+
+  </main>
+</div><!-- /admin-panel -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     REQUEST DETAIL MODAL
+════════════════════════════════════════════════════════════ -->
+<div class="modal-ov" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <h3 id="modal-title">Request Details</h3>
+      <button class="form-close-btn" onclick="closeModal('detail-modal')" aria-label="Close modal">✕</button>
+    </div>
+    <div class="modal-body" id="detail-modal-body">
+      <!-- Populated by JS -->
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-sm btn-ghost" onclick="closeModal('detail-modal')">Close</button>
+      <button class="btn btn-sm btn-primary" id="save-detail-btn" onclick="saveDetail()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONFIRM DELETE MODAL
+════════════════════════════════════════════════════════════ -->
+<div class="modal-ov" id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+  <div class="modal-box" style="max-width:380px">
+    <div class="modal-hdr">
+      <h3 id="confirm-title">Confirm Delete</h3>
+      <button class="form-close-btn" onclick="closeModal('confirm-modal')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="confirm-msg" id="confirm-msg">Are you sure you want to permanently delete this request? This cannot be undone.</p>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-sm btn-ghost" onclick="closeModal('confirm-modal')">Cancel</button>
+      <button class="btn btn-sm btn-danger" id="confirm-ok-btn">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Toast area ─────────────────────────────────────── -->
+<div class="toast-area" id="toast-area" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ─── Scripts ────────────────────────────────────────── -->
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
