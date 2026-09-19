@@ -13,7 +13,7 @@ const BRANDS = {
 
 // ─── State ────────────────────────────────────────────────────
 let currentStep = 1;
-const TOTAL_STEPS = 5;
+const TOTAL_STEPS = 4;
 let isSubmitting = false;
 let lastSubmittedData = null;
 
@@ -208,8 +208,7 @@ function validateStep(step) {
   if (step === 1) return validateMobile();
   if (step === 2) return validateAppliance();
   if (step === 3) return validateBrand();
-  if (step === 4) return validateAge();
-  return true; // step 5 is optional
+  return true; // step 4 is optional
 }
 
 function validateMobile() {
@@ -245,15 +244,6 @@ function validateBrand() {
       $('brand-other-input').focus();
       return false;
     }
-  }
-  return true;
-}
-
-function validateAge() {
-  const checked = document.querySelector('input[name="age"]:checked');
-  if (!checked) {
-    showErr(null, 'age-error', true);
-    return false;
   }
   return true;
 }
@@ -383,7 +373,7 @@ function collectFormData() {
     mobile_number:          $('mobile-input').value.trim(),
     appliance_type:         document.querySelector('input[name="appliance"]:checked')?.value || '',
     brand:                  brand,
-    appliance_age:          document.querySelector('input[name="age"]:checked')?.value || '',
+    appliance_age:          'Not Specified',
     customer_name:          $('name-input')?.value.trim() || '',
     customer_area:          $('area-input')?.value.trim() || '',
     problem_description:    $('problem-input')?.value.trim() || '',
@@ -402,7 +392,7 @@ async function submitForm() {
   const data = collectFormData();
 
   // Final guard: require core fields
-  if (!data.mobile_number || !data.appliance_type || !data.brand || !data.appliance_age) {
+  if (!data.mobile_number || !data.appliance_type || !data.brand) {
     showToast('Please complete all required fields.', 'error');
     return;
   }
@@ -473,7 +463,6 @@ function showSuccessScreen(data) {
       { k: '📱 Mobile',    v: `+91 ${data.mobile_number}` },
       { k: '🔧 Appliance', v: data.appliance_type },
       { k: '🏷️ Brand',    v: data.brand },
-      { k: '📅 Age',       v: data.appliance_age },
       data.customer_name ? { k: '👤 Name', v: data.customer_name } : null,
       data.customer_area ? { k: '📍 Area', v: data.customer_area } : null,
       data.problem_description ? { k: '📝 Issue', v: data.problem_description } : null,
