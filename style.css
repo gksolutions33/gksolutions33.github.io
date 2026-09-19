@@ -305,6 +305,29 @@ textarea {
   align-items: center;
 }
 
+@media (max-width: 576px) {
+  .brand-sub {
+    display: none;
+  }
+
+  .navbar-actions .btn-phone span,
+  .navbar-actions .btn-whatsapp span {
+    display: none;
+  }
+
+  .navbar-actions .btn-phone,
+  .navbar-actions .btn-whatsapp {
+    padding: 0.45rem 0.55rem;
+    min-width: 36px;
+    justify-content: center;
+  }
+
+  .nav-book-btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.78rem;
+  }
+}
+
 /* ─── BUTTONS ────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
