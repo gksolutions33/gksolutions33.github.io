@@ -13,7 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=1.0.3" />
+  <link rel="stylesheet" href="style.css?v=1.0.5" />
 </head>
 
 <body>
@@ -766,7 +766,10 @@
           <div class="appliance-opt">
             <input type="radio" name="appliance" id="app-wm" value="Washing Machine" onchange="onApplianceChange()" />
             <label class="appliance-card" for="app-wm">
-              <span class="ac-icon" aria-hidden="true">🫧</span>
+              <div class="ac-img-wrap">
+                <img src="images/washing-machine-service.jpg" alt="Washing Machine Repair" class="ac-img" loading="lazy" />
+                <span class="ac-check-badge">✓</span>
+              </div>
               <span class="ac-label">Washing Machine</span>
               <span class="ac-sub">Front / Top / Semi</span>
             </label>
@@ -774,7 +777,10 @@
           <div class="appliance-opt">
             <input type="radio" name="appliance" id="app-fridge" value="Refrigerator" onchange="onApplianceChange()" />
             <label class="appliance-card" for="app-fridge">
-              <span class="ac-icon" aria-hidden="true">🧊</span>
+              <div class="ac-img-wrap">
+                <img src="images/refrigerator-service.jpg" alt="Refrigerator Repair" class="ac-img" loading="lazy" />
+                <span class="ac-check-badge">✓</span>
+              </div>
               <span class="ac-label">Refrigerator</span>
               <span class="ac-sub">Single / Double / Inverter</span>
             </label>
