@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block admin panel from being indexed
+Disallow: /admin.html
+Disallow: /config.js
+Disallow: /admin.js
+
+Sitemap: https://gksolutions33.online/sitemap.xml
