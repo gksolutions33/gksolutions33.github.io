@@ -183,58 +183,220 @@ textarea {
   padding: 0 var(--s4);
 }
 
-/* ─── TOP ANNOUNCEMENT BAR ───────────────────────────────── */
-.announcement-bar {
-  background: linear-gradient(90deg, rgba(6, 182, 212, 0.12), rgba(14, 165, 233, 0.18), rgba(37, 211, 102, 0.12));
-  border-bottom: 1px solid rgba(14, 165, 233, 0.2);
-  padding: 6px 0;
-  font-size: 0.78rem;
-  color: var(--slate-300);
+/* ─── BRAND LOGO (COMPANY EMBLEM) ────────────────────────── */
+.brand-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.announcement-inner {
+.navbar-brand:hover .brand-logo-img {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 6px 18px rgba(14, 165, 233, 0.55);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.footer-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
+}
+
+/* ─── TOP BRANDS TICKER BAR ───────────────────────────────── */
+.top-brands-ticker-bar {
+  background: linear-gradient(90deg, #070b16 0%, #0d1527 50%, #070b16 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+  user-select: none;
+}
+
+.top-brands-ticker-bar::before,
+.top-brands-ticker-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.top-brands-ticker-bar::before {
+  left: 0;
+  background: linear-gradient(to right, #070b16, transparent);
+}
+
+.top-brands-ticker-bar::after {
+  right: 0;
+  background: linear-gradient(to left, #070b16, transparent);
+}
+
+.brands-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: brands-ticker-slide 28s linear infinite;
+  will-change: transform;
+}
+
+.brands-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes brands-ticker-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.brands-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0 1.25rem;
+}
+
+.brand-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.brand-ticker-item:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.brand-ticker-item svg {
+  height: 24px;
+  width: auto;
+  max-width: 120px;
+  display: block;
+}
+
+.brand-ticker-dot {
+  color: var(--cyan-400);
+  opacity: 0.4;
+  font-size: 0.75rem;
+}
+
+/* ─── HERO BRANDS SHOWCASE BAR ───────────────────────────── */
+.hero-brands-showcase {
+  margin-top: 2.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-brands-scroll {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
   flex-wrap: wrap;
-  text-align: center;
+  gap: 0.85rem;
 }
 
-.live-pulse-badge {
+.hero-brand-card {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: var(--green-400);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 8px 18px;
+  height: 48px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
 }
 
-.pulse-dot-green {
-  width: 7px;
-  height: 7px;
-  background: var(--green-400);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--green-400);
-  animation: pulse-green 1.8s infinite;
+.hero-brand-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4), 0 0 16px rgba(14, 165, 233, 0.22);
 }
 
-@keyframes pulse-green {
+.hero-brand-card svg {
+  height: 26px;
+  width: auto;
+  max-width: 110px;
+  display: block;
+}
 
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
+@media (max-width: 768px) {
+  .brand-logo-img {
+    width: 36px;
+    height: 36px;
   }
 
-  50% {
-    opacity: 0.4;
-    transform: scale(0.8);
+  .hero-brands-showcase {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+  }
+
+  .hero-brands-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 6px 4px 14px;
+    gap: 0.65rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hero-brands-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-brand-card {
+    padding: 6px 14px;
+    height: 42px;
+  }
+
+  .hero-brand-card svg {
+    height: 22px;
+    max-width: 95px;
   }
 }
 
-.announcement-sep {
-  opacity: 0.4;
+@media (prefers-reduced-motion: reduce) {
+  .brands-marquee-track {
+    animation: none;
+    overflow-x: auto;
+  }
 }
 
 /* ─── NAVBAR ─────────────────────────────────────────────── */
